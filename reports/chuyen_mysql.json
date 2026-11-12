@@ -1,0 +1,20 @@
+{
+  "database": "bep_mien_tay",
+  "backend": "mysql",
+  "doi_chieu_tat_ca_ban_ghi": true,
+  "snapshot_sha256": "1cb0fcf044c17a43388323d2300817b3c060153128f21abbd843b2d41d89fa5c",
+  "snapshot_sqlite": "du_lieu_nguoi_dung\\sao_luu_sqlite\\truoc_mysql_20261029_170535_59f2c4dd.sqlite3",
+  "so_ban_ghi": {
+    "cau_hinh_db": 2,
+    "nguoi_dung": 4,
+    "phien": 3,
+    "cuoc_tro_chuyen": 29,
+    "tin_nhan": 176,
+    "nhat_ky_quan_tri": 1
+  },
+  "vai_tro": {
+    "admin": 1,
+    "user": 3
+  },
+  "thoi_diem": "2026-10-29T17:05:35"
+}

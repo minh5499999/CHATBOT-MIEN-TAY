@@ -1,0 +1,1076 @@
+{
+  "tom_tat": {
+    "cu_khong_mo_rong": {
+      "n": 44,
+      "hit1": 0.9318181818181818,
+      "hit5": 0.9772727272727273,
+      "mrr5": 0.9545454545454546
+    },
+    "langchain_keyword": {
+      "n": 44,
+      "hit1": 0.9545454545454546,
+      "hit5": 0.9772727272727273,
+      "mrr5": 0.9659090909090909
+    }
+  },
+  "giay": 3.9,
+  "chi_tiet": [
+    {
+      "cau_hoi": "luộc thịt heo sao cho thịt trắng, không bị khô",
+      "id_dung": 272,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          272,
+          936,
+          337,
+          463,
+          939
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          272,
+          936,
+          337,
+          463,
+          939
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "xào bò với đậu que làm sao để thịt bò không dai",
+      "id_dung": 205,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          205,
+          248,
+          201,
+          469,
+          220
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          205,
+          248,
+          201,
+          469,
+          220
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "cánh gà kho gừng làm thế nào cho thấm",
+      "id_dung": 194,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          194,
+          244,
+          89,
+          821,
+          85
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          194,
+          244,
+          89,
+          821,
+          85
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "hướng dẫn xào hủ tiếu với giá và hẹ",
+      "id_dung": 285,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          285,
+          131,
+          49,
+          200,
+          268
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          285,
+          131,
+          49,
+          200,
+          268
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "cách kho cá rô với khế chua",
+      "id_dung": 111,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          111,
+          110,
+          142,
+          62,
+          109
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          111,
+          110,
+          142,
+          62,
+          109
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "công thức cá lóc kho chung với thịt ba chỉ",
+      "id_dung": 103,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          106,
+          103,
+          218,
+          62,
+          42
+        ],
+        "hang_dung": 2
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          103,
+          142,
+          106,
+          87,
+          42
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "nấu bún nước lèo kiểu Trà Vinh như thế nào",
+      "id_dung": 98,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          98,
+          537,
+          47,
+          179,
+          165
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          98,
+          537,
+          47,
+          179,
+          165
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "cá bông lau kho tộ nấu sao ngon",
+      "id_dung": 76,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          76,
+          81,
+          106,
+          115,
+          560
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          76,
+          81,
+          106,
+          115,
+          560
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "đám giỗ ở miền Tây hay làm món gì",
+      "id_dung": 544,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          544,
+          546,
+          578,
+          545,
+          602
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          544,
+          546,
+          578,
+          545,
+          602
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "người miền Tây nấu lươn thành những món gì",
+      "id_dung": 600,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          600,
+          583,
+          8,
+          602,
+          544
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          600,
+          583,
+          8,
+          602,
+          544
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "đi Sóc Trăng nên ăn món đặc sản nào",
+      "id_dung": 542,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          542,
+          603,
+          581,
+          163,
+          165
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          542,
+          603,
+          581,
+          163,
+          165
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "bánh khọt là món gì vậy",
+      "id_dung": 606,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          606,
+          328,
+          607,
+          54,
+          176
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          606,
+          328,
+          607,
+          54,
+          176
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "có những loại đậu hũ nào",
+      "id_dung": 345,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          345,
+          398,
+          368,
+          219,
+          266
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          345,
+          398,
+          368,
+          466,
+          714
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "dầu hào thường nêm vào món gì",
+      "id_dung": 295,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          295,
+          372,
+          271,
+          150,
+          440
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          295,
+          372,
+          271,
+          150,
+          440
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "nước tương dùng để làm gì",
+      "id_dung": 294,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          294,
+          300,
+          555,
+          689,
+          658
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          294,
+          300,
+          555,
+          689,
+          658
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "bột ngọt nên nêm bao nhiêu là vừa",
+      "id_dung": 302,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          302,
+          303,
+          381,
+          380,
+          237
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          302,
+          303,
+          381,
+          380,
+          237
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "món xào thiếu đậu hũ thì dùng gì thay",
+      "id_dung": 398,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          398,
+          196,
+          368,
+          388,
+          266
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          398,
+          368,
+          219,
+          196,
+          266
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "nấu canh mà không có tôm thì thay bằng gì",
+      "id_dung": 400,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          400,
+          432,
+          424,
+          183,
+          376
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          400,
+          432,
+          424,
+          183,
+          376
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "hết muối rồi thì nêm bằng gì",
+      "id_dung": 435,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          435,
+          381,
+          504,
+          966,
+          456
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          435,
+          381,
+          504,
+          966,
+          456
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "kho chua ngọt mà không có sườn non thì dùng gì",
+      "id_dung": 448,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          448,
+          199,
+          217,
+          207,
+          266
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          448,
+          199,
+          217,
+          207,
+          266
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "công thức cho 6 người mà mình nấu cho 3 người thì chia sao",
+      "id_dung": 454,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          454,
+          515,
+          61,
+          125,
+          193
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          454,
+          515,
+          61,
+          125,
+          193
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "vì sao kho thịt cần thắng nước màu",
+      "id_dung": 522,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          522,
+          472,
+          460,
+          575,
+          932
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          522,
+          472,
+          460,
+          575,
+          932
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "sao xào đồ ăn phải phi hành tỏi trước",
+      "id_dung": 476,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          476,
+          957,
+          493,
+          505,
+          313
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          476,
+          957,
+          493,
+          505,
+          313
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "cuốn bánh tráng cứ bị rách là tại sao",
+      "id_dung": 520,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          520,
+          283,
+          464,
+          466,
+          465
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          520,
+          283,
+          464,
+          466,
+          465
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "ăn dưa muối với kim chi có lợi không",
+      "id_dung": 664,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          664,
+          946,
+          102,
+          86,
+          202
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          664,
+          946,
+          102,
+          86,
+          202
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "đậu phụ có chất dinh dưỡng gì",
+      "id_dung": 639,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          639,
+          714,
+          652,
+          950,
+          696
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          639,
+          714,
+          652,
+          219,
+          696
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "ăn nhiều tôm cua có sao không",
+      "id_dung": 668,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          668,
+          860,
+          655,
+          639,
+          649
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          668,
+          860,
+          655,
+          639,
+          649
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "sáng bụng đói uống cà phê có hại không",
+      "id_dung": 686,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          686,
+          666,
+          669,
+          615,
+          689
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          686,
+          666,
+          669,
+          615,
+          689
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "người không ăn cay thì nấu món gì",
+      "id_dung": 726,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          726,
+          487,
+          394,
+          444,
+          524
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          726,
+          487,
+          394,
+          444,
+          524
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "bữa sáng nên ăn gì để giảm cân",
+      "id_dung": 691,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          691,
+          694,
+          677,
+          693,
+          768
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          691,
+          694,
+          744,
+          677,
+          768
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "có sẵn thịt gà thì nấu món gì dễ",
+      "id_dung": 711,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          711,
+          85,
+          242,
+          339,
+          228
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          711,
+          85,
+          242,
+          339,
+          228
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "tối coi phim thì ăn món gì nhẹ nhẹ",
+      "id_dung": 745,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          745,
+          692,
+          630,
+          633,
+          721
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          745,
+          692,
+          630,
+          633,
+          721
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "cà rốt ăn sống hay nấu chín thì tốt hơn",
+      "id_dung": 959,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          959,
+          663,
+          647,
+          852,
+          429
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          959,
+          663,
+          647,
+          852,
+          429
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "làm sao giữ rau thơm tươi được lâu",
+      "id_dung": 951,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          951,
+          926,
+          945,
+          438,
+          978
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          951,
+          926,
+          945,
+          438,
+          978
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "nấu canh thế nào để ngon mà không mất chất",
+      "id_dung": 935,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          935,
+          966,
+          991,
+          516,
+          496
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          935,
+          966,
+          991,
+          516,
+          496
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "nấu phở bò ở nhà sao cho đơn giản",
+      "id_dung": 943,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          943,
+          248,
+          207,
+          241,
+          132
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          943,
+          248,
+          207,
+          241,
+          132
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "nấu ăn cho người ốm cần lưu ý điều gì",
+      "id_dung": 884,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          840,
+          815,
+          834,
+          814,
+          794
+        ],
+        "hang_dung": null
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          840,
+          815,
+          834,
+          814,
+          794
+        ],
+        "hang_dung": null
+      }
+    },
+    {
+      "cau_hoi": "cơm nguội để qua đêm ăn có sao không",
+      "id_dung": 854,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          854,
+          972,
+          657,
+          888,
+          885
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          854,
+          972,
+          657,
+          888,
+          885
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "dao cắt thịt sống đem cắt trái cây được không",
+      "id_dung": 852,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          852,
+          849,
+          959,
+          429,
+          911
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          852,
+          849,
+          959,
+          429,
+          911
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "nấm mọc dại ngoài vườn ăn được không",
+      "id_dung": 889,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          889,
+          890,
+          336,
+          553,
+          590
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          889,
+          890,
+          336,
+          553,
+          590
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "chiều hay bị mệt thì trưa nên ăn gì",
+      "id_dung": 783,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          783,
+          753,
+          694,
+          701,
+          721
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          783,
+          698,
+          781,
+          694,
+          805
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "cảm cúm thì nên ăn gì cho mau khỏi",
+      "id_dung": 816,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          816,
+          771,
+          799,
+          774,
+          819
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          816,
+          771,
+          799,
+          774,
+          819
+        ],
+        "hang_dung": 1
+      }
+    },
+    {
+      "cau_hoi": "ốm không ăn được cơm thì ăn món gì thay",
+      "id_dung": 815,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          700,
+          815,
+          840,
+          808,
+          793
+        ],
+        "hang_dung": 2
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          700,
+          815,
+          840,
+          808,
+          793
+        ],
+        "hang_dung": 2
+      }
+    },
+    {
+      "cau_hoi": "sau khi sốt tay chân yếu nên ăn gì bổ sung",
+      "id_dung": 804,
+      "cu_khong_mo_rong": {
+        "top_ids": [
+          804,
+          780,
+          791,
+          798,
+          778
+        ],
+        "hang_dung": 1
+      },
+      "langchain_keyword": {
+        "top_ids": [
+          804,
+          780,
+          791,
+          798,
+          778
+        ],
+        "hang_dung": 1
+      }
+    }
+  ],
+  "luu_y": "44 câu diễn đạt lại; kiểm tra truy hồi, không phải đánh giá y khoa hoặc độ tự nhiên của mô hình sinh."
+}

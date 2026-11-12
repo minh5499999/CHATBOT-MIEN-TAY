@@ -1,0 +1,22 @@
+test_admin_cuoi_khong_duoc_tu_khoa_ha_quyen (test_database_tai_khoan.DatabaseTests.test_admin_cuoi_khong_duoc_tu_khoa_ha_quyen) ... ok
+test_admin_them_khoa_mo_va_thu_hoi_phien (test_database_tai_khoan.DatabaseTests.test_admin_them_khoa_mo_va_thu_hoi_phien) ... ok
+test_chuyen_json_giu_hash_phien_lich_su_va_sao_luu (test_database_tai_khoan.DatabaseTests.test_chuyen_json_giu_hash_phien_lich_su_va_sao_luu) ... ok
+test_dang_ky_mac_dinh_user_hash_va_muoi_rieng (test_database_tai_khoan.DatabaseTests.test_dang_ky_mac_dinh_user_hash_va_muoi_rieng) ... ok
+test_dang_ky_trung_dong_thoi_chi_mot_thanh_cong (test_database_tai_khoan.DatabaseTests.test_dang_ky_trung_dong_thoi_chi_mot_thanh_cong) ... ok
+test_dat_lai_mat_khau_khong_lo_bam_va_audit (test_database_tai_khoan.DatabaseTests.test_dat_lai_mat_khau_khong_lo_bam_va_audit) ... ok
+test_google_khong_trung_email_khong_dang_nhap_bang_password (test_database_tai_khoan.DatabaseTests.test_google_khong_trung_email_khong_dang_nhap_bang_password) ... ok
+test_khoi_tao_admin_khong_the_cap_them_bang_bootstrap (test_database_tai_khoan.DatabaseTests.test_khoi_tao_admin_khong_the_cap_them_bang_bootstrap) ... ok
+test_lich_su_cach_ly_va_xoa_cascade (test_database_tai_khoan.DatabaseTests.test_lich_su_cach_ly_va_xoa_cascade) ... ok
+test_migration_loi_rollback_khong_mat_json (test_database_tai_khoan.DatabaseTests.test_migration_loi_rollback_khong_mat_json) ... ok
+test_phien_chi_luu_hash_het_han_va_dang_xuat (test_database_tai_khoan.DatabaseTests.test_phien_chi_luu_hash_het_han_va_dang_xuat) ... ok
+test_quyen_lay_lai_tu_db_khong_tin_phien_cu (test_database_tai_khoan.DatabaseTests.test_quyen_lay_lai_tu_db_khong_tin_phien_cu) ... ok
+test_sua_ho_so_va_quyen_trong_cung_transaction (test_database_tai_khoan.DatabaseTests.test_sua_ho_so_va_quyen_trong_cung_transaction) ... ok
+test_user_khong_duoc_goi_quan_tri (test_database_tai_khoan.DatabaseTests.test_user_khong_duoc_goi_quan_tri) ... ok
+test_validate_va_sql_injection (test_database_tai_khoan.DatabaseTests.test_validate_va_sql_injection) ... ok
+test_xoa_chan_user_admin_cuoi_va_tu_xoa (test_database_tai_khoan.DatabaseTests.test_xoa_chan_user_admin_cuoi_va_tu_xoa) ... ok
+test_xoa_tai_khoan_thu_hoi_phien_va_xoa_lich_su (test_database_tai_khoan.DatabaseTests.test_xoa_tai_khoan_thu_hoi_phien_va_xoa_lich_su) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 56.327s
+
+OK

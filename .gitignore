@@ -5,16 +5,34 @@
 # Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.mypy_cache/
+.pytest_cache/
 
 # Editor / hệ điều hành
 .vscode/
+.idea/
 Thumbs.db
 desktop.ini
 ~$*
+*.tmp
 
-# Khóa bí mật
-.env
+# Khóa bí mật & Cấu hình nhạy cảm
+.env*
+*.env
+!.env.example
+.streamlit/secrets.toml
+!.streamlit/secrets.toml.example
+
+# Bản sao lưu & Thử nghiệm tạm thời
+*.bak*
+backups/
+scratch/
 
 # Bộ đệm vector (sinh lại được) và nhật ký hội thoại
 kho_vector/_bo_dem/
 logs/
+
+# Tài khoản và lịch sử trò chuyện của người dùng (chỉ lưu trên máy)
+du_lieu_nguoi_dung/

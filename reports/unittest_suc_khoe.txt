@@ -1,0 +1,76 @@
+test_chay (test_chatbot.NgonNguTests.test_chay) ... ok
+test_chuyen_y_sau_phu_dinh (test_chatbot.NgonNguTests.test_chuyen_y_sau_phu_dinh) ... ok
+test_di_ung_nhieu_thu (test_chatbot.NgonNguTests.test_di_ung_nhieu_thu) ... ok
+test_dia_phuong_khong_nham_thit_vit (test_chatbot.NgonNguTests.test_dia_phuong_khong_nham_thit_vit) ... ok
+test_dieu_kien_chua_ho_tro (test_chatbot.NgonNguTests.test_dieu_kien_chua_ho_tro) ... ok
+test_dinh_luong (test_chatbot.NgonNguTests.test_dinh_luong) ... ok
+test_dong_nghia (test_chatbot.NgonNguTests.test_dong_nghia) ... ok
+test_gia_vi_va_bien_tu (test_chatbot.NgonNguTests.test_gia_vi_va_bien_tu) ... ok
+test_khong_dau (test_chatbot.NgonNguTests.test_khong_dau) ... ok
+test_khong_di_ung (test_chatbot.NgonNguTests.test_khong_di_ung) ... ok
+test_kieng_la_cau_hoi_khong_phai_nguyen_lieu (test_chatbot.NgonNguTests.test_kieng_la_cau_hoi_khong_phai_nguyen_lieu) ... ok
+test_nhan_dien_thit_kho (test_chatbot.NgonNguTests.test_nhan_dien_thit_kho) ... ok
+test_nho_loai_tru (test_chatbot.NgonNguTests.test_nho_loai_tru) ... ok
+test_nhu_cau_khong_suy_dien (test_chatbot.NgonNguTests.test_nhu_cau_khong_suy_dien) ... ok
+test_phan_biet_goi_y_mon_va_hoi_thuc_pham (test_chatbot.NgonNguTests.test_phan_biet_goi_y_mon_va_hoi_thuc_pham) ... ok
+test_phan_biet_nguyen_lieu_muon_an (test_chatbot.NgonNguTests.test_phan_biet_nguyen_lieu_muon_an) ... ok
+test_phu_dinh_ho (test_chatbot.NgonNguTests.test_phu_dinh_ho) ... ok
+test_phu_dinh_sot (test_chatbot.NgonNguTests.test_phu_dinh_sot) ... ok
+test_sinh_phai_bam_nguon (test_chatbot.NgonNguTests.test_sinh_phai_bam_nguon) ... ok
+test_tai_nha_khong_mat_chu_nha (test_chatbot.NgonNguTests.test_tai_nha_khong_mat_chu_nha) ... ok
+test_chao (test_chatbot.TichHopOfflineTests.test_chao) ... ok
+test_chua_ro_khong_goi_y_bua (test_chatbot.TichHopOfflineTests.test_chua_ro_khong_goi_y_bua) ... 
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 16/199 [00:00<00:01, 146.84it/s]
+Loading weights:  16%|█▌        | 31/199 [00:00<00:01, 134.34it/s]
+Loading weights:  23%|██▎       | 45/199 [00:00<00:01, 108.16it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 480.02it/s]
+ok
+test_cong_thuc_day_du (test_chatbot.TichHopOfflineTests.test_cong_thuc_day_du) ... ok
+test_faq_khong_can_embedding_va_cache_khong_bi_sua (test_chatbot.TichHopOfflineTests.test_faq_khong_can_embedding_va_cache_khong_bi_sua) ... ok
+test_faq_nguyen_van_khong_chon_bai_gan_nghia (test_chatbot.TichHopOfflineTests.test_faq_nguyen_van_khong_chon_bai_gan_nghia) ... ok
+test_goi_y_mon_khi_cam_khong_tra_bai_hai_san (test_chatbot.TichHopOfflineTests.test_goi_y_mon_khi_cam_khong_tra_bai_hai_san) ... ok
+test_langchain_documents (test_chatbot.TichHopOfflineTests.test_langchain_documents) ... ok
+test_loc_toan_bo_cong_thuc_va_goi_y (test_chatbot.TichHopOfflineTests.test_loc_toan_bo_cong_thuc_va_goi_y) ... ok
+test_ngoai_pham_vi (test_chatbot.TichHopOfflineTests.test_ngoai_pham_vi) ... ok
+test_noi_tiep (test_chatbot.TichHopOfflineTests.test_noi_tiep) ... ok
+test_ten_mon_ngan_khong_nham_bai_an_kem (test_chatbot.TichHopOfflineTests.test_ten_mon_ngan_khong_nham_bai_an_kem) ... ok
+test_ten_mon_ngan_va_hoi_du_cong_thuc (test_chatbot.TichHopOfflineTests.test_ten_mon_ngan_va_hoi_du_cong_thuc) ... ok
+test_thit_kho_khong_doi_sang_ca (test_chatbot.TichHopOfflineTests.test_thit_kho_khong_doi_sang_ca) ... ok
+test_thit_kho_trung_co_the_xem_cong_thuc (test_chatbot.TichHopOfflineTests.test_thit_kho_trung_co_the_xem_cong_thuc) ... ok
+test_trung_vit_khong_tra_cong_thuc_thit_vit (test_chatbot.TichHopOfflineTests.test_trung_vit_khong_tra_cong_thuc_thit_vit) ... ok
+test_calories_remain_until_cleared (test_hoi_thoai_v2.CauTrucTests.test_calories_remain_until_cleared) ... ok
+test_cho_phep_lai_so_thich (test_hoi_thoai_v2.CauTrucTests.test_cho_phep_lai_so_thich) ... ok
+test_di_ung_chua_ro_khong_bi_quen (test_hoi_thoai_v2.CauTrucTests.test_di_ung_chua_ro_khong_bi_quen) ... ok
+test_di_ung_khong_bi_xoa_nhu_so_thich (test_hoi_thoai_v2.CauTrucTests.test_di_ung_khong_bi_xoa_nhu_so_thich) ... ok
+test_evaluation_rejects_production (test_hoi_thoai_v2.CauTrucTests.test_evaluation_rejects_production) ... ok
+test_ingredient_dedup_and_egg (test_hoi_thoai_v2.CauTrucTests.test_ingredient_dedup_and_egg) ... ok
+test_nhieu_intent (test_hoi_thoai_v2.CauTrucTests.test_nhieu_intent) ... ok
+test_no_generative_runtime (test_hoi_thoai_v2.CauTrucTests.test_no_generative_runtime) ... ok
+test_ordinal_without_list (test_hoi_thoai_v2.CauTrucTests.test_ordinal_without_list) ... ok
+test_state_copy_and_no_cross_session (test_hoi_thoai_v2.CauTrucTests.test_state_copy_and_no_cross_session) ... ok
+test_time_and_portions (test_hoi_thoai_v2.CauTrucTests.test_time_and_portions) ... ok
+test_bao_quan_noi_tiep_khong_tra_lai_cong_thuc (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_bao_quan_noi_tiep_khong_tra_lai_cong_thuc) ... ok
+test_cache_khong_sua_state (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_cache_khong_sua_state) ... ok
+test_chi_co_khong_dau_ngam_them_nguyen_lieu (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_chi_co_khong_dau_ngam_them_nguyen_lieu) ... ok
+test_dieu_kien_moi_khong_doi_mon (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_dieu_kien_moi_khong_doi_mon) ... ok
+test_evaluation_khong_co_Test (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_evaluation_khong_co_Test) ... ok
+test_fuzzy_cho_xac_nhan (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_fuzzy_cho_xac_nhan) ... ok
+test_goi_y_va_chon_dung_thu_tu (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_goi_y_va_chon_dung_thu_tu) ... ok
+test_hai_phan_duoc_tra_du (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_hai_phan_duoc_tra_du) ... ok
+test_kcal_khong_tu_tinh (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_kcal_khong_tu_tinh) ... ok
+test_loc_thoi_gian_va_chien (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_loc_thoi_gian_va_chien) ... ok
+test_nam_cach_dien_dat_trung_vit (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_nam_cach_dien_dat_trung_vit) ... ok
+test_quy_doi_bao_toan_khoang (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_quy_doi_bao_toan_khoang) ... ok
+test_giu_qua_luot_sau_va_khong_sua_lich_su (test_suc_khoe.SucKhoeOfflineTests.test_giu_qua_luot_sau_va_khong_sua_lich_su) ... ok
+test_hai_cau_trong_anh_va_dien_dat_lai (test_suc_khoe.SucKhoeOfflineTests.test_hai_cau_trong_anh_va_dien_dat_lai) ... ok
+test_lich_su_cu_chua_co_truong_suc_khoe (test_suc_khoe.SucKhoeOfflineTests.test_lich_su_cu_chua_co_truong_suc_khoe) ... ok
+test_phu_dinh_khong_chan_mon_thong_thuong (test_suc_khoe.SucKhoeOfflineTests.test_phu_dinh_khong_chan_mon_thong_thuong) ... ok
+test_bang_chung_khong_chi_la_it_duong_hoac_an_chay (test_suc_khoe.ThucTheSucKhoeTests.test_bang_chung_khong_chi_la_it_duong_hoac_an_chay) ... ok
+test_cac_cach_hoi_khong_dong_nhat_voi_it_duong (test_suc_khoe.ThucTheSucKhoeTests.test_cac_cach_hoi_khong_dong_nhat_voi_it_duong) ... ok
+test_phu_dinh_va_dinh_chinh (test_suc_khoe.ThucTheSucKhoeTests.test_phu_dinh_va_dinh_chinh) ... ok
+
+----------------------------------------------------------------------
+Ran 65 tests in 28.311s
+
+OK

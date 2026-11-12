@@ -1,0 +1,20 @@
+2026-11-05 08:23:25.552 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-05 08:23:25.552 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-05 08:23:27.376 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:  19%|█▉        | 38/199 [00:00<00:00, 365.78it/s]
+Loading weights:  38%|███▊      | 75/199 [00:00<00:00, 219.64it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 543.49it/s]
+2026-11-05 08:23:39.486 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+{
+  "backend": "sqlite",
+  "khong_ghi_tai_khoan_that": true,
+  "dang_nhap_admin": true,
+  "trang_quan_tri_hien_dung_quyen": true,
+  "admin_tao_user": true,
+  "user_khong_mo_duoc_quan_tri": true,
+  "khoa_user_thu_hoi_phien_dang_mo": true,
+  "chan_ha_quyen_admin_cuoi": true,
+  "khong_hien_noi_dung_lich_su_user_cho_admin": true
+}

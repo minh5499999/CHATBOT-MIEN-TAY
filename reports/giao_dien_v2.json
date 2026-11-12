@@ -1,0 +1,11 @@
+{
+  "dang_nhap_hien_thi": true,
+  "chat_sau_dang_nhap_gia_lap": true,
+  "cau_hoi_tieu_duong_khong_goi_y_lac_chu_de": true,
+  "goi_y_co_so_thu_tu": true,
+  "chon_dung_mon_thu_hai": true,
+  "luu_trang_thai_trong_lich_su": true,
+  "debug_khong_loi": true,
+  "ghi_tai_khoan_that": false,
+  "kiem_thu_oauth_that": false
+}

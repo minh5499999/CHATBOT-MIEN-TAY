@@ -9,7 +9,7 @@ from functools import lru_cache
 
 import numpy as np
 
-from chatbot.cau_hinh import ROOT, doc_cau_hinh, doc_cau_hinh_cat_doan
+from backend.chatbot.cau_hinh import ROOT, doc_cau_hinh, doc_cau_hinh_cat_doan, nap_env
 
 os.environ.setdefault("TRANSFORMERS_VERBOSITY", "error")
 os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
@@ -23,10 +23,14 @@ from tach_tu import TachTu, doc_tu_dien, tien_xu_ly  # noqa: E402
 def nap_mo_hinh():
     """Ưu tiên bản đã tải về máy, không có thì tải từ Hugging Face. Chạy trên CPU."""
     from sentence_transformers import SentenceTransformer
-    ten = doc_cau_hinh_cat_doan()["ten_mo_hinh"]
+    nap_env()  # HF_TOKEN trong .env (nếu có) để tải mô hình
+    ten =doc_cau_hinh_cat_doan()["ten_mo_hinh"]
+    offline = doc_cau_hinh().get("chi_chay_cuc_bo", True)
     try:
         m = SentenceTransformer(ten, device="cpu", local_files_only=True)
     except Exception:
+        if offline:
+            raise RuntimeError("Thiếu mô hình embedding cục bộ. Chạy scripts/chuan_bi_mo_hinh.py khi có mạng trước.")
         m = SentenceTransformer(ten, device="cpu")
     m.max_seq_length = doc_cau_hinh_cat_doan()["gioi_han_token_mo_hinh"]
     return m

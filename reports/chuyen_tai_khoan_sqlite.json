@@ -1,0 +1,23 @@
+{
+  "database": "du_lieu_nguoi_dung\\chatbot.sqlite3",
+  "kiem_tra_toan_ven": "ok",
+  "loi_khoa_ngoai": 0,
+  "so_ban_ghi": {
+    "nguoi_dung": 4,
+    "phien": 3,
+    "cuoc_tro_chuyen": 29,
+    "tin_nhan": 176,
+    "nhat_ky_quan_tri": 1
+  },
+  "vai_tro": {
+    "admin": 1,
+    "user": 3
+  },
+  "chuyen_doi": {
+    "so_tai_khoan_json": 4,
+    "so_cuoc_tro_chuyen": 29,
+    "so_tin_nhan": 176,
+    "so_phien_json": 3,
+    "thu_muc_sao_luu": "C:\\Users\\Bao Tram\\Downloads\\CHATBOT AI (2) (1)\\CHATBOT AI (2)\\CHATBOT AI\\du_lieu_nguoi_dung\\sao_luu_json\\20261029_162300_3174511f"
+  }
+}

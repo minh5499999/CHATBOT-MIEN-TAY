@@ -1,0 +1,283 @@
+{
+  "backend_yeu_cau": "neo4j",
+  "backend_thuc_te": {
+    "neo4j": 15
+  },
+  "la_test_kin": false,
+  "so_luot": 15,
+  "so_dat": 15,
+  "do_tre_p50_giay": 0.1765,
+  "do_tre_lon_nhat_giay": 2.2009,
+  "sha256_ma_nguon": {
+    "cau_hinh.py": "8aaa254c51091aee22881f8ba2a8829d544a6ee1a3aeb70db27d075da135c9cf",
+    "che_do_du_lieu.py": "1b2a11d9bc12f8887bc8c028b6b3dc5bd87fcd24845ce5190767be7148b668d3",
+    "chuoi_langchain.py": "f3c948b65b4c2025da19a9ec96afc9688acd88a7bba5455b145b961ff9c337ce",
+    "cong_thuc.py": "deb95920548f5cf05afeb523ea53a404d9cab9f2661f03d45fa06413896cd531",
+    "doi_chieu.py": "ba28f9cc70b884233a5da288227b0f92b4a346b994b92dcb29ce34cb4cec9195",
+    "fuzzy.py": "babb45704aeed6ed26440a7334961fba26c8bfacc35a3783d72f41f10c0b0f49",
+    "hoi_thoai.py": "0fde7913ae4c43a8ff19f1c5212f0c59ae400cd65cffccebfaa8431e2cfafe97",
+    "intent.py": "dd75a2caa0bfa0d31f0facf4f2792e783a321362f6f5c714f1e9dcc630b2f92a",
+    "kho_neo4j.py": "c2dc45c179a604ad43e55012cd13bece1004c8bce8c059f83f2d0f82e572a3d8",
+    "mo_hinh_vector.py": "0c54855e217c3379c12257111ccf34e1bbb21df21e82441e46a32eede581de46",
+    "ngon_ngu.py": "805bea3bce573fcba1a6170e3e15205ac1db8c39162ac2d7b77893c77061a559",
+    "nhan_dien_mon.py": "5c2974e1abe17bb93ec73e59e03b7a38ad4deb51642808f45bc9e217fcf92f0e",
+    "phan_hoi.py": "ca5b852ace5c430f368d92f1d59191f32c56ed4762017ed72f05c99baedc67a8",
+    "sinh_cau_tra_loi.py": "8204a577bb13491c3b18b9ce84d0abc8312e7876932720b8ec5f5e27a74679a7",
+    "tai_khoan.py": "5de30b9ae05eae56eeef2570f80b42ec0f61106dd69655f9120e4caea606ff07",
+    "trang_thai.py": "7a2ac8d96aeb644381370dd5e651e127c5611ceb97de05848f80e730ffc6e331",
+    "truy_hoi.py": "0abeca2d3b51899e297de22a38d4e8725079e9f532d9389af26665832d11ed10",
+    "y_dinh_an_uong.py": "49cd514f982c545c40287a167e8900605b5caf51f0f2f9612602bd06b011d522",
+    "__init__.py": "582d08e2387788c9aa0f19f40aea251a7bc968c8954cda4813dc93370a111c49"
+  },
+  "chi_tiet": [
+    {
+      "cau_hoi": "Chỉ tui nấu thịt kho hột vịt.",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "tra_loi",
+      "nguon": [
+        59
+      ],
+      "goi_y": [],
+      "intents": [
+        "cong_thuc"
+      ],
+      "giay": 2.2009,
+      "cau_tra_loi": "Mình hướng dẫn bạn theo công thức có trong kho nhé.\n\nThịt kho rệu là món thịt kho của miền Tây, hay nấu vào dịp lễ Tết. Thịt được kho hai lần với nước dừa nên có màu vàng nâu óng, thịt mềm mà không nát và trứng thấm vị.\n\n\n**Nguyên liệu cần chuẩn bị (khoảng 10 đến 11 phần, chuẩn bị 3 giờ và kho khoảng 2 giờ)**\n\n- Thịt ba chỉ 1kg\n- Trứng vịt 10 quả\n- Chanh 1 quả\n- Ớt sừng 2 trái (khoảng 40g)\n- Ớt cay nhỏ 2 đến 3 trái\n- Tỏi 6 tép\n- Hành tím 5 củ\n- Đường phèn 50g\n- Nước dừa 1 lít\n- Nước lọc 300ml\n- Nước mắm 3 muỗng canh\n- Muối 15g (khoảng 2/3 muỗng canh) và thêm 1/2 muỗng canh để làm sạch thịt\n- Bột ngọt 1 muỗng cà phê\n- Lá mít để lót mặt nồi\n\n**Sơ chế**\n\n- Rửa sạch thịt và cạo phần lông còn sót, cắt khối khoảng 7x7cm\n- Vắt chanh vào thịt cùng 1/2 muỗng canh muối\n- Đun sôi nước rồi chần thịt 2 đến 3 phút, vớt ra rửa sạch và để ráo\n\nCách chế biến\n\n\n**Ướp thịt**\n\n- Cắt nhỏ ớt sừng, ớt cay, hành tím và tỏi rồi giã nhuyễn với 50g đường phèn\n- Ướp thịt với hỗn hợp vừa giã, 15g muối, 1 muỗng cà phê bột ngọt và phần nước chanh còn lại trong 2 đến 3 giờ\n\n**Luộc trứng**\n\n- Luộc trứng 10 phút, khi nước sôi thì đảo đều 1 phút cho lòng đỏ nằm giữa\n- Ngâm nước lạnh rồi bóc vỏ\n\n**Kho lần 1**\n\n- Cho 1 lít nước dừa, 300ml nước lọc và 3 muỗng canh nước mắm vào nồi\n- Thả thịt cùng gia vị vào, đun sôi rồi vớt bọt\n- Cho trứng vào và lót lá mít phủ mặt thịt\n- Hạ lửa nhỏ kho 1 đến 1,5 giờ rồi tắt bếp, để nguội hoàn toàn qua đêm hoặc ít nhất 4 giờ\n\n**Kho lần 2**\n\n- Bật lửa nhỏ và kho thêm 30 đến 40 phút\n\nHoàn thành món ăn\n\n\nThịt kho rệu có màu vàng nâu đẹp mắt, nước kho mặn ngọt vừa phải. Bạn dùng nước kho chan cơm hoặc chấm rau đều ngon.\n\n\nVậy là đã hoàn thành nồi thịt kho rệu, chúc bạn nấu ăn vui vẻ."
+    },
+    {
+      "cau_hoi": "Chi tui nau thit kho hot vit.",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "tra_loi",
+      "nguon": [
+        59
+      ],
+      "goi_y": [],
+      "intents": [
+        "cong_thuc"
+      ],
+      "giay": 0.1766,
+      "cau_tra_loi": "Mình hướng dẫn bạn theo công thức có trong kho nhé.\n\nThịt kho rệu là món thịt kho của miền Tây, hay nấu vào dịp lễ Tết. Thịt được kho hai lần với nước dừa nên có màu vàng nâu óng, thịt mềm mà không nát và trứng thấm vị.\n\n\n**Nguyên liệu cần chuẩn bị (khoảng 10 đến 11 phần, chuẩn bị 3 giờ và kho khoảng 2 giờ)**\n\n- Thịt ba chỉ 1kg\n- Trứng vịt 10 quả\n- Chanh 1 quả\n- Ớt sừng 2 trái (khoảng 40g)\n- Ớt cay nhỏ 2 đến 3 trái\n- Tỏi 6 tép\n- Hành tím 5 củ\n- Đường phèn 50g\n- Nước dừa 1 lít\n- Nước lọc 300ml\n- Nước mắm 3 muỗng canh\n- Muối 15g (khoảng 2/3 muỗng canh) và thêm 1/2 muỗng canh để làm sạch thịt\n- Bột ngọt 1 muỗng cà phê\n- Lá mít để lót mặt nồi\n\n**Sơ chế**\n\n- Rửa sạch thịt và cạo phần lông còn sót, cắt khối khoảng 7x7cm\n- Vắt chanh vào thịt cùng 1/2 muỗng canh muối\n- Đun sôi nước rồi chần thịt 2 đến 3 phút, vớt ra rửa sạch và để ráo\n\nCách chế biến\n\n\n**Ướp thịt**\n\n- Cắt nhỏ ớt sừng, ớt cay, hành tím và tỏi rồi giã nhuyễn với 50g đường phèn\n- Ướp thịt với hỗn hợp vừa giã, 15g muối, 1 muỗng cà phê bột ngọt và phần nước chanh còn lại trong 2 đến 3 giờ\n\n**Luộc trứng**\n\n- Luộc trứng 10 phút, khi nước sôi thì đảo đều 1 phút cho lòng đỏ nằm giữa\n- Ngâm nước lạnh rồi bóc vỏ\n\n**Kho lần 1**\n\n- Cho 1 lít nước dừa, 300ml nước lọc và 3 muỗng canh nước mắm vào nồi\n- Thả thịt cùng gia vị vào, đun sôi rồi vớt bọt\n- Cho trứng vào và lót lá mít phủ mặt thịt\n- Hạ lửa nhỏ kho 1 đến 1,5 giờ rồi tắt bếp, để nguội hoàn toàn qua đêm hoặc ít nhất 4 giờ\n\n**Kho lần 2**\n\n- Bật lửa nhỏ và kho thêm 30 đến 40 phút\n\nHoàn thành món ăn\n\n\nThịt kho rệu có màu vàng nâu đẹp mắt, nước kho mặn ngọt vừa phải. Bạn dùng nước kho chan cơm hoặc chấm rau đều ngon.\n\n\nVậy là đã hoàn thành nồi thịt kho rệu, chúc bạn nấu ăn vui vẻ."
+    },
+    {
+      "cau_hoi": "Cách làm thịt kho trứng vịt?",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "tra_loi",
+      "nguon": [
+        59
+      ],
+      "goi_y": [],
+      "intents": [
+        "che_bien",
+        "cong_thuc"
+      ],
+      "giay": 0.1474,
+      "cau_tra_loi": "Mình hướng dẫn bạn theo công thức có trong kho nhé.\n\nThịt kho rệu là món thịt kho của miền Tây, hay nấu vào dịp lễ Tết. Thịt được kho hai lần với nước dừa nên có màu vàng nâu óng, thịt mềm mà không nát và trứng thấm vị.\n\n\n**Nguyên liệu cần chuẩn bị (khoảng 10 đến 11 phần, chuẩn bị 3 giờ và kho khoảng 2 giờ)**\n\n- Thịt ba chỉ 1kg\n- Trứng vịt 10 quả\n- Chanh 1 quả\n- Ớt sừng 2 trái (khoảng 40g)\n- Ớt cay nhỏ 2 đến 3 trái\n- Tỏi 6 tép\n- Hành tím 5 củ\n- Đường phèn 50g\n- Nước dừa 1 lít\n- Nước lọc 300ml\n- Nước mắm 3 muỗng canh\n- Muối 15g (khoảng 2/3 muỗng canh) và thêm 1/2 muỗng canh để làm sạch thịt\n- Bột ngọt 1 muỗng cà phê\n- Lá mít để lót mặt nồi\n\n**Sơ chế**\n\n- Rửa sạch thịt và cạo phần lông còn sót, cắt khối khoảng 7x7cm\n- Vắt chanh vào thịt cùng 1/2 muỗng canh muối\n- Đun sôi nước rồi chần thịt 2 đến 3 phút, vớt ra rửa sạch và để ráo\n\nCách chế biến\n\n\n**Ướp thịt**\n\n- Cắt nhỏ ớt sừng, ớt cay, hành tím và tỏi rồi giã nhuyễn với 50g đường phèn\n- Ướp thịt với hỗn hợp vừa giã, 15g muối, 1 muỗng cà phê bột ngọt và phần nước chanh còn lại trong 2 đến 3 giờ\n\n**Luộc trứng**\n\n- Luộc trứng 10 phút, khi nước sôi thì đảo đều 1 phút cho lòng đỏ nằm giữa\n- Ngâm nước lạnh rồi bóc vỏ\n\n**Kho lần 1**\n\n- Cho 1 lít nước dừa, 300ml nước lọc và 3 muỗng canh nước mắm vào nồi\n- Thả thịt cùng gia vị vào, đun sôi rồi vớt bọt\n- Cho trứng vào và lót lá mít phủ mặt thịt\n- Hạ lửa nhỏ kho 1 đến 1,5 giờ rồi tắt bếp, để nguội hoàn toàn qua đêm hoặc ít nhất 4 giờ\n\n**Kho lần 2**\n\n- Bật lửa nhỏ và kho thêm 30 đến 40 phút\n\nHoàn thành món ăn\n\n\nThịt kho rệu có màu vàng nâu đẹp mắt, nước kho mặn ngọt vừa phải. Bạn dùng nước kho chan cơm hoặc chấm rau đều ngon.\n\n\nVậy là đã hoàn thành nồi thịt kho rệu, chúc bạn nấu ăn vui vẻ."
+    },
+    {
+      "cau_hoi": "Nấu thịt kho hột vịt sao cho ngon?",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "tra_loi",
+      "nguon": [
+        59
+      ],
+      "goi_y": [],
+      "intents": [],
+      "giay": 0.1765,
+      "cau_tra_loi": "Bạn tham khảo nội dung có nguồn dưới đây nhé.\n\nThịt kho rệu là món thịt kho của miền Tây, hay nấu vào dịp lễ Tết. Thịt được kho hai lần với nước dừa nên có màu vàng nâu óng, thịt mềm mà không nát và trứng thấm vị.\n\n\n**Nguyên liệu cần chuẩn bị (khoảng 10 đến 11 phần, chuẩn bị 3 giờ và kho khoảng 2 giờ)**\n\n- Thịt ba chỉ 1kg\n- Trứng vịt 10 quả\n- Chanh 1 quả\n- Ớt sừng 2 trái (khoảng 40g)\n- Ớt cay nhỏ 2 đến 3 trái\n- Tỏi 6 tép\n- Hành tím 5 củ\n- Đường phèn 50g\n- Nước dừa 1 lít\n- Nước lọc 300ml\n- Nước mắm 3 muỗng canh\n- Muối 15g (khoảng 2/3 muỗng canh) và thêm 1/2 muỗng canh để làm sạch thịt\n- Bột ngọt 1 muỗng cà phê\n- Lá mít để lót mặt nồi\n\n**Sơ chế**\n\n- Rửa sạch thịt và cạo phần lông còn sót, cắt khối khoảng 7x7cm\n- Vắt chanh vào thịt cùng 1/2 muỗng canh muối\n- Đun sôi nước rồi chần thịt 2 đến 3 phút, vớt ra rửa sạch và để ráo\n\nCách chế biến\n\n\n**Ướp thịt**\n\n- Cắt nhỏ ớt sừng, ớt cay, hành tím và tỏi rồi giã nhuyễn với 50g đường phèn\n- Ướp thịt với hỗn hợp vừa giã, 15g muối, 1 muỗng cà phê bột ngọt và phần nước chanh còn lại trong 2 đến 3 giờ\n\n**Luộc trứng**\n\n- Luộc trứng 10 phút, khi nước sôi thì đảo đều 1 phút cho lòng đỏ nằm giữa\n- Ngâm nước lạnh rồi bóc vỏ\n\n**Kho lần 1**\n\n- Cho 1 lít nước dừa, 300ml nước lọc và 3 muỗng canh nước mắm vào nồi\n- Thả thịt cùng gia vị vào, đun sôi rồi vớt bọt\n- Cho trứng vào và lót lá mít phủ mặt thịt\n- Hạ lửa nhỏ kho 1 đến 1,5 giờ rồi tắt bếp, để nguội hoàn toàn qua đêm hoặc ít nhất 4 giờ\n\n**Kho lần 2**\n\n- Bật lửa nhỏ và kho thêm 30 đến 40 phút\n\nHoàn thành món ăn\n\n\nThịt kho rệu có màu vàng nâu đẹp mắt, nước kho mặn ngọt vừa phải. Bạn dùng nước kho chan cơm hoặc chấm rau đều ngon.\n\n\nVậy là đã hoàn thành nồi thịt kho rệu, chúc bạn nấu ăn vui vẻ."
+    },
+    {
+      "cau_hoi": "Mình muốn làm thịt kho có trứng vịt.",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "tra_loi",
+      "nguon": [
+        59
+      ],
+      "goi_y": [],
+      "intents": [],
+      "giay": 0.1396,
+      "cau_tra_loi": "Bạn tham khảo nội dung có nguồn dưới đây nhé.\n\nThịt kho rệu là món thịt kho của miền Tây, hay nấu vào dịp lễ Tết. Thịt được kho hai lần với nước dừa nên có màu vàng nâu óng, thịt mềm mà không nát và trứng thấm vị.\n\n\n**Nguyên liệu cần chuẩn bị (khoảng 10 đến 11 phần, chuẩn bị 3 giờ và kho khoảng 2 giờ)**\n\n- Thịt ba chỉ 1kg\n- Trứng vịt 10 quả\n- Chanh 1 quả\n- Ớt sừng 2 trái (khoảng 40g)\n- Ớt cay nhỏ 2 đến 3 trái\n- Tỏi 6 tép\n- Hành tím 5 củ\n- Đường phèn 50g\n- Nước dừa 1 lít\n- Nước lọc 300ml\n- Nước mắm 3 muỗng canh\n- Muối 15g (khoảng 2/3 muỗng canh) và thêm 1/2 muỗng canh để làm sạch thịt\n- Bột ngọt 1 muỗng cà phê\n- Lá mít để lót mặt nồi\n\n**Sơ chế**\n\n- Rửa sạch thịt và cạo phần lông còn sót, cắt khối khoảng 7x7cm\n- Vắt chanh vào thịt cùng 1/2 muỗng canh muối\n- Đun sôi nước rồi chần thịt 2 đến 3 phút, vớt ra rửa sạch và để ráo\n\nCách chế biến\n\n\n**Ướp thịt**\n\n- Cắt nhỏ ớt sừng, ớt cay, hành tím và tỏi rồi giã nhuyễn với 50g đường phèn\n- Ướp thịt với hỗn hợp vừa giã, 15g muối, 1 muỗng cà phê bột ngọt và phần nước chanh còn lại trong 2 đến 3 giờ\n\n**Luộc trứng**\n\n- Luộc trứng 10 phút, khi nước sôi thì đảo đều 1 phút cho lòng đỏ nằm giữa\n- Ngâm nước lạnh rồi bóc vỏ\n\n**Kho lần 1**\n\n- Cho 1 lít nước dừa, 300ml nước lọc và 3 muỗng canh nước mắm vào nồi\n- Thả thịt cùng gia vị vào, đun sôi rồi vớt bọt\n- Cho trứng vào và lót lá mít phủ mặt thịt\n- Hạ lửa nhỏ kho 1 đến 1,5 giờ rồi tắt bếp, để nguội hoàn toàn qua đêm hoặc ít nhất 4 giờ\n\n**Kho lần 2**\n\n- Bật lửa nhỏ và kho thêm 30 đến 40 phút\n\nHoàn thành món ăn\n\n\nThịt kho rệu có màu vàng nâu đẹp mắt, nước kho mặn ngọt vừa phải. Bạn dùng nước kho chan cơm hoặc chấm rau đều ngon.\n\n\nVậy là đã hoàn thành nồi thịt kho rệu, chúc bạn nấu ăn vui vẻ."
+    },
+    {
+      "cau_hoi": "Cho tôi nguyên liệu và cách nấu canh chua cá lóc.",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "tra_loi",
+      "nguon": [
+        41
+      ],
+      "goi_y": [
+        "Lẩu cá lóc nấu măng chua làm sao",
+        "Lẩu mắm cá lóc nấu như thế nào",
+        "Bún cá lóc Kiên Giang nấu như thế nào"
+      ],
+      "intents": [
+        "nguyen_lieu",
+        "che_bien",
+        "cong_thuc"
+      ],
+      "giay": 0.1583,
+      "cau_tra_loi": "Mình tìm được hướng dẫn sau trong kho công thức.\n\nCanh chua cá lóc là món canh quen thuộc trong bữa cơm miền Tây. Nước canh chua ngọt hài hòa từ me và thơm, cá lóc ngọt thịt, ăn cùng rau ngổ và ngò gai rất đưa cơm.\n\n\n**Nguyên liệu cần chuẩn bị (cho 4 người)**\n\n- Cá lóc 500g\n- Thơm (dứa) 1/4 trái\n- Cà chua 2 trái\n- Đậu bắp 50g\n- Bạc hà (dọc mùng) 50g\n- Me 20g\n- Giá đỗ 50g\n- Ngò gai 1 nhánh\n- Rau ngổ 1 nhánh\n- Nước mắm 1 muỗng canh\n- Đường, muối, hạt nêm, tiêu vừa đủ\n\n**Sơ chế**\n\n- Cá lóc làm sạch rồi chà muối, rửa lại với nước 2 lần. Cắt khúc vừa ăn cỡ một lóng tay\n- Ướp cá với 1 muỗng canh nước mắm, 1/2 muỗng canh hạt nêm và 1/2 muỗng canh tiêu trong 15 phút\n- Thơm gọt vỏ cắt miếng vừa ăn. Cà chua cắt múi cau\n- Giá rửa sạch 2 lần. Ngò gai và rau ngổ rửa sạch rồi cắt nhỏ\n- Đậu bắp và bạc hà cắt xéo\n- Me cho vào 1 muỗng canh nước ấm khoảng 60 độ C rồi dằm cho mềm\n\n**Cách chế biến**\n\n- Đun sôi 1 lít nước rồi cho phần me đã dằm vào\n- Cho cá đã ướp vào nấu khoảng 10 phút. Trong lúc nấu nhớ vớt bọt để nước canh trong\n- Thêm cà chua, thơm, đậu bắp, giá và bạc hà vào nồi\n- Khi nước sôi lại thì cho 1 muỗng canh đường, nêm nếm lại cho vừa ăn rồi tắt bếp\n\nHoàn thành món ăn\n\n\nMúc canh ra tô và rắc rau ngổ với ngò gai lên trên. Món này ăn nóng với cơm trắng hoặc bún tươi, cá lóc chấm thêm nước mắm là ngon nhất.\n\n\nVậy là xong nồi canh chua cá lóc rồi, chúc bạn nấu ăn thật vui vẻ."
+    },
+    {
+      "cau_hoi": "canh chua ca locc",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Chỉ mình cách nấu canh chua cá lóc miền Tây với"
+      ],
+      "intents": [],
+      "giay": 0.0926,
+      "cau_tra_loi": "Tên món bạn nhập có thể bị gõ nhầm. Ý bạn là công thức nào dưới đây? Mình chờ bạn xác nhận để không đổi nhầm món."
+    },
+    {
+      "cau_hoi": "Gợi ý món dưới 400 kcal",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [],
+      "intents": [
+        "dinh_duong",
+        "goi_y_mon",
+        "goi_y_dinh_duong"
+      ],
+      "giay": 0.1394,
+      "cau_tra_loi": "Kho hiện tại chưa có bảng dưỡng chất theo khối lượng và khẩu phần để xác nhận con số bạn yêu cầu. Mình có thể tìm món theo mô tả ít béo, ít đường hoặc giàu đạm trong tài liệu; bạn muốn tìm theo tiêu chí nào?"
+    },
+    {
+      "cau_hoi": "Tôi chỉ có cá lóc, gợi ý món ăn",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [],
+      "intents": [
+        "goi_y_mon",
+        "goi_y_theo_nguyen_lieu"
+      ],
+      "giay": 0.2825,
+      "cau_tra_loi": "Mình chưa tìm được công thức có đủ dữ liệu để đáp ứng đồng thời các điều kiện này. Bạn có thể bổ sung nguyên liệu hoặc nới giới hạn thời gian không?"
+    },
+    {
+      "cau_hoi": "Gợi ý món không chiên trong 30 phút",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "khong_chac",
+      "nguon": [
+        60,
+        182,
+        187
+      ],
+      "goi_y": [
+        "Cá linh kho nghệ nấu như thế nào",
+        "Canh mướp nấu tôm tươi nấu sao",
+        "Rau muống xào tỏi làm sao cho xanh giòn"
+      ],
+      "intents": [
+        "thoi_gian",
+        "goi_y_mon"
+      ],
+      "giay": 0.1796,
+      "cau_tra_loi": "Mình tìm được các công thức sau trong kho; bạn chọn một món để xem cách làm nhé:\n\n1. **Cá linh kho nghệ nấu như thế nào**\n\n2. **Canh mướp nấu tôm tươi nấu sao**\n\n3. **Rau muống xào tỏi làm sao cho xanh giòn**"
+    },
+    {
+      "cau_hoi": "Tôi dị ứng tôm và đậu phộng, gợi ý món ăn từ cá lóc",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "khong_chac",
+      "nguon": [
+        105,
+        264,
+        279
+      ],
+      "goi_y": [
+        "Chỉ mình làm cá lóc nướng lá sen",
+        "Cá lóc kho tiêu nấu kiểu nào cho thấm vị đậm đà",
+        "Cá lóc chiên sả ớt làm sao cho vàng đều mà thấm gia vị"
+      ],
+      "intents": [
+        "goi_y_mon",
+        "goi_y_theo_nguyen_lieu"
+      ],
+      "giay": 0.2534,
+      "cau_tra_loi": "Mình tìm được các công thức sau trong kho; bạn chọn một món để xem cách làm nhé:\n\n1. **Chỉ mình làm cá lóc nướng lá sen**\n\n   Cần thêm theo nguồn: Lá sen 2 lá, Muối ớt 4 muỗng canh, Giấm một ít, Ăn kèm: bún, rau sống, dưa leo, nước mắm chua ngọt hoặc mắm nêm.\n\n2. **Cá lóc kho tiêu nấu kiểu nào cho thấm vị đậm đà**\n\n   Cần thêm theo nguồn: Ớt sừng 1 quả, Nước mắm 3 muỗng canh, Dầu ăn 3 muỗng canh, Gia vị tiêu xay, bột ngọt, đường, muối.\n\n3. **Cá lóc chiên sả ớt làm sao cho vàng đều mà thấm gia vị**\n\n   Cần thêm theo nguồn: Muối 3/2 muỗng cà phê, Bột ngọt 1/2 muỗng cà phê, Ớt 2 trái, Sả 2 nhánh."
+    },
+    {
+      "cau_hoi": "Gợi ý món ăn từ cá lóc.",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "khong_chac",
+      "nguon": [
+        105,
+        264,
+        279
+      ],
+      "goi_y": [
+        "Chỉ mình làm cá lóc nướng lá sen",
+        "Cá lóc kho tiêu nấu kiểu nào cho thấm vị đậm đà",
+        "Cá lóc chiên sả ớt làm sao cho vàng đều mà thấm gia vị"
+      ],
+      "intents": [
+        "goi_y_mon",
+        "goi_y_theo_nguyen_lieu"
+      ],
+      "giay": 0.2805,
+      "cau_tra_loi": "Mình tìm được các công thức sau trong kho; bạn chọn một món để xem cách làm nhé:\n\n1. **Chỉ mình làm cá lóc nướng lá sen**\n\n   Cần thêm theo nguồn: Lá sen 2 lá, Muối ớt 4 muỗng canh, Giấm một ít, Ăn kèm: bún, rau sống, dưa leo, nước mắm chua ngọt hoặc mắm nêm.\n\n2. **Cá lóc kho tiêu nấu kiểu nào cho thấm vị đậm đà**\n\n   Cần thêm theo nguồn: Ớt sừng 1 quả, Nước mắm 3 muỗng canh, Dầu ăn 3 muỗng canh, Gia vị tiêu xay, bột ngọt, đường, muối.\n\n3. **Cá lóc chiên sả ớt làm sao cho vàng đều mà thấm gia vị**\n\n   Cần thêm theo nguồn: Muối 3/2 muỗng cà phê, Bột ngọt 1/2 muỗng cà phê, Ớt 2 trái, Sả 2 nhánh."
+    },
+    {
+      "cau_hoi": "Món thứ hai nấu sao?",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "tra_loi",
+      "nguon": [
+        264
+      ],
+      "goi_y": [
+        "Làm cá lóc nướng trui kiểu miền Tây sao bạn",
+        "Nấu canh cải thảo thịt bằm như nào cho ngon hả bạn",
+        "Chỉ mình cách nấu canh chua cá lóc miền Tây với"
+      ],
+      "intents": [
+        "che_bien",
+        "cong_thuc",
+        "noi_tiep"
+      ],
+      "giay": 0.2528,
+      "cau_tra_loi": "Mình hướng dẫn bạn theo công thức có trong kho nhé.\n\nCá lóc kho tiêu là món kho đậm đà với vị mặn ngọt hài hòa, cá lóc chắc thịt thấm gia vị, kho kẹo nước ăn cùng cơm trắng nóng rất hao cơm.\n\n\n**Nguyên liệu cần chuẩn bị (cho 4 người)**\n\n- Cá lóc 700g\n- Ớt sừng 1 quả\n- Nước mắm 3 muỗng canh\n- Dầu ăn 3 muỗng canh\n- Gia vị tiêu xay, bột ngọt, đường, muối\n\n**Sơ chế**\n\n- Cá lóc đánh sạch vảy, cắt bỏ vây, loại bỏ nội tạng rồi rửa sạch để ráo\n- Cắt cá thành từng khúc dày khoảng 1 đốt ngón tay\n- Ớt sừng cắt thành lát mỏng\n\nCách chế biến\n\n\n**Ướp cá**\n\n- Ướp cá với 3 muỗng canh nước mắm, 1 muỗng canh đường, 1 muỗng cà phê bột ngọt, 1 muỗng cà phê muối, 2 muỗng cà phê tiêu xay, 1 muỗng canh dầu ăn trong 30-40 phút\n\n**Kho cá**\n\n- Cho 2 muỗng canh dầu ăn và 1 muỗng canh đường vào nồi, để lửa vừa cho đường tan và chuyển sang màu nâu cánh gián\n- Cho cá ướp vào nồi đảo đều 3 phút cho cá săn\n- Thêm 1.5 chén nước vừa đủ ngập mặt cá rồi nấu đến khi sôi\n- Đậy nắp, vặn lửa vừa kho 20-30 phút\n- Mở nắp nêm nếm gia vị rồi tiếp tục kho đến khi nước cạn bớt\n- Cho ớt và tiêu xay vào rồi tắt bếp\n\nHoàn thành món ăn\n\n\nMúc cá ra dĩa, rưới nước kho lên trên. Cá lóc kho tiêu ăn nóng cùng cơm trắng và rau sống là đúng vị.\n\n\nMón cá kho này kẹo nước thì mới ngon, chúc bạn kho cá thành công."
+    },
+    {
+      "cau_hoi": "Không dùng ớt nha.",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [],
+      "intents": [
+        "noi_tiep"
+      ],
+      "giay": 0.1473,
+      "cau_tra_loi": "Mình vẫn đang giữ món **Cá lóc kho tiêu nấu kiểu nào cho thấm vị đậm đà**. Công thức trong nguồn chưa đáp ứng điều kiện tránh ớt; mình chưa có phiên bản đã kiểm chứng để tự thay nguyên liệu. Bạn có thể chọn món khác hoặc điều chỉnh yêu cầu. Các điều kiện dị ứng vẫn được giữ."
+    },
+    {
+      "cau_hoi": "Nấu cho 3 người thì sao?",
+      "dat": true,
+      "backend_thuc_te": "neo4j",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [],
+      "intents": [
+        "khau_phan",
+        "noi_tiep"
+      ],
+      "giay": 0.1573,
+      "cau_tra_loi": "Mình vẫn đang giữ món **Cá lóc kho tiêu nấu kiểu nào cho thấm vị đậm đà**. Công thức trong nguồn chưa đáp ứng điều kiện tránh ớt; mình chưa có phiên bản đã kiểm chứng để tự thay nguyên liệu. Mình đã ghi nhận khẩu phần 3 người. Bạn có thể chọn món khác hoặc điều chỉnh yêu cầu. Các điều kiện dị ứng vẫn được giữ."
+    }
+  ]
+}

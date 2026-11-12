@@ -1,0 +1,19 @@
+2026-10-29 16:31:21.531 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-29 16:31:22.035 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:  11%|█         | 21/199 [00:00<00:00, 200.13it/s]
+Loading weights:  21%|██        | 42/199 [00:00<00:01, 127.84it/s]
+Loading weights:  29%|██▊       | 57/199 [00:00<00:01, 132.94it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 414.09it/s]
+{
+  "dang_nhap_hien_thi": true,
+  "chat_sau_dang_nhap_gia_lap": true,
+  "cau_hoi_tieu_duong_khong_goi_y_lac_chu_de": true,
+  "goi_y_co_so_thu_tu": true,
+  "chon_dung_mon_thu_hai": true,
+  "luu_trang_thai_trong_lich_su": true,
+  "debug_khong_loi": true,
+  "ghi_tai_khoan_that": false,
+  "kiem_thu_oauth_that": false
+}

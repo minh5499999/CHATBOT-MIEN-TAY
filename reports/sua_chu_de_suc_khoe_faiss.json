@@ -1,0 +1,57 @@
+{
+  "backend": "faiss",
+  "id_chuyen_biet_tieu_duong": [],
+  "so_dat": 6,
+  "so_ca": 6,
+  "la_test_kin": false,
+  "chi_tiet": [
+    {
+      "cau_hoi": "bị tiểu đường thì nấu được món gì",
+      "dat": true,
+      "backend": "faiss",
+      "tra_loi": "Bạn đang hỏi về ăn uống cho người có tình trạng **tiểu đường**. Kho hiện tại chưa có tài liệu chuyên biệt đủ để xác nhận món ăn phù hợp với yêu cầu này. Mình cần bổ sung nguồn dinh dưỡng phù hợp cho tình trạng này trước khi gợi ý món có căn cứ.",
+      "goi_y": [],
+      "nguon": []
+    },
+    {
+      "cau_hoi": "mình bị tiểu đường thì nấu ăn món nào được",
+      "dat": true,
+      "backend": "faiss",
+      "tra_loi": "Bạn đang hỏi về ăn uống cho người có tình trạng **tiểu đường**. Kho hiện tại chưa có tài liệu chuyên biệt đủ để xác nhận món ăn phù hợp với yêu cầu này. Mình cần bổ sung nguồn dinh dưỡng phù hợp cho tình trạng này trước khi gợi ý món có căn cứ.",
+      "goi_y": [],
+      "nguon": []
+    },
+    {
+      "cau_hoi": "bi tieu duong thi nau duoc mon gi",
+      "dat": true,
+      "backend": "faiss",
+      "tra_loi": "Bạn đang hỏi về ăn uống cho người có tình trạng **tiểu đường**. Kho hiện tại chưa có tài liệu chuyên biệt đủ để xác nhận món ăn phù hợp với yêu cầu này. Mình cần bổ sung nguồn dinh dưỡng phù hợp cho tình trạng này trước khi gợi ý món có căn cứ.",
+      "goi_y": [],
+      "nguon": []
+    },
+    {
+      "cau_hoi": "Gợi ý món ăn cho người đái tháo đường",
+      "dat": true,
+      "backend": "faiss",
+      "tra_loi": "Bạn đang hỏi về ăn uống cho người có tình trạng **tiểu đường**. Kho hiện tại chưa có tài liệu chuyên biệt đủ để xác nhận món ăn phù hợp với yêu cầu này. Mình cần bổ sung nguồn dinh dưỡng phù hợp cho tình trạng này trước khi gợi ý món có căn cứ.",
+      "goi_y": [],
+      "nguon": []
+    },
+    {
+      "cau_hoi": "Tôi bị tiểu đường, có cá lóc thì nấu món nào?",
+      "dat": true,
+      "backend": "faiss",
+      "tra_loi": "Bạn đang hỏi về ăn uống cho người có tình trạng **tiểu đường**. Kho hiện tại chưa có tài liệu chuyên biệt đủ để xác nhận món ăn phù hợp với yêu cầu này. Mình cần bổ sung nguồn dinh dưỡng phù hợp cho tình trạng này trước khi gợi ý món có căn cứ.",
+      "goi_y": [],
+      "nguon": []
+    },
+    {
+      "cau_hoi": "vậy nấu cho 3 người thì sao?",
+      "dat": true,
+      "backend": "faiss",
+      "tra_loi": "Bạn đang hỏi về ăn uống cho người có tình trạng **tiểu đường**. Kho hiện tại chưa có tài liệu chuyên biệt đủ để xác nhận món ăn phù hợp với yêu cầu này. Mình cần bổ sung nguồn dinh dưỡng phù hợp cho tình trạng này trước khi gợi ý món có căn cứ.",
+      "goi_y": [],
+      "nguon": []
+    }
+  ]
+}

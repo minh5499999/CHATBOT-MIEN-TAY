@@ -1,0 +1,19 @@
+{
+  "ket_noi": "thanh_cong",
+  "backend_cau_hinh": "mysql",
+  "db": "bep_mien_tay",
+  "version": "8.0.46",
+  "tai_khoan": "bep_mien_tay_app@127.0.0.1",
+  "so_ban_ghi": {
+    "nguoi_dung": 4,
+    "phien": 3,
+    "cuoc_tro_chuyen": 29,
+    "tin_nhan": 176,
+    "nhat_ky_quan_tri": 1,
+    "cau_hinh_db": 3
+  },
+  "vai_tro": {
+    "admin": 1,
+    "user": 3
+  }
+}

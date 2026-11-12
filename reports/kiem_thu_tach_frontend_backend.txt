@@ -1,0 +1,115 @@
+test_chay (test_chatbot.NgonNguTests.test_chay) ... ok
+test_chuyen_y_sau_phu_dinh (test_chatbot.NgonNguTests.test_chuyen_y_sau_phu_dinh) ... ok
+test_di_ung_nhieu_thu (test_chatbot.NgonNguTests.test_di_ung_nhieu_thu) ... ok
+test_dia_phuong_khong_nham_thit_vit (test_chatbot.NgonNguTests.test_dia_phuong_khong_nham_thit_vit) ... ok
+test_dieu_kien_chua_ho_tro (test_chatbot.NgonNguTests.test_dieu_kien_chua_ho_tro) ... ok
+test_dinh_luong (test_chatbot.NgonNguTests.test_dinh_luong) ... ok
+test_dong_nghia (test_chatbot.NgonNguTests.test_dong_nghia) ... ok
+test_gia_vi_va_bien_tu (test_chatbot.NgonNguTests.test_gia_vi_va_bien_tu) ... ok
+test_khong_dau (test_chatbot.NgonNguTests.test_khong_dau) ... ok
+test_khong_di_ung (test_chatbot.NgonNguTests.test_khong_di_ung) ... ok
+test_kieng_la_cau_hoi_khong_phai_nguyen_lieu (test_chatbot.NgonNguTests.test_kieng_la_cau_hoi_khong_phai_nguyen_lieu) ... ok
+test_nhan_dien_thit_kho (test_chatbot.NgonNguTests.test_nhan_dien_thit_kho) ... ok
+test_nho_loai_tru (test_chatbot.NgonNguTests.test_nho_loai_tru) ... ok
+test_nhu_cau_khong_suy_dien (test_chatbot.NgonNguTests.test_nhu_cau_khong_suy_dien) ... ok
+test_phan_biet_goi_y_mon_va_hoi_thuc_pham (test_chatbot.NgonNguTests.test_phan_biet_goi_y_mon_va_hoi_thuc_pham) ... ok
+test_phan_biet_nguyen_lieu_muon_an (test_chatbot.NgonNguTests.test_phan_biet_nguyen_lieu_muon_an) ... ok
+test_phu_dinh_ho (test_chatbot.NgonNguTests.test_phu_dinh_ho) ... ok
+test_phu_dinh_sot (test_chatbot.NgonNguTests.test_phu_dinh_sot) ... ok
+test_sinh_phai_bam_nguon (test_chatbot.NgonNguTests.test_sinh_phai_bam_nguon) ... ok
+test_tai_nha_khong_mat_chu_nha (test_chatbot.NgonNguTests.test_tai_nha_khong_mat_chu_nha) ... ok
+test_chao (test_chatbot.TichHopOfflineTests.test_chao) ... ok
+test_chua_ro_khong_goi_y_bua (test_chatbot.TichHopOfflineTests.test_chua_ro_khong_goi_y_bua) ... 
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:  10%|▉         | 19/199 [00:00<00:00, 184.54it/s]
+Loading weights:  19%|█▉        | 38/199 [00:00<00:00, 177.10it/s]
+Loading weights:  29%|██▉       | 58/199 [00:00<00:00, 182.76it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 613.02it/s]
+ok
+test_cong_thuc_day_du (test_chatbot.TichHopOfflineTests.test_cong_thuc_day_du) ... ok
+test_faq_khong_can_embedding_va_cache_khong_bi_sua (test_chatbot.TichHopOfflineTests.test_faq_khong_can_embedding_va_cache_khong_bi_sua) ... ok
+test_faq_nguyen_van_khong_chon_bai_gan_nghia (test_chatbot.TichHopOfflineTests.test_faq_nguyen_van_khong_chon_bai_gan_nghia) ... ok
+test_goi_y_mon_khi_cam_khong_tra_bai_hai_san (test_chatbot.TichHopOfflineTests.test_goi_y_mon_khi_cam_khong_tra_bai_hai_san) ... ok
+test_langchain_documents (test_chatbot.TichHopOfflineTests.test_langchain_documents) ... ok
+test_loc_toan_bo_cong_thuc_va_goi_y (test_chatbot.TichHopOfflineTests.test_loc_toan_bo_cong_thuc_va_goi_y) ... ok
+test_ngoai_pham_vi (test_chatbot.TichHopOfflineTests.test_ngoai_pham_vi) ... ok
+test_noi_tiep (test_chatbot.TichHopOfflineTests.test_noi_tiep) ... ok
+test_ten_mon_ngan_khong_nham_bai_an_kem (test_chatbot.TichHopOfflineTests.test_ten_mon_ngan_khong_nham_bai_an_kem) ... ok
+test_ten_mon_ngan_va_hoi_du_cong_thuc (test_chatbot.TichHopOfflineTests.test_ten_mon_ngan_va_hoi_du_cong_thuc) ... ok
+test_thit_kho_khong_doi_sang_ca (test_chatbot.TichHopOfflineTests.test_thit_kho_khong_doi_sang_ca) ... ok
+test_thit_kho_trung_co_the_xem_cong_thuc (test_chatbot.TichHopOfflineTests.test_thit_kho_trung_co_the_xem_cong_thuc) ... ok
+test_trung_vit_khong_tra_cong_thuc_thit_vit (test_chatbot.TichHopOfflineTests.test_trung_vit_khong_tra_cong_thuc_thit_vit) ... ok
+test_admin_cuoi_khong_duoc_tu_khoa_ha_quyen (test_database_tai_khoan.DatabaseTests.test_admin_cuoi_khong_duoc_tu_khoa_ha_quyen) ... ok
+test_admin_them_khoa_mo_va_thu_hoi_phien (test_database_tai_khoan.DatabaseTests.test_admin_them_khoa_mo_va_thu_hoi_phien) ... ok
+test_chuyen_json_giu_hash_phien_lich_su_va_sao_luu (test_database_tai_khoan.DatabaseTests.test_chuyen_json_giu_hash_phien_lich_su_va_sao_luu) ... ok
+test_dang_ky_mac_dinh_user_hash_va_muoi_rieng (test_database_tai_khoan.DatabaseTests.test_dang_ky_mac_dinh_user_hash_va_muoi_rieng) ... ok
+test_dang_ky_trung_dong_thoi_chi_mot_thanh_cong (test_database_tai_khoan.DatabaseTests.test_dang_ky_trung_dong_thoi_chi_mot_thanh_cong) ... ok
+test_dat_lai_mat_khau_khong_lo_bam_va_audit (test_database_tai_khoan.DatabaseTests.test_dat_lai_mat_khau_khong_lo_bam_va_audit) ... ok
+test_google_khong_trung_email_khong_dang_nhap_bang_password (test_database_tai_khoan.DatabaseTests.test_google_khong_trung_email_khong_dang_nhap_bang_password) ... ok
+test_khoi_tao_admin_khong_the_cap_them_bang_bootstrap (test_database_tai_khoan.DatabaseTests.test_khoi_tao_admin_khong_the_cap_them_bang_bootstrap) ... ok
+test_lich_su_cach_ly_va_xoa_cascade (test_database_tai_khoan.DatabaseTests.test_lich_su_cach_ly_va_xoa_cascade) ... ok
+test_migration_loi_rollback_khong_mat_json (test_database_tai_khoan.DatabaseTests.test_migration_loi_rollback_khong_mat_json) ... ok
+test_phien_chi_luu_hash_het_han_va_dang_xuat (test_database_tai_khoan.DatabaseTests.test_phien_chi_luu_hash_het_han_va_dang_xuat) ... ok
+test_quyen_lay_lai_tu_db_khong_tin_phien_cu (test_database_tai_khoan.DatabaseTests.test_quyen_lay_lai_tu_db_khong_tin_phien_cu) ... ok
+test_sua_ho_so_va_quyen_trong_cung_transaction (test_database_tai_khoan.DatabaseTests.test_sua_ho_so_va_quyen_trong_cung_transaction) ... ok
+test_user_khong_duoc_goi_quan_tri (test_database_tai_khoan.DatabaseTests.test_user_khong_duoc_goi_quan_tri) ... ok
+test_validate_va_sql_injection (test_database_tai_khoan.DatabaseTests.test_validate_va_sql_injection) ... ok
+test_xoa_chan_user_admin_cuoi_va_tu_xoa (test_database_tai_khoan.DatabaseTests.test_xoa_chan_user_admin_cuoi_va_tu_xoa) ... ok
+test_xoa_tai_khoan_thu_hoi_phien_va_xoa_lich_su (test_database_tai_khoan.DatabaseTests.test_xoa_tai_khoan_thu_hoi_phien_va_xoa_lich_su) ... ok
+test_calories_remain_until_cleared (test_hoi_thoai_v2.CauTrucTests.test_calories_remain_until_cleared) ... ok
+test_cho_phep_lai_so_thich (test_hoi_thoai_v2.CauTrucTests.test_cho_phep_lai_so_thich) ... ok
+test_di_ung_chua_ro_khong_bi_quen (test_hoi_thoai_v2.CauTrucTests.test_di_ung_chua_ro_khong_bi_quen) ... ok
+test_di_ung_khong_bi_xoa_nhu_so_thich (test_hoi_thoai_v2.CauTrucTests.test_di_ung_khong_bi_xoa_nhu_so_thich) ... ok
+test_evaluation_rejects_production (test_hoi_thoai_v2.CauTrucTests.test_evaluation_rejects_production) ... ok
+test_ingredient_dedup_and_egg (test_hoi_thoai_v2.CauTrucTests.test_ingredient_dedup_and_egg) ... ok
+test_nhieu_intent (test_hoi_thoai_v2.CauTrucTests.test_nhieu_intent) ... ok
+test_no_generative_runtime (test_hoi_thoai_v2.CauTrucTests.test_no_generative_runtime) ... ok
+test_ordinal_without_list (test_hoi_thoai_v2.CauTrucTests.test_ordinal_without_list) ... ok
+test_state_copy_and_no_cross_session (test_hoi_thoai_v2.CauTrucTests.test_state_copy_and_no_cross_session) ... ok
+test_time_and_portions (test_hoi_thoai_v2.CauTrucTests.test_time_and_portions) ... ok
+test_bao_quan_noi_tiep_khong_tra_lai_cong_thuc (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_bao_quan_noi_tiep_khong_tra_lai_cong_thuc) ... ok
+test_cache_khong_sua_state (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_cache_khong_sua_state) ... ok
+test_chi_co_khong_dau_ngam_them_nguyen_lieu (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_chi_co_khong_dau_ngam_them_nguyen_lieu) ... ok
+test_dieu_kien_moi_khong_doi_mon (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_dieu_kien_moi_khong_doi_mon) ... ok
+test_evaluation_khong_co_Test (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_evaluation_khong_co_Test) ... ok
+test_fuzzy_cho_xac_nhan (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_fuzzy_cho_xac_nhan) ... ok
+test_goi_y_va_chon_dung_thu_tu (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_goi_y_va_chon_dung_thu_tu) ... ok
+test_hai_phan_duoc_tra_du (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_hai_phan_duoc_tra_du) ... ok
+test_kcal_khong_tu_tinh (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_kcal_khong_tu_tinh) ... ok
+test_loc_thoi_gian_va_chien (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_loc_thoi_gian_va_chien) ... ok
+test_nam_cach_dien_dat_trung_vit (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_nam_cach_dien_dat_trung_vit) ... ok
+test_quy_doi_bao_toan_khoang (test_hoi_thoai_v2.HoiThoaiOfflineTests.test_quy_doi_bao_toan_khoang) ... ok
+test_literal_and_bind (test_mysql_adapter.AdapterTests.test_literal_and_bind) ... ok
+test_row_mapping_and_index (test_mysql_adapter.AdapterTests.test_row_mapping_and_index) ... ok
+test_admin_cuoi_khong_duoc_tu_khoa_ha_quyen (test_mysql_tai_khoan.MySQLTests.test_admin_cuoi_khong_duoc_tu_khoa_ha_quyen) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_admin_them_khoa_mo_va_thu_hoi_phien (test_mysql_tai_khoan.MySQLTests.test_admin_them_khoa_mo_va_thu_hoi_phien) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_chuyen_json_giu_hash_phien_lich_su_va_sao_luu (test_mysql_tai_khoan.MySQLTests.test_chuyen_json_giu_hash_phien_lich_su_va_sao_luu) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_dang_ky_mac_dinh_user_hash_va_muoi_rieng (test_mysql_tai_khoan.MySQLTests.test_dang_ky_mac_dinh_user_hash_va_muoi_rieng) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_dang_ky_trung_dong_thoi_chi_mot_thanh_cong (test_mysql_tai_khoan.MySQLTests.test_dang_ky_trung_dong_thoi_chi_mot_thanh_cong) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_dat_lai_mat_khau_khong_lo_bam_va_audit (test_mysql_tai_khoan.MySQLTests.test_dat_lai_mat_khau_khong_lo_bam_va_audit) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_google_khong_trung_email_khong_dang_nhap_bang_password (test_mysql_tai_khoan.MySQLTests.test_google_khong_trung_email_khong_dang_nhap_bang_password) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_hai_admin_cung_ha_quyen_van_con_mot_admin (test_mysql_tai_khoan.MySQLTests.test_hai_admin_cung_ha_quyen_van_con_mot_admin) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_khoi_tao_admin_khong_the_cap_them_bang_bootstrap (test_mysql_tai_khoan.MySQLTests.test_khoi_tao_admin_khong_the_cap_them_bang_bootstrap) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_lich_su_cach_ly_va_xoa_cascade (test_mysql_tai_khoan.MySQLTests.test_lich_su_cach_ly_va_xoa_cascade) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_migration_loi_rollback_khong_mat_json (test_mysql_tai_khoan.MySQLTests.test_migration_loi_rollback_khong_mat_json) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_phien_chi_luu_hash_het_han_va_dang_xuat (test_mysql_tai_khoan.MySQLTests.test_phien_chi_luu_hash_het_han_va_dang_xuat) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_quyen_lay_lai_tu_db_khong_tin_phien_cu (test_mysql_tai_khoan.MySQLTests.test_quyen_lay_lai_tu_db_khong_tin_phien_cu) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_sua_ho_so_va_quyen_trong_cung_transaction (test_mysql_tai_khoan.MySQLTests.test_sua_ho_so_va_quyen_trong_cung_transaction) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_transaction_rollback_mysql (test_mysql_tai_khoan.MySQLTests.test_transaction_rollback_mysql) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_unicode_literal_percent_va_sql_parameter (test_mysql_tai_khoan.MySQLTests.test_unicode_literal_percent_va_sql_parameter) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_user_khong_duoc_goi_quan_tri (test_mysql_tai_khoan.MySQLTests.test_user_khong_duoc_goi_quan_tri) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_validate_va_sql_injection (test_mysql_tai_khoan.MySQLTests.test_validate_va_sql_injection) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_xoa_chan_user_admin_cuoi_va_tu_xoa (test_mysql_tai_khoan.MySQLTests.test_xoa_chan_user_admin_cuoi_va_tu_xoa) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_xoa_tai_khoan_thu_hoi_phien_va_xoa_lich_su (test_mysql_tai_khoan.MySQLTests.test_xoa_tai_khoan_thu_hoi_phien_va_xoa_lich_su) ... skipped 'MySQL integration chay bang scripts/kiem_thu_mysql.py'
+test_giu_qua_luot_sau_va_khong_sua_lich_su (test_suc_khoe.SucKhoeOfflineTests.test_giu_qua_luot_sau_va_khong_sua_lich_su) ... ok
+test_hai_cau_trong_anh_va_dien_dat_lai (test_suc_khoe.SucKhoeOfflineTests.test_hai_cau_trong_anh_va_dien_dat_lai) ... ok
+test_lich_su_cu_chua_co_truong_suc_khoe (test_suc_khoe.SucKhoeOfflineTests.test_lich_su_cu_chua_co_truong_suc_khoe) ... ok
+test_phu_dinh_khong_chan_mon_thong_thuong (test_suc_khoe.SucKhoeOfflineTests.test_phu_dinh_khong_chan_mon_thong_thuong) ... ok
+test_bang_chung_khong_chi_la_it_duong_hoac_an_chay (test_suc_khoe.ThucTheSucKhoeTests.test_bang_chung_khong_chi_la_it_duong_hoac_an_chay) ... ok
+test_cac_cach_hoi_khong_dong_nhat_voi_it_duong (test_suc_khoe.ThucTheSucKhoeTests.test_cac_cach_hoi_khong_dong_nhat_voi_it_duong) ... ok
+test_phu_dinh_va_dinh_chinh (test_suc_khoe.ThucTheSucKhoeTests.test_phu_dinh_va_dinh_chinh) ... ok
+
+----------------------------------------------------------------------
+Ran 104 tests in 25.575s
+
+OK (skipped=20)

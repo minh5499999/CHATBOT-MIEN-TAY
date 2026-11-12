@@ -148,14 +148,66 @@ def doc_tu_dien():
 
 
 class TachTu:
-    def __init__(self, tu_dien):
+    def __init__(self, tu_dien, trong_so_cum=None):
         self.tu_dien = tu_dien
         self.cum = {tuple(t.lower().split()) for t in tu_dien if len(t.split()) > 1}
         self.max_len = max((len(c) for c in self.cum), default=0)
+        # Trọng số ưu tiên cho giải thuật Bi-directional Maximum Matching (FMM + BMM)
+        self.trong_so_cum = {
+            c: (trong_so_cum.get(" ".join(c), 1.0) if trong_so_cum else 1.0) * (len(c) ** 1.5)
+            for c in self.cum
+        }
         self.dem_thu_vien_sai = Counter()  # cụm từ điển mà thư viện tách sai (trước khi ép)
 
+    def _tim_khop_fmm(self, thap):
+        """Forward Maximum Matching (FMM): quét từ trái sang phải."""
+        spans = []
+        i, n = 0, len(thap)
+        while i < n:
+            for L in range(min(self.max_len, n - i), 1, -1):
+                if tuple(thap[i:i + L]) in self.cum:
+                    spans.append((i, i + L))
+                    i += L
+                    break
+            else:
+                i += 1
+        return spans
+
+    def _tim_khop_bmm(self, thap):
+        """Backward Maximum Matching (BMM): quét từ phải sang trái."""
+        spans = []
+        j = len(thap)
+        while j > 0:
+            for L in range(min(self.max_len, j), 1, -1):
+                if tuple(thap[j - L:j]) in self.cum:
+                    spans.append((j - L, j))
+                    j -= L
+                    break
+            else:
+                j -= 1
+        spans.reverse()
+        return spans
+
+    def _diem_phu_ongan(self, spans, thap):
+        """Chấm điểm phương án khớp từ điển: ưu tiên độ phủ âm tiết cao, ít mảnh lẻ, trọng số cụm lớn."""
+        so_am_phu = sum(e - s for s, e in spans)
+        trong_so = sum(self.trong_so_cum.get(tuple(thap[s:e]), float(e - s)) for s, e in spans)
+        # Số cụm khớp càng ít (tức cụm càng dài) càng tốt khi cùng độ phủ
+        return (so_am_phu, trong_so, -len(spans))
+
+    def _chon_khop_hai_chieu(self, thap):
+        """Bi-directional Maximum Matching (BiMM): kết hợp FMM và BMM có trọng số."""
+        fmm = self._tim_khop_fmm(thap)
+        bmm = self._tim_khop_bmm(thap)
+        if fmm == bmm:
+            return fmm
+        if self._diem_phu_ongan(bmm, thap) >= self._diem_phu_ongan(fmm, thap):
+            return bmm
+        return fmm
+
     def _ep_tu_dien(self, tokens):
-        """Ép ranh giới đúng theo từ điển: cụm trong từ điển thành đúng một token.
+        """Ép ranh giới đúng theo từ điển bằng Bi-directional Maximum Matching (FMM/BMM):
+        cụm trong từ điển thành đúng một token, ưu tiên thực thể ẩm thực dài và trọng số cao.
 
         fixed_words của underthesea 9.5 hay nối các cụm đứng cạnh nhau (canh_chua_cá_lóc)
         hoặc nối cụm với từ trước (Nêm_nước_mắm), nên phải sửa lại ranh giới ở đây.
@@ -167,22 +219,16 @@ class TachTu:
                 am_tiet.append(p)
                 noi.append(j < len(parts) - 1)
         thap = [a.lower() for a in am_tiet]
-        i = 0
-        while i < len(am_tiet):
-            for L in range(min(self.max_len, len(am_tiet) - i), 1, -1):
-                if tuple(thap[i:i + L]) in self.cum:
-                    dung = all(noi[i:i + L - 1]) and not noi[i + L - 1] and (i == 0 or not noi[i - 1])
-                    if not dung:
-                        self.dem_thu_vien_sai[" ".join(thap[i:i + L])] += 1
-                    if i > 0:
-                        noi[i - 1] = False
-                    for k in range(i, i + L - 1):
-                        noi[k] = True
-                    noi[i + L - 1] = False
-                    i += L
-                    break
-            else:
-                i += 1
+        spans = self._chon_khop_hai_chieu(thap)
+        for s, e in spans:
+            dung = all(noi[s:e - 1]) and not noi[e - 1] and (s == 0 or not noi[s - 1])
+            if not dung:
+                self.dem_thu_vien_sai[" ".join(thap[s:e])] += 1
+            if s > 0:
+                noi[s - 1] = False
+            for k in range(s, e - 1):
+                noi[k] = True
+            noi[e - 1] = False
         out, cur = [], []
         for a, n in zip(am_tiet, noi):
             cur.append(a)
@@ -329,7 +375,7 @@ def viet_bao_cao(path, ket_qua, tach, thong_ke, chay_mot_nhom):
     tat_ca = [r for _, rows in ket_qua for r in rows]
     L = ["# Kiểm tra tách từ", "",
          f"- Kiểu đặt dấu đã chọn: **{KIEU_DAU}**.",
-         f"- Thư viện: underthesea 9.5.0, `word_tokenize(..., format=\"text\", fixed_words=TU_DIEN_RIENG, use_token_normalize=False)`.",
+         "- Thư viện: underthesea 9.5.0, `word_tokenize(..., format=\"text\", fixed_words=TU_DIEN_RIENG, use_token_normalize=False)`.",
          f"- Từ điển riêng: `cau_hinh/tu_dien_rieng.txt` ({len(tach.tu_dien)} cụm).",
          f"- Số dòng: {len(tat_ca)}. Dòng trống đã bỏ: {thong_ke['dong_trong']}.",
          f"- Tiền xử lý: {thong_ke['doi_kieu_dau']} chỗ đổi kiểu đặt dấu, {thong_ke['them_cach_sau_dau']} ô được thêm dấu cách sau dấu câu.",

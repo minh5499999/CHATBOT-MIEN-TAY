@@ -30,10 +30,10 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from chatbot.cau_hinh import CAU_HINH_PATH, doc_cau_hinh, doc_cau_hinh_cat_doan  # noqa: E402
-from chatbot.mo_hinh_vector import _bo_tach_tu, sinh_vector  # noqa: E402
-from chatbot.sinh_cau_tra_loi import noi_dung_day_du, tra_loi  # noqa: E402
-from chatbot.truy_hoi import bo_dau, thu_muc_kho, truy_hoi  # noqa: E402
+from backend.chatbot.cau_hinh import CAU_HINH_PATH, doc_cau_hinh, doc_cau_hinh_cat_doan  # noqa: E402
+from backend.chatbot.mo_hinh_vector import _bo_tach_tu, sinh_vector  # noqa: E402
+from backend.chatbot.sinh_cau_tra_loi import noi_dung_day_du, tra_loi  # noqa: E402
+from backend.chatbot.truy_hoi import bo_dau, thu_muc_kho, truy_hoi  # noqa: E402
 
 CACH_CAT = ["cau_truc", "co_dinh", "de_quy"]
 CACH_TIM = ["vector", "lai", "bm25"]
@@ -150,8 +150,11 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description="Đánh giá chatbot")
     ap.add_argument("--gioi_han", type=int, help="chỉ chạy N câu Test ngẫu nhiên (seed 42)")
-    ap.add_argument("--ghi_cau_hinh", action="store_true", help="ghi cấu hình đề xuất vào cau_hinh/chatbot.json")
+    ap.add_argument("--ghi_cau_hinh", action="store_true", help="đã khóa: không ghi tham số từ benchmark production")
     a = ap.parse_args()
+    if a.ghi_cau_hinh:
+        ap.error('Không ghi ngưỡng từ benchmark production/Test. Cần tập validation Train riêng đã phê duyệt.')
+    print('Benchmark production lịch sử; không phải đánh giá Test kín hoặc hiệu chuẩn evaluation.')
 
     test, nhom_cua = doc_cau_test(a.gioi_han)
     dien_dat = [{"id_goc": int(r["id_goc"]), "cau_hoi": r["cau_hoi"], "nhom": nhom_cua[int(r["id_goc"])]}
@@ -176,9 +179,9 @@ def main():
             m, t = bang[(cach, tim, "dien_dat")], bang[(cach, tim, "test")]
             print(f"  {cach:9} {tim:6} Test Hit@1 {t['hit1']:.3f} | diễn đạt lại Hit@1 {m['hit1']:.3f} "
                   f"MRR@5 {m['mrr5']:.3f}")
-    # chọn theo bộ diễn đạt lại (gần người dùng thật nhất), hòa thì xét bộ không dấu rồi bộ Test
+    # Chỉ xếp theo bộ phát triển, không dùng Test để phá hòa.
     tot_nhat = max(((c, t) for c in cac_cach for t in CACH_TIM),
-                   key=lambda x: tuple(bang[(*x, b)][m] for b in ("dien_dat", "khong_dau", "test") for m in ("mrr5", "hit1")))
+                   key=lambda x: tuple(bang[(*x, b)][m] for b in ("dien_dat", "khong_dau") for m in ("mrr5", "hit1")))
     cach_tot, tim_tot = tot_nhat
     print(f"Cấu hình truy hồi tốt nhất: {cach_tot} + {tim_tot}")
 
@@ -363,7 +366,7 @@ def viet_bao_cao(bo, ngoai, khong_co, bang, chi_tiet, tot_nhat, nguong, du_lieu_
           "gốc** (câu cần ghép nhiều cặp hỏi–đáp, món không có trong dữ liệu nhưng tên gần giống, câu gõ không dấu).",
           "- Hạn chế: bộ diễn đạt lại, ngoài phạm vi và không có dữ liệu là bộ nhỏ tự soạn nên ngưỡng còn dao động; "
           "câu Test nằm trong kho nên số trên bộ Test là cận trên.",
-          "- `python scripts/danh_gia.py --ghi_cau_hinh` ghi cấu hình đề xuất vào `cau_hinh/chatbot.json`."]
+          "- Đây là benchmark production lịch sử, không phải Test kín; chế độ ghi ngưỡng đã bị khóa."]
     (REPORTS / "danh_gia_chatbot.md").write_text("\n".join(L) + "\n", encoding="utf-8", newline="\n")
 
     with open(REPORTS / "danh_gia_chi_tiet.csv", "w", encoding="utf-8-sig", newline="") as f:

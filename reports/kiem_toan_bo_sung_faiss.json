@@ -1,0 +1,780 @@
+{
+  "backend": "faiss",
+  "backend_thuc_te": {
+    "faiss": 49
+  },
+  "la_test_kin": false,
+  "so_luot": 49,
+  "tom_tat": {
+    "dien_dat_lai_doc_lap": {
+      "tra_loi_dung_id": 33,
+      "goi_y_dung": 10,
+      "chua_dat": 1
+    },
+    "noi_tiep": {
+      "tra_loi_dung_id": 5
+    }
+  },
+  "chi_tiet": [
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "luộc thịt heo sao cho thịt trắng, không bị khô",
+      "id_mong_doi": 272,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        272
+      ],
+      "goi_y": [
+        "Cho mình công thức thịt heo xào nấm đông cô với",
+        "Cá trê kho gừng nấu sao cho thơm",
+        "Cho mình công thức tôm xào hành tây đơn giản với"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "xào bò với đậu que làm sao để thịt bò không dai",
+      "id_mong_doi": 205,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        205
+      ],
+      "goi_y": [
+        "Bò xào súp lơ xanh nấu như thế nào cho bò mềm vậy",
+        "Chỉ mình cách làm nui xào bò bằm nhanh gọn cho bữa sáng với",
+        "Bò xào cần tỏi làm sao cho thịt bò mềm mà không dai"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "cánh gà kho gừng làm thế nào cho thấm",
+      "id_mong_doi": 194,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        194
+      ],
+      "goi_y": [
+        "Gà kho sả ớt làm sao cho thấm vị mà không bị khô"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "hướng dẫn xào hủ tiếu với giá và hẹ",
+      "id_mong_doi": 285,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        285
+      ],
+      "goi_y": [
+        "Hủ tiếu chay miền Tây nấu sao",
+        "Cách nấu hủ tiếu Mỹ Tho tại nhà",
+        "Canh rong biển thịt bằm đậu hũ nấu vậy được chưa"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "cách kho cá rô với khế chua",
+      "id_mong_doi": 111,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        111
+      ],
+      "goi_y": [
+        "Cá rô kho tiêu với nước dừa làm sao",
+        "Cá rô phi kho tộ với thịt ba rọi làm sao",
+        "Chỉ mình kho cá rô đồng kho tộ"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "công thức cá lóc kho chung với thịt ba chỉ",
+      "id_mong_doi": 103,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Cá lóc kho thịt ba rọi làm như thế nào",
+        "Cá lóc kho tộ làm sao cho ngon",
+        "Cá lóc kho sả nấu thế nào"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "nấu bún nước lèo kiểu Trà Vinh như thế nào",
+      "id_mong_doi": 98,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        98
+      ],
+      "goi_y": [
+        "Bún nước lèo Sóc Trăng có gì khác Trà Vinh",
+        "Bún nước lèo Sóc Trăng nấu như thế nào",
+        "Bánh ống lá dứa Trà Vinh làm sao"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "cá bông lau kho tộ nấu sao ngon",
+      "id_mong_doi": 76,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        76
+      ],
+      "goi_y": [
+        "Lẩu cá bông lau nấu như thế nào",
+        "Nấu canh cải thảo thịt bằm như nào cho ngon hả bạn",
+        "Nấu canh chua cá bông lau như thế nào"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "đám giỗ ở miền Tây hay làm món gì",
+      "id_mong_doi": 544,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        544
+      ],
+      "goi_y": [
+        "Đám cưới miền Tây hay nấu gì",
+        "Bữa cơm gia đình miền Tây thường có gì",
+        "Tết ở miền Tây thường ăn những gì"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "người miền Tây nấu lươn thành những món gì",
+      "id_mong_doi": 600,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        600
+      ],
+      "goi_y": [
+        "Ếch miền Tây chế biến sao ngon",
+        "Món nhậu miền Tây phổ biến là gì",
+        "Đám giỗ miền Tây thường nấu những món gì"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "đi Sóc Trăng nên ăn món đặc sản nào",
+      "id_mong_doi": 542,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        542
+      ],
+      "goi_y": [
+        "Bánh pía Sóc Trăng là bánh gì",
+        "Bánh cống Sóc Trăng ăn kèm gì",
+        "Bún vịt nấu tiêu đặc sản Sóc Trăng làm sao"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "bánh khọt là món gì vậy",
+      "id_mong_doi": 606,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Bánh khọt miền Tây là gì",
+        "Lá lốt dùng nấu gì ngon",
+        "Cá lóc hấp bầu ăn thế nào"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "có những loại đậu hũ nào",
+      "id_mong_doi": 345,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Đậu hũ có mấy loại phổ biến",
+        "Không có đậu hũ thì thay bằng gì trong món xào",
+        "Đậu hũ non và đậu hũ chiên khác nhau thế nào"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "dầu hào thường nêm vào món gì",
+      "id_mong_doi": 295,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        295
+      ],
+      "goi_y": [
+        "Chỉ mình cách làm nui xào bò bằm nhanh gọn cho bữa sáng với",
+        "Bò lúc lắc làm sao cho thịt bò mềm mà săn đẹp",
+        "Bò xào súp lơ xanh nấu như thế nào cho bò mềm vậy"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "nước tương dùng để làm gì",
+      "id_mong_doi": 294,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Nước tương là gì và dùng trong món nào",
+        "Tương hột là gì và dùng thế nào",
+        "Nước cốt dừa dùng trong món miền Tây nào"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "bột ngọt nên nêm bao nhiêu là vừa",
+      "id_mong_doi": 302,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Bột ngọt là gì và nên dùng bao nhiêu",
+        "Hạt nêm và bột ngọt giống nhau không",
+        "Hạt nêm hết thì nêm gì thay"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "món xào thiếu đậu hũ thì dùng gì thay",
+      "id_mong_doi": 398,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        398
+      ],
+      "goi_y": [
+        "Canh xương khoai tây nấu sao cho nước ngọt mà trong",
+        "Canh cà chua trứng đậu hũ nấu vậy được chưa",
+        "Su su xào trứng nấu sao cho đơn giản mà vẫn ngon vậy"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "nấu canh mà không có tôm thì thay bằng gì",
+      "id_mong_doi": 400,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        400
+      ],
+      "goi_y": [
+        "Trứng chiên thịt băm làm sao cho trứng phồng đẹp",
+        "Nghêu hấp sả làm sao cho nhanh",
+        "Canh sườn nấu chua làm sao cho vừa vị chua ngọt"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "hết muối rồi thì nêm bằng gì",
+      "id_mong_doi": 435,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        435
+      ],
+      "goi_y": [
+        "Canh khổ qua nhồi thịt nấu sao cho không đắng",
+        "Mình muốn nấu bún gỏi dà Sóc Trăng thì làm sao",
+        "Mắm kho ăn với gì cho hợp"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "kho chua ngọt mà không có sườn non thì dùng gì",
+      "id_mong_doi": 448,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        448
+      ],
+      "goi_y": [
+        "Cá lóc kho thịt ba rọi làm như thế nào",
+        "Canh cà chua trứng đậu hũ nấu vậy được chưa",
+        "Canh sườn nấu chua làm sao cho vừa vị chua ngọt"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "công thức cho 6 người mà mình nấu cho 3 người thì chia sao",
+      "id_mong_doi": 454,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Công thức ghi khẩu phần 6 nhưng nhà mình 3 người thì sao",
+        "Nấu cho 8 người mà công thức cho 2 thì nhân lên sao",
+        "Kho quẹt tôm thịt làm sao cho sánh"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "vì sao kho thịt cần thắng nước màu",
+      "id_mong_doi": 522,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        522
+      ],
+      "goi_y": [
+        "Thắng nước hàng cho thịt kho tàu thế nào cho đẹp",
+        "Thịt ba chỉ kho củ cải trắng làm sao cho củ cải không bị nát",
+        "Thịt ba chỉ kho tiêu làm sao cho nước kho vừa sệt lại"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "sao xào đồ ăn phải phi hành tỏi trước",
+      "id_mong_doi": 476,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        476
+      ],
+      "goi_y": [
+        "Bò xào cần tỏi làm sao cho thịt bò mềm mà không dai",
+        "Rau lang xào tỏi làm sao cho xanh mà không bị đen",
+        "Chả cá chiên nước mắm làm sao cho chả không bị bở"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "cuốn bánh tráng cứ bị rách là tại sao",
+      "id_mong_doi": 520,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        520
+      ],
+      "goi_y": [
+        "Gỏi cuốn tôm thịt làm sao cho ngon đẹp vậy bạn",
+        "Cá lóc chiên xù cuốn bánh tráng làm sao cho cá giòn lâu",
+        "Hướng dẫn làm bánh tằm bì"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "ăn dưa muối với kim chi có lợi không",
+      "id_mong_doi": 664,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        664
+      ],
+      "goi_y": [
+        "Cá lóc kho nghệ nấu thế nào",
+        "Cá lóc nướng muối ớt bằng lò làm sao",
+        "Cá thu kho mặn ngọt nấu sao cho nước sánh đẹp"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "đậu phụ có chất dinh dưỡng gì",
+      "id_mong_doi": 639,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        639
+      ],
+      "goi_y": [
+        "Canh cà chua trứng đậu hũ nấu vậy được chưa",
+        "Cá trê kho gừng nấu sao cho thơm",
+        "Nấu canh cải thảo thịt bằm như nào cho ngon hả bạn"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "ăn nhiều tôm cua có sao không",
+      "id_mong_doi": 668,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        668
+      ],
+      "goi_y": [
+        "Cho mình công thức tôm xào hành tây đơn giản với",
+        "Bánh khọt miền Tây tôm thịt làm như thế nào",
+        "Tôm càng xanh miền Tây chế biến kiểu nào ngon"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "sáng bụng đói uống cà phê có hại không",
+      "id_mong_doi": 686,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        686
+      ],
+      "goi_y": [
+        "Bánh cống Sóc Trăng ăn kèm gì",
+        "Mình muốn nấu bún gỏi dà Sóc Trăng thì làm sao",
+        "Cơm tấm miền Tây khác cơm tấm Sài Gòn sao"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "người không ăn cay thì nấu món gì",
+      "id_mong_doi": 726,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        726
+      ],
+      "goi_y": [
+        "Gợi ý món ăn cho người không ăn được cay"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "bữa sáng nên ăn gì để giảm cân",
+      "id_mong_doi": 691,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        691
+      ],
+      "goi_y": [
+        "Nấu gì ăn sáng để giảm cân"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "có sẵn thịt gà thì nấu món gì dễ",
+      "id_mong_doi": 711,
+      "ket_qua": "chua_dat",
+      "loai": "khong_chac",
+      "nguon": [
+        210,
+        46,
+        85
+      ],
+      "goi_y": [
+        "Gà kho sả ớt làm sao cho thấm vị mà không bị khô",
+        "Mình muốn nấu canh gà lá giang chỉ mình với",
+        "Gà xào lá giang làm sao"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "tối coi phim thì ăn món gì nhẹ nhẹ",
+      "id_mong_doi": 745,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        745
+      ],
+      "goi_y": [
+        "Bún mắm ăn kèm với topping gì",
+        "Cá lóc nướng trui ăn kèm với gì mới đúng kiểu",
+        "Đám giỗ miền Tây thường nấu những món gì"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "cà rốt ăn sống hay nấu chín thì tốt hơn",
+      "id_mong_doi": 959,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        959
+      ],
+      "goi_y": [
+        "Nấu cháo thịt băm cà rốt kiểu gì cho mềm ngon vậy",
+        "Bông súng miền Tây ăn được những món gì",
+        "Cá lóc nướng trui ăn kèm với gì mới đúng kiểu"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "làm sao giữ rau thơm tươi được lâu",
+      "id_mong_doi": 951,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Bảo quản rau thơm tươi lâu bằng cách nào",
+        "Gia vị bảo quản sao cho thơm lâu",
+        "Phơi khô thực phẩm bảo quản có tốt không"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "nấu canh thế nào để ngon mà không mất chất",
+      "id_mong_doi": 935,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Nấu canh sao cho ngon và giữ được chất",
+        "Làm sao cho canh không bị mặn",
+        "Cách nấu súp ngon cho cả nhà"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "nấu phở bò ở nhà sao cho đơn giản",
+      "id_mong_doi": 943,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        943
+      ],
+      "goi_y": [
+        "Chỉ mình cách làm nui xào bò bằm nhanh gọn cho bữa sáng với",
+        "Cá trê kho gừng nấu sao cho thơm",
+        "Bò xào cần tỏi làm sao cho thịt bò mềm mà không dai"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "nấu ăn cho người ốm cần lưu ý điều gì",
+      "id_mong_doi": 884,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        884
+      ],
+      "goi_y": [
+        "Bò xào cần tỏi làm sao cho thịt bò mềm mà không dai",
+        "Canh chua bông súng chay nấu sao",
+        "Cá diêu hồng hấp Hong Kong làm sao cho thịt cá ngọt mà không tanh"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "cơm nguội để qua đêm ăn có sao không",
+      "id_mong_doi": 854,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        854
+      ],
+      "goi_y": [
+        "Chả lạnh da heo miền Tây làm sao",
+        "Cơm gà chiên xối mỡ ở nhà làm được không bạn ơi",
+        "Cách làm cơm chiên dương châu ngon ở nhà như thế nào vậy"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "dao cắt thịt sống đem cắt trái cây được không",
+      "id_mong_doi": 852,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        852
+      ],
+      "goi_y": [
+        "Nấu cháo thịt băm cà rốt kiểu gì cho mềm ngon vậy",
+        "Gỏi bông súng tôm thịt trộn sao",
+        "Canh rau ngót thịt băm nấu vậy có đúng cách chưa"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "nấm mọc dại ngoài vườn ăn được không",
+      "id_mong_doi": 889,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Nấm dại có ăn được không",
+        "Khoai tây mọc mầm có ăn được không",
+        "Rau đắng đất dùng thế nào"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "chiều hay bị mệt thì trưa nên ăn gì",
+      "id_mong_doi": 783,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        783
+      ],
+      "goi_y": [
+        "Rau lang xào tỏi làm sao cho xanh mà không bị đen",
+        "Su su xào trứng nấu sao cho đơn giản mà vẫn ngon vậy",
+        "Mình muốn nấu cháo gà nguyên con ngon ngọt, bạn hướng dẫn mình nhé"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "cảm cúm thì nên ăn gì cho mau khỏi",
+      "id_mong_doi": 816,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        816
+      ],
+      "goi_y": [
+        "Mình muốn nấu cháo gà nguyên con ngon ngọt, bạn hướng dẫn mình nhé",
+        "Bò xào súp lơ xanh nấu như thế nào cho bò mềm vậy",
+        "Gà rang muối làm sao cho lớp muối bám đều mà giòn"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "ốm không ăn được cơm thì ăn món gì thay",
+      "id_mong_doi": 815,
+      "ket_qua": "goi_y_dung",
+      "loai": "khong_chac",
+      "nguon": [],
+      "goi_y": [
+        "Nấu gì cho người mới ốm dậy ăn",
+        "Bị ốm không muốn ăn cơm thì ăn gì thay",
+        "Nấu gì cho nhanh khi người nhà bị ốm đột ngột"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "dien_dat_lai_doc_lap",
+      "cau_hoi": "sau khi sốt tay chân yếu nên ăn gì bổ sung",
+      "id_mong_doi": 804,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        804
+      ],
+      "goi_y": [
+        "Rau lang xào tỏi làm sao cho xanh mà không bị đen",
+        "Mình muốn nấu cháo gà nguyên con ngon ngọt, bạn hướng dẫn mình nhé",
+        "Su su xào trứng nấu sao cho đơn giản mà vẫn ngon vậy"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "noi_tiep",
+      "cau_hoi": "món đó cần những nguyên liệu gì",
+      "id_mong_doi": 41,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        41
+      ],
+      "goi_y": [
+        "Cá nục chiên sốt cà chua làm sao cho ngon vậy bạn",
+        "Làm cá lóc nướng trui kiểu miền Tây sao bạn",
+        "Cách đổ bánh xèo miền Tây cho giòn"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "noi_tiep",
+      "cau_hoi": "món này nấu cho mấy người ăn",
+      "id_mong_doi": 43,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        43
+      ],
+      "goi_y": [
+        "Cá lóc kho thịt ba rọi làm như thế nào",
+        "Chỉ mình cách luộc thịt heo cho trắng mà không bị khô",
+        "Cá linh kho rệu nấu thế nào"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "noi_tiep",
+      "cau_hoi": "nó nấu mất bao lâu",
+      "id_mong_doi": 49,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        49
+      ],
+      "goi_y": [
+        "Chỉ mình cách luộc thịt heo cho trắng mà không bị khô",
+        "Cá nục chiên sốt cà chua làm sao cho ngon vậy bạn",
+        "Cho mình công thức tôm xào hành tây đơn giản với"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "noi_tiep",
+      "cau_hoi": "món đó sơ chế cá sao cho hết tanh",
+      "id_mong_doi": 111,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        111
+      ],
+      "goi_y": [
+        "Khô cá sặc chiên làm sao cho giòn",
+        "Cá kèo miền Tây chế biến kiểu nào ngon nhất",
+        "Cá lóc nướng trui ăn kèm với gì mới đúng kiểu"
+      ],
+      "may_tim": "faiss"
+    },
+    {
+      "bo": "noi_tiep",
+      "cau_hoi": "món này cần những gia vị gì",
+      "id_mong_doi": 943,
+      "ket_qua": "tra_loi_dung_id",
+      "loai": "tra_loi",
+      "nguon": [
+        943
+      ],
+      "goi_y": [
+        "Chỉ mình cách làm nui xào bò bằm nhanh gọn cho bữa sáng với",
+        "Cá trê kho gừng nấu sao cho thơm",
+        "Bò xào cần tỏi làm sao cho thịt bò mềm mà không dai"
+      ],
+      "may_tim": "faiss"
+    }
+  ]
+}

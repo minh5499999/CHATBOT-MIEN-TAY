@@ -1,0 +1,11 @@
+{
+  "backend": "mysql",
+  "khong_ghi_tai_khoan_that": true,
+  "dang_nhap_admin": true,
+  "trang_quan_tri_hien_dung_quyen": true,
+  "admin_tao_user": true,
+  "user_khong_mo_duoc_quan_tri": true,
+  "khoa_user_thu_hoi_phien_dang_mo": true,
+  "chan_ha_quyen_admin_cuoi": true,
+  "khong_hien_noi_dung_lich_su_user_cho_admin": true
+}

@@ -1,0 +1,21 @@
+2026-11-05 13:19:57.648 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+2026-11-05 13:19:58.233 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-05 13:19:58.233 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-05 13:20:02.031 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:   7%|▋         | 13/199 [00:00<00:01, 125.74it/s]
+Loading weights:  21%|██        | 42/199 [00:00<00:00, 212.02it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 756.76it/s]
+2026-11-05 13:20:08.699 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+{
+  "backend": "mysql",
+  "khong_ghi_tai_khoan_that": true,
+  "dang_nhap_admin": true,
+  "trang_quan_tri_hien_dung_quyen": true,
+  "admin_tao_user": true,
+  "user_khong_mo_duoc_quan_tri": true,
+  "khoa_user_thu_hoi_phien_dang_mo": true,
+  "chan_ha_quyen_admin_cuoi": true,
+  "khong_hien_noi_dung_lich_su_user_cho_admin": true
+}

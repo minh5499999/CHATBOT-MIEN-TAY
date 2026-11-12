@@ -4,9 +4,10 @@ Các bước: chuẩn hóa câu hỏi bằng đúng hàm đã dùng khi dựng k
 → lấy candidate_k ứng viên (vector, hoặc vector + BM25 kết hợp bằng RRF) → gộp đoạn cùng id_goc
 → giữ k → đánh dấu ngoài phạm vi nếu điểm cao nhất dưới ngưỡng.
 
-Thử nhanh: python -m chatbot.truy_hoi "món canh chua cá lóc"
+Thử nhanh: python -m backend.chatbot.truy_hoi "món canh chua cá lóc"
 """
 import json
+import logging
 import math
 import re
 import sys
@@ -16,11 +17,12 @@ from functools import lru_cache
 
 import numpy as np
 
-from chatbot.cau_hinh import ROOT, doc_cau_hinh
-from chatbot.mo_hinh_vector import chuan_bi_cau_hoi, sinh_vector
+from backend.chatbot.cau_hinh import ROOT, doc_cau_hinh
+from backend.chatbot.mo_hinh_vector import chuan_bi_cau_hoi, sinh_vector
 
 DAU_CAU = re.compile(r"^[^\w]+$")
 AM_TIET = re.compile(r"\w+")
+SO_TIM_VECTOR = 100  # số đoạn lấy từ chỉ mục vector khi không lọc (≥ candidate_k = 20, dư cho bước gộp id_goc)
 
 
 # ------------------------------------------------------------------ nạp kho
@@ -34,14 +36,27 @@ def thu_muc_kho(cach_cat=None, tap="tat_ca"):
 
 @lru_cache(maxsize=8)
 def nap_kho(thu_muc):
-    """Đọc kho đã lưu trên đĩa một lần (không dựng lại mỗi lần chạy). Trả về (index, siêu dữ liệu, thông tin)."""
+    """Nạp kho một lần (không dựng lại mỗi lần chạy). Trả về (index, siêu dữ liệu, thông tin).
+
+    Cấu hình kho_tim_kiem = "neo4j" → đọc kho trong Neo4j; Neo4j chưa bật / chưa nạp kho này → đọc FAISS trên đĩa.
+    """
+    if doc_cau_hinh().get("kho_tim_kiem") == "neo4j":
+        try:
+            from backend.chatbot import kho_neo4j
+            kq = kho_neo4j.nap_kho(thu_muc)
+            if kq:
+                return kq
+            logging.getLogger(__name__).warning("Neo4j chưa có kho %s (chạy scripts/nap_neo4j.py), dùng FAISS",
+                                                thu_muc)
+        except Exception as e:
+            logging.getLogger(__name__).warning("Không dùng được Neo4j (%s), dùng FAISS trên đĩa", e)
     import faiss
     thu_muc = ROOT / thu_muc
     if not (thu_muc / "index.faiss").exists():
         raise FileNotFoundError(f"Chưa có kho vector ở {thu_muc}. Chạy: python scripts/tao_kho_vector.py")
     index = faiss.deserialize_index(np.frombuffer((thu_muc / "index.faiss").read_bytes(), dtype=np.uint8))
     sieu = [json.loads(dong) for dong in (thu_muc / "sieu_du_lieu.jsonl").read_text(encoding="utf-8").splitlines()]
-    thong_tin = json.loads((thu_muc / "thong_tin.json").read_text(encoding="utf-8"))
+    thong_tin = json.loads((thu_muc / "thong_tin.json").read_text(encoding="utf-8")) | {"may_tim": "faiss"}
     if index.ntotal != len(sieu):
         raise ValueError(f"Kho {thu_muc.name} hỏng: {index.ntotal} vector nhưng {len(sieu)} dòng siêu dữ liệu")
     return index, sieu, thong_tin
@@ -165,9 +180,10 @@ def truy_hoi(cau_hoi, k=None, loc_nhom=None, loc_tap=None, nguong_diem=None,
     bo_nguong = ch["nguong"][che_do if che_do in ("bm25", "khong_dau") else "vector"]
     nguong = bo_nguong["ngoai_pham_vi"] if nguong_diem is None else nguong_diem
     gop = ch["gop_theo_id_goc"] if gop_theo_id_goc is None else gop_theo_id_goc
-    thu_muc = str((kho or thu_muc_kho()).relative_to(ROOT)) if not isinstance(kho, str) else kho
+    # khóa bộ đệm nap_kho luôn dùng "/" (str(Path) trên Windows ra "\" → nạp kho hai lần)
+    thu_muc = kho if isinstance(kho, str) else (kho or thu_muc_kho()).relative_to(ROOT).as_posix()
 
-    index, sieu, _ = nap_kho(thu_muc)
+    index, sieu, thong_tin = nap_kho(thu_muc)
     sach, vao = chuan_bi_cau_hoi(cau_hoi)
     tu_hoi = tu_bm25(vao)
 
@@ -177,8 +193,11 @@ def truy_hoi(cau_hoi, k=None, loc_nhom=None, loc_tap=None, nguong_diem=None,
     elif che_do == "khong_dau":
         diem = nap_bm25_khong_dau(thu_muc).diem_chuan_hoa(tu_khong_dau(cau_hoi))
     else:
-        d, i = index.search(sinh_vector([vao]), index.ntotal)
-        diem = np.empty(index.ntotal, dtype=np.float32)
+        # chế độ vector không lọc chỉ cần top candidate_k → lấy 100 đoạn đầu là đủ (Neo4j nhanh gấp ~4 lần);
+        # có lọc hoặc chế độ lai (điểm hiển thị cosine của cả ứng viên BM25) thì vẫn chấm mọi đoạn
+        so_tim = index.ntotal if (loc_nhom or loc_tap or che_do == "lai") else min(index.ntotal, SO_TIM_VECTOR)
+        d, i = index.search(sinh_vector([vao]), so_tim)
+        diem = np.full(index.ntotal, -1.0, dtype=np.float32)  # đoạn ngoài top so_tim: cosine thấp nhất
         diem[i[0]] = d[0]
     mask = np.array([(not loc_nhom or s["nhom_folder"] in loc_nhom) and (not loc_tap or s["tap"] in loc_tap)
                      for s in sieu])
@@ -218,6 +237,7 @@ def truy_hoi(cau_hoi, k=None, loc_nhom=None, loc_tap=None, nguong_diem=None,
         "cau_hoi_vao_mo_hinh": vao,
         "che_do_truy_hoi": che_do,
         "kho": thu_muc,
+        "may_tim": getattr(index, "may_tim", thong_tin["may_tim"]),  # "neo4j" hoặc "faiss": nơi thật sự đã tìm
     }
 
 

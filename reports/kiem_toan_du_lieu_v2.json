@@ -1,0 +1,34 @@
+{
+  "so_cau": 993,
+  "so_doan": 1208,
+  "chia_tap_cau": {
+    "Train": 795,
+    "Test": 198
+  },
+  "truong_metadata": [
+    "cach_cat",
+    "canh_bao",
+    "cau_hoi",
+    "chia_theo_cau",
+    "chunk_id",
+    "id_goc",
+    "muc_truoc",
+    "nguon",
+    "nhom",
+    "nhom_folder",
+    "noi_dung",
+    "noi_dung_kem_tieu_de",
+    "noi_dung_kem_tieu_de_tach_tu",
+    "so_ky_tu",
+    "so_ky_tu_chong_lan",
+    "so_token",
+    "tap",
+    "ten_muc",
+    "thu_tu_doan",
+    "tong_so_doan_cua_cau",
+    "vi_tri_ky_tu"
+  ],
+  "cong_thuc_trich_duoc": 250,
+  "co_khau_phan_goc_ro": 216,
+  "co_tong_thoi_gian_ro": 95
+}

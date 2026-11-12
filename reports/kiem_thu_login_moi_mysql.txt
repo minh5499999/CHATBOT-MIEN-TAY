@@ -1,0 +1,24 @@
+2026-10-29 17:40:37.098 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-29 17:40:37.100 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-29 17:40:39.766 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:   4%|▎         | 7/199 [00:00<00:02, 65.64it/s]
+Loading weights:   8%|▊         | 16/199 [00:00<00:02, 63.77it/s]
+Loading weights:  16%|█▌        | 31/199 [00:00<00:01, 89.98it/s]
+Loading weights:  23%|██▎       | 46/199 [00:00<00:01, 93.16it/s]
+Loading weights:  31%|███       | 61/199 [00:00<00:01, 104.89it/s]
+Loading weights:  37%|███▋      | 74/199 [00:00<00:01, 110.60it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 255.33it/s]
+2026-10-29 17:40:52.984 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+{
+  "backend": "mysql",
+  "khong_ghi_tai_khoan_that": true,
+  "dang_nhap_admin": true,
+  "trang_quan_tri_hien_dung_quyen": true,
+  "admin_tao_user": true,
+  "user_khong_mo_duoc_quan_tri": true,
+  "khoa_user_thu_hoi_phien_dang_mo": true,
+  "chan_ha_quyen_admin_cuoi": true,
+  "khong_hien_noi_dung_lich_su_user_cho_admin": true
+}

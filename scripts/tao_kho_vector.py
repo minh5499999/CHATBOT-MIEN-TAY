@@ -27,8 +27,8 @@ import faiss
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chatbot.cau_hinh import ROOT, doc_cau_hinh, doc_cau_hinh_cat_doan, duong_dan  # noqa: E402
-from chatbot.mo_hinh_vector import sinh_vector, van_ban_doan, vector_cau_hoi  # noqa: E402
+from backend.chatbot.cau_hinh import ROOT, doc_cau_hinh, doc_cau_hinh_cat_doan, duong_dan  # noqa: E402
+from backend.chatbot.mo_hinh_vector import sinh_vector, van_ban_doan, vector_cau_hoi  # noqa: E402
 
 CAC_CACH = ["cau_truc", "co_dinh", "de_quy"]
 CAC_TAP = ["Train", "tat_ca"]
@@ -143,7 +143,7 @@ def viet_bao_cao(path, ket_qua):
                  f"{k['kiem']['chuan_min']:.6f}–{k['kiem']['chuan_max']:.6f} | {d}/{n} | {k['so_chieu']} | {k['sinh']} |")
     trung = {t for k in ket_qua.values() for t in k["kiem"]["tu_truy_hoi_trung_vector"]}
     if trung:
-        L += ["", f"Đoạn có vector trùng hệt đoạn khác (top-1 có thể là bản trùng, vẫn tính đạt): "
+        L += ["", "Đoạn có vector trùng hệt đoạn khác (top-1 có thể là bản trùng, vẫn tính đạt): "
                   + ", ".join(f"`{t}`" for t in sorted(trung))]
     L += ["", "## 2. Ba câu hỏi mẫu (top-5)", ""]
     for ten, k in ket_qua.items():

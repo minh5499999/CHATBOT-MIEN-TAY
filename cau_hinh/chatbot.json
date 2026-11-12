@@ -4,6 +4,7 @@
   "thu_muc_kho": "kho_vector",
   "cach_cat": "cau_truc",
   "kho_vector": "kho_vector/cau_truc_tat_ca",
+  "kho_tim_kiem": "neo4j",
   "tien_to_cau_hoi": "",
   "tien_to_doan": "",
   "batch_size": 32,
@@ -14,7 +15,7 @@
   ],
   "k": 5,
   "candidate_k": 20,
-  "che_do_truy_hoi": "vector",
+  "che_do_truy_hoi": "lai",
   "rrf_k": 60,
   "gop_theo_id_goc": true,
   "so_luot_nho": 4,
@@ -22,7 +23,7 @@
   "bm25_k1": 1.5,
   "bm25_b": 0.75,
   "trong_so_vector": 1.0,
-  "trong_so_bm25": 1.0,
+  "trong_so_bm25": 0.1,
   "nguong_chao_hoi": 0.6,
   "ghi_nhat_ky": true,
   "ghi_nguyen_van_cau_hoi": false,
@@ -39,5 +40,9 @@
       "ngoai_pham_vi": 0.209,
       "tin_cay": 0.47
     }
-  }
+  },
+  "chi_chay_cuc_bo": true,
+  "che_do_du_lieu": "production",
+  "kho_danh_gia": "kho_vector/cau_truc_Train",
+  "phien_ban_hoi_thoai": 2
 }

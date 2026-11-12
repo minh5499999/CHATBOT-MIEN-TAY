@@ -1,0 +1,22 @@
+2026-11-05 11:27:38.696 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+2026-11-05 11:27:39.330 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-05 11:27:39.330 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-05 11:27:43.604 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:   9%|▉         | 18/199 [00:00<00:01, 171.52it/s]
+Loading weights:  18%|█▊        | 36/199 [00:00<00:01, 136.34it/s]
+Loading weights:  27%|██▋       | 53/199 [00:00<00:00, 149.10it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 464.45it/s]
+2026-11-05 11:27:54.678 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+{
+  "backend": "sqlite",
+  "khong_ghi_tai_khoan_that": true,
+  "dang_nhap_admin": true,
+  "trang_quan_tri_hien_dung_quyen": true,
+  "admin_tao_user": true,
+  "user_khong_mo_duoc_quan_tri": true,
+  "khoa_user_thu_hoi_phien_dang_mo": true,
+  "chan_ha_quyen_admin_cuoi": true,
+  "khong_hien_noi_dung_lich_su_user_cho_admin": true
+}

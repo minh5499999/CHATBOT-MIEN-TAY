@@ -1,16 +1,15 @@
 """Đọc cấu hình chatbot (cau_hinh/chatbot.json), cấu hình cắt đoạn và khóa bí mật trong .env."""
 import json
-import os
 from functools import lru_cache
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 CAU_HINH_PATH = ROOT / "cau_hinh" / "chatbot.json"
 
 
 @lru_cache(maxsize=1)
 def doc_cau_hinh():
-    """Cấu hình chatbot. Đường dẫn trong file là tương đối so với thư mục gốc project."""
+    """Cấu hình backend.chatbot. Đường dẫn trong file là tương đối so với thư mục gốc project."""
     return json.loads(CAU_HINH_PATH.read_text(encoding="utf-8"))
 
 
@@ -27,12 +26,7 @@ def duong_dan(khoa):
 
 @lru_cache(maxsize=1)
 def nap_env():
-    """Nạp .env một lần (nếu có). Khóa API chỉ đọc qua os.environ, không ghi vào cấu hình hay nhật ký."""
+    """Nạp .env một lần (nếu có), ví dụ HF_TOKEN để tải mô hình. Không ghi khóa vào cấu hình hay nhật ký."""
     from dotenv import load_dotenv
     load_dotenv(ROOT / ".env")
     return True
-
-
-def lay_bien_moi_truong(ten, mac_dinh=None):
-    nap_env()
-    return os.environ.get(ten, mac_dinh)

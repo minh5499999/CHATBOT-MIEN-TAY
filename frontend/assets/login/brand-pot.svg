@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" fill="none" aria-hidden="true">
+ <defs><linearGradient id="pot" x1="24" y1="49" x2="76" y2="99" gradientUnits="userSpaceOnUse"><stop stop-color="#ff6b08"/><stop offset="1" stop-color="#dd3300"/></linearGradient></defs>
+ <g stroke="#f16b0b" stroke-width="3.1" stroke-linecap="round">
+  <path class="steam steam-one" d="M42 32c-10-10 7-12 0-23"/>
+  <path class="steam steam-two" d="M55 27c-9-9 6-12 1-22"/>
+  <path class="steam steam-three" d="M66 34c-9-9 6-12 1-19"/>
+ </g>
+ <path d="M19 60H10c-7 0-7 9 0 9h11M80 60h10c7 0 7 9 0 9H79" stroke="#d33900" stroke-width="4"/>
+ <path d="M20 57h61l-5 34c-1 9-13 13-27 13-15 0-26-4-27-13l-2-34Z" fill="url(#pot)" stroke="#bd3200" stroke-width="2.6"/>
+ <ellipse cx="50" cy="55" rx="33" ry="8" fill="#ffa72c" stroke="#da3900" stroke-width="2.4"/>
+ <path d="M24 52c8-22 43-23 52 0" fill="#ffc35e" stroke="#e54b00" stroke-width="2.5"/>
+ <ellipse cx="50" cy="36" rx="6" ry="4" fill="#fa5a00" stroke="#ce3700" stroke-width="2"/>
+ <circle cx="38" cy="77" r="2.5" fill="#fff6dc"/><circle cx="62" cy="77" r="2.5" fill="#fff6dc"/>
+ <path d="M41 87q9 10 18 0" stroke="#fff6dc" stroke-width="3" stroke-linecap="round"/>
+</svg>
