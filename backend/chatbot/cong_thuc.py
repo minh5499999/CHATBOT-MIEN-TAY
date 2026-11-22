@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 from fractions import Fraction
 from functools import lru_cache
+from backend.chatbot.knowledge_policy import store_cache
 import re
 from backend.chatbot.ngon_ngu import chuan_hoa, chuan_hoa_dia_phuong, vi_pham, du_bang_chung
 
@@ -23,7 +24,7 @@ def ten_nguyen_lieu(line):
     return re.sub(r'\s+(?:vua du|mot it|tuy chon)$', '', chuan_hoa(chuan_hoa_dia_phuong(text))).strip()
 
 
-@lru_cache(maxsize=8)
+@store_cache(maxsize=8)
 def danh_muc(kho):
     from backend.chatbot.truy_hoi import nap_kho
     _, rows, _ = nap_kho(kho)

@@ -23,6 +23,8 @@ def _empty(message, suggestions=()):
 def chuoi_hoi_thoai():
     def prepare(payload):
         kho, mode = chon_kho(payload['options'])
+        from backend.chatbot.knowledge_policy import sanitize_history
+        payload['history'] = sanitize_history(payload['history'], kho)
         parsed = phan_tich(payload['question'], tu_vung_nguyen_lieu(kho))
         previous = lay_trang_thai(payload['history'])
         if 'tinh_trang_suc_khoe' not in previous:
@@ -50,6 +52,13 @@ def chuoi_hoi_thoai():
         from backend.chatbot.doi_chieu import chi_muc_cau_hoi
         from backend.chatbot.fuzzy import de_nghi_ten_mon
         p, state, q, kho = payload['parsed'], payload['state'], payload['question'], payload['kho']
+        from backend.chatbot.knowledge_policy import policy
+        knowledge_policy = policy(kho)
+        if knowledge_policy and any(khoa_cau_hoi(q) == khoa_cau_hoi(row['question'])
+                                    and not row['allowed_for_answer']
+                                    for row in knowledge_policy[1].values()):
+            payload['result'] = _empty('Nội dung đang chờ kiểm duyệt.')
+            return payload
         from backend.chatbot.suc_khoe import id_co_bang_chung, thong_bao_thieu
         health = [] if nhan_dien_xa_giao(q) else state.get('tinh_trang_suc_khoe', [])
         food_request = not ('thong_tin' in p['intents'] and not set(p['intents']) & {'goi_y_mon','cong_thuc','che_bien','nguyen_lieu'})
@@ -243,10 +252,13 @@ def chuoi_hoi_thoai():
         if result.get('loai') in ('ngoai_pham_vi', 'khong_chac') or (g.get('diem_cao_nhat', 0) < 0.40 and not result.get('chu_de')):
             try:
                 from backend.chatbot.tu_hoc import ghi_nhan_cau_hoi_cho_hoc
-                ghi_nhan_cau_hoi_cho_hoc(payload['question'], result.get('loai', 'diem_thap'), g.get('diem_cao_nhat', 0), kho)
+                from backend.chatbot.knowledge_policy import policy
+                if not policy(kho):
+                    ghi_nhan_cau_hoi_cho_hoc(payload['question'], result.get('loai', 'diem_thap'), g.get('diem_cao_nhat', 0), kho)
             except Exception:
                 pass
-        return result
+        from backend.chatbot.knowledge_policy import seal_result
+        return seal_result(result, kho)
 
     return RunnableLambda(prepare, name='nlp_va_trang_thai') | RunnableLambda(answer, name='chon_nguon_va_loc') | RunnableLambda(finish, name='response_selector')
 

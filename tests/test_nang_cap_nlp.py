@@ -9,6 +9,7 @@ import json
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 import faiss
@@ -33,6 +34,22 @@ from scripts.tach_tu import TachTu
 
 class TestNangCapNLP(unittest.TestCase):
     def setUp(self):
+        from scripts.run_isolated_tests import ROOT, snapshot
+        original_hashes = snapshot(ROOT)
+        self.addCleanup(lambda: self.assertEqual(original_hashes, snapshot(ROOT)))
+        from backend.chatbot import tu_hoc
+        self.storage = tempfile.TemporaryDirectory(prefix="nlp_test_")
+        self.addCleanup(self.storage.cleanup)
+        root = Path(self.storage.name)
+        for name, value in {"ROOT": root, "DATASET_CSV": root/"dataset.csv",
+                            "DATASET_JSONL": root/"dataset.jsonl",
+                            "SQLITE_DB": root/"chatbot.sqlite3",
+                            "CHO_HOC_PATH": root/"queue.jsonl"}.items():
+            patcher = patch.object(tu_hoc, name, value)
+            patcher.start()
+            self.addCleanup(patcher.stop)
+        (root/"dataset.csv").write_text("ID;Nhóm;Tập;Câu hỏi;Câu trả lời;Nguồn\n", encoding="utf-8")
+        (root/"dataset.jsonl").write_text("", encoding="utf-8")
         self.tu_dien = [
             "canh chua", "cá lóc", "thịt kho", "hột vịt", "nước mắm",
             "lạp xưởng", "dừa sáp", "bông điên điển", "rau đắng", "miền Tây",

@@ -192,12 +192,17 @@ class PhanLoaiIntentML:
         self._huan_luyen()
 
     def _huan_luyen(self) -> None:
-        if not DATASET_CSV.exists():
+        from backend.chatbot.knowledge_policy import active_build
+        build = active_build()
+        dataset = build/"nlp_train.csv" if build else DATASET_CSV
+        if not dataset.exists():
             return
         X, y = [], []
-        with DATASET_CSV.open(encoding="utf-8-sig", newline="") as f:
+        with dataset.open(encoding="utf-8-sig", newline="") as f:
             reader = csv.DictReader(f, delimiter=";")
             for row in reader:
+                if row.get("Tập") != "Train":
+                    continue
                 q = (row.get("Câu hỏi") or "").strip()
                 grp = (row.get("Nhóm") or "").strip()
                 if q and grp:

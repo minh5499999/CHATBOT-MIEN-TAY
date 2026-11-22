@@ -14,6 +14,7 @@ import sys
 import unicodedata
 from collections import Counter
 from functools import lru_cache
+from backend.chatbot.knowledge_policy import store_cache
 
 import numpy as np
 
@@ -35,7 +36,7 @@ def thu_muc_kho(cach_cat=None, tap="tat_ca"):
 
 
 @lru_cache(maxsize=8)
-def nap_kho(thu_muc):
+def _nap_kho_cached(thu_muc):
     """Nạp kho một lần (không dựng lại mỗi lần chạy). Trả về (index, siêu dữ liệu, thông tin).
 
     Cấu hình kho_tim_kiem = "neo4j" → đọc kho trong Neo4j; Neo4j chưa bật / chưa nạp kho này → đọc FAISS trên đĩa.
@@ -59,7 +60,17 @@ def nap_kho(thu_muc):
     thong_tin = json.loads((thu_muc / "thong_tin.json").read_text(encoding="utf-8")) | {"may_tim": "faiss"}
     if index.ntotal != len(sieu):
         raise ValueError(f"Kho {thu_muc.name} hỏng: {index.ntotal} vector nhưng {len(sieu)} dòng siêu dữ liệu")
+    from backend.chatbot.knowledge_policy import check_rows
+    check_rows(thu_muc.relative_to(ROOT).as_posix(), sieu)
     return index, sieu, thong_tin
+
+
+def nap_kho(thu_muc):
+    from backend.chatbot.knowledge_policy import policy
+    policy(thu_muc)  # validate even when cached index/catalog already exists
+    return _nap_kho_cached(thu_muc)
+
+nap_kho.cache_clear = _nap_kho_cached.cache_clear
 
 
 # ------------------------------------------------------------------ BM25 viết tay
@@ -115,7 +126,7 @@ class BM25:
         return self.diem(tu_hoi) / tran if tran else np.zeros(len(self.tf), dtype=np.float32)
 
 
-@lru_cache(maxsize=8)
+@store_cache(maxsize=8)
 def nap_bm25(thu_muc):
     ch = doc_cau_hinh()
     _, sieu, _ = nap_kho(thu_muc)
@@ -123,7 +134,7 @@ def nap_bm25(thu_muc):
                 ch.get("bm25_k1", 1.5), ch.get("bm25_b", 0.75))
 
 
-@lru_cache(maxsize=8)
+@store_cache(maxsize=8)
 def nap_bm25_khong_dau(thu_muc):
     """Chỉ mục phụ không dấu (Bài 5) cho câu hỏi gõ không dấu."""
     ch = doc_cau_hinh()

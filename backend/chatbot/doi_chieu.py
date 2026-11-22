@@ -1,5 +1,6 @@
 """Đối chiếu câu hỏi với tên nguồn: không dùng cosine làm bằng chứng duy nhất."""
 from functools import lru_cache
+from backend.chatbot.knowledge_policy import store_cache
 import re
 from backend.chatbot.ngon_ngu import khoa_cau_hoi
 
@@ -31,7 +32,7 @@ def ten_mon_tu_cau_hoi(text):
     return q.strip()
 
 
-@lru_cache(maxsize=8)
+@store_cache(maxsize=8)
 def chi_muc_ten_mon(kho):
     from backend.chatbot.truy_hoi import nap_kho
     _, metadata, _ = nap_kho(kho)
@@ -47,7 +48,7 @@ def chi_muc_ten_mon(kho):
     return result
 
 
-@lru_cache(maxsize=8)
+@store_cache(maxsize=8)
 def chi_muc_cau_hoi(kho):
     from backend.chatbot.truy_hoi import nap_kho
     _, metadata, _ = nap_kho(kho)

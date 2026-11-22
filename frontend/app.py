@@ -17,6 +17,13 @@ import streamlit as st
 from backend.chatbot import tai_khoan
 from backend.chatbot.cau_hinh import doc_cau_hinh
 
+# Streamlit caches imported modules; refresh the configured account backend on rerun.
+import os
+from backend.chatbot import co_so_du_lieu
+from backend.chatbot.cau_hinh import nap_env
+nap_env()
+co_so_du_lieu.BACKEND = os.environ.get('TAI_KHOAN_BACKEND', co_so_du_lieu.BACKEND).strip().lower()
+
 st.set_page_config(page_title="Bếp Miền Tây – Trợ lý nấu ăn", page_icon="🍲", layout="centered")
 
 CAU_GOI_Y = [
@@ -27,12 +34,19 @@ CAU_GOI_Y = [
     "Không có me thì nấu canh chua bằng gì",
     "Bị cảm cúm nên ăn gì cho mau khỏi",
 ]
-GIOI_HAN = ("Trợ lý trả lời về nấu ăn và ăn uống dựa trên tài liệu của đồ án · có thể chọn nhầm câu, "
-            "hãy xem nguồn · không thay lời khuyên của bác sĩ hay chuyên gia dinh dưỡng · không dùng cho dị ứng nặng "
-            "hay bệnh cần điều trị · không tra cứu thông tin mới trên mạng · đừng nhập thông tin cá nhân.")
+CAU_DINH_DUONG = [
+    'Món nào ăn tối nhẹ bụng mà đủ chất',
+    'Nấu gì cho bữa cơm chay đủ chất',
+    'Món chay nào giàu đạm',
+    'Người làm việc văn phòng nên ăn gì',
+]
+GIOI_HAN_DAM = "Trợ lý trả lời dựa trên tài liệu về dinh dưỡng từ Bộ Y tế / Viện Dinh dưỡng."
+GIOI_HAN = ("Thông tin chỉ mang tính tham khảo, không thay thế tư vấn y tế, không chẩn đoán bệnh, "
+            "không kê thuốc và không khẳng định món ăn có thể chữa bệnh.")
 
 st.markdown("""
 <style>
+[data-testid="stHeaderActionElements"] {display:none!important;}
 .block-container {padding-top: 2rem; max-width: 760px;}
 /* khối chỉ chứa <style> (và iframe ghi cookie) không chiếm chỗ → không tạo khoảng trống đầu trang */
 .stElementContainer:has(> .stMarkdown style):not(:has([data-testid="stMarkdownContainer"] > :not(style):not(span:empty))) {display: none;}
@@ -120,10 +134,8 @@ if ss.nguoi_dung is not None:
 
 def google_da_cau_hinh():
     """Đăng nhập Gmail chỉ bật khi .streamlit/secrets.toml có [auth.google] với client_id thật."""
-    try:
-        return bool(st.secrets["auth"]["google"]["client_id"].strip())
-    except Exception:  # chưa có secrets.toml / chưa có mục [auth.google]
-        return False
+    return False  # Offline profile: Google OAuth is disabled.
+
 
 
 # đã đăng nhập Google (cookie còn hạn 30 ngày) → vào thẳng, không cần đăng nhập lại khi tải lại trang
@@ -168,7 +180,9 @@ if ss.nguoi_dung is None:
     man_hinh_dang_nhap()
     st.stop()
 if ss.get("ma_phien"):
-    ghi_cookie(ss.ma_phien, 30 * 24 * 3600)
+    if ss.get("cookie_phien_da_ghi") != ss.ma_phien:
+        ghi_cookie(ss.ma_phien, 30 * 24 * 3600)
+        ss.cookie_phien_da_ghi = ss.ma_phien
     if st.query_params.get("phien") != ss.ma_phien:
         st.query_params["phien"] = ss.ma_phien
 
@@ -181,46 +195,80 @@ ss.setdefault("ma_cuoc", None)   # mã cuộc trò chuyện đang mở (None = c
 
 @st.cache_resource(show_spinner="Đang tải kho dữ liệu (chỉ lần đầu)...")
 def khoi_dong():
-    """Nạp kho và mô hình sinh vector (nếu cách tìm trong cấu hình cần) một lần cho mọi phiên."""
+    """Warm the search index. The embedding model loads only when vector search needs it."""
     from backend.chatbot.truy_hoi import nap_bm25, nap_kho
     ch = doc_cau_hinh()
     nap_kho(ch["kho_vector"])
-    if ch["che_do_truy_hoi"] != "bm25":
-        from backend.chatbot.mo_hinh_vector import nap_mo_hinh
-        nap_mo_hinh()
     if ch["che_do_truy_hoi"] != "vector":
         nap_bm25(ch["kho_vector"])
 
 
 # ================================================================== hành động
 
+TRANG_THEO_MUC = {"nav_history": "history", "nav_fav": "fav", "nav_profile": "profile"}
+
+
 def hoi(cau):
     """Đặt câu chờ; lượt chạy kế tiếp sẽ trả lời."""
     ss.cau_cho = cau
+    ss.trang_chat = "chat"
+
+
+def mo_goi_y_mon():
+    chon_muc_chat("nav_suggest")
+    ss.pop("cau_cho", None)
+    ss.trang_chat = "meal_suggestions"
+
+
+def mo_goi_y_dinh_duong():
+    ss.pop("cau_cho", None)
+    ss.chon_mon_nau = False
+    ss.trang_chat = "nutrition"
+    ss.muc_dang_chon = "nav_nutri"
 
 
 def cuoc_moi():
     ss.tin_nhan, ss.ma_cuoc = [], None
-    ss.muc_dang_chon = "cuoc_moi"
+    ss.muc_dang_chon = "nav_chat"
     ss.chon_mon_nau = False
+    ss.trang_chat = "chat"
+    ss.loi_chao = "chung"
+
+
+def bo_tin_dieu_huong(tin_nhan):
+    """Remove old navigation messages without an associated answer."""
+    return [
+        tin for i, tin in enumerate(tin_nhan)
+        if not (
+            tin.get("vai") == "user" and tin.get("noi_dung") == 'Hướng dẫn nấu ăn'
+            and (i + 1 == len(tin_nhan) or tin_nhan[i + 1].get("vai") != "assistant")
+        )
+    ]
 
 
 def mo_cuoc(cuoc):
     ss.tin_nhan, ss.ma_cuoc = cuoc["tin_nhan"], cuoc["ma"]
-    ss.muc_dang_chon = f"ls_{cuoc['ma']}"
+    ss.muc_dang_chon = "nav_chat"
     ss.chon_mon_nau = False
+    ss.trang_chat = "chat"
 
 
 def chon_muc_chat(muc, cau=None):
-    if muc == 'nav_chat':
+    if muc in TRANG_THEO_MUC:  # trang phụ: lịch sử, món yêu thích, hồ sơ
+        ss.muc_dang_chon, ss.trang_chat, ss.chon_mon_nau = muc, TRANG_THEO_MUC[muc], False
+        return
+    if muc == 'nav_adjust':
+        ss.pop('cau_cho', None)
+        ss.muc_dang_chon, ss.trang_chat, ss.chon_mon_nau = muc, 'adjust_recipe', False
+        return
+    if muc in ('nav_chat', 'nav_nutri'):
         cuoc_moi()
+        ss.loi_chao = 'dinh_duong' if muc == 'nav_nutri' else 'chung'
+    ss.trang_chat = 'chat'
     ss.muc_dang_chon = muc
     ss.chon_mon_nau = muc == 'nav_cook'
     if ss.chon_mon_nau:
         ss.pop('cau_cho', None)
-        message = {'vai': 'user', 'noi_dung': 'Hướng dẫn nấu ăn'}
-        if not ss.tin_nhan or ss.tin_nhan[-1] != message:
-            ss.tin_nhan = ss.tin_nhan + [message]
     elif cau:
         hoi(cau)
 
@@ -235,7 +283,12 @@ def chon_mon_huong_dan(cau):
 def xoa_cuoc(ma):
     tai_khoan.xoa_cuoc_tro_chuyen(TEN, ma)
     if ss.ma_cuoc == ma:
-        cuoc_moi()
+        ss.tin_nhan, ss.ma_cuoc = [], None
+
+
+def doi_yeu_thich(cau):
+    from frontend import mon_yeu_thich
+    mon_yeu_thich.doi(TEN, cau)
 
 
 def dang_xuat():
@@ -251,7 +304,7 @@ def dang_xuat():
 
 # ================================================================== thanh bên
 
-if tai_khoan.la_admin(TEN) and ss.get('trang_hien_tai', 'Quản trị') != 'Trò chuyện':
+if ss.nguoi_dung.get('vai_tro') == 'admin' and ss.get('trang_hien_tai', 'Quản trị') != 'Trò chuyện':
     from frontend.bang_quan_tri import hien_thi
     hien_thi(TEN, dang_xuat)
     st.stop()
@@ -261,44 +314,40 @@ if tai_khoan.la_admin(TEN) and ss.get('trang_hien_tai', 'Quản trị') != 'Trò
 import importlib
 from frontend import giao_dien_tro_chuyen
 importlib.reload(giao_dien_tro_chuyen)
-from frontend.giao_dien_tro_chuyen import ap_dung, thuong_hieu, tieu_de
+from frontend.giao_dien_tro_chuyen import (MUC_THANH_BEN, ap_dung, the_ho_so, thong_bao, thuong_hieu,
+                                           tieu_de, tieu_de_trang, to_muc_chon)
+from frontend import mon_yeu_thich
 ap_dung()
+ss.setdefault("trang_chat", "chat")
+ss.setdefault("loi_chao", "chung")
 
 with st.sidebar:
     thuong_hieu()
-    st.button('Trò chuyện', key='nav_chat', icon=':material/chat_bubble:', width='stretch', on_click=chon_muc_chat, args=('nav_chat',))
-    st.button('Gợi ý món ăn', key='nav_suggest', icon=':material/ramen_dining:', width='stretch', on_click=chon_muc_chat, args=('nav_suggest', 'Gợi ý món ăn miền Tây cho bữa cơm gia đình'))
-    st.button('Hướng dẫn nấu ăn', key='nav_cook', icon=':material/skillet:', width='stretch', on_click=chon_muc_chat, args=('nav_cook',))
-    trang = (st.radio('Chức năng',['Trò chuyện','Quản trị'],key='trang_hien_tai')
+    for key, nhan, icon in MUC_THANH_BEN:
+        callback = mo_goi_y_mon if key == 'nav_suggest' else chon_muc_chat
+        args = () if key == 'nav_suggest' else (key,)
+        st.button(nhan, key=key, icon=icon, width='stretch', on_click=callback, args=args)
+    trang = (st.radio('Chức năng', ['Trò chuyện', 'Quản trị'], key='trang_hien_tai')
              if tai_khoan.la_admin(TEN) else 'Trò chuyện')
-    if trang == 'Trò chuyện':
-        st.button("Cuộc trò chuyện mới", key="cuoc_moi", icon=":material/edit_square:", width="stretch", on_click=cuoc_moi)
 
     # Preserve the selected menu through reruns and chatbot replies.
-    muc_chon = ss.get('muc_dang_chon', 'nav_chat')
-    from frontend.giao_dien_tro_chuyen import to_muc_chon
-    to_muc_chon(muc_chon)
+    to_muc_chon(ss.get('muc_dang_chon', 'nav_chat'))
 
-    cac_cuoc = tai_khoan.danh_sach_cuoc_tro_chuyen(TEN) if trang == 'Trò chuyện' else []
-    if trang == 'Trò chuyện':
-        st.markdown("<div class='nhan-muc'>Lịch sử</div>", unsafe_allow_html=True)
-    if not cac_cuoc and trang == 'Trò chuyện':
-        st.caption("Chưa có cuộc trò chuyện nào.")
-    hom_nay = datetime.now().date().isoformat()
-    moc_truoc = None
-    for c in cac_cuoc[:30]:
-        moc = "Hôm nay" if c["cap_nhat"][:10] == hom_nay else "Trước đó"
-        if moc != moc_truoc:
-            st.caption(moc)
-            moc_truoc = moc
-        cot_ten, cot_xoa = st.columns([6, 1], vertical_alignment="center")
-        cot_ten.button(c["tieu_de"], key=f"ls_{c['ma']}", icon=":material/chat_bubble:", width="stretch",
-                       on_click=mo_cuoc, args=(c,), help=c["tieu_de"])
-        cot_xoa.button("", icon=":material/delete:", key=f"xoa_{c['ma']}", on_click=xoa_cuoc, args=(c["ma"],), help="Xóa cuộc trò chuyện này")
+    # chân thanh bên: luôn dính ở đáy (CSS .st-key-chan_trang)
+    cac_cuoc_da_luu = tai_khoan.danh_sach_cuoc_tro_chuyen(TEN)
+    recent = cac_cuoc_da_luu[:3]
+    if recent:
+        with st.container(key="chat_recent"):
+            st.caption("Lịch sử gần đây")
+            for c in recent:
+                st.button(c["tieu_de"], key=f"recent_{c['ma']}", icon=":material/chat:", width="stretch",
+                          on_click=mo_cuoc, args=(c,), help=c["tieu_de"])
+            if len(cac_cuoc_da_luu) > len(recent):
+                st.button(f"Xem tất cả ({len(cac_cuoc_da_luu)})", key="recent_all",
+                          on_click=chon_muc_chat, args=("nav_history",), width="stretch")
 
-    # chân thanh bên: luôn dính ở đáy (CSS .st-key-chan_trang), lịch sử dài thì cuộn phía trên
     with st.container(key="chan_trang"):
-        st.button("Đăng xuất", key="dang_xuat", icon=":material/logout:", width="stretch", on_click=dang_xuat)
+        st.button("Đăng xuất", key="dang_xuat", icon=":material/arrow_forward:", width="stretch", on_click=dang_xuat)
 
 if trang == 'Quản trị':
     st.rerun()
@@ -340,11 +389,19 @@ def hien_giai_thich(kq):
                      hide_index=True, width="stretch")
 
 
-def hien_tra_loi(kq, vi_tri, cuoi):
+def hien_tra_loi(kq, vi_tri, cuoi, cau_hoi=None, yeu_thich=frozenset()):
+    from backend.chatbot.knowledge_policy import render_result
+    kq = render_result(kq, doc_cau_hinh()['kho_vector'])
     st.markdown(kq["cau_tra_loi"])
     hien_nguon(kq)
-    if giai_thich and "giai_thich" in kq:  # tin nhắn mở từ lịch sử không còn phần giải thích
+    if giai_thich and {"kho", "che_do_truy_hoi", "thoi_gian_giay", "diem_cao_nhat", "nguong_ngoai_pham_vi", "nguong_tin_cay", "cau_hoi_sach", "cau_hoi_vao_mo_hinh"}.issubset(kq.get("giai_thich", {})):  # history may be blocked or omit diagnostics
         hien_giai_thich(kq)
+    if cau_hoi and kq.get("loai") == "tra_loi":  # chỉ lưu món khi trợ lý trả lời được từ dữ liệu
+        da_luu = cau_hoi in yeu_thich
+        st.button("Đã lưu vào món yêu thích" if da_luu else "Lưu vào món yêu thích",
+                  icon=":material/heart_check:" if da_luu else ":material/heart_plus:",
+                  key=f"yt_{vi_tri}", type="tertiary", on_click=doi_yeu_thich, args=(cau_hoi,),
+                  help="Bấm lần nữa để bỏ khỏi danh sách" if da_luu else "Lưu để xem lại trong mục Món yêu thích")
     if kq["goi_y"] and cuoi:  # nút câu hỏi gợi ý chỉ bấm được ở câu trả lời mới nhất
         nhan_goi_y = kq.get("nhan_goi_y") or ("👉 Gợi ý công thức món ăn bạn có thể nấu:" if kq["loai"] == "tra_loi" else "👉 Chọn món bạn muốn xem công thức:")
         st.caption(nhan_goi_y)
@@ -352,55 +409,190 @@ def hien_tra_loi(kq, vi_tri, cuoi):
             st.button(f"{j+1}. {cau}", key=f"lq_{vi_tri}_{j}", on_click=hoi, args=(cau,))
 
 
+# ================================================================== các trang phụ
+
+def trang_lich_su():
+    tieu_de_trang("history", "Lịch sử trò chuyện", "Mở lại hoặc xóa các cuộc trò chuyện đã lưu.")
+    st.button("Cuộc trò chuyện mới", key="cuoc_moi", icon=":material/edit_square:", on_click=cuoc_moi)
+    cac_cuoc = tai_khoan.danh_sach_cuoc_tro_chuyen(TEN)
+    if not cac_cuoc:
+        st.info("Chưa có cuộc trò chuyện nào.", icon=":material/chat_bubble:")
+        return
+    hom_nay = datetime.now().date().isoformat()
+    moc_truoc = None
+    for c in cac_cuoc:
+        moc = "Hôm nay" if c["cap_nhat"][:10] == hom_nay else "Trước đó"
+        if moc != moc_truoc:
+            st.markdown(f"<div class='nhan-muc'>{moc}</div>", unsafe_allow_html=True)
+            moc_truoc = moc
+        so_cau = sum(1 for t in c["tin_nhan"] if t.get("vai") == "user")
+        cot_ten, cot_xoa = st.columns([12, 1], vertical_alignment="center")
+        cot_ten.button(c["tieu_de"], key=f"ls_{c['ma']}", icon=":material/chat_bubble:", width="stretch",
+                       on_click=mo_cuoc, args=(c,),
+                       help=f"Cập nhật {c['cap_nhat'][:16].replace('T', ' ')} · {so_cau} câu hỏi")
+        cot_xoa.button("", icon=":material/delete:", key=f"xoa_{c['ma']}", on_click=xoa_cuoc, args=(c["ma"],),
+                       help="Xóa cuộc trò chuyện này")
+
+
+def mo_yeu_thich(cau):
+    cuoc_moi()
+    hoi(cau)
+
+
+def dieu_chinh_mon_da_luu(recipe_id):
+    chon_muc_chat("nav_adjust")
+    ss.adjust_recipe_id = recipe_id
+
+
+def trang_yeu_thich():
+    from frontend.danh_sach_mon_da_luu import hien_thi_mon_da_luu
+
+    hien_thi_mon_da_luu(
+        doc_cau_hinh()["kho_vector"], TEN, mo_yeu_thich, dieu_chinh_mon_da_luu, chon_muc_chat
+    )
+
+
+def trang_ho_so():
+    with st.container(key="profile_page"):
+        tieu_de_trang("person", "Hồ sơ cá nhân", "Quản lý thông tin tài khoản, tùy chọn ăn uống và hoạt động của bạn.")
+        cac_cuoc = tai_khoan.danh_sach_cuoc_tro_chuyen(TEN)
+        so_cau = sum(1 for c in cac_cuoc for t in c["tin_nhan"] if t.get("vai") == "user")
+        the_ho_so(ss.nguoi_dung, len(cac_cuoc), so_cau, len(mon_yeu_thich.danh_sach(TEN)))
+
+        from frontend.tuy_chon_ho_so import hien_thi_tuy_chon
+
+        hien_thi_tuy_chon(TEN, ss.nguoi_dung)
+
+
 # ================================================================== màn hình trò chuyện
 
+cau_hoi = None
 tieu_de(ss.nguoi_dung)
-
 with st.container(key="chat_canvas"):
-    so_tin = len(ss.tin_nhan)
-    for vi_tri, tn in enumerate(ss.tin_nhan[-1:] if ss.get("chon_mon_nau") else ss.tin_nhan):
-        with st.chat_message(tn["vai"], avatar="🍲" if tn["vai"] == "assistant" else None):
-            if tn["vai"] == "assistant":
-                hien_tra_loi(tn["ket_qua"], vi_tri, cuoi=vi_tri == so_tin - 1)
-            else:
-                st.markdown(tn["noi_dung"])
+    if ss.trang_chat == "history":
+        trang_lich_su()
+    elif ss.trang_chat == "fav":
+        trang_yeu_thich()
+    elif ss.trang_chat == "profile":
+        trang_ho_so()
+    elif ss.trang_chat == "adjust_recipe":
+        from frontend.dieu_chinh_cong_thuc import hien_thi_dieu_chinh
 
-    if ss.get("chon_mon_nau"):
+        with st.container(key="adjust_page"):
+            hien_thi_dieu_chinh(doc_cau_hinh()["kho_vector"], TEN, hoi)
+    elif ss.trang_chat == "meal_suggestions":
         from frontend.chon_mon_nau import hien_thi_chon_mon
-        hien_thi_chon_mon(doc_cau_hinh()["kho_vector"], chon_mon_huong_dan)
 
-    if not ss.tin_nhan and not ss.get("chon_mon_nau"):
+        with st.container(key="meal_suggestions_page"):
+            with st.chat_message("user"):
+                st.markdown(next(label for key, label, _ in MUC_THANH_BEN if key == "nav_suggest"))
+            hien_thi_chon_mon(doc_cau_hinh()["kho_vector"], chon_mon_huong_dan, theo_nhom=True)
+    elif ss.trang_chat == "nutrition":
+        with st.chat_message("user"):
+            st.markdown('Món ăn dinh dưỡng')
         with st.chat_message("assistant", avatar="🍲"):
-            st.markdown("Chào bạn! Hôm nay mình gợi ý cho bạn một số món miền Tây thơm ngon, dễ nấu nhé:\n\n"
-                        "- **Cá kho tộ** – đậm đà, đưa cơm.\n"
-                        "- **Canh cá nấu lá giang** – vị chua thanh, giải nhiệt.\n"
-                        "- **Thịt kho nước dừa** – mềm, béo nhẹ, hợp bữa cơm gia đình.\n\n"
-                        "Bạn muốn mình hướng dẫn cách nấu món nào trong các món trên ạ?")
+            st.markdown("**Món ăn dinh dưỡng**")
+            st.write("Bạn muốn hỏi câu nào?")
+            for i, cau in enumerate(CAU_DINH_DUONG):
+                st.button(cau, key=f"nutrition_{i}", on_click=hoi, args=(cau,))
+    else:
+        yeu_thich = {m["cau_hoi"] for m in mon_yeu_thich.danh_sach(TEN)}
+        ss.tin_nhan = bo_tin_dieu_huong(ss.tin_nhan)
+        so_tin = len(ss.tin_nhan)
+        tin_hien_thi = [] if ss.get("chon_mon_nau") else ss.tin_nhan
+        for vi_tri, tn in enumerate(tin_hien_thi):
+            with st.chat_message(tn["vai"], avatar="🍲" if tn["vai"] == "assistant" else None):
+                if tn["vai"] == "assistant":
+                    hien_tra_loi(tn["ket_qua"], vi_tri, cuoi=vi_tri == so_tin - 1,
+                                 cau_hoi=tn.get("cau_hoi"), yeu_thich=yeu_thich)
+                else:
+                    st.markdown(tn["noi_dung"])
 
-    with st.container(key="chat_actions"):
-        cot = st.columns(4)
-        for i, (nhan, icon, cau) in enumerate([
-            ('Gợi ý món ăn', ':material/restaurant:', 'Gợi ý món ăn miền Tây cho bữa cơm gia đình'),
-            ('Hướng dẫn nấu ăn', ':material/skillet:', 'Hướng dẫn nấu ăn'),
-            ('Món ăn dinh dưỡng', ':material/eco:', 'Gợi ý bữa ăn đủ dinh dưỡng'),
-            ('Món nấu nhanh', ':material/schedule:', 'Gợi ý món ăn dễ nấu trong 20 phút'),
-        ]):
-            if i == 1:
-                cot[i].button(nhan, icon=icon, key=f'chat_quick_{i}', on_click=chon_muc_chat, args=('nav_cook',), width='stretch')
-            else:
-                cot[i].button(nhan, icon=icon, key=f'chat_quick_{i}', on_click=hoi, args=(cau,), width='stretch')
+        if ss.get("chon_mon_nau"):
+            from frontend.chon_mon_nau import hien_thi_chon_mon
+            with st.container(key="cook_picker_page"):
+                with st.chat_message("user"):
+                    st.markdown(dict((key, label) for key, label, _ in MUC_THANH_BEN)["nav_cook"])
+                hien_thi_chon_mon(doc_cau_hinh()["kho_vector"], chon_mon_huong_dan)
 
-    with st.container(key="chat_composer"):
-        cau_hoi = st.chat_input("Hỏi mình về món ăn, nguyên liệu, dinh dưỡng...") or ss.pop("cau_cho", None)
+        if not ss.tin_nhan and not ss.get("chon_mon_nau") and not ss.get("cau_cho"):
+            if ss.loi_chao in ("dinh_duong", "dieu_chinh"):
+                muc = "nav_nutri" if ss.loi_chao == "dinh_duong" else "nav_adjust"
+                with st.container(key=f"topic_badge_{muc}"), st.chat_message("user"):
+                    st.markdown(next(label for key, label, _ in MUC_THANH_BEN if key == muc))
+            with st.chat_message("assistant", avatar="🍲"):
+                if ss.loi_chao == "dinh_duong":
+                    with st.container(key="nutrition_prompt"):
+                        st.markdown("Bạn muốn hỏi gì về dinh dưỡng?")
+                    for j, cau in enumerate(CAU_DINH_DUONG):
+                        st.button(cau, key=f"dd_{j}", icon=":material/arrow_right:", type="tertiary",
+                                  on_click=hoi, args=(cau,))
+                elif ss.loi_chao == "dieu_chinh":
+                    st.markdown("Bạn muốn thay nguyên liệu hay điều chỉnh khẩu phần? Hãy nhập tên món và thay đổi bạn cần.")
+                    cau = "Không có me thì nấu canh chua bằng gì"
+                    st.button(cau, key="adjust_example", on_click=hoi, args=(cau,))
+                else:
+                    with st.container(key="chat_welcome_copy"):
+                        st.markdown("**Chào bạn!** Hôm nay mình gợi ý cho bạn một số món miền Tây thơm ngon, dễ nấu nhé:\n\n"
+                                    "- **Cá kho tộ** – đậm đà, đưa cơm.\n"
+                                    "- **Canh cá nấu lá giang** – vị chua thanh, giải nhiệt.\n"
+                                    "- **Thịt kho nước dừa** – mềm, béo nhẹ, hợp bữa cơm gia đình.\n\n"
+                                    "Bạn muốn mình hướng dẫn cách nấu món nào trong các món trên ạ?")
+
+        cho_tin_nhan_moi = st.empty()
+
+        with st.container(key="chat_actions"):
+            cot = st.columns(4)
+            for i, (nhan, cau) in enumerate([
+                ('Gợi ý món ăn', 'Gợi ý món ăn miền Tây cho bữa cơm gia đình'),
+                ('Hướng dẫn nấu ăn', 'Hướng dẫn nấu ăn'),
+                ('Món ăn dinh dưỡng', None),
+                ('Món nấu nhanh', 'Gợi ý món ăn nấu nhanh trong 25 phút'),
+            ]):
+                icon = ("restaurant", "soup_kitchen", "ecg_heart", "bolt")[i]
+                label = f":material/{icon}: {nhan}"
+                if i == 0:
+                    cot[i].button(label, key=f"chat_quick_{i}",
+                                  on_click=mo_goi_y_mon, width="stretch")
+                elif i == 1:
+                    cot[i].button(label, key=f'chat_quick_{i}', on_click=chon_muc_chat, args=('nav_cook',), width='stretch')
+                elif i == 2:
+                    cot[i].button(label, key=f'chat_quick_{i}', on_click=mo_goi_y_dinh_duong, width='stretch')
+                else:
+                    cot[i].button(label, key=f'chat_quick_{i}', on_click=hoi, args=(cau,), width='stretch')
+
+        if not ss.get("chon_mon_nau"):
+            with st.container(key="chat_features"):
+                st.markdown('<h2 class="chat-features-title">✦ Bạn có thể làm gì với Bếp Miền Tây?</h2>', unsafe_allow_html=True)
+                cards = [
+                    ('Gợi ý món theo nhu cầu', 'Theo nguyên liệu, thời gian, khẩu phần và tình trạng sức khỏe.', 'mon-ca-kho.jpg', mo_goi_y_mon, ()),
+                    ('Hướng dẫn nấu chi tiết', 'Có nguyên liệu, khẩu phần, thời gian và các bước nấu.', 'mon-canh.jpg', chon_muc_chat, ('nav_cook',)),
+                    ('Phân tích & điều chỉnh công thức', 'Kiểm tra thành phần, cảnh báo và gợi ý thay thế phù hợp.', 'mon-dinh-duong.jpg', chon_muc_chat, ('nav_adjust',)),
+                    ('Thông tin dinh dưỡng', 'Tra cứu kiến thức dinh dưỡng và nguồn tham khảo.', 'mon-nhanh.jpg', chon_muc_chat, ('nav_nutri',)),
+                ]
+                for i, (column, card) in enumerate(zip(st.columns(4), cards)):
+                    title, description, image, callback, args = card
+                    with column, st.container(key=f"chat_feature_{i}"):
+                        st.html(f'<img class="chat-feature-image" src="/app/static/chat/{image}" alt="">')
+                        st.button(title, key=f"feature_open_{i}", on_click=callback, args=args, width="stretch")
+                        st.markdown(f'<p class="chat-feature-description">{description}</p>', unsafe_allow_html=True)
+
+        with st.container(key="chat_composer"):
+            cau_cho = ss.pop("cau_cho", None)
+            cau_hoi = st.chat_input("Hỏi mình về món ăn, nguyên liệu, dinh dưỡng...") or cau_cho
+
+    with st.container(key="chat_footer"):
+        thong_bao(GIOI_HAN_DAM, GIOI_HAN)
 
 if cau_hoi:
     from backend.chatbot.sinh_cau_tra_loi import tra_loi
 
     # hiện ngay câu vừa hỏi và bong bóng trợ lý có ba chấm nhấp nháy trong lúc tìm câu trả lời
-    with st.chat_message("user"):
-        st.markdown(cau_hoi)
-    with st.chat_message("assistant", avatar="🍲"):
-        st.markdown("<div class='dang-nghi'><span></span><span></span><span></span></div>", unsafe_allow_html=True)
+    with cho_tin_nhan_moi.container():
+        with st.chat_message("user"):
+            st.markdown(cau_hoi)
+        with st.chat_message("assistant", avatar="🍲"):
+            st.markdown("<div class='dang-nghi'><span></span><span></span><span></span></div>", unsafe_allow_html=True)
 
     lich_su = [{"cau_hoi": tn["cau_hoi"], "cau_tra_loi": tn["ket_qua"]["cau_tra_loi"], "chu_de": tn["ket_qua"]["chu_de"],
                 "trang_thai": tn["ket_qua"].get("trang_thai")}
@@ -416,6 +608,3 @@ if cau_hoi:
                for t in ss.tin_nhan]
     ss.ma_cuoc = tai_khoan.luu_cuoc_tro_chuyen(TEN, ss.ma_cuoc, ban_luu)
     st.rerun()  # vẽ lại từ lịch sử (thay ba chấm bằng câu trả lời, hiện nút câu hỏi liên quan)
-
-with st.container(key="chat_notice"):
-    st.caption(f"ℹ️ {GIOI_HAN}")

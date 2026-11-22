@@ -5,6 +5,9 @@ Model card bkai-foundation-models/vietnamese-bi-encoder: đầu vào PHẢI tác
 """
 import os
 import sys
+
+for _key in ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE", "HF_HUB_DISABLE_TELEMETRY"):
+    os.environ[_key] = "1"
 from functools import lru_cache
 
 import numpy as np
@@ -25,13 +28,13 @@ def nap_mo_hinh():
     from sentence_transformers import SentenceTransformer
     nap_env()  # HF_TOKEN trong .env (nếu có) để tải mô hình
     ten =doc_cau_hinh_cat_doan()["ten_mo_hinh"]
-    offline = doc_cau_hinh().get("chi_chay_cuc_bo", True)
+    # Runtime never downloads, even if an old config disables offline mode.
+    os.environ["HF_HUB_OFFLINE"] = "1"
+    os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
     try:
         m = SentenceTransformer(ten, device="cpu", local_files_only=True)
-    except Exception:
-        if offline:
-            raise RuntimeError("Thiếu mô hình embedding cục bộ. Chạy scripts/chuan_bi_mo_hinh.py khi có mạng trước.")
-        m = SentenceTransformer(ten, device="cpu")
+    except Exception as exc:
+        raise RuntimeError("Thiếu mô hình embedding local; cần chuẩn bị offline trước.") from exc
     m.max_seq_length = doc_cau_hinh_cat_doan()["gioi_han_token_mo_hinh"]
     return m
 

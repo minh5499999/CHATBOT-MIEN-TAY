@@ -118,6 +118,12 @@ class TichHopOfflineTests(unittest.TestCase):
     def setUpClass(cls):
         import torch
         torch.set_num_threads(4)
+        import tempfile
+        from pathlib import Path
+        from backend.chatbot import tu_hoc
+        cls.test_storage = tempfile.TemporaryDirectory(prefix='chatbot_test_')
+        cls.queue_patch = patch.object(tu_hoc, 'CHO_HOC_PATH', Path(cls.test_storage.name)/'queue.jsonl')
+        cls.queue_patch.start()
         cls.network_guard = patch.object(socket.socket, 'connect', side_effect=AssertionError('Không được gọi mạng'))
         cls.network_guard.start()
         from backend.chatbot.cau_hinh import doc_cau_hinh
@@ -132,6 +138,8 @@ class TichHopOfflineTests(unittest.TestCase):
         cls.ch.clear()
         cls.ch.update(cls.original)
         cls.network_guard.stop()
+        cls.queue_patch.stop()
+        cls.test_storage.cleanup()
 
     def test_cong_thuc_day_du(self):
         r = self.ask("cách nấu canh chua cá lóc")

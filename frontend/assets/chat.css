@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Pangolin&display=swap');
 .stApp {background: #fff5e8; color:#382016;}
 .stApp::before {content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 75% 15%,#fffdf7 0%,#fff5e8 65%,#fce9cf 100%);}
 [data-testid="stHeader"] {background:transparent;}
@@ -58,7 +59,7 @@ section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {gap:0.65rem;}
 
 /* One composed background keeps the tray, lamp and leaf shadows in proportion. */
 .stApp {
-    background:#fff5e8 url('/app/static/chat/chat-scene-v2.png?v=3') center center / 100% 100% no-repeat fixed!important;
+    background:#fff5e8 url('__CHAT_SCENE__') center center / 100% 100% no-repeat fixed!important;
 }
 .stApp::before {content:none!important;}
 [data-testid="stAppViewContainer"], [data-testid="stMain"], [data-testid="stMainBlockContainer"] {
@@ -529,3 +530,993 @@ section[data-testid="stSidebar"][data-collapsed="true"] {
     height:auto!important;
     align-self:flex-start;
 }
+
+/* =====================================================================
+   Bản thiết kế "Trò chuyện cùng Bếp Miền Tây" (11/2026).
+   Các quy tắc dưới đây ghi đè phần cũ phía trên.
+   ===================================================================== */
+
+/* ---------- thanh bên ---------- */
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {padding:0.6rem 1.1rem 1rem;}
+.chat-brand {margin:0 0 1.2rem;}
+.chat-brand>div {width:84px;}
+.chat-brand svg {height:84px;}
+.chat-brand h2 {font-size:31px;font-weight:700;font-style:italic;color:#8b2909;margin:2px 0 6px;line-height:1.25;}
+.chat-brand p {font-size:15px;line-height:1.55;color:#6a3a1f;margin:0;}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button {
+    justify-content:flex-start!important;
+    min-height:50px!important;
+    padding:8px 18px!important;
+    border-radius:26px!important;
+    text-align:left;
+}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button > div {justify-content:flex-start;gap:14px;width:100%;}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button p {
+    font-size:16.5px!important;line-height:1.3;white-space:normal!important;overflow:visible!important;text-align:left;
+}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button [data-testid="stIconMaterial"] {font-size:25px;}
+section[data-testid="stSidebar"] .st-key-chan_trang {
+    background:transparent!important;border-top:0;padding:10px 0 14px!important;
+}
+section[data-testid="stSidebar"] .st-key-dang_xuat button {
+    width:auto!important;min-width:70%;margin:0 auto;display:flex;
+    border-radius:30px!important;min-height:50px;background:#fffdf8!important;
+    border:1px solid #f1d6b8!important;box-shadow:0 4px 12px rgba(122,62,20,.10);
+}
+section[data-testid="stSidebar"] .st-key-dang_xuat button p,
+section[data-testid="stSidebar"] .st-key-dang_xuat button [data-testid="stIconMaterial"] {color:#8b2909!important;font-weight:700;}
+
+/* ---------- tiêu đề ---------- */
+.chat-heading,
+.stApp:has([data-testid="stSidebar"]) .chat-heading {
+    display:grid!important;
+    grid-template-columns:auto minmax(0,1fr) auto;
+    grid-template-areas:"logo title account";
+    align-items:center;
+    column-gap:20px;
+    margin:0 0 16px!important;
+    width:100%!important;
+    padding:14px 22px!important;
+    border-radius:28px;
+    background:linear-gradient(105deg,rgba(255,252,246,.86),rgba(255,248,236,.62));
+    border:1px solid rgba(243,221,195,.75);
+    box-shadow:0 6px 18px rgba(105,56,16,.07),inset 0 1px 0 #fff;
+}
+.chat-heading .chat-logo {grid-area:logo;flex:none;}
+.chat-heading .chat-logo img {
+    display:block;width:92px;height:92px;object-fit:cover;border-radius:50%;
+    border:3px solid #fff;box-shadow:0 6px 14px rgba(120,60,15,.22);
+}
+.chat-heading .chat-heading-copy {grid-area:title;}
+.chat-heading h1 {
+    font-family:'Segoe Print','Comic Sans MS',cursive;font-style:italic;font-weight:700;
+    font-size:clamp(25px,2.4vw,38px)!important;color:#8b2a08;line-height:1.3;padding:0 0 4px;margin:0;
+}
+.chat-heading p {font-size:16px;color:#4f2a16;}
+.chat-heading .chat-account,
+.stApp:has([data-testid="stSidebar"]) .chat-heading .chat-account {
+    grid-area:account;display:flex!important;align-items:center;gap:14px;
+    margin:0!important;padding:8px 22px 8px 8px!important;
+    background:rgba(255,253,248,.95)!important;border:1px solid #f3dfc6!important;border-radius:40px!important;
+    box-shadow:0 6px 16px rgba(105,56,16,.09)!important;
+}
+.chat-account>span {width:54px!important;height:54px!important;font-size:26px!important;
+    background:linear-gradient(140deg,#ffa52a,#f06d0f)!important;box-shadow:0 4px 10px #d9741f40!important;}
+.chat-account b {display:block;font-size:17px;color:#3c1d0e;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.chat-account small {display:inline-block!important;margin-top:4px;padding:3px 14px!important;
+    background:#ffe2c2!important;color:#9b3e0b;font-weight:600;font-size:13px;border-radius:20px;}
+
+/* ---------- khung trò chuyện ---------- */
+.st-key-chat_canvas {
+    background:rgba(255,251,245,.66)!important;
+    border:1px solid rgba(244,222,198,.85)!important;
+    border-radius:30px!important;
+    box-shadow:0 8px 26px rgba(120,64,20,.07)!important;
+    padding:26px 30px 24px!important;
+}
+.st-key-chat_canvas [data-testid="stChatMessage"] {
+    background:rgba(255,254,251,.97)!important;
+    border:1px solid #f6e3cf!important;
+    border-radius:28px!important;
+    box-shadow:0 8px 22px rgba(120,64,20,.08)!important;
+}
+.st-key-chat_canvas [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
+    background:#ffe9cf!important;width:auto;max-width:75%!important;
+}
+[data-testid="stChatMessage"] :is([data-testid="stChatMessageAvatarCustom"],[data-testid="stChatMessageAvatarAssistant"]) {
+    width:52px;height:52px;font-size:30px;border-radius:50%;
+    background:#fff!important;box-shadow:0 4px 12px rgba(150,70,20,.18);
+}
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li {font-size:16.5px;color:#3a1f12;}
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] ul {padding-left:1.4rem;}
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li {margin:0.35rem 0;}
+[data-testid="stChatMessage"] li::marker {color:#f07a12;font-size:1.15em;}
+.st-key-chat_canvas button[data-testid="stBaseButton-tertiary"] p,
+.st-key-chat_canvas button[data-testid="stBaseButton-tertiary"] [data-testid="stIconMaterial"] {color:#c2540a;font-weight:600;}
+
+/* ---------- bốn thẻ thao tác nhanh có ảnh món ---------- */
+.st-key-chat_canvas .st-key-chat_actions {padding:22px 0!important;}
+.st-key-chat_actions [data-testid="stHorizontalBlock"] {gap:22px;}
+.st-key-chat_actions button {
+    position:relative;
+    min-height:86px!important;
+    padding:10px 44px 10px 112px!important;
+    justify-content:flex-start!important;
+    text-align:left;
+    background:rgba(255,253,249,.97)!important;
+    border:1px solid #f4dcc2!important;
+    border-radius:24px!important;
+    box-shadow:0 6px 16px rgba(120,64,20,.09)!important;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.st-key-chat_actions button:hover {
+    transform:translateY(-2px);border-color:#f3a85c!important;box-shadow:0 10px 22px rgba(120,64,20,.14)!important;
+}
+.st-key-chat_actions button:focus-visible {outline:3px solid #ff9a35;outline-offset:2px;}
+.st-key-chat_actions button p {font-size:17px!important;font-weight:700;color:#c04e09!important;line-height:1.3;}
+.st-key-chat_actions button::before {
+    content:"";position:absolute;left:12px;top:50%;transform:translateY(-50%);
+    width:86px;height:64px;border-radius:18px;
+    background:#f5e1c8 center/cover no-repeat;
+    box-shadow:0 3px 8px rgba(80,40,10,.18);
+}
+.st-key-chat_actions button::after {
+    content:"";position:absolute;right:20px;top:50%;width:9px;height:9px;
+    border-right:2.5px solid #e2690f;border-top:2.5px solid #e2690f;
+    transform:translateY(-50%) rotate(45deg);
+}
+.st-key-chat_quick_0 button::before {background-image:url('__MON_CA_KHO__');}
+.st-key-chat_quick_1 button::before {background-image:url('__MON_CANH__');}
+.st-key-chat_quick_2 button::before {background-image:url('__MON_DINH_DUONG__');}
+.st-key-chat_quick_3 button::before {background-image:url('__MON_NHANH__');}
+
+/* ---------- ô nhập câu hỏi ---------- */
+.st-key-chat_composer [data-testid="stChatInput"] {
+    min-height:68px;padding:8px 10px 8px 22px!important;
+    border:1px solid #f3dcc3!important;border-radius:40px!important;
+    background:rgba(255,254,251,.98)!important;box-shadow:0 8px 20px rgba(120,64,20,.08)!important;
+    display:flex;align-items:center;
+}
+.st-key-chat_composer [data-testid="stChatInput"] > div {width:100%;align-items:center;}
+.st-key-chat_composer [data-testid="stChatInput"] textarea {font-size:16.5px!important;color:#4a2a18;}
+.st-key-chat_composer [data-testid="stChatInput"] textarea::placeholder {color:#9a8072;}
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"],
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"]:disabled {
+    width:104px!important;height:50px!important;border-radius:28px!important;
+    background:linear-gradient(110deg,#ffa025,#f06a0e)!important;color:#fff!important;
+    box-shadow:0 5px 12px rgba(230,105,15,.32);border:0!important;
+}
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"]:disabled {opacity:.7;box-shadow:none;}
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"]:not(:disabled):hover {filter:brightness(1.05);}
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"] svg {width:24px;height:24px;color:#fff;fill:#fff;}
+
+/* ---------- thẻ lưu ý ---------- */
+.chat-notice {
+    display:flex;align-items:flex-start;gap:14px;margin-top:22px;
+    padding:16px 22px;border-radius:22px;
+    background:rgba(255,252,247,.93);border:1px solid #f3dcc3;
+    box-shadow:0 6px 16px rgba(120,64,20,.07);
+}
+.chat-notice svg {flex:none;margin-top:2px;}
+.chat-notice p {margin:0!important;font-size:14.5px;line-height:1.65;color:#4f2c18;}
+.chat-notice b {color:#2f170a;}
+
+/* ---------- trang phụ: lịch sử, món yêu thích, hồ sơ ---------- */
+.chat-page-title {display:flex;align-items:center;gap:14px;margin:0 0 14px;}
+.chat-page-title>span {display:grid;place-items:center;width:52px;height:52px;border-radius:50%;
+    background:#fff;color:#f07412;box-shadow:0 4px 12px rgba(150,70,20,.16);}
+.chat-page-title h3 {margin:0;padding:0;font-size:22px;color:#8b2a08;}
+.chat-page-title p {margin:2px 0 0;color:#6a3a1f;font-size:15px;}
+.st-key-chat_canvas .nhan-muc {margin:14px 0 4px 6px;color:#8a4a22;opacity:1;}
+.st-key-chat_canvas [class*="st-key-ls_"] button,
+.st-key-chat_canvas [class*="st-key-yt_mo_"] button {
+    justify-content:flex-start!important;text-align:left;min-height:50px;border-radius:18px!important;
+    background:rgba(255,253,249,.97)!important;border:1px solid #f4dcc2!important;
+    box-shadow:0 3px 10px rgba(120,64,20,.06);
+}
+.st-key-chat_canvas [class*="st-key-ls_"] button > div,
+.st-key-chat_canvas [class*="st-key-yt_mo_"] button > div {justify-content:flex-start;gap:10px;}
+.st-key-chat_canvas [class*="st-key-ls_"] button p,
+.st-key-chat_canvas [class*="st-key-yt_mo_"] button p {font-size:16px;color:#4a2412;font-weight:600;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.st-key-chat_canvas [class*="st-key-ls_"] button:hover,
+.st-key-chat_canvas [class*="st-key-yt_mo_"] button:hover {border-color:#f3a85c!important;background:#fff4e4!important;}
+.st-key-chat_canvas [class*="st-key-ls_"] [data-testid="stIconMaterial"],
+.st-key-chat_canvas [class*="st-key-yt_mo_"] [data-testid="stIconMaterial"] {color:#f07412;}
+.st-key-chat_canvas :is([class*="st-key-xoa_"],[class*="st-key-yt_xoa_"]) button {
+    border-radius:50%!important;width:44px;height:44px;min-height:44px;padding:0;justify-content:center;
+    background:#fff8ef!important;border:1px solid #f1d6b8!important;color:#9b3e0b;
+}
+.st-key-chat_canvas .st-key-cuoc_moi button {
+    border-radius:26px!important;background:linear-gradient(110deg,#ffa524,#f07412)!important;
+    border:0!important;color:#fff!important;padding:8px 20px;box-shadow:0 5px 12px #d9741f40;
+}
+.st-key-chat_canvas .st-key-cuoc_moi button :is(p,[data-testid="stIconMaterial"]) {color:#fff!important;font-weight:700;}
+.profile-card {display:flex;align-items:center;gap:22px;padding:22px 26px;border-radius:26px;
+    background:rgba(255,254,251,.97);border:1px solid #f4dcc2;box-shadow:0 6px 16px rgba(120,64,20,.08);}
+.profile-avatar {flex:none;display:grid;place-items:center;width:84px;height:84px;border-radius:50%;
+    font-size:38px;color:#fff;background:linear-gradient(140deg,#ffa52a,#f06d0f);box-shadow:0 5px 14px #d9741f40;}
+.profile-info h3 {margin:0;padding:0;font-size:24px;color:#3c1d0e;}
+.profile-info small {display:inline-block;margin-top:6px;padding:3px 14px;border-radius:20px;
+    background:#ffe2c2;color:#9b3e0b;font-weight:600;}
+.profile-info dl {display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:14px 0 0;font-size:15px;}
+.profile-info dt {color:#8a5a3c;}
+.profile-info dd {margin:0;color:#3c1d0e;font-weight:600;overflow-wrap:anywhere;}
+.profile-stats {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px;}
+.profile-stats>div {padding:18px;border-radius:22px;text-align:center;background:rgba(255,254,251,.97);
+    border:1px solid #f4dcc2;box-shadow:0 4px 12px rgba(120,64,20,.06);}
+.profile-stats b {display:block;font-size:30px;color:#e2690f;}
+.profile-stats span {color:#6a3a1f;font-size:14.5px;}
+
+/* ---------- màn hình hẹp ---------- */
+@container(max-width:1100px) {
+    .st-key-chat_actions [data-testid="stHorizontalBlock"] {flex-wrap:wrap;gap:14px;}
+    .st-key-chat_actions [data-testid="stColumn"] {flex:1 1 calc(50% - 14px)!important;min-width:0;}
+}
+@container(max-width:650px) {
+    .chat-heading,
+    .stApp:has([data-testid="stSidebar"]) .chat-heading {
+        grid-template-columns:64px minmax(0,1fr)!important;
+        grid-template-areas:"account account" "logo title"!important;
+        row-gap:12px;column-gap:12px;padding:14px!important;
+    }
+    .chat-heading .chat-logo img {width:64px;height:64px;}
+    .chat-heading .chat-account {justify-self:end;}
+    .st-key-chat_canvas {padding:16px!important;}
+    .st-key-chat_actions [data-testid="stColumn"] {flex-basis:100%!important;}
+    .st-key-chat_actions button {padding-left:96px!important;min-height:74px!important;}
+    .st-key-chat_actions button::before {width:72px;height:54px;}
+    .profile-card {flex-direction:column;text-align:center;}
+    .profile-info dl {text-align:left;}
+    .profile-stats {grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce) {
+    .st-key-chat_actions button {transition:none;}
+    .st-key-chat_actions button:hover {transform:none;}
+}
+
+/* Tinh chỉnh sau khi so với bản thiết kế. */
+.st-key-chat_actions [data-testid="stHorizontalBlock"] {gap:1rem!important;}
+.st-key-chat_actions [data-testid="stColumn"] {flex:1 1 0!important;min-width:0!important;width:auto!important;}
+.st-key-chat_actions button > div {justify-content:flex-start!important;width:100%;}
+.st-key-chat_actions button > div > span {display:block;text-align:left;}
+.st-key-chat_actions button p {text-align:left;}
+[data-testid="stChatMessage"] > div[aria-hidden="true"]:first-child {
+    width:52px;height:52px;font-size:28px;border-radius:50%;
+    display:grid;place-items:center;flex:none;
+    background:#fff!important;box-shadow:0 4px 12px rgba(150,70,20,.18);
+}
+@container(max-width:1100px) {
+    .st-key-chat_actions [data-testid="stHorizontalBlock"] {flex-wrap:wrap!important;}
+    .st-key-chat_actions [data-testid="stColumn"] {flex:1 1 calc(50% - 1rem)!important;}
+}
+@container(max-width:650px) {
+    .st-key-chat_actions [data-testid="stColumn"] {flex-basis:100%!important;}
+}
+.st-key-chat_canvas [class*="st-key-dd_"] button {min-height:0!important;padding:2px 4px!important;}
+.st-key-chat_canvas [data-testid="stChatMessage"] [data-testid="stVerticalBlock"]:has(> [class*="st-key-dd_"]) {gap:0.35rem;}
+
+/* =====================================================================
+   Bản mô tả v2: Pangolin + Be Vietnam Pro, cam #F08A24, nâu đỏ #7A3415,
+   chữ #3B2A1E, nền kem #FBEBD3, khung trong mờ bo góc 20–28px.
+   ===================================================================== */
+.stApp {background-color:#FBEBD3!important;color:#3B2A1E;}
+.stApp :is(p,li,label,textarea,input,small,b,strong,dd,dt,h3,h4) {
+    font-family:'Be Vietnam Pro','Segoe UI',Arial,sans-serif;
+}
+.chat-heading h1,
+.chat-brand h2,
+.chat-page-title h3 {
+    font-family:'Pangolin','Segoe Print','Comic Sans MS',cursive!important;
+    font-style:normal!important;font-weight:400!important;letter-spacing:.2px;
+}
+
+/* ---------- thanh bên ~260px, nền kem trong mờ ---------- */
+section[data-testid="stSidebar"]:not([data-collapsed="true"]) {
+    width:260px!important;min-width:260px!important;max-width:260px!important;
+}
+section[data-testid="stSidebar"] {
+    background:rgba(255,246,232,.80)!important;
+    background-image:none!important;
+    backdrop-filter:blur(6px);
+    border-right:1px solid rgba(240,205,165,.7)!important;
+}
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {padding:0.4rem 0.9rem 0.8rem;}
+.chat-brand h2 {font-size:32px;color:#7A3415;margin:4px 0 6px;}
+.chat-brand p {font-size:13.5px;line-height:1.5;color:#5b3b26;}
+.chat-brand>div {width:76px;}
+.chat-brand svg {height:76px;}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button {min-height:44px!important;padding:6px 16px!important;border-radius:22px!important;}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button p {font-size:15px!important;font-weight:500;}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button [data-testid="stIconMaterial"] {font-size:22px;font-variation-settings:'wght' 300;}
+section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {gap:0.35rem!important;}
+section[data-testid="stSidebar"] .st-key-dang_xuat button {min-height:44px;width:100%!important;min-width:0;}
+section[data-testid="stSidebar"] .st-key-dang_xuat button p,
+section[data-testid="stSidebar"] .st-key-dang_xuat button [data-testid="stIconMaterial"] {color:#7A3415!important;}
+
+/* ---------- thanh tiêu đề ---------- */
+.chat-heading,
+.stApp:has([data-testid="stSidebar"]) .chat-heading {
+    background:rgba(255,250,242,.72)!important;
+    backdrop-filter:blur(4px);
+    border-radius:26px!important;
+    padding:12px 20px!important;
+}
+.chat-heading .chat-logo img {
+    width:104px;height:84px;border-radius:20px;object-fit:contain;padding:4px 6px;box-sizing:border-box;
+    background:linear-gradient(160deg,#fff6e6,#ffe3bd);border:1px solid #f6dcbc;box-shadow:0 5px 12px rgba(122,52,21,.12);
+}
+.chat-heading h1 {color:#7A3415!important;font-size:clamp(26px,2.5vw,38px)!important;text-shadow:none!important;}
+.chat-heading p {color:#3B2A1E;font-size:15px;}
+.chat-tools {grid-area:account;display:flex;align-items:center;gap:16px;}
+.chat-bell {
+    position:relative;display:grid;place-items:center;width:46px;height:46px;flex:none;border-radius:50%;
+    color:#3B2A1E;background:rgba(255,253,248,.95);border:1px solid #f3dfc6;box-shadow:0 5px 12px rgba(105,56,16,.09);
+}
+.chat-bell i {position:absolute;top:9px;right:10px;width:9px;height:9px;border-radius:50%;background:#E5402A;border:2px solid #fff;}
+.chat-account>span {background:#F08A24!important;}
+.chat-account b {color:#3B2A1E;font-weight:700;}
+.chat-account small {display:inline-flex!important;align-items:center;gap:4px;color:#7A3415!important;background:#FFE3C2!important;}
+.chat-account small svg {flex:none;}
+
+/* ---------- khung chat & bong bóng ---------- */
+.st-key-chat_canvas {background:rgba(255,250,242,.62)!important;backdrop-filter:blur(3px);border-radius:28px!important;}
+.st-key-chat_canvas [data-testid="stChatMessage"] {background:rgba(255,253,247,.95)!important;border-radius:26px!important;}
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] :is(p,li) {color:#3B2A1E;font-size:15.5px;}
+[data-testid="stChatMessage"] li::marker {color:#F08A24;}
+[data-testid="stChatMessage"]:not(:has([data-testid="stChatMessageAvatarUser"])) > div[aria-hidden="true"]:first-child {
+    font-size:0!important;color:transparent;
+    width:54px;height:54px;border-radius:16px;
+    background:#fff url('__AVATAR_BEP__') center 55% / 80% no-repeat!important;
+    box-shadow:0 4px 12px rgba(150,70,20,.16);
+}
+
+/* ---------- 4 thẻ lối tắt ---------- */
+.st-key-chat_actions button p {color:#D9681A!important;font-size:16px!important;}
+.st-key-chat_actions button::after {border-color:#F08A24!important;}
+.st-key-chat_actions button {border-radius:22px!important;}
+
+/* ---------- nút gửi máy bay giấy ---------- */
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"],
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"]:disabled {
+    background:#F08A24!important;width:96px!important;height:48px!important;
+}
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"] > * {display:none!important;}
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"]::before {
+    content:"";width:24px;height:24px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M21.4 2.6 2.9 10.2c-.8.3-.8 1.4 0 1.7l6.3 2.4 2.4 6.3c.3.8 1.4.8 1.7 0l7.6-18.5c.2-.5-.3-1-.8-.8Zm-11 11.2 6.6-6.6-5.2 8.4Z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+/* ---------- hộp lưu ý ---------- */
+.chat-notice {background:rgba(255,252,246,.9);border-radius:20px;}
+.chat-notice p {color:#3B2A1E;}
+.chat-notice b {color:#3B2A1E;}
+
+/* ---------- trang phụ dùng chung màu mới ---------- */
+.chat-page-title h3 {color:#7A3415;font-size:24px;}
+.chat-page-title>span {color:#F08A24;}
+.st-key-chat_canvas .st-key-cuoc_moi button {background:#F08A24!important;}
+.profile-avatar {background:#F08A24;}
+.profile-stats b {color:#F08A24;}
+section[data-testid="stSidebar"] [data-testid="stSidebarContent"] {padding-left:4px!important;padding-right:4px!important;}
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {padding-left:12px!important;padding-right:12px!important;}
+/* Nhãn thẻ lối tắt xuống dòng như bản thiết kế, không cắt bằng dấu "…". */
+.st-key-chat_actions button {padding:10px 36px 10px 104px!important;}
+.st-key-chat_actions button :is(.stMarkdownEllipsis,[data-testid="stMarkdownContainer"],p) {
+    white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+}
+/* Như bản mẫu: lối tắt, ô nhập và lưu ý nối tiếp ngay dưới tin nhắn, không dàn ra giữa/đáy khung. */
+.st-key-chat_canvas > [data-testid="stLayoutWrapper"]:has(.st-key-chat_actions),
+.st-key-chat_canvas > .st-key-chat_actions,
+.st-key-chat_canvas > [data-testid="stLayoutWrapper"]:has(.st-key-chat_composer),
+.st-key-chat_canvas > .st-key-chat_composer {margin-top:0!important;margin-bottom:0!important;}
+.st-key-chat_canvas .st-key-chat_actions {padding:14px 0 18px!important;}
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"]:disabled {opacity:.9!important;}
+/* Đưa logo + tên lên sát mép trên thanh bên (lấn vào vùng đầu thanh bên, nút thu gọn vẫn ở góc phải). */
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {padding-top:0!important;}
+section[data-testid="stSidebar"] .chat-brand {margin-top:-3rem!important;}
+
+/* Bố cục theo ảnh mẫu: banner và khung chat dùng gần hết chiều ngang. */
+.stApp:has(.chat-heading) .stMain .block-container {
+    max-width:none;
+    padding:0 clamp(12px,1.55vw,28px) 0 clamp(12px,0.75vw,16px)!important;
+}
+.chat-heading,
+.stApp:has([data-testid="stSidebar"]) .chat-heading {
+    grid-template-columns:auto minmax(0,1fr) auto;
+    width:100%!important;margin:0!important;
+    padding:clamp(10px,1.05vw,20px) clamp(14px,1.5vw,28px)!important;
+    column-gap:clamp(12px,1.2vw,22px);
+    border-radius:0 0 28px 28px!important;
+    background:linear-gradient(105deg,#fff9efc7,#fff0db78)!important;
+    backdrop-filter:none;
+}
+.chat-heading .chat-logo img {
+    width:clamp(66px,6.1vw,110px);height:clamp(58px,5vw,92px);
+    background:none;border:0;border-radius:0;padding:0;box-shadow:none;
+}
+.chat-heading h1 {
+    font-size:clamp(24px,2.3vw,41px)!important;
+    font-style:italic!important;color:#802b0e!important;
+}
+.chat-heading p {font-size:clamp(14px,1vw,18px);}
+.chat-bell {width:clamp(38px,3vw,54px);height:clamp(38px,3vw,54px);}
+.chat-heading .chat-account,
+.stApp:has([data-testid="stSidebar"]) .chat-heading .chat-account {
+    gap:9px;
+    padding:5px 13px 5px 5px!important;
+}
+.chat-account>span {
+    width:clamp(34px,2.35vw,43px)!important;
+    height:clamp(34px,2.35vw,43px)!important;
+    font-size:21px!important;
+    flex:none;
+}
+.chat-account b {font-size:15px;}
+.chat-account small {font-size:12px;padding:2px 9px!important;}
+
+.stApp:has(.chat-heading) .st-key-chat_canvas {
+    padding:clamp(14px,1.15vw,20px) clamp(16px,1.65vw,30px) 28px!important;
+    background:linear-gradient(145deg,#fff8edab,#fff3e35c)!important;
+    backdrop-filter:none;
+    border-color:#fff9ef;
+}
+.st-key-chat_canvas [data-testid="stChatMessage"] {
+    border-color:#fff;box-shadow:0 8px 18px #8e461516!important;
+}
+.st-key-chat_canvas [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] :is(p,li) {
+    font-size:clamp(15px,1.05vw,19px);
+}
+.st-key-chat_canvas .st-key-chat_actions {padding:clamp(8px,1vw,18px) 0 clamp(10px,1.5vw,27px)!important;}
+.st-key-chat_actions button {
+    --dish-width:clamp(48px,4.15vw,74px);
+    min-height:clamp(62px,4.2vw,76px)!important;
+    padding:8px 28px 8px calc(var(--dish-width) + 26px)!important;
+    background:linear-gradient(145deg,#fffaf2eb,#fff0dbc9)!important;
+    border-radius:clamp(20px,1.8vw,32px)!important;
+}
+.st-key-chat_actions button::before {width:var(--dish-width);height:calc(100% - 14px);max-height:70px;}
+.st-key-chat_actions button::after {right:15px;}
+.st-key-chat_actions button p {color:#86280f!important;font-size:clamp(14px,1vw,18px)!important;}
+.st-key-chat_composer [data-testid="stChatInput"] {
+    min-height:clamp(54px,3.8vw,68px)!important;
+    padding:6px clamp(8px,1.3vw,24px) 6px clamp(16px,1.3vw,24px)!important;
+}
+.st-key-chat_composer [data-testid="stChatInput"] textarea {font-size:clamp(15px,1.05vw,19px)!important;}
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"],
+.st-key-chat_composer [data-testid="stChatInputSubmitButton"]:disabled {
+    width:clamp(56px,5.4vw,96px)!important;height:clamp(42px,2.65vw,48px)!important;
+    background:linear-gradient(#ff9c25,#fb7900)!important;
+}
+.chat-notice {margin-top:clamp(4px,0.65vw,12px);padding:12px 18px;border-color:#fff;border-radius:28px;}
+.chat-notice p {font-size:clamp(14px,0.98vw,17px);}
+
+@media(min-width:1300px) {
+    section[data-testid="stSidebar"]:not([data-collapsed="true"]) {
+        width:16.55vw!important;min-width:16.55vw!important;max-width:16.55vw!important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
+        padding-inline:clamp(14px,1.2vw,22px)!important;
+    }
+    section[data-testid="stSidebar"] [class*="st-key-nav_"] button {
+        min-height:clamp(44px,2.6vw,48px)!important;
+    }
+    section[data-testid="stSidebar"] [class*="st-key-nav_"] button p {font-size:clamp(14px,0.95vw,17px)!important;}
+    .chat-brand h2 {font-size:clamp(28px,1.8vw,32px);}
+    .chat-brand p {font-size:clamp(13px,0.9vw,16px);max-width:195px;margin:0 auto;}
+}
+section[data-testid="stSidebar"] {background:rgba(255,242,221,.56)!important;backdrop-filter:none;}
+section[data-testid="stSidebar"] .st-key-dang_xuat button {width:88%!important;min-height:48px;}
+@container(max-width:650px) {
+    .chat-heading,.stApp:has([data-testid="stSidebar"]) .chat-heading {
+        grid-template-columns:56px minmax(0,1fr)!important;
+        grid-template-areas:"account account" "logo title"!important;
+        margin:0!important;
+    }
+    .chat-heading .chat-logo img {width:56px;height:52px;}
+    .chat-tools {justify-self:end;max-width:100%;}
+    .chat-account b {max-width:115px;}
+}
+
+/* Reserve the top toolbar when the navigation is collapsed. */
+.stApp:has(.chat-heading):has([data-testid="stSidebar"][data-collapsed="true"]) .stMain .block-container {
+    padding-top:3.5rem!important;
+}
+.chat-heading .chat-logo {min-width:0;}
+.st-key-chat_composer [data-testid="stChatInput"] > div {padding-block:0!important;min-height:0!important;}
+@container(min-width:1120px) {
+    .chat-heading h1::after {
+        content:"";display:inline-block;width:26px;height:36px;margin-left:14px;
+        vertical-align:middle;
+        background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 36' fill='none' stroke='%23ff7900' stroke-width='3.5' stroke-linecap='round'%3E%3Cpath d='m4 12 8-9M8 20l16-4M8 27l9 5'/%3E%3C/svg%3E") center/contain no-repeat;
+    }
+}
+
+/* The title and conversation share the canvas surface. */
+.stApp .st-key-chat_canvas .chat-heading {
+    background:none!important;
+    border:0;
+    border-radius:0!important;
+    box-shadow:none;
+    padding:0 0 8px!important;
+}
+
+/* Keep the notice at the foot of the canvas on short conversations. */
+.stApp:has(.chat-heading) .st-key-chat_canvas {
+    min-height:calc(100dvh - 12px);
+}
+.stApp:has(.chat-heading):has([data-testid="stSidebar"][data-collapsed="true"]) .st-key-chat_canvas {
+    min-height:calc(100dvh - 3.5rem - 12px);
+}
+.st-key-chat_canvas > .st-key-chat_footer,
+.st-key-chat_canvas > [data-testid="stLayoutWrapper"]:has(> .st-key-chat_footer) {
+    margin-top:auto;
+}
+
+/* Reference layout, using the existing scene and food assets. */
+.stApp:has(.chat-heading) .stMain .block-container {padding:0 22px 14px 14px!important;}
+.stApp:has(.chat-heading) .chat-heading {padding:10px 16px!important;background:transparent!important;min-height:96px;}
+.stApp:has(.chat-heading) .st-key-chat_canvas {min-height:calc(100dvh - 128px);padding:18px 22px!important;border:1px solid #fffaf2;border-radius:34px;background:rgba(255,247,235,.72)!important;gap:12px;}
+.st-key-chat_canvas [data-testid="stChatMessage"] {max-width:100%!important;width:100%;border-radius:30px!important;padding:20px!important;background:rgba(255,253,250,.92)!important;}
+.st-key-chat_canvas [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {width:auto;max-width:80%!important;}
+.st-key-chat_canvas > [data-testid="stLayoutWrapper"]:has(.st-key-chat_actions), .st-key-chat_canvas > .st-key-chat_actions {margin:0!important;}
+.st-key-chat_canvas .st-key-chat_actions {padding:0!important;}
+.st-key-chat_actions button {min-height:46px!important;padding:10px 14px 10px 48px!important;border-radius:32px!important;justify-content:center!important;background:#fffaf2df!important;}
+.st-key-chat_actions button::before {width:25px!important;height:27px!important;left:17px!important;background:none!important;box-shadow:none!important;border-radius:0;color:#ef710a;font-size:27px;line-height:27px;text-align:center;}
+.st-key-chat_quick_0 button::before {content:'♧';}
+.st-key-chat_quick_1 button::before {content:'♨';}
+.st-key-chat_quick_2 button::before {content:'♡';}
+.st-key-chat_quick_3 button::before {content:'ϟ';}
+.st-key-chat_actions button::after {display:none!important;}
+.st-key-chat_actions button p {font-size:17px!important;font-weight:500!important;}
+.st-key-chat_actions button > div {justify-content:center!important;}
+.chat-features-title {color:#942b0e!important;font-size:20px!important;font-weight:700!important;margin:0 0 10px!important;padding:0!important;}
+.st-key-chat_features {margin:4px 0 8px;}
+.st-key-chat_features [data-testid="stHorizontalBlock"] {gap:14px;align-items:stretch;}
+.st-key-chat_features [class*="st-key-chat_feature_"] {gap:0!important;overflow:hidden;border:1px solid #f6cda5;border-radius:24px;background:linear-gradient(140deg,#fffdf7eb,#fff0dce8);box-shadow:0 3px 7px #aa501015;padding:4px 4px 14px;}
+.chat-feature-image {display:block;height:96px;width:100%;object-fit:cover;object-position:center;border-radius:20px 20px 15px 15px;}
+.st-key-chat_features button {border:0!important;background:transparent!important;box-shadow:none!important;border-radius:0!important;padding:12px 13px 4px!important;min-height:0!important;color:#942b0e!important;justify-content:flex-start!important;text-align:left!important;}
+.st-key-chat_features button p {font-size:16px!important;font-weight:700!important;line-height:1.35!important;text-align:left;}
+.st-key-chat_features button:hover p {color:#ef710a!important;}
+.st-key-chat_features button:focus-visible {outline:2px solid #ef710a!important;outline-offset:-2px;}
+.chat-feature-description {font-size:14px;line-height:1.5;color:#49271c;margin:0;padding:0 28px 0 13px;}
+.st-key-chat_features [class*="st-key-chat_feature_"] {position:relative;}
+.st-key-chat_features [class*="st-key-chat_feature_"]::after {content:'›';position:absolute;right:12px;bottom:12px;color:#e66b0b;font-size:30px;pointer-events:none;}
+/* On pages without a composer, let the notice absorb the remaining height. */
+.st-key-chat_canvas:not(:has(.st-key-chat_composer)) > .st-key-chat_footer,
+.st-key-chat_canvas:not(:has(.st-key-chat_composer)) > :has(> .st-key-chat_footer) {
+    margin-top:auto!important;
+}
+.st-key-chat_canvas:has(.st-key-chat_composer) > .st-key-chat_footer,
+.st-key-chat_canvas:has(.st-key-chat_composer) > :has(> .st-key-chat_footer) {
+    margin-top:0!important;
+}
+.chat-notice {margin:0!important;background:#fff9eece!important;font-size:14px;}
+.chat-notice p {font-size:13px!important;line-height:1.55;}
+.st-key-chat_composer [data-testid="stChatInput"] {min-height:62px!important;background:#fffdfbf0!important;}
+section[data-testid="stSidebar"] .chat-brand {margin-top:-1.8rem!important;margin-bottom:12px!important;}
+section[data-testid="stSidebar"] .chat-brand > div {width:76px;}
+section[data-testid="stSidebar"] [class*="st-key-nav_"] button {min-height:39px!important;}
+section[data-testid="stSidebar"] .st-key-nav_chat button {border-radius:28px!important;}
+@media(min-width:1300px) {section[data-testid="stSidebar"]:not([data-collapsed="true"]) {width:17.5vw!important;min-width:17.5vw!important;max-width:17.5vw!important;}}
+@media(max-width:1100px) {
+ .st-key-chat_features [data-testid="stHorizontalBlock"] {flex-wrap:wrap;}
+ .st-key-chat_features [data-testid="stColumn"] {flex:1 1 calc(50% - 14px)!important;min-width:0!important;}
+ .chat-heading h1 {font-size:26px!important;}
+ .st-key-chat_actions button p {font-size:14px!important;}
+}
+@media(max-width:640px) {
+ .stApp:has(.chat-heading) .stMain .block-container {padding:0 10px 12px!important;}
+ .stApp:has(.chat-heading) .st-key-chat_canvas {padding:14px!important;border-radius:24px;gap:14px;}
+ .st-key-chat_features [data-testid="stColumn"] {flex-basis:100%!important;}
+ .chat-feature-image {height:155px;}
+ .chat-features-title {font-size:19px!important;}
+ .st-key-chat_actions button {padding-left:42px!important;min-height:52px!important;}
+}
+.st-key-chat_actions button::before {display:none!important;}
+.st-key-chat_actions button {padding:10px 14px!important;gap:10px;}
+.st-key-chat_actions button [data-testid="stIconMaterial"] {font-size:27px!important;color:#ef710a!important;}
+
+section[data-testid="stSidebar"] .st-key-chat_recent {
+    border-top:1px solid #efcfac;
+    padding-top:9px;
+    margin:8px 0 12px;
+}
+.st-key-chat_recent [data-testid="stCaptionContainer"] p {
+    color:#842b11;
+    font-weight:700;
+}
+.st-key-chat_recent button {
+    justify-content:flex-start!important;
+    border:1px solid #f1caab!important;
+    border-radius:12px!important;
+    background:#fff9eee8!important;
+    min-height:35px;
+    text-align:left;
+}
+.st-key-chat_recent button p {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.st-key-chat_recent button:hover {background:#ffead2!important;}
+
+@media (min-width:1101px) {
+    .stApp:has(.chat-heading) .chat-heading h1 {font-size:clamp(28px,2vw,36px)!important;}
+    .chat-heading .chat-logo img {width:95px;height:76px;}
+    .st-key-chat_canvas [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] :is(p,li) {
+        font-size:clamp(15px,0.95vw,17px);
+    }
+}
+.st-key-chat_actions button > div {
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    gap:8px;
+}
+.st-key-chat_actions button p {margin:0!important;}
+.st-key-chat_actions button [data-testid="stIconMaterial"] {font-size:22px!important;}
+section[data-testid="stSidebar"] [data-testid="stLayoutWrapper"]:has(> .st-key-chan_trang) {
+    position:static;
+}
+
+
+/* Compact desktop layout without scaling the background or mobile controls. */
+@media (min-width:1101px) {
+    .stApp:has(.chat-heading) .chat-heading {
+        min-height:78px;
+        padding-block:6px!important;
+    }
+    .stApp:has(.chat-heading) .chat-heading h1 {font-size:clamp(26px,1.8vw,32px)!important;}
+    .chat-heading .chat-logo img {width:82px;height:64px;}
+    .chat-heading p {font-size:15px;}
+    .stApp:has(.chat-heading) .st-key-chat_canvas {
+        padding:14px 18px!important;
+        gap:8px;
+    }
+    .st-key-chat_canvas [data-testid="stChatMessage"]:not(:has([data-testid="stChatMessageAvatarUser"])) {
+        padding:14px 18px!important;
+        margin:0 0 6px;
+    }
+    .st-key-chat_canvas [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li {margin:2px 0;}
+    .st-key-chat_actions button {min-height:44px!important;padding:5px 10px!important;}
+    .st-key-chat_actions button p {font-size:14px!important;line-height:1.2!important;}
+    .st-key-chat_actions button [data-testid="stIconMaterial"] {font-size:19px!important;}
+    .chat-feature-image {height:82px;}
+    .chat-features-title {font-size:18px!important;margin-bottom:8px!important;}
+    .st-key-chat_features button {padding:7px 10px 3px!important;}
+    .st-key-chat_features button p {font-size:14px!important;}
+    .st-key-chat_features p.chat-feature-description {
+        font-size:13px!important;
+        line-height:1.45;
+        padding-inline:10px 24px;
+    }
+    .st-key-chat_composer [data-testid="stChatInput"] {min-height:54px!important;}
+    .st-key-chat_composer [data-testid="stChatInputSubmitButton"] {height:38px!important;}
+    section[data-testid="stSidebar"] .chat-brand svg {height:62px;}
+    section[data-testid="stSidebar"] .chat-brand h2 {font-size:27px;}
+    section[data-testid="stSidebar"] .chat-brand p {font-size:13px;}
+    section[data-testid="stSidebar"] [class*="st-key-nav_"] button {min-height:35px!important;padding-block:4px!important;}
+    section[data-testid="stSidebar"] [class*="st-key-nav_"] button p {font-size:14px!important;}
+}
+
+/* Reserve room for the photo and keep text beneath it at every card width. */
+.st-key-chat_features [class*="st-key-chat_feature_"] > * {
+    flex-shrink:0;
+    min-height:auto;
+}
+.st-key-chat_features [class*="st-key-chat_feature_"] button {
+    justify-content:flex-start!important;
+    padding:8px 24px 4px 10px!important;
+}
+.st-key-chat_features [class*="st-key-chat_feature_"] button > div {
+    justify-content:flex-start!important;
+}
+.st-key-chat_features [class*="st-key-chat_feature_"] button p {
+    margin:0!important;
+    overflow-wrap:anywhere;
+    white-space:normal!important;
+}
+.st-key-chat_features p.chat-feature-description {
+    margin:0!important;
+    padding:0 24px 4px 10px;
+}
+
+.st-key-chat_features [class*="st-key-chat_feature_"] [data-testid="stHtml"]:has(.chat-feature-image) {
+    display:block;
+    line-height:0;
+    margin-bottom:6px;
+}
+.st-key-chat_features [class*="st-key-chat_feature_"] .stButton {
+    position:static;
+    margin:0;
+    height:auto;
+}
+.st-key-chat_features [class*="st-key-chat_feature_"] button {
+    height:auto!important;
+}
+
+/* Keep the composer and notice together at the bottom on short chats. */
+.st-key-chat_canvas > .st-key-chat_composer,
+.st-key-chat_canvas > [data-testid="stLayoutWrapper"]:has(> .st-key-chat_composer) {
+    margin-top:auto!important;
+    padding-top:12px;
+}
+.st-key-chat_canvas .st-key-chat_footer {
+    padding-top:4px;
+}
+
+/* Recipe comparison and explanation panels. */
+.st-key-adjust_main,
+.st-key-adjust_aside [data-testid="stVerticalBlockBorderWrapper"] {
+    background:#fffaf2e8;
+    border-radius:18px;
+}
+.st-key-adjust_main h4,
+.st-key-adjust_aside h4 {color:#882b13;}
+.st-key-adjust_main [data-testid="stHorizontalBlock"] [data-testid="stColumn"] {
+    padding:10px;
+    border-radius:12px;
+    background:#fff0dc;
+}
+.st-key-adjust_main [data-testid="stHorizontalBlock"] [data-testid="stColumn"] + [data-testid="stColumn"] {
+    background:#f0f3df;
+}
+
+/* Profile page follows the account overview layout. */
+.stApp:has(.st-key-profile_page) .chat-heading {display:none!important;}
+.st-key-profile_page .chat-page-title h3 {font-family:inherit!important;font-weight:700!important;}
+.st-key-profile_page .chat-page-title p {font-size:14px;}
+.st-key-profile_page .chat-page-title > div::after {
+    content:"";
+    display:block;
+    width:38px;
+    height:2px;
+    background:#ff890f;
+    margin-top:7px;
+}
+.st-key-profile_page .profile-card {
+    border-radius:18px;
+    background:linear-gradient(100deg,#fffdfa 46%,#fff0d9 100%);
+}
+.st-key-profile_page .profile-avatar {
+    background:linear-gradient(145deg,#ff9d2e,#ff7400);
+    border:4px solid #fff;
+}
+.st-key-profile_page .profile-stats > div {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:22px;
+    padding:12px;
+    border-radius:16px;
+}
+.st-key-profile_page .profile-stats i {
+    display:grid;
+    place-items:center;
+    flex:none;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:#fff0dc;
+    color:#ff8100;
+}
+.st-key-profile_page .profile-stats svg {width:27px;height:27px;}
+.st-key-profile_page [data-testid="stExpander"] {
+    background:#fff9ef;
+    border-radius:14px;
+    box-shadow:0 3px 8px #8e461510;
+}
+.st-key-profile_page [data-testid="stExpander"] summary {color:#802b13;}
+
+.st-key-profile_page [data-testid="stForm"] [data-testid="stVerticalBlockBorderWrapper"] {
+    border-color:#f4d4b2;
+    border-radius:18px;
+    background:#fffaf1ef;
+    box-shadow:0 3px 10px #a95a1714;
+}
+.st-key-profile_page [data-testid="stForm"] h4 {color:#8a2814;}
+.st-key-profile_page [data-testid="stFormSubmitButton"] button {border-radius:24px;}
+
+.st-key-profile_page [data-testid="stExpander"] summary {
+    cursor:pointer;
+    gap:8px;
+}
+.st-key-profile_page [data-testid="stExpander"] summary::after {
+    content:"Mở rộng";
+    margin-inline-start:auto;
+    flex:none;
+    padding:3px 8px;
+    border:1px solid #f2c69d;
+    border-radius:12px;
+    background:#fff0da;
+    color:#8a350e;
+    font-size:12px;
+}
+.st-key-profile_page [data-testid="stExpander"] details[open] > summary::after {
+    content:"Thu gọn";
+}
+
+
+/* The icon is part of the button label, so both share the same baseline. */
+.st-key-chat_actions button[data-testid] {
+    min-height:48px!important;
+    padding:8px 12px!important;
+    align-items:center!important;
+}
+.st-key-chat_actions button[data-testid] p {
+    text-align:center;
+    line-height:1.3!important;
+    font-weight:600!important;
+}
+.st-key-chat_actions button[data-testid] [data-testid="stIconMaterial"] {
+    position:static;
+    vertical-align:middle;
+    margin-inline-end:6px;
+    font-size:19px!important;
+}
+
+.st-key-adjust_recipe_saved button:disabled {
+    background:#e4f4e5!important;
+    border-color:#91c598!important;
+    color:#265f30!important;
+    opacity:1!important;
+}
+.st-key-adjust_recipe_saved button:disabled :is(p, [data-testid="stIconMaterial"]) {
+    color:#265f30!important;
+}
+
+.st-key-saved_dishes [class*="st-key-saved_dish_"] {
+    background:#fffaf2ef;
+    border:1px solid #f3d6b7;
+    border-radius:20px;
+    box-shadow:0 3px 9px #9c521315;
+    padding:14px;
+}
+.st-key-saved_dishes [class*="st-key-saved_dish_"] button {
+    border-radius:22px!important;
+}
+.st-key-saved_dishes [class*="st-key-saved_dish_"] strong {
+    font-size:clamp(16px,1.35vw,22px);
+    color:#83260f;
+}
+@container (max-width:850px) {
+    .st-key-saved_dishes [class*="st-key-saved_dish_"] [data-testid="stHorizontalBlock"] {flex-wrap:wrap;}
+    .st-key-saved_dishes [class*="st-key-saved_dish_"] [data-testid="stColumn"] {flex:1 1 110px!important;}
+}
+.saved-dish-photo {display:block;width:100%;height:105px;object-fit:cover;border-radius:14px;}
+
+/* Match the scale of other chat pages. */
+.st-key-saved_dishes .chat-page-title > span {width:42px;height:42px;}
+.st-key-saved_dishes .chat-page-title h3 {font-size:21px;}
+.st-key-saved_dishes .chat-page-title p,
+.st-key-saved_dishes [data-testid="stWidgetLabel"] p {font-size:13px;}
+.st-key-saved_dishes [class*="st-key-saved_dish_"] {padding:9px 11px;border-radius:15px;}
+.st-key-saved_dishes [class*="st-key-saved_dish_"] strong {font-size:17px;line-height:1.35;}
+.st-key-saved_dishes button[data-testid] {min-height:36px!important;padding:5px 10px!important;}
+.st-key-saved_dishes button[data-testid] p {font-size:13px!important;}
+.st-key-saved_dishes .saved-dish-photo {height:73px;max-width:150px;border-radius:10px;}
+
+/* Compact proportions for the recipe adjustment page. */
+.st-key-adjust_page {gap:10px!important;}
+.st-key-adjust_page h3 {font-size:22px!important;padding-block:0 4px;}
+.st-key-adjust_page h4 {font-size:18px!important;padding-block:0 4px;}
+.st-key-adjust_page [data-testid="stWidgetLabel"] p {font-size:13px;}
+.st-key-adjust_page :is(input, [role="combobox"]) {font-size:14px!important;}
+.st-key-adjust_page [data-testid="stMarkdownContainer"] :is(p, li) {
+    font-size:14px!important;
+    line-height:1.45;
+}
+.st-key-chat_canvas .st-key-adjust_page [data-testid="stChatMessage"] {
+    padding:9px 13px!important;
+    margin-block:0 4px;
+    border-radius:18px!important;
+    align-items:center;
+}
+.st-key-adjust_page [data-testid="stChatMessage"] > :first-child[aria-hidden="true"] {
+    width:36px!important;
+    height:36px!important;
+}
+.st-key-adjust_page [data-testid="stChatMessageContent"] {align-self:center;}
+.st-key-adjust_page .st-key-adjust_main [data-testid="stColumn"] {padding:7px 9px;}
+.st-key-adjust_page button[data-testid] {min-height:34px;}
+
+:is(.st-key-meal_suggestions_page, .st-key-cook_picker_page) {gap:8px!important;}
+.st-key-chat_canvas :is(.st-key-meal_suggestions_page, .st-key-cook_picker_page) [data-testid="stChatMessage"] {
+    padding:9px 13px!important;
+    margin:0 0 4px;
+    border-radius:18px!important;
+}
+:is(.st-key-meal_suggestions_page, .st-key-cook_picker_page) [data-testid="stChatMessage"] > :first-child[aria-hidden="true"] {
+    width:36px!important;height:36px!important;
+}
+:is(.st-key-meal_suggestions_page, .st-key-cook_picker_page) h3 {font-size:21px!important;padding:0 0 4px;}
+:is(.st-key-meal_suggestions_page, .st-key-cook_picker_page) [data-testid="stWidgetLabel"] p {font-size:13px!important;}
+:is(.st-key-meal_suggestions_page, .st-key-cook_picker_page) :is(input,[role="combobox"]) {font-size:14px!important;}
+:is(.st-key-meal_suggestions_page, .st-key-cook_picker_page) button {min-height:34px!important;padding:4px 9px!important;}
+:is(.st-key-meal_suggestions_page, .st-key-cook_picker_page) button p {font-size:14px!important;}
+:is(.st-key-meal_suggestions_page, .st-key-cook_picker_page) [data-testid="stChatMessageContent"] [data-testid="stVerticalBlock"] {gap:8px;}
+
+/* Space the nutrition prompt and its choices consistently. */
+.st-key-chat_canvas [data-testid="stVerticalBlock"]:has(> :is([class*="st-key-dd_"], :has(> [class*="st-key-dd_"]))) {
+    gap:14px!important;
+}
+.st-key-chat_canvas [class*="st-key-dd_"] button {
+    min-height:38px!important;
+    padding:4px 8px!important;
+}
+.st-key-chat_canvas .st-key-nutrition_prompt {padding-bottom:12px;}
+
+.st-key-chat_canvas .st-key-topic_badge_nav_nutri [data-testid="stChatMessage"] {
+    padding:6px 10px!important;
+    gap:8px;
+    border-radius:18px!important;
+    align-items:center;
+}
+.st-key-topic_badge_nav_nutri [data-testid="stChatMessageAvatarUser"] {
+    width:32px!important;
+    height:32px!important;
+}
+.st-key-chat_canvas .st-key-topic_badge_nav_nutri [data-testid="stChatMessageContent"] {
+    align-self:center;
+}
+
+.chat-heading:has(.chat-notifications[open]) {z-index:5;}
+.chat-notifications {position:relative;flex:none;}
+.chat-notifications > summary {cursor:pointer;list-style:none;}
+.chat-notifications > summary::-webkit-details-marker {display:none;}
+.chat-notifications > summary:hover,
+.chat-notifications[open] > summary {background:#ffe9cd;}
+.chat-notifications > summary:focus-visible {outline:2px solid #d46514;outline-offset:3px;}
+.chat-notifications-panel {
+    position:absolute;
+    top:calc(100% + 10px);
+    right:0;
+    width:min(260px, 75vw);
+    padding:14px 16px;
+    color:#582912;
+    border:1px solid #f1d2ae;
+    border-radius:16px;
+    background:#fffaf1;
+    box-shadow:0 8px 24px #70350f26;
+}
+.chat-notifications-panel strong {display:block;margin-bottom:6px;}
+.chat-notifications-panel p {font-size:14px;margin:0;}
+@container (max-width:650px) {
+    .chat-notifications-panel {right:auto;left:0;width:min(225px, 62vw);}
+}
+
+.st-key-chat_canvas [data-testid="stChatMessage"]:not(:has([data-testid="stChatMessageAvatarUser"])):has(.st-key-chat_welcome_copy) {
+    padding:20px 22px 26px!important;
+    width:calc(100% + 8px);
+    max-width:calc(100% + 8px)!important;
+    margin-inline:-4px;
+}
+.st-key-chat_welcome_copy [data-testid="stMarkdownContainer"] > p {
+    line-height:1.5;
+    margin:0!important;
+}
+.st-key-chat_welcome_copy [data-testid="stMarkdownContainer"] > ul {
+    margin:10px 0!important;
+}
+.st-key-chat_canvas .st-key-chat_welcome_copy [data-testid="stMarkdownContainer"] li {
+    margin:4px 0;
+    line-height:1.5;
+}
+.st-key-chat_welcome_copy [data-testid="stMarkdownContainer"] li p {margin:0!important;}
+/* Lift the sidebar branding slightly without moving the collapse control. */
+section[data-testid="stSidebar"] .chat-brand {
+    position:relative;
+    top:-12px;
+}
+/* Give the cooking picker more breathing room between copy, filters and recipes. */
+.st-key-cook_picker_page [data-testid="stChatMessageContent"] [data-testid="stVerticalBlock"] {
+    gap:14px!important;
+}
+.st-key-cook_picker_page h3 {padding-bottom:8px!important;line-height:1.4!important;}
+.st-key-cook_picker_page [data-testid="stChatMessageContent"] > [data-testid="stVerticalBlock"] {
+    padding-top:6px!important;padding-bottom:10px!important;
+}
+.st-key-cook_picker_page [data-testid="stHorizontalBlock"] {column-gap:22px!important;}
+.st-key-cook_picker_page button {min-height:40px!important;padding:7px 12px!important;}

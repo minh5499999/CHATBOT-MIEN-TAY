@@ -173,92 +173,48 @@ TU_Y_DINH_NAU = re.compile(
     re.IGNORECASE
 )
 
-NGUYEN_LIEU_CHINH = [
-    "thịt bò", "bò", "thịt bằm", "thịt băm", "thịt ba rọi", "thịt ba chỉ", "thịt heo", "thịt lợn",
-    "thịt gà", "gà", "thịt vịt", "vịt", "cá lóc", "cá kèo", "cá bông lau", "cá linh", "cá trê", "cá chạch", "cá bống", "cá",
-    "tôm", "tép", "cua", "sườn", "ếch", "nghêu", "ngao", "trứng", "đậu hũ",
-    "rau xanh", "rau ngót", "rau dền", "rau muống", "rau lang", "rau đắng", "cải thảo", "cải ngọt", "cải bẹ", "cải",
-    "súp lơ", "bông điên điển", "bông bí", "bông so đũa", "bí đao", "bí đỏ", "bầu", "mướp", "khổ qua",
-    "cà rốt", "khoai mỡ", "khoai tây", "cà chua", "nấm", "giá đỗ",
-    "gừng", "sả", "lá giang",
-    "cháo", "canh", "súp", "lẩu"
-]
+# Common dish names used in answers, mapped to specific titles in the recipe catalog.
+TEN_MON_TUONG_DUONG = {
+    "ca kho to": ("ca kho to mien tay kieu truyen thong ne", "ca loc kho to"),
+    "thit kho nuoc dua": ("thit kho nuoc cot dua", "thit kho dua kieu ben tre"),
+    "canh chua ca": ("canh chua ca loc", "canh chua ca bong lau"),
+}
 
 
-def trich_xuat_tu_khoa_nau_an(van_ban, cau_hoi=""):
-    """Trích xuất các nguyên liệu hoặc món ăn xuất hiện trong văn bản trả lời hoặc câu hỏi."""
-    vb = f"{cau_hoi} {van_ban}".lower()
-    vb = re.sub(r"\bhấp\s+(thu|thụ)\b", "", vb)
-    tim_thay = []
-    ds_sap_xep = sorted(NGUYEN_LIEU_CHINH, key=len, reverse=True)
-    for nl in ds_sap_xep:
-        if re.search(r'\b' + re.escape(nl) + r'\b', vb):
-            if not any(nl in t for t in tim_thay):
-                tim_thay.append(nl)
-    return tim_thay
+def tao_goi_y_phu_hop(van_ban, dau, kho, dk, toi_da=3):
+    """Suggest only catalog recipes for dishes named in the displayed answer."""
+    from backend.chatbot.cong_thuc import danh_muc
 
-
-def tim_goi_y_cong_thuc(cau_hoi, noi_dung_tra_loi, dau=None, kho=None, toi_da=3):
-    """Tìm gợi ý các câu hỏi về CÔNG THỨC VÀ CÁCH NẤU ĂN liên quan đến nguyên liệu/món vừa được đề xuất."""
-    bo_qua = {dau["id_goc"]} if dau else set()
-    tu_khoa = trich_xuat_tu_khoa_nau_an(noi_dung_tra_loi, cau_hoi)
-    da_co = set(bo_qua)
-    goi_y = []
-
-    # 1. Ưu tiên tìm đa dạng theo từng nhóm nguyên liệu/món chính trong câu trả lời
-    if tu_khoa:
-        for kw in tu_khoa[:3]:
-            kq_kw = truy_hoi(f"cách làm món {kw}", k=3, loc_nhom=list(NHOM_CONG_THUC), kho=kho)
-            for d in kq_kw["doan"]:
-                if d["id_goc"] not in da_co:
-                    da_co.add(d["id_goc"])
-                    goi_y.append(d["cau_hoi"])
-                    break
-            if len(goi_y) >= toi_da:
-                break
-
-    # 2. Nếu chưa đủ: tìm tổng hợp trong nhóm công thức
-    if len(goi_y) < toi_da:
-        truy_van = f"món ăn {' '.join(tu_khoa[:4])}" if tu_khoa else cau_hoi
-        kq_tong = truy_hoi(truy_van, k=toi_da + 5, loc_nhom=list(NHOM_CONG_THUC), kho=kho)
-        for d in kq_tong["doan"]:
-            if d["id_goc"] not in da_co:
-                da_co.add(d["id_goc"])
-                goi_y.append(d["cau_hoi"])
-            if len(goi_y) >= toi_da:
-                break
-
-    return goi_y
-
-
-def tao_goi_y_phu_hop(cau_hoi, van_ban, dau, cac_doan, kho=None, toi_da=3):
-    """Tạo gợi ý luôn hướng người dùng đến CÔNG THỨC VÀ CÁCH NẤU ĂN."""
-    if not dau:
-        return [d["cau_hoi"] for d in cac_doan if d.get("nhom_folder") != NHOM_CHAO_HOI][:toi_da]
-
-    bo_qua = {dau["id_goc"]}
-    la_bai_cong_thuc = (
-        dau.get("nhom_folder") in NHOM_CONG_THUC
-        or any(k in dau.get("ten_muc", "").lower() for k in ("nguyên liệu", "chế biến", "cách nấu", "sơ chế"))
-    )
-
-    if la_bai_cong_thuc:
-        # Nếu bài hiện tại đã là một công thức nấu ăn:
-        # 1. Lấy các bài công thức khác trong top truy hồi
-        goi_y = [d["cau_hoi"] for d in cac_doan if d["id_goc"] not in bo_qua and d.get("nhom_folder") in NHOM_CONG_THUC]
-        goi_y = list(dict.fromkeys(goi_y))[:toi_da]
-        # Nếu chưa đủ 3 món: tìm thêm các công thức liên quan đến nguyên liệu của món này
-        if len(goi_y) < toi_da:
-            them = tim_goi_y_cong_thuc(cau_hoi, van_ban, dau, kho=kho, toi_da=toi_da - len(goi_y))
-            for c in them:
-                if c not in goi_y:
-                    goi_y.append(c)
-        return goi_y[:toi_da]
-    else:
-        # Nếu bài hiện tại KHÔNG PHẢI là công thức (ví dụ: tư vấn dinh dưỡng, ốm mệt, kinh nguyệt, nguyên liệu):
-        # TUYỆT ĐỐI KHÔNG gợi ý thêm câu hỏi y tế/bệnh tật!
-        # LUÔN tìm và gợi ý CÁCH NẤU CÁC MÓN ĂN phù hợp với nguyên liệu được đề xuất!
-        return tim_goi_y_cong_thuc(cau_hoi, van_ban, dau, kho=kho, toi_da=toi_da)
+    text = chuan_hoa(van_ban)
+    recipes = danh_muc(kho)
+    matches = []
+    for recipe in recipes:
+        if recipe.id_goc == dau["id_goc"]:
+            continue
+        name = ten_mon_tu_cau_hoi(recipe.cau_hoi)
+        name = re.sub(r"\s+(?:mien tay|voi)$", "", name)
+        if len(name.split()) < 3:
+            continue
+        hit = re.search(r"\b" + re.escape(name) + r"\b", text)
+        if not hit:
+            for short, variants in TEN_MON_TUONG_DUONG.items():
+                if any(name.startswith(variant) for variant in variants):
+                    hit = re.search(r"\b" + re.escape(short) + r"\b", text)
+                    if hit:
+                        break
+        if not hit or vi_pham(recipe.noi_dung, dk):
+            continue
+        if not du_bang_chung(recipe.noi_dung + " " + recipe.cau_hoi, dk):
+            continue
+        matches.append((hit.start(), -len(hit.group()), recipe.id_goc, recipe.cau_hoi))
+    suggestions, seen = [], set()
+    for start, _, _, question in sorted(matches):
+        if start not in seen:
+            suggestions.append(question)
+            seen.add(start)
+        if len(suggestions) >= toi_da:
+            break
+    return suggestions
 
 
 def tao_cau_hoi_lam_ro(cau_hoi, cac_doan):
@@ -468,7 +424,7 @@ def _tra_loi_truy_hoi(cau_hoi, lich_su=None, tuy_chon=None):
         raw_noi_dung, _ = noi_dung_theo_yeu_cau(tr["kho"], dau["id_goc"], cau_viet_lai or cau_hoi)
         van_ban = dinh_dang(raw_noi_dung)
         nguon = [mo_ta_nguon(dau)]
-        goi_y = tao_goi_y_phu_hop(cau_viet_lai or cau_hoi, van_ban, dau, cac_doan, kho=tr["kho"])
+        goi_y = tao_goi_y_phu_hop(van_ban, dau, tr["kho"], dk)
 
 
     if mon:
@@ -477,8 +433,9 @@ def _tra_loi_truy_hoi(cau_hoi, lich_su=None, tuy_chon=None):
         goi_y = [q for q in goi_y if dung_ten_mon(q, mon)]
     if co_dieu_kien:
         # Các nút gợi ý cũng phải qua bộ lọc; không để nút đề xuất lại món bị cấm.
-        goi_y = [d["cau_hoi"] for d in cac_doan if d["nhom_folder"] != NHOM_CHAO_HOI
-                 and (d.get('khop_chinh_xac') or d["diem"] >= (tr["nguong_tin_cay"] if loai == 'tra_loi' else tr['nguong']))][:3]
+        if loai != "tra_loi":
+            goi_y = [d["cau_hoi"] for d in cac_doan if d["nhom_folder"] != NHOM_CHAO_HOI
+                     and (d.get('khop_chinh_xac') or d["diem"] >= (tr["nguong_tin_cay"] if loai == 'tra_loi' else tr['nguong']))][:3]
         if loai == "tra_loi":
             if (dk["loai_tru"] or dk["an_chay"]) and dau and dau['nhom_folder'] in NHOM_CONG_THUC:
                 van_ban += ("\n\n*Mình đã lọc theo nguyên liệu được ghi trong công thức. "

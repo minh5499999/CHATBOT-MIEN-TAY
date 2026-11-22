@@ -1,5 +1,6 @@
 """Thực thể sức khỏe và bằng chứng chủ đề; không suy ra chế độ ăn từ bệnh danh."""
 from functools import lru_cache
+from backend.chatbot.knowledge_policy import store_cache
 import re
 from backend.chatbot.ngon_ngu import chuan_hoa, co_cum, khang_dinh
 
@@ -39,7 +40,7 @@ def dung_chu_de(text, conditions):
     return all(any(co_cum(positive,a) for a in TINH_TRANG[name]) for name in conditions)
 
 
-@lru_cache(maxsize=64)
+@store_cache(maxsize=64)
 def id_co_bang_chung(kho, conditions, hoi_mon=True):
     from backend.chatbot.truy_hoi import nap_kho
     _, rows, _ = nap_kho(kho)

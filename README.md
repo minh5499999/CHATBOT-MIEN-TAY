@@ -1,46 +1,12 @@
-## Cấu trúc frontend / backend
+# Chatbot Bếp Miền Tây
 
-Xem [CAU_TRUC_DU_AN.md](CAU_TRUC_DU_AN.md) để biết chi tiết vị trí giao diện, xử lý nghiệp vụ và dữ liệu.
-- `app.py`: Tệp entry point khởi động và chuyển tiếp điều hướng (dispatcher router) tới các module giao diện tại thư mục `frontend/` (`frontend/app_giaodien.py` và `frontend/bang_quan_tri.py`).
-- Khởi chạy ứng dụng bằng `chay_web.bat` hoặc lệnh:
-  ```bash
-  python -m streamlit run app.py
-  ```
+Đề tài môn Các ứng dụng AI của nhóm là xây dựng chatbot hỗ trợ hướng dẫn nấu ăn và gợi ý món ăn theo nhu cầu dinh dưỡng, ưu tiên món miền Tây.
 
-> **Tính khả chuyển & Chạy trên máy độc lập (Zero-Config Portability)**:
-> Mặc định hệ thống hoạt động hoàn chỉnh 100% ngay trên máy mới độc lập bằng cơ sở dữ liệu **SQLite** (`du_lieu_nguoi_dung/chatbot.sqlite3`) và kho vector **FAISS** (`kho_vector/cau_truc_tat_ca/index.faiss`) mà **không bắt buộc phải cài đặt Neo4j hay MySQL**.
-> Khi triển khai ở quy mô lớn hoặc muốn dùng cơ sở dữ liệu đồ thị, có thể kích hoạt MySQL / Neo4j qua cấu hình `.env` và tệp `scripts/nap_neo4j.py`.
+Xem [Hướng dẫn chạy bản demo trên máy mới](HUONG_DAN_CHAY_DEMO.md) để chuẩn bị thư viện, mô hình và chạy thử. Bản demo để nộp dùng `app_demo.py` trong ZIP, chạy Streamlit và LangChain với SQLite, FAISS, BM25 và RRF cục bộ. Đây là cấu hình nhóm dùng để trình diễn.
 
-# CHATBOT
+## Ghi chú phát triển của dự án
 
-Chatbot hướng dẫn nấu ăn và gợi ý món theo nhu cầu dinh dưỡng (ưu tiên món miền Tây).
-**LangChain Core/LCEL, embedding cục bộ, không LLM sinh văn bản và không API suy luận bên ngoài.**
-Luồng: NLP → intent/thực thể → trạng thái → đối chiếu FAQ/tên món hoặc Vector + BM25 + RRF → kiểm tra món/điều kiện → trích xuất + template có nguồn.
-Neo4j là kho chính, FAISS dự phòng. Gợi ý theo nguyên liệu/thời gian dùng danh mục công thức trích từ kho đã chọn và lọc điều kiện trước khi xếp hạng.
-
-## Cài đặt trên máy mới
-
-Bước cài thư viện và tải trọng số cần mạng; runtime mặc định chạy offline.
-Môi trường trên máy hiện tại đã được cài LangChain và chuẩn bị embedding tiếng Việt.
-
-```bash
-# 1. Tạo môi trường ảo
-python -m venv .venv
-
-# 2. Kích hoạt môi trường ảo:
-# Windows (PowerShell / Command Prompt):
-.venv\Scripts\activate
-# Linux / macOS:
-source .venv/bin/activate
-
-# 3. Cài đặt thư viện phụ thuộc và tải mô hình embedding cục bộ
-pip install -r requirements.txt
-python scripts/chuan_bi_mo_hinh.py
-```
-
-Cấu hình hiện tại: `chi_chay_cuc_bo=true`, `kho_tim_kiem=neo4j`; FAISS là kho dự phòng.
-Không cần API key, không tự tải model khi khách hỏi. Thiếu embedding thì báo
-cách chuẩn bị. Google login là tùy chọn cần mạng. Giữ torch/transformers vì embedding và tokenizer cần dùng.
+Các phần sau ghi lại chức năng và thử nghiệm của mã nguồn dự án qua các phiên bản.
 
 ## Hiểu keyword và điều kiện
 

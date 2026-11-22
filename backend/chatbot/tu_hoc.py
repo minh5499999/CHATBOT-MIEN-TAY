@@ -76,55 +76,7 @@ def ghi_nhan_cau_hoi_cho_hoc(cau_hoi: str, loai: str, diem: float, kho: str = ""
 # 2. KHAI PHÁ & GOM CỤM CÂU HỎI MỚI (CLUSTERING)
 # -----------------------------------------------------------------------------
 
-def lay_danh_sach_cau_hoi_chua_biet() -> list[dict[str, Any]]:
-    """Tổng hợp danh sách các câu hỏi người dùng hỏi nhưng bot chưa đáp ứng được."""
-    ds: list[dict[str, Any]] = []
-    da_gap = set()
-
-    # 1. Từ file cau_hoi_cho_hoc.jsonl
-    if CHO_HOC_PATH.exists():
-        for line in CHO_HOC_PATH.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                obj = json.loads(line)
-                q = obj.get("cau_hoi", "").strip()
-                if q and q.lower() not in da_gap:
-                    da_gap.add(q.lower())
-                    ds.append(obj)
-            except Exception:
-                pass
-
-    # 2. Từ SQLite (nếu có các câu hỏi của user có câu trả lời ngoài phạm vi)
-    if SQLITE_DB.exists():
-        try:
-            conn = sqlite3.connect(SQLITE_DB)
-            cur = conn.cursor()
-            cur.execute("""
-                SELECT noi_dung, tao_luc
-                FROM tin_nhan
-                WHERE vai_tro = 'user'
-                ORDER BY id DESC LIMIT 200
-            """)
-            for content, created_at in cur.fetchall():
-                q = (content or "").strip()
-                if q and len(q.split()) >= 3 and q.lower() not in da_gap:
-                    # Kiểm tra xem câu này có chứa các từ hỏi món ăn miền Tây
-                    if any(kw in q.lower() for kw in ("nấu", "làm", "món", "ăn", "nguyên liệu", "công thức")):
-                        da_gap.add(q.lower())
-                        ds.append({
-                            "thoi_gian": str(created_at),
-                            "cau_hoi": q,
-                            "loai": "nhat_ky_chat",
-                            "diem": 0.0,
-                            "kho": "",
-                        })
-            conn.close()
-        except Exception:
-            pass
-
-    return ds
+from backend.chatbot.cau_hoi_cho_hoc import lay_danh_sach_cau_hoi_chua_biet
 
 
 def gom_cum_cau_hoi(danh_sach_cau_hoi: list[str] | None = None, eps: float = 0.35, min_samples: int = 1) -> list[dict[str, Any]]:
@@ -211,6 +163,9 @@ def them_cau_hoi_moi(
     5. Cập nhật sieu_du_lieu.jsonl, dataset.csv, dataset.jsonl, thong_tin.json.
     6. Xóa toàn bộ bộ nhớ đệm (LRU cache) để hệ thống nhận ngay tri thức mới mà không cần khởi động lại.
     """
+    from backend.chatbot.knowledge_policy import active_build
+    if active_build():
+        raise ValueError("Staging knowledge build is immutable; rebuild in a new version")
     cau_hoi = cau_hoi.strip()
     cau_tra_loi = cau_tra_loi.strip()
     if not cau_hoi or not cau_tra_loi:

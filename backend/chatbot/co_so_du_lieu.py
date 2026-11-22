@@ -12,9 +12,11 @@ import uuid
 from backend.chatbot.cau_hinh import ROOT, nap_env
 
 nap_env()
-BACKEND=os.environ.get('TAI_KHOAN_BACKEND','sqlite').lower()
+BACKEND=os.environ.get('TAI_KHOAN_BACKEND', 'sqlite').strip().lower()
 
-FILE_DB = ROOT/'du_lieu_nguoi_dung/chatbot.sqlite3'
+from backend.chatbot.knowledge_policy import active_build
+_stage_build = active_build()
+FILE_DB = (_stage_build/'runtime/chatbot.sqlite3') if _stage_build else ROOT/'du_lieu_nguoi_dung/chatbot.sqlite3'
 _KHOA = threading.RLock()
 _SAN_SANG = set()
 

@@ -10,7 +10,14 @@ CAU_HINH_PATH = ROOT / "cau_hinh" / "chatbot.json"
 @lru_cache(maxsize=1)
 def doc_cau_hinh():
     """Cấu hình backend.chatbot. Đường dẫn trong file là tương đối so với thư mục gốc project."""
-    return json.loads(CAU_HINH_PATH.read_text(encoding="utf-8"))
+    ch = json.loads(CAU_HINH_PATH.read_text(encoding="utf-8"))
+    from backend.chatbot.knowledge_policy import active_build
+    build = active_build()
+    if build:
+        ch.update(kho_vector=(build/'kho_vector/answer_all').relative_to(ROOT).as_posix(),
+                  kho_danh_gia=(build/'kho_vector/answer_Train').relative_to(ROOT).as_posix(),
+                  kho_tim_kiem='faiss', ghi_nhat_ky=False)
+    return ch
 
 
 @lru_cache(maxsize=1)

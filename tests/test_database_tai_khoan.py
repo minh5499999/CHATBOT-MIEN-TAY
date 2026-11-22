@@ -18,8 +18,7 @@ PASSWORD='MatKhauKiemThu123!'
 
 class DatabaseTests(unittest.TestCase):
     def setUp(self):
-        (ROOT/'scratch').mkdir(exist_ok=True)
-        self.temp=tempfile.TemporaryDirectory(dir=ROOT/'scratch',prefix='test_sqlite_')
+        self.temp=tempfile.TemporaryDirectory(prefix='test_sqlite_')
         self.folder=Path(self.temp.name)
         self.patcher=patch.object(db,'FILE_DB',self.folder/'chatbot.sqlite3')
         self.patcher.start()

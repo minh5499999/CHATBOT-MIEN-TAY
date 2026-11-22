@@ -65,13 +65,13 @@ def hien_thi(vao_bang_mat_khau,google_da_cau_hinh):
                     if nd:
                         vao_bang_mat_khau(nd)
                     st.error('Sai tên đăng nhập hoặc mật khẩu.')
-            with tab_moi,st.form('dang_ky',border=False):
+            with tab_moi,st.form('dang_ky', border=False, enter_to_submit=False):
                 c1,c2=st.columns(2)
-                display=c1.text_input('Tên của bạn',placeholder='Ví dụ: Bảo Trâm',icon=':material/badge:')
-                ten=c2.text_input('Tên đăng nhập',placeholder='vd: baotram',icon=':material/person:',autocomplete='username')
+                display=c1.text_input('Tên của bạn',icon=':material/badge:')
+                ten=c2.text_input('Tên đăng nhập',icon=':material/person:',autocomplete='username')
                 c1,c2=st.columns(2)
-                mk=c1.text_input('Mật khẩu',type='password',placeholder='ít nhất 8 ký tự',autocomplete='new-password')
-                confirm=c2.text_input('Nhập lại mật khẩu',type='password',placeholder='Nhập lại mật khẩu',autocomplete='new-password')
+                mk=c1.text_input('Mật khẩu',type='password',autocomplete='new-password')
+                confirm=c2.text_input('Nhập lại mật khẩu',type='password',autocomplete='new-password')
                 if st.form_submit_button('Tạo tài khoản',type='primary',width='stretch',
                                          icon=':material/arrow_forward:',icon_position='right'):
                     if mk!=confirm:

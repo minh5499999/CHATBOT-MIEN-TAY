@@ -64,8 +64,8 @@ def _nhat_ky(con,actor,target,action,details=''):
 def _hop_le(ten,mat_khau):
     if not TEN_HOP_LE.fullmatch(ten):
         return 'Tên đăng nhập 3–30 ký tự, chỉ gồm chữ không dấu, số, dấu chấm hoặc gạch dưới.'
-    if not 8<=len(mat_khau)<=128:
-        return 'Mật khẩu mới cần từ 8 đến 128 ký tự.'
+    if not 8<=len(mat_khau)<=64:
+        return 'Mật khẩu mới cần từ 8 đến 64 ký tự.'
     return None
 
 
@@ -190,7 +190,7 @@ def xoa_cuoc_tro_chuyen(ten_dang_nhap,ma):
 
 
 def rut_gon_ket_qua(kq):
-    fields=('cau_tra_loi','loai','nguon','goi_y','nhan_goi_y','chu_de','trang_thai','mau_phan_hoi')
+    fields=('cau_tra_loi','loai','nguon','goi_y','nhan_goi_y','chu_de','trang_thai','mau_phan_hoi','policy_build_id','policy_seal')
     return {key:kq[key] for key in fields if key in kq}
 
 
@@ -268,8 +268,8 @@ def admin_dat_lai_mat_khau(actor,target,password):
         row=con.execute('SELECT * FROM nguoi_dung WHERE ten_dang_nhap=?',(target,)).fetchone()
         if not row or row['google']:
             return False,'Chỉ đặt lại mật khẩu cho tài khoản đăng nhập bằng mật khẩu.'
-        if not 8<=len(password)<=128:
-            return False,'Mật khẩu mới cần từ 8 đến 128 ký tự.'
+        if not 8<=len(password)<=64:
+            return False,'Mật khẩu mới cần từ 8 đến 64 ký tự.'
         salt=os.urandom(16).hex()
         con.execute('UPDATE nguoi_dung SET muoi=?,bam=?,so_vong_bam=?,cap_nhat=? WHERE ten_dang_nhap=?',
                     (salt,_bam(password,salt),SO_VONG_BAM,_now(),target))

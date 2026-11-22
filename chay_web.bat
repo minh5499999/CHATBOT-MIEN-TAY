@@ -1,5 +1,5 @@
 @echo off
-REM Chạy giao diện web của chatbot: mở http://localhost:8501
+REM Chay chatbot voi MySQL cuc bo tai http://localhost:8501
 chcp 65001 >nul
 cd /d "%~dp0"
 if not exist ".venv\Scripts\python.exe" (
@@ -7,5 +7,7 @@ if not exist ".venv\Scripts\python.exe" (
     pause
     exit /b 1
 )
-".venv\Scripts\python.exe" -m streamlit run app.py --server.address localhost
-pause
+".venv\Scripts\python.exe" -B -X utf8 ".\scripts\chay_web_mysql.py"
+set "CHAY_WEB_EXIT=%ERRORLEVEL%"
+if not "%CHAY_WEB_EXIT%"=="0" pause
+exit /b %CHAY_WEB_EXIT%

@@ -4,7 +4,7 @@
   "thu_muc_kho": "kho_vector",
   "cach_cat": "cau_truc",
   "kho_vector": "kho_vector/cau_truc_tat_ca",
-  "kho_tim_kiem": "neo4j",
+  "kho_tim_kiem": "faiss",
   "tien_to_cau_hoi": "",
   "tien_to_doan": "",
   "batch_size": 32,
