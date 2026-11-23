@@ -8,9 +8,12 @@ textColor = "#3B2A1E"
 [server]
 headless = true
 enableStaticServing = true  # phục vụ thư mục static/ tại /app/static/ (ảnh nền trang đăng nhập)
+enableXsrfProtection = true
+enableCORS = true
 
 [browser]
 gatherUsageStats = false
 
 [client]
 toolbarMode = "minimal"  # ẩn Deploy và các mục dành cho người lập trình
+showErrorDetails = "none"

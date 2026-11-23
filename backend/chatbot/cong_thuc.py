@@ -56,6 +56,7 @@ def danh_muc(kho):
     return tuple(result)
 
 
+@store_cache(maxsize=8)
 def tu_vung_nguyen_lieu(kho):
     names = {ten_nguyen_lieu(line) for r in danh_muc(kho) for line in r.nguyen_lieu}
     names.update(('cá lóc', 'cá quả', 'thịt gà', 'trứng', 'trứng vịt', 'trứng gà', 'cà chua', 'đậu hũ', 'ớt'))

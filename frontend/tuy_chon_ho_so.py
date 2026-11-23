@@ -58,7 +58,12 @@ def hien_thi_tuy_chon(tai_khoan, nguoi_dung):
         settings = dict(email=email, phone=phone, birthday=birthday, goal=goal,
                         servings=servings, avoid=avoid, allergies=allergies, health=health,
                         notes=notes, alerts=alerts)
-        if not luu_tuy_chon(tai_khoan, name, settings):
+        try:
+            ok = luu_tuy_chon(tai_khoan, name, settings)
+        except ValueError as exc:
+            st.error(str(exc))
+            return
+        if not ok:
             st.error("Tài khoản không còn hoạt động.")
             return
         st.session_state["nguoi_dung"] = {**nguoi_dung, "ten_hien_thi": name}

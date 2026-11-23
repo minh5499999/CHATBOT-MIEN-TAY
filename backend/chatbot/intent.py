@@ -54,7 +54,7 @@ PATTERNS = {
 }
 
 
-def phan_tich(text, ingredient_names=()):
+def phan_tich(text, ingredient_names=(), phan_tich_sau=False):
     normalized = chuan_hoa_dia_phuong(text)
     q = chuan_hoa(normalized)
     intents = [name for name, pattern in PATTERNS.items() if re.search(pattern, q)]
@@ -64,7 +64,7 @@ def phan_tich(text, ingredient_names=()):
         intents.append('cong_thuc')
     dk = dieu_kien(text)
     have = []
-    inventory = re.search(r'\b(?:chi co|dang co|minh co|toi co|co san|tu lanh co|tu)\s+(.+)', q)
+    inventory = re.search(r'\b(?:chi co|dang co|nha co|trong nha co|bep co|em co|nay co|minh co|toi co|co san|tu lanh co|tu)\s+(.+)', q)
     if inventory:
         span = re.split(r'\b(?:muon|can|thi|nhung|de|lam sao|nau sao)\b', inventory[1])[0]
         for name in dict.fromkeys(chuan_hoa(chuan_hoa_dia_phuong(n)) for n in ingredient_names):
@@ -85,24 +85,38 @@ def phan_tich(text, ingredient_names=()):
     if re.search(r'\b(bi cam|bi ho|bi sot|om met)\b', q):
         intents.append('an_uong_khi_om')
     allergies, unknown_allergies = [], []
-    for match in re.finditer(r'(?<!khong )(?<!chua )\bdi ung(?: voi)?\s+([^,;.!?]+)', q):
+    for match in re.finditer(r'(?<!khong )(?<!chua )\bdi ung(?: voi)?\s+([^.!?]+)', q):
         if re.search(r'\b(?:khong|chua)(?: con)?\s*$',q[max(0,match.start()-16):match.start()]):
             continue
-        allergy_dk = dieu_kien('dị ứng '+match[1])
+        clause = re.split(
+            r'\b(?:nhung|con|muon|can|hay|goi y|nau|thich|thi|de|nen|la gi|'
+            r'cach nau|cach lam|huong dan|chi (?:toi|minh|tui|em)|day (?:toi|minh|tui|em))\b',
+            match[1],
+        )[0]
+        allergy_dk = dieu_kien('dị ứng ' + clause)
         allergies.extend(allergy_dk['loai_tru'])
         unknown_allergies.extend(allergy_dk['chua_ro'])
     from backend.chatbot.suc_khoe import nhan_dien
-    from backend.chatbot.trich_xuat_thuc_the import (
-        trich_xuat_textrank,
-        trich_xuat_cum_cu_phap,
-        lay_bo_phan_loai_ml,
-    )
     health = nhan_dien(normalized)
     if health:
         intents.append('an_uong_theo_suc_khoe')
-    tu_khoa_textrank = [k for k, _ in trich_xuat_textrank(text, top_k=5)]
-    cum_cu_phap = trich_xuat_cum_cu_phap(text)
-    nhom_ml = lay_bo_phan_loai_ml().du_doan(text)
+    if phan_tich_sau:
+        from backend.chatbot.trich_xuat_thuc_the import (
+            trich_xuat_textrank,
+            trich_xuat_cum_cu_phap,
+            lay_bo_phan_loai_ml,
+        )
+        tu_khoa_textrank = [k for k, _ in trich_xuat_textrank(text, top_k=5)]
+        cum_cu_phap = trich_xuat_cum_cu_phap(text)
+        nhom_ml = lay_bo_phan_loai_ml().du_doan(text)
+    else:
+        tu_khoa_textrank = []
+        cum_cu_phap = {}
+        nhom_ml = {'nhom': '', 'diem': 0.0}
+    bo_nguyen_lieu = bool(re.search(
+        r'\b(?:bo|bo bot|loai bo|khong cho|khong bo|dung cho)\s+.+?\s+(?:khoi|ra khoi|vao)\s+mon\b',
+        q,
+    ))
     return {'cau_goc': text, 'cau_chuan': normalized, 'intents': list(dict.fromkeys(intents)),
             'tinh_trang_suc_khoe': health,
             'di_ung': sorted(set(allergies)),
@@ -112,6 +126,7 @@ def phan_tich(text, ingredient_names=()):
             'khau_phan': int(portions[1]) if portions else None,
             'calo_yeu_cau': int(calories[1]) if calories else None,
             'khong_chien': bool(re.search(r'\b(khong chien|khong ran|tranh chien)\b', q)),
+            'bo_nguyen_lieu': bo_nguyen_lieu,
             'tu_khoa_chinh': tu_khoa_textrank,
             'cum_cu_phap': cum_cu_phap,
             'nhom_ml': nhom_ml['nhom'],

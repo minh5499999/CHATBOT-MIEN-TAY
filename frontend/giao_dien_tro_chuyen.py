@@ -1,4 +1,5 @@
 """Trang trí trang trò chuyện; các thao tác vẫn dùng widget Streamlit thật."""
+from functools import lru_cache
 import html
 import re
 from pathlib import Path
@@ -30,8 +31,14 @@ def _anh(ten):
     return f'/app/static/chat/{ten}?v={v}'
 
 
+@lru_cache(maxsize=2)
+def _doc_css_chat(_mtime=None):
+    return (ASSETS / 'chat.css').read_text(encoding='utf-8')
+
+
 def ap_dung():
-    css = (ASSETS / 'chat.css').read_text(encoding='utf-8')
+    css_file = ASSETS / 'chat.css'
+    css = _doc_css_chat(css_file.stat().st_mtime_ns if css_file.exists() else 0)
     for khoa, ten in [('__CHAT_SCENE__', 'chat-scene-v2.png'), ('__AVATAR_BEP__', 'avatar-bep.svg'),
                       ('__MON_CA_KHO__', 'mon-ca-kho.jpg'), ('__MON_CANH__', 'mon-canh.jpg'),
                       ('__MON_DINH_DUONG__', 'mon-dinh-duong.jpg'), ('__MON_NHANH__', 'mon-nhanh.jpg')]:

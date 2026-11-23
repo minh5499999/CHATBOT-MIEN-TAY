@@ -13,6 +13,10 @@ def _trang_thai_cau_hoi(row):
 
 
 def hien_thi_chatbot_admin(actor, docs):
+    from backend.chatbot import tai_khoan
+    if not tai_khoan.la_admin(actor):
+        st.error("Bạn không có quyền quản trị.")
+        st.stop()
     from frontend.bang_quan_tri import esc
     from backend.chatbot.cau_hoi_cho_hoc import lay_danh_sach_cau_hoi_chua_biet
     from backend.chatbot.intent import phan_tich

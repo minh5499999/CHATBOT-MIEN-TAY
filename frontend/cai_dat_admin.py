@@ -4,6 +4,10 @@ from backend.chatbot.co_so_du_lieu import BACKEND
 
 
 def hien_thi_cai_dat(actor):
+    from backend.chatbot import tai_khoan
+    if not tai_khoan.la_admin(actor):
+        st.error('Bạn không có quyền quản trị.')
+        st.stop()
     from frontend.bang_quan_tri import chuyen
     with st.container(key='admin_settings_page'):
         system, audit = st.tabs([':material/database: Cấu hình và sao lưu', ':material/receipt_long: Nhật ký thao tác'],

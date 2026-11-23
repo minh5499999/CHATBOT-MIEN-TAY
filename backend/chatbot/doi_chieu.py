@@ -32,6 +32,13 @@ def ten_mon_tu_cau_hoi(text):
     return q.strip()
 
 
+TEN_MON_BI_DANH = {
+    "canh ga la giang": ("ga nau la giang", "canh ga nau la giang"),
+    "canh chua ca loc": ("ca loc nau canh chua", "canh chua ca loc mien tay"),
+    "ca loc kho to": ("ca kho to", "ca loc kho"),
+}
+
+
 @store_cache(maxsize=8)
 def chi_muc_ten_mon(kho):
     from backend.chatbot.truy_hoi import nap_kho
@@ -45,6 +52,10 @@ def chi_muc_ten_mon(kho):
                 short = re.sub(r'\s+mien tay$', '', name).strip()
                 if short != name and len(short.split()) >= 2:
                     result.setdefault(short, {}).setdefault(d['id_goc'], d)
+                for canonical, aliases in TEN_MON_BI_DANH.items():
+                    if name == canonical or name.startswith(canonical + " "):
+                        for alias in aliases:
+                            result.setdefault(alias, {}).setdefault(d['id_goc'], d)
     return result
 
 

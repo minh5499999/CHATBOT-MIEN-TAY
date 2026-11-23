@@ -24,15 +24,21 @@ class Hang(dict):
 
 
 class KetQua:
-    def __init__(self,cursor):
-        self.cursor=cursor
+    def __init__(self, rows=()):
+        self._rows = [Hang(row) for row in rows]
+        self._pos = 0
 
     def fetchone(self):
-        row=self.cursor.fetchone()
-        return Hang(row) if row is not None else None
+        if self._pos >= len(self._rows):
+            return None
+        row = self._rows[self._pos]
+        self._pos += 1
+        return row
 
     def fetchall(self):
-        return [Hang(row) for row in self.cursor.fetchall()]
+        rest = self._rows[self._pos:]
+        self._pos = len(self._rows)
+        return rest
 
     def __iter__(self):
         return iter(self.fetchall())
@@ -68,19 +74,23 @@ class KetNoi:
         cursor=self.con.cursor()
         try:
             cursor.execute(doi_tham_so(sql),params)
+            rows = cursor.fetchall() if cursor.description is not None else ()
+            return KetQua(rows)
         except pymysql.IntegrityError as exc:
-            cursor.close()
             raise sqlite3.IntegrityError('Vi pham rang buoc du lieu MySQL.') from exc
-        return KetQua(cursor)
+        finally:
+            cursor.close()
 
     def executemany(self,sql,params):
         cursor=self.con.cursor()
         try:
             cursor.executemany(doi_tham_so(sql),params)
+            rows = cursor.fetchall() if cursor.description is not None else ()
+            return KetQua(rows)
         except pymysql.IntegrityError as exc:
-            cursor.close()
             raise sqlite3.IntegrityError('Vi pham rang buoc du lieu MySQL.') from exc
-        return KetQua(cursor)
+        finally:
+            cursor.close()
 
 
 @contextmanager

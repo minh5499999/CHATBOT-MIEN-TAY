@@ -1,9 +1,14 @@
 """Luồng LCEL truy hồi lai, lọc điều kiện, trả lời có nguồn bằng trích xuất/template."""
 import hashlib
 import json
+import os
 import re
+import threading
 import time
 from datetime import datetime
+
+_LOG_LOCK = threading.Lock()
+_MAX_LOG_BYTES = 10 * 1024 * 1024
 
 from backend.chatbot.cau_hinh import ROOT, doc_cau_hinh
 from backend.chatbot.truy_hoi import nap_kho
@@ -80,7 +85,7 @@ def nhan_dien_khia_canh(cau_hoi):
     if not cau_hoi:
         return None
     from backend.chatbot.intent import phan_tich
-    intents = set(phan_tich(cau_hoi)['intents'])
+    intents = set(phan_tich(cau_hoi, phan_tich_sau=False)['intents'])
     if 'nguyen_lieu' in intents and intents & {'che_bien', 'cong_thuc', 'so_che'}:
         return None
     if TU_KHIA_CANH[0][1].search(cau_hoi) and TU_KHIA_CANH[2][1].search(cau_hoi):
@@ -261,9 +266,14 @@ def ghi_nhat_ky(ban_ghi):
                 ban_ghi[khoa + "_bam"] = hashlib.sha256(van_ban.encode("utf-8")).hexdigest()[:12]
                 ban_ghi[khoa + "_do_dai"] = len(van_ban)
     thu_muc = ROOT / "logs"
-    thu_muc.mkdir(exist_ok=True)
-    with open(thu_muc / "hoi_thoai.jsonl", "a", encoding="utf-8", newline="\n") as f:
-        f.write(json.dumps(ban_ghi, ensure_ascii=False) + "\n")
+    line = json.dumps(ban_ghi, ensure_ascii=False) + "\n"
+    with _LOG_LOCK:
+        thu_muc.mkdir(exist_ok=True)
+        log_file = thu_muc / "hoi_thoai.jsonl"
+        if log_file.exists() and log_file.stat().st_size >= _MAX_LOG_BYTES:
+            os.replace(log_file, thu_muc / "hoi_thoai.jsonl.1")
+        with open(log_file, "a", encoding="utf-8", newline="\n") as f:
+            f.write(line)
 
 
 # ------------------------------------------------------------------ hàm chính
@@ -376,10 +386,11 @@ def _tra_loi_truy_hoi(cau_hoi, lich_su=None, tuy_chon=None):
 
     # 3. định tuyến
     nguon, goi_y, chu_de_moi = [], [], None
-    mau = dau if khop_nguon and dau['nhom_folder'] == NHOM_CHAO_HOI else None
-    if mau is None and y_dinh and not khop_nguon:
+    co_yeu_cau_thuc_chat = co_dieu_kien or bool(mon or dac_trung or TU_Y_DINH_NAU.search(cau_hoi))
+    mau = dau if (not co_yeu_cau_thuc_chat and khop_nguon and dau['nhom_folder'] == NHOM_CHAO_HOI) else None
+    if mau is None and y_dinh and not khop_nguon and not co_yeu_cau_thuc_chat:
         mau = tra_loi_xa_giao(y_dinh, tr['kho'])
-    if mau is None and dau and dau["nhom_folder"] == NHOM_CHAO_HOI and dau["diem"] >= ch["nguong_chao_hoi"]:
+    if mau is None and not co_yeu_cau_thuc_chat and dau and dau["nhom_folder"] == NHOM_CHAO_HOI and dau["diem"] >= ch["nguong_chao_hoi"]:
         mau = dau
     if mau is not None:
         loai, van_ban = "chao_hoi", mau["noi_dung"]

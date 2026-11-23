@@ -40,6 +40,21 @@ def chuoi_hoi_thoai():
             previous['dieu_kien'] = dieu_kien('', payload['history'])
             for turn in payload['history']:
                 previous['tinh_trang_suc_khoe'] = cap_nhat_suc_khoe(previous.get('tinh_trang_suc_khoe'),turn.get('cau_hoi',''))
+        ho_so = payload['options'].get('ho_so_an_uong') if not payload['history'] else None
+        if isinstance(ho_so, dict):
+            snippets = []
+            for item in re.split(r'[,;\n/]+', str(ho_so.get('allergies') or '')):
+                item = item.strip()
+                if item:
+                    snippets.append(f'dị ứng {item}')
+            for item in re.split(r'[,;\n/]+', str(ho_so.get('avoid') or '')):
+                item = item.strip()
+                if item:
+                    snippets.append(f'không ăn {item}')
+            if ho_so.get('goal') == 'Ăn chay':
+                snippets.append('ăn chay')
+            if snippets:
+                previous = cap_nhat(previous, phan_tich('. '.join(snippets)))
         state = cap_nhat(previous, parsed)
         choice, error = chon_theo_so(payload['question'], previous)
         if choice:
@@ -59,15 +74,33 @@ def chuoi_hoi_thoai():
                                     for row in knowledge_policy[1].values()):
             payload['result'] = _empty('Nội dung đang chờ kiểm duyệt.')
             return payload
-        from backend.chatbot.suc_khoe import id_co_bang_chung, thong_bao_thieu
+        from backend.chatbot.suc_khoe import id_co_bang_chung, la_cau_hoi_chua_benh, thong_bao_thieu
         health = [] if nhan_dien_xa_giao(q) else state.get('tinh_trang_suc_khoe', [])
         food_request = not ('thong_tin' in p['intents'] and not set(p['intents']) & {'goi_y_mon','cong_thuc','che_bien','nguyen_lieu'})
         health_ids = id_co_bang_chung(kho,tuple(health),food_request) if health else None
         current = state.get('mon_hien_tai')
-        if health and not health_ids:
+        follow_up_current = bool(current and (payload['choice'] or la_cau_noi_tiep(q)))
+        if la_cau_hoi_chua_benh(q):
+            result = _empty(
+                'Món ăn chỉ hỗ trợ dinh dưỡng và giúp bữa ăn phù hợp hơn, không có tác dụng chữa khỏi bệnh '
+                'hoặc thay thế chẩn đoán, điều trị y tế. Nếu bạn có triệu chứng kéo dài hoặc bệnh lý cụ thể, '
+                'hãy tham khảo bác sĩ hoặc chuyên gia dinh dưỡng nhé.'
+            )
+        elif health and not health_ids:
             result = _empty(thong_bao_thieu(health))
         elif payload['error']:
             result = _empty(payload['error'])
+        elif follow_up_current and p['dieu_kien'].get('can_dinh_luong'):
+            result = _empty(
+                f"Mình vẫn đang giữ món **{current['cau_hoi']}**. Kho hiện tại chưa có bảng dưỡng chất theo "
+                "khối lượng và khẩu phần để tính chính xác lượng kcal, đạm hay thành phần dinh dưỡng cho món này. "
+                "Mình có thể tìm món theo mô tả ít béo, ít đường hoặc giàu đạm trong tài liệu; bạn muốn tìm theo tiêu chí nào?"
+            )
+        elif follow_up_current and p.get('bo_nguyen_lieu'):
+            result = _empty(
+                f"Mình vẫn đang giữ món **{current['cau_hoi']}**. Mình không tự ý bỏ nguyên liệu rồi viết lại "
+                "công thức khi chưa có nguồn kiểm chứng; bạn có thể chọn công thức khác hoặc tự gia giảm trực tiếp khi nấu nhé."
+            )
         else:
             
             nau_nhanh = 'nau_nhanh' in p['intents']
@@ -170,7 +203,8 @@ def chuoi_hoi_thoai():
                 if proposals:
                     result = _empty('Tên món bạn nhập có thể bị gõ nhầm. Ý bạn là công thức nào dưới đây? Mình chờ bạn xác nhận để không đổi nhầm món.', proposals)
                 else:
-                    tc = {**payload['options'], 'kho':kho, 'dieu_kien':dk}
+                    tc = {k: v for k, v in payload['options'].items() if k != 'ho_so_an_uong'}
+                    tc.update({'kho': kho, 'dieu_kien': dk})
                     if current and (payload['choice'] or la_cau_noi_tiep(q)) and 'thay_the' not in p['intents']:
                         tc['id_chu_de'] = current['id_goc']
                     result = _tra_loi_truy_hoi(p['cau_chuan'], payload['history'], tc)
@@ -263,7 +297,13 @@ def chuoi_hoi_thoai():
     return RunnableLambda(prepare, name='nlp_va_trang_thai') | RunnableLambda(answer, name='chon_nguon_va_loc') | RunnableLambda(finish, name='response_selector')
 
 
+MAX_QUESTION_CHARS = 1000
+
+
 def tra_loi_co_trang_thai(question, history=None, options=None):
     if not isinstance(question, str) or not question.strip():
         return _empty('Bạn nhập tên món hoặc nhu cầu ăn uống để mình tìm giúp nhé.')
-    return chuoi_hoi_thoai().invoke({'question':question.strip(), 'history':history or [], 'options':options or {}}, config={'callbacks':[]})
+    cleaned = question.strip()
+    if len(cleaned) > MAX_QUESTION_CHARS:
+        return _empty(f'Câu hỏi quá dài (tối đa {MAX_QUESTION_CHARS} ký tự). Bạn rút gọn câu hỏi giúp mình nhé.')
+    return chuoi_hoi_thoai().invoke({'question': cleaned, 'history': history or [], 'options': options or {}}, config={'callbacks': []})

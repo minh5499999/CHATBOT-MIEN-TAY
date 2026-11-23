@@ -61,10 +61,18 @@ def hien_thi(vao_bang_mat_khau,google_da_cau_hinh):
                                  icon=':material/lock:',autocomplete='current-password')
                 if st.form_submit_button('Đăng nhập',type='primary',width='stretch',
                                          icon=':material/arrow_forward:',icon_position='right'):
-                    nd=tai_khoan.dang_nhap(ten,mk)
-                    if nd:
-                        vao_bang_mat_khau(nd)
-                    st.error('Sai tên đăng nhập hoặc mật khẩu.')
+                    con_khoa=tai_khoan.kiem_tra_khoa_dang_nhap(ten)
+                    if con_khoa>0:
+                        st.error(f'Tài khoản tạm thời bị giới hạn đăng nhập do thử sai nhiều lần. Vui lòng thử lại sau {con_khoa} giây.')
+                    else:
+                        nd=tai_khoan.dang_nhap(ten,mk)
+                        if nd:
+                            vao_bang_mat_khau(nd)
+                        con_khoa=tai_khoan.kiem_tra_khoa_dang_nhap(ten)
+                        if con_khoa>0:
+                            st.error(f'Bạn đã nhập sai quá số lần cho phép. Vui lòng thử lại sau {con_khoa} giây.')
+                        else:
+                            st.error('Sai tên đăng nhập hoặc mật khẩu.')
             with tab_moi,st.form('dang_ky', border=False, enter_to_submit=False):
                 c1,c2=st.columns(2)
                 display=c1.text_input('Tên của bạn',icon=':material/badge:')

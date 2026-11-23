@@ -11,6 +11,7 @@ import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 
 from datetime import datetime
+import re
 
 import streamlit as st
 
@@ -142,22 +143,36 @@ def google_da_cau_hinh():
 if ss.nguoi_dung is None and google_da_cau_hinh() and st.user.is_logged_in:
     ss.nguoi_dung = tai_khoan.dang_nhap_google(st.user.email, st.user.get("name"))
 
-# đăng nhập bằng mật khẩu: mã phiên (hạn 30 ngày) giữ ở cả cookie COOKIE_PHIEN lẫn đường dẫn trang (?phien=...)
-# → tải lại trang (F5, Ctrl+F5) không phải đăng nhập lại, kể cả khi trình duyệt chặn cookie; chỉ Đăng xuất mới xóa
+# đăng nhập bằng mật khẩu: mã phiên (hạn 30 ngày) giữ trong cookie COOKIE_PHIEN,
+# không ghi lại token phiên vào URL (?phien=...) để tránh lộ qua lịch sử/Referrer/log.
 COOKIE_PHIEN = "bmt_phien"
+_TOKEN_RE = re.compile(r"^[A-Za-z0-9_-]{0,128}$")
 if ss.nguoi_dung is None:
-    for ma in (st.context.cookies.get(COOKIE_PHIEN), st.query_params.get("phien")):
+    legacy_query_token = st.query_params.get("phien")
+    for ma in (st.context.cookies.get(COOKIE_PHIEN), legacy_query_token):
         nd = tai_khoan.nguoi_dung_theo_phien(ma)
         if nd:
             ss.nguoi_dung, ss.ma_phien = nd, ma
             break
+    if legacy_query_token:
+        st.query_params.pop("phien", None)
 
 
 def ghi_cookie(gia_tri, so_giay):
     """Streamlit không tự ghi cookie được → chạy JS trong khung ẩn (cùng nguồn) để ghi lên trang cha."""
+    gia_tri = str(gia_tri or "")
+    if not _TOKEN_RE.fullmatch(gia_tri):
+        raise ValueError("Mã phiên không hợp lệ.")
+    so_giay = max(0, int(so_giay))
     with st.container(key="o_cookie"):
-        st.iframe(f"<script>window.parent.document.cookie = '{COOKIE_PHIEN}={gia_tri}; path=/; "
-                  f"max-age={so_giay}; SameSite=Lax';</script>", height=1)
+        st.iframe(
+            "<script>"
+            "var sec = window.parent.location.protocol === 'https:' ? '; Secure' : '';"
+            f"window.parent.document.cookie = '{COOKIE_PHIEN}={gia_tri}; path=/; "
+            f"max-age={so_giay}; SameSite=Lax' + sec;"
+            "</script>",
+            height=1,
+        )
     st.markdown("<style>.st-key-o_cookie {position: absolute; width: 0; height: 0; overflow: hidden;}</style>",
                 unsafe_allow_html=True)
 
@@ -166,6 +181,7 @@ def vao_bang_mat_khau(nd):
     ss.nguoi_dung, ss.ma_phien = nd, tai_khoan.tao_phien(nd["ten_dang_nhap"])
     ss.trang_hien_tai = 'Quản trị' if nd.get('vai_tro') == 'admin' else 'Trò chuyện'
     ss.admin_muc = 'Tổng quan'
+    st.query_params.pop("phien", None)
     st.rerun()
 
 
@@ -183,8 +199,8 @@ if ss.get("ma_phien"):
     if ss.get("cookie_phien_da_ghi") != ss.ma_phien:
         ghi_cookie(ss.ma_phien, 30 * 24 * 3600)
         ss.cookie_phien_da_ghi = ss.ma_phien
-    if st.query_params.get("phien") != ss.ma_phien:
-        st.query_params["phien"] = ss.ma_phien
+    if "phien" in st.query_params:
+        st.query_params.pop("phien", None)
 
 TEN = ss.nguoi_dung["ten_dang_nhap"]
 ss.setdefault("tin_nhan", [])
@@ -309,11 +325,6 @@ if ss.nguoi_dung.get('vai_tro') == 'admin' and ss.get('trang_hien_tai', 'Quản 
     hien_thi(TEN, dang_xuat)
     st.stop()
 
-# Streamlit reruns this entrypoint but caches imported modules between runs.
-# Reload the small view module so new image placeholders and assets take effect.
-import importlib
-from frontend import giao_dien_tro_chuyen
-importlib.reload(giao_dien_tro_chuyen)
 from frontend.giao_dien_tro_chuyen import (MUC_THANH_BEN, ap_dung, the_ho_so, thong_bao, thuong_hieu,
                                            tieu_de, tieu_de_trang, to_muc_chon)
 from frontend import mon_yeu_thich
@@ -358,9 +369,8 @@ except Exception as e:
     st.error(f"Không khởi động được chatbot: {e}")
     st.stop()
 
-# chế độ giải thích (câu hỏi sau tiền xử lý / tách từ, câu hỏi viết lại, top-k, ngưỡng): không có nút trên giao diện,
-# bật bằng cách thêm &giai_thich=1 vào đường dẫn trang
-giai_thich = st.query_params.get("giai_thich") == "1"
+# chế độ giải thích (chỉ dành cho admin đang đăng nhập): bật bằng &giai_thich=1 trên URL
+giai_thich = (st.query_params.get("giai_thich") == "1") and tai_khoan.la_admin(TEN)
 
 
 # ================================================================== hiển thị câu trả lời
@@ -579,7 +589,7 @@ with st.container(key="chat_canvas"):
 
         with st.container(key="chat_composer"):
             cau_cho = ss.pop("cau_cho", None)
-            cau_hoi = st.chat_input("Hỏi mình về món ăn, nguyên liệu, dinh dưỡng...") or cau_cho
+            cau_hoi = st.chat_input("Hỏi mình về món ăn, nguyên liệu, dinh dưỡng...", max_chars=1000) or cau_cho
 
     with st.container(key="chat_footer"):
         thong_bao(GIOI_HAN_DAM, GIOI_HAN)
@@ -600,7 +610,12 @@ if cau_hoi:
     if ss.pop('cong_thuc_vua_chon', False):
         lich_su = []
     ss.chon_mon_nau = False
-    kq = tra_loi(cau_hoi, lich_su)
+    from frontend.luu_tuy_chon_ho_so import doc_tuy_chon
+    ho_so_nguoi_dung = doc_tuy_chon(TEN)
+    tuy_chon_hoi = None
+    if any(ho_so_nguoi_dung.get(k) for k in ("allergies", "avoid")) or ho_so_nguoi_dung.get("goal") == "Ăn chay":
+        tuy_chon_hoi = {"ho_so_an_uong": ho_so_nguoi_dung}
+    kq = tra_loi(cau_hoi, lich_su, tuy_chon_hoi)
     ss.tin_nhan = ss.tin_nhan + [{"vai": "user", "noi_dung": cau_hoi},
                                  {"vai": "assistant", "cau_hoi": cau_hoi, "ket_qua": kq}]
     # lưu lịch sử bản rút gọn (bỏ nội dung các đoạn truy hồi), bản đầy đủ chỉ giữ trong phiên
