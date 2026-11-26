@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "basis_mass_g": "100",
+  "foods": {
+    "USDA:FDC:169975": {
+      "food_state": "RAW",
+      "name": "Cabbage, raw",
+      "nutrients_per_100g": {
+        "kcal": "25",
+        "protein_g": "1.28",
+        "lipid_g": "0.1",
+        "carbohydrate_g": "5.8",
+        "sodium_mg": "18"
+      },
+      "citations": [
+        {
+          "path": "evidence/usda.txt",
+          "sha256": "38281336a403c0c46c96b9048e8e382443a9d1b92e1d3091b6b80362502b035f",
+          "passage": "USDA SR Legacy 2018-04; FDC 169975; Cabbage, raw; 1 cup, chopped = 89 g (row 85791).",
+          "document_version": "USDA SR Legacy 2018-04",
+          "collected_at": "2026-11-16"
+        }
+      ],
+      "carbohydrate_basis": "BY_DIFFERENCE",
+      "energy_basis": "METABOLIZABLE"
+    }
+  }
+}

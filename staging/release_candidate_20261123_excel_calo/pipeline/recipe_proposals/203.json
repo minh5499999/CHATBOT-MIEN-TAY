@@ -1,0 +1,96 @@
+{
+  "recipe_id": 203,
+  "recipe_version": "371ea38a2c29ca271567ef215ce799b32c417f7c6190874c041506935470461e",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "step_review": [
+    {
+      "section": "prep",
+      "start": 307,
+      "end": 337,
+      "text": "- Bầu gọt vỏ, cắt miếng vừa ăn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 338,
+      "end": 375,
+      "text": "- Hành lá và ngò rí rửa sạch, cắt nhỏ",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 376,
+      "end": 402,
+      "text": "- Hành tím bóc vỏ, băm nhỏ",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 403,
+      "end": 455,
+      "text": "- Tôm bỏ đầu, lột vỏ, rút chỉ đen, rửa với nước muối",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 456,
+      "end": 518,
+      "text": "- Dằm nhuyễn phân nửa tôm, phần còn lại để nguyên hoặc đập nhẹ",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "steps",
+      "start": 534,
+      "end": 579,
+      "text": "- Phi thơm hành tím với 1/2 muỗng canh dầu ăn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 580,
+      "end": 630,
+      "text": "- Cho hết tôm vào, đảo đến khi tôm chuyển màu hồng",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 631,
+      "end": 668,
+      "text": "- Đổ vào 2 chén nước, đun sôi lửa lớn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 669,
+      "end": 761,
+      "text": "- Nêm mỗi loại 1 muỗng cà phê hạt nêm, hạt nêm tôm, nước mắm, muối và 1/2 muỗng cà phê đường",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 762,
+      "end": 816,
+      "text": "- Nước sôi lại thì cho bầu vào, nêm nếm lại cho vừa ăn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    }
+  ],
+  "required_reviewer_actions": [
+    "Compare ingredients against all steps and serving suggestions",
+    "Resolve quantities/state/edible mass/compound ingredients",
+    "Obtain local recipe + nutrient + conversion + processing evidence",
+    "Map every source component with explicit reviewed identity",
+    "Approve separately by scope; never auto-populate unknown values"
+  ],
+  "new_values_assumed": false
+}

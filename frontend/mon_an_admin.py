@@ -27,18 +27,7 @@ def do_kho(text):
     return match[1].capitalize() if match else "Chưa ghi rõ"
 
 
-def _an_toan_csv(value):
-    text = "" if value is None else str(value)
-    if text.lstrip().startswith(("=", "+", "-", "@", "\t", "\r")):
-        return "'" + text
-    return text
-
-
 def hien_thi_mon_admin(actor):
-    from backend.chatbot import tai_khoan
-    if not tai_khoan.la_admin(actor):
-        st.error("Bạn không có quyền quản trị.")
-        st.stop()
     from frontend.bang_quan_tri import esc
 
     recipes = danh_muc(doc_cau_hinh()["kho_vector"])
@@ -72,7 +61,7 @@ def hien_thi_mon_admin(actor):
             writer = csv.writer(output)
             writer.writerow(["Tên món", "Danh mục", "Thời gian", "Khẩu phần"])
             for r in matches:
-                writer.writerow([_an_toan_csv(r.cau_hoi), _an_toan_csv(nhom_mon(r.cau_hoi)), r.tong_phut, r.khau_phan])
+                writer.writerow([r.cau_hoi, nhom_mon(r.cau_hoi), r.tong_phut, r.khau_phan])
             export.download_button("Xuất dữ liệu", output.getvalue().encode("utf-8-sig"),
                                    file_name="mon_an.csv", icon=":material/download:", width="stretch")
             pages = max(1, (len(matches) + 4) // 5)
@@ -132,14 +121,8 @@ def hien_thi_mon_admin(actor):
             writer = csv.writer(output)
             writer.writerow(["id", "Tên món", "Danh mục", "Thời gian (phút)", "Khẩu phần", "Nội dung"])
             for recipe in recipes:
-                writer.writerow([
-                    recipe.id_goc,
-                    _an_toan_csv(recipe.cau_hoi),
-                    _an_toan_csv(nhom_mon(recipe.cau_hoi)),
-                    recipe.tong_phut,
-                    recipe.khau_phan,
-                    _an_toan_csv(recipe.noi_dung),
-                ])
+                writer.writerow([recipe.id_goc, recipe.cau_hoi, nhom_mon(recipe.cau_hoi),
+                                 recipe.tong_phut, recipe.khau_phan, recipe.noi_dung])
             st.download_button("Xuất dữ liệu CSV", output.getvalue().encode("utf-8-sig"),
                                file_name="mon_an.csv", mime="text/csv", icon=":material/download:")
             st.caption("Để thêm hoặc chỉnh nội dung, mở tab Thêm / sửa món ăn. Bản biên tập cần được đồng bộ vào kho trước khi chatbot sử dụng.")

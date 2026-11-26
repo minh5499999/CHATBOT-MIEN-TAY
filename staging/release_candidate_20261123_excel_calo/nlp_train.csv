@@ -1,0 +1,796 @@
+﻿ID;Nhóm;Tập;Câu hỏi
+1;Chào hỏi, cảm ơn, tạm biệt;Train;Xin chào
+2;Chào hỏi, cảm ơn, tạm biệt;Train;Chào bot
+3;Chào hỏi, cảm ơn, tạm biệt;Train;Hello
+4;Chào hỏi, cảm ơn, tạm biệt;Train;Chào buổi sáng
+5;Chào hỏi, cảm ơn, tạm biệt;Train;Chào buổi tối
+6;Chào hỏi, cảm ơn, tạm biệt;Train;Bạn là ai
+7;Chào hỏi, cảm ơn, tạm biệt;Train;Bạn có thể giúp gì cho tôi
+8;Chào hỏi, cảm ơn, tạm biệt;Train;Bạn biết nấu món miền Tây không
+9;Chào hỏi, cảm ơn, tạm biệt;Train;Hi mình mới dùng lần đầu
+10;Chào hỏi, cảm ơn, tạm biệt;Train;Alo có ai không
+11;Chào hỏi, cảm ơn, tạm biệt;Train;Chào bạn hôm nay mình nên nấu gì
+12;Chào hỏi, cảm ơn, tạm biệt;Train;Xin chào mình muốn hỏi về nấu ăn
+13;Chào hỏi, cảm ơn, tạm biệt;Train;Cảm ơn bạn
+14;Chào hỏi, cảm ơn, tạm biệt;Train;Cảm ơn nhiều nha
+15;Chào hỏi, cảm ơn, tạm biệt;Train;Cám ơn công thức hay quá
+16;Chào hỏi, cảm ơn, tạm biệt;Train;Thanks
+17;Chào hỏi, cảm ơn, tạm biệt;Train;Cảm ơn mình nấu thành công rồi
+18;Chào hỏi, cảm ơn, tạm biệt;Train;Cảm ơn đã gợi ý món
+19;Chào hỏi, cảm ơn, tạm biệt;Train;Bạn giỏi quá
+20;Chào hỏi, cảm ơn, tạm biệt;Train;Cảm ơn để mình thử
+21;Chào hỏi, cảm ơn, tạm biệt;Train;Tạm biệt
+22;Chào hỏi, cảm ơn, tạm biệt;Train;Bye
+23;Chào hỏi, cảm ơn, tạm biệt;Train;Hẹn gặp lại
+24;Chào hỏi, cảm ơn, tạm biệt;Train;Mình đi nấu đây
+25;Chào hỏi, cảm ơn, tạm biệt;Train;Chúc ngủ ngon
+26;Chào hỏi, cảm ơn, tạm biệt;Train;Thôi mình không hỏi nữa
+27;Chào hỏi, cảm ơn, tạm biệt;Train;Ok vậy thôi
+28;Chào hỏi, cảm ơn, tạm biệt;Train;Hôm khác mình hỏi tiếp
+29;Chào hỏi, cảm ơn, tạm biệt;Train;Bạn tên gì
+30;Chào hỏi, cảm ơn, tạm biệt;Train;Bạn có phải bác sĩ không
+31;Chào hỏi, cảm ơn, tạm biệt;Train;Chào bạn mình là sinh viên mới tập nấu ăn còn vụng
+32;Chào hỏi, cảm ơn, tạm biệt;Train;Ừ cảm ơn nha mai hỏi tiếp
+41;Hướng dẫn nấu món ăn miền Tây;Train;Chỉ mình cách nấu canh chua cá lóc miền Tây với
+42;Hướng dẫn nấu món ăn miền Tây;Train;Cá lóc kho tộ làm sao cho ngon
+43;Hướng dẫn nấu món ăn miền Tây;Train;Hướng dẫn mình nấu lẩu mắm miền Tây
+44;Hướng dẫn nấu món ăn miền Tây;Train;Cách đổ bánh xèo miền Tây cho giòn
+45;Hướng dẫn nấu món ăn miền Tây;Train;Làm cá lóc nướng trui kiểu miền Tây sao bạn
+46;Hướng dẫn nấu món ăn miền Tây;Train;Mình muốn nấu canh gà lá giang chỉ mình với
+47;Hướng dẫn nấu món ăn miền Tây;Train;Bún nước lèo Sóc Trăng nấu như thế nào
+48;Hướng dẫn nấu món ăn miền Tây;Train;Nấu cháo cá lóc rau đắng bằng nồi cơm điện được không
+49;Hướng dẫn nấu món ăn miền Tây;Train;Cách nấu hủ tiếu Mỹ Tho tại nhà
+50;Hướng dẫn nấu món ăn miền Tây;Train;Cá kèo kho rau răm làm sao
+51;Hướng dẫn nấu món ăn miền Tây;Train;Chỉ cách làm thịt kho dừa kiểu Bến Tre
+52;Hướng dẫn nấu món ăn miền Tây;Train;Mắm kho miền Tây nấu sao cho đúng vị
+53;Hướng dẫn nấu món ăn miền Tây;Train;Bún cá Châu Đốc làm như thế nào
+54;Hướng dẫn nấu món ăn miền Tây;Train;Hướng dẫn làm bánh tằm bì
+55;Hướng dẫn nấu món ăn miền Tây;Train;Làm gỏi củ hủ dừa tôm thịt sao cho giòn
+56;Hướng dẫn nấu món ăn miền Tây;Train;Chỉ mình nấu lẩu cá kèo lá giang
+57;Hướng dẫn nấu món ăn miền Tây;Train;Canh chua bông điên điển nấu với cá gì ngon
+58;Hướng dẫn nấu món ăn miền Tây;Train;Mắm chưng miền Tây làm sao bạn
+59;Hướng dẫn nấu món ăn miền Tây;Train;Thịt kho rệu miền Tây là gì chỉ mình cách kho
+60;Hướng dẫn nấu món ăn miền Tây;Train;Cá linh kho nghệ nấu như thế nào
+61;Hướng dẫn nấu món ăn miền Tây;Train;Kho quẹt tôm thịt làm sao cho sánh
+62;Hướng dẫn nấu món ăn miền Tây;Train;Chỉ mình kho cá rô đồng kho tộ
+63;Hướng dẫn nấu món ăn miền Tây;Train;Lươn xào sả ớt làm như thế nào
+64;Hướng dẫn nấu món ăn miền Tây;Train;Mình muốn làm ếch xào sả ớt
+65;Hướng dẫn nấu món ăn miền Tây;Train;Cá tai tượng chiên xù làm sao cho vảy xù đẹp
+66;Hướng dẫn nấu món ăn miền Tây;Train;Cá lóc hấp bầu cuốn bánh tráng làm thế nào
+67;Hướng dẫn nấu món ăn miền Tây;Train;Vịt nấu chao nấu sao cho béo thơm
+68;Hướng dẫn nấu món ăn miền Tây;Train;Cách gói bánh tét nhân chuối kiểu miền Tây
+69;Hướng dẫn nấu món ăn miền Tây;Train;Hủ tiếu Sa Đéc nấu như thế nào
+70;Hướng dẫn nấu món ăn miền Tây;Train;Làm ba khía rang me chua ngọt sao bạn
+71;Hướng dẫn nấu món ăn miền Tây;Train;Cá trê chiên giòn chấm mắm gừng làm sao
+72;Hướng dẫn nấu món ăn miền Tây;Train;Canh chua cá linh bông điên điển nấu sao
+73;Hướng dẫn nấu món ăn miền Tây;Train;Chỉ mình nấu lẩu gà lá giang
+74;Hướng dẫn nấu món ăn miền Tây;Train;Nấu cháo vịt đậu xanh sao cho ngon
+75;Hướng dẫn nấu món ăn miền Tây;Train;Ốc bươu xào sả ớt làm thế nào
+76;Hướng dẫn nấu món ăn miền Tây;Train;Cá bông lau kho tộ làm sao cho ngon
+77;Hướng dẫn nấu món ăn miền Tây;Train;Tôm càng xanh rang muối ớt làm như nào
+78;Hướng dẫn nấu món ăn miền Tây;Train;Canh bầu nấu tôm tươi nấu sao cho ngọt
+79;Hướng dẫn nấu món ăn miền Tây;Train;Chả giò miền Tây nhân khoai môn làm sao
+80;Hướng dẫn nấu món ăn miền Tây;Train;Canh khổ qua nhồi thịt nấu sao cho không đắng
+81;Hướng dẫn nấu món ăn miền Tây;Train;Lẩu cá bông lau nấu như thế nào
+82;Hướng dẫn nấu món ăn miền Tây;Train;Cháo cối vịt xiêm miền Tây nấu sao
+83;Hướng dẫn nấu món ăn miền Tây;Train;Bánh bò mặn Sóc Trăng làm như thế nào
+84;Hướng dẫn nấu món ăn miền Tây;Train;Chỉ mình làm bánh bầu Sóc Trăng
+85;Hướng dẫn nấu món ăn miền Tây;Train;Gà xào lá giang làm sao
+86;Hướng dẫn nấu món ăn miền Tây;Train;Cá lóc nướng muối ớt bằng lò làm sao
+87;Hướng dẫn nấu món ăn miền Tây;Train;Lẩu mắm cá kèo nấu như thế nào
+88;Hướng dẫn nấu món ăn miền Tây;Train;Gỏi xoài ba khía làm sao cho ngon
+89;Hướng dẫn nấu món ăn miền Tây;Train;Cá trê kho gừng nấu sao cho thơm
+90;Hướng dẫn nấu món ăn miền Tây;Train;Ếch kho sả ớt làm như thế nào
+91;Hướng dẫn nấu món ăn miền Tây;Train;Lươn kho sả ớt nấu sao
+92;Hướng dẫn nấu món ăn miền Tây;Train;Ốc bươu xào lá lốt làm sao bạn
+93;Hướng dẫn nấu món ăn miền Tây;Train;Tôm càng xanh nướng sa tế làm như nào
+94;Hướng dẫn nấu món ăn miền Tây;Train;Cá bống kho tộ với tóp mỡ làm sao
+95;Hướng dẫn nấu món ăn miền Tây;Train;Chả lạnh da heo miền Tây làm sao
+96;Hướng dẫn nấu món ăn miền Tây;Train;Thịt heo khìa nước dừa làm như thế nào
+97;Hướng dẫn nấu món ăn miền Tây;Train;Bánh tét lá cẩm nhân trứng muối gói sao
+98;Hướng dẫn nấu món ăn miền Tây;Train;Bún nước lèo Trà Vinh khác gì Sóc Trăng chỉ mình nấu
+99;Hướng dẫn nấu món ăn miền Tây;Train;Canh chua cá kèo bông so đũa nấu sao
+100;Hướng dẫn nấu món ăn miền Tây;Train;Cá linh kho mía làm như thế nào
+101;Hướng dẫn nấu món ăn miền Tây;Train;Cá lóc kho tiêu làm sao cho kẹo nước
+102;Hướng dẫn nấu món ăn miền Tây;Train;Cá lóc kho nghệ nấu thế nào
+103;Hướng dẫn nấu món ăn miền Tây;Train;Cá lóc kho thịt ba rọi làm như thế nào
+104;Hướng dẫn nấu món ăn miền Tây;Train;Cá lóc nướng giấy bạc làm sao
+105;Hướng dẫn nấu món ăn miền Tây;Train;Chỉ mình làm cá lóc nướng lá sen
+106;Hướng dẫn nấu món ăn miền Tây;Train;Cá kèo kho tộ với thịt ba chỉ làm sao
+107;Hướng dẫn nấu món ăn miền Tây;Train;Cá kèo kho củ cải trắng nấu sao
+108;Hướng dẫn nấu món ăn miền Tây;Train;Cá linh kho me làm như thế nào
+109;Hướng dẫn nấu món ăn miền Tây;Train;Cá linh kho rệu nấu thế nào
+110;Hướng dẫn nấu món ăn miền Tây;Train;Cá rô kho tiêu với nước dừa làm sao
+111;Hướng dẫn nấu món ăn miền Tây;Train;Cá rô kho khế nấu như thế nào
+112;Hướng dẫn nấu món ăn miền Tây;Train;Cá chạch kho rau răm làm sao
+113;Hướng dẫn nấu món ăn miền Tây;Train;Cá bống kho rau răm nấu sao cho thơm
+114;Hướng dẫn nấu món ăn miền Tây;Train;Mắm kho cá hú làm sao
+115;Hướng dẫn nấu món ăn miền Tây;Train;Canh cá bông lau nấu măng chua làm sao
+116;Hướng dẫn nấu món ăn miền Tây;Train;Canh chua cá lăng bông điên điển nấu sao
+117;Hướng dẫn nấu món ăn miền Tây;Train;Lẩu cháo cá lóc nấu như thế nào
+118;Hướng dẫn nấu món ăn miền Tây;Train;Cháo cá lóc nấu bầu làm sao
+119;Hướng dẫn nấu món ăn miền Tây;Train;Cháo cá khoai nấu như thế nào
+120;Hướng dẫn nấu món ăn miền Tây;Train;Thịt kho trứng nước dừa làm sao cho mềm
+121;Hướng dẫn nấu món ăn miền Tây;Train;Thịt kho nước cốt dừa làm như thế nào
+122;Hướng dẫn nấu món ăn miền Tây;Train;Canh chân gà lá giang nấu sao
+123;Hướng dẫn nấu món ăn miền Tây;Train;Tôm kho tàu nước dừa làm sao
+124;Hướng dẫn nấu món ăn miền Tây;Train;Tôm càng xanh sốt me làm như nào
+125;Hướng dẫn nấu món ăn miền Tây;Train;Ba khía rang muối ớt làm sao
+126;Hướng dẫn nấu món ăn miền Tây;Train;Canh nghêu nấu bầu nấu sao
+127;Hướng dẫn nấu món ăn miền Tây;Train;Cá lóc nấu canh bầu sao cho không tanh
+128;Hướng dẫn nấu món ăn miền Tây;Train;Canh khổ qua tôm thịt nấu như thế nào
+129;Hướng dẫn nấu món ăn miền Tây;Train;Canh chua bông điên điển chay nấu sao
+130;Hướng dẫn nấu món ăn miền Tây;Train;Bún cá lóc miền Tây nấu như thế nào
+131;Hướng dẫn nấu món ăn miền Tây;Train;Hủ tiếu chay miền Tây nấu sao
+132;Hướng dẫn nấu món ăn miền Tây;Train;Bún nước lèo chay nấu như thế nào
+133;Hướng dẫn nấu món ăn miền Tây;Train;Bánh cúng miền Tây làm như thế nào
+134;Hướng dẫn nấu món ăn miền Tây;Train;Bánh tằm xíu mại cốt dừa làm sao
+135;Hướng dẫn nấu món ăn miền Tây;Train;Làm mắm đu đủ tại nhà sao bạn
+136;Hướng dẫn nấu món ăn miền Tây;Train;Gỏi củ hủ dừa tai heo làm sao
+137;Hướng dẫn nấu món ăn miền Tây;Train;Gỏi củ hủ dừa hải sản trộn sao
+138;Hướng dẫn nấu món ăn miền Tây;Train;Ếch xào sả nghệ làm như thế nào
+139;Hướng dẫn nấu món ăn miền Tây;Train;Ếch kho nghệ nấu sao
+140;Hướng dẫn nấu món ăn miền Tây;Train;Lươn hấp sả ớt làm sao
+141;Hướng dẫn nấu món ăn miền Tây;Train;Lươn xào lăn nước cốt dừa làm sao
+142;Hướng dẫn nấu món ăn miền Tây;Train;Cá rô phi kho tộ với thịt ba rọi làm sao
+143;Hướng dẫn nấu món ăn miền Tây;Train;Tép xào bông điên điển làm sao
+144;Hướng dẫn nấu món ăn miền Tây;Train;Gỏi bông súng tôm thịt trộn sao
+145;Hướng dẫn nấu món ăn miền Tây;Train;Gỏi tép bông điên điển làm sao
+146;Hướng dẫn nấu món ăn miền Tây;Train;Bông điên điển xào thịt bò làm sao
+147;Hướng dẫn nấu món ăn miền Tây;Train;Vịt kho gừng làm như thế nào
+148;Hướng dẫn nấu món ăn miền Tây;Train;Vịt kho nước dừa tươi nấu sao
+149;Hướng dẫn nấu món ăn miền Tây;Train;Gỏi xoài khô cá sặc làm sao
+150;Hướng dẫn nấu món ăn miền Tây;Train;Gỏi sầu đâu khô cá sặc làm sao
+151;Hướng dẫn nấu món ăn miền Tây;Train;Bánh khoai mì nướng làm sao cho dẻo
+152;Hướng dẫn nấu món ăn miền Tây;Train;Cá linh chiên giòn chấm mắm me làm sao
+153;Hướng dẫn nấu món ăn miền Tây;Train;Canh chua bông súng chay nấu sao
+154;Hướng dẫn nấu món ăn miền Tây;Train;Gỏi bắp chuối tôm thịt làm sao
+155;Hướng dẫn nấu món ăn miền Tây;Train;Bún cá lóc Kiên Giang nấu như thế nào
+156;Hướng dẫn nấu món ăn miền Tây;Train;Canh chua rau muống tôm nấu sao
+157;Hướng dẫn nấu món ăn miền Tây;Train;Bánh chuối hấp làm sao
+158;Hướng dẫn nấu món ăn miền Tây;Train;Lẩu mắm cá lóc nấu như thế nào
+159;Hướng dẫn nấu món ăn miền Tây;Train;Lẩu cá lóc nấu măng chua làm sao
+160;Hướng dẫn nấu món ăn miền Tây;Train;Tóp mỡ kho quẹt làm sao
+191;Hướng dẫn nấu ăn;Train;Cho mình công thức trứng vịt chiên hành lá với
+192;Hướng dẫn nấu ăn;Train;Canh bí đao nấu tôm nấu sao cho ngọt nước vậy
+193;Hướng dẫn nấu ăn;Train;Cá diêu hồng kho tộ làm sao cho thấm vị đậm đà
+194;Hướng dẫn nấu ăn;Train;Chỉ cách kho cánh gà kho gừng cho đậm vị đi
+195;Hướng dẫn nấu ăn;Train;Canh cải ngọt thịt bằm nấu vậy có đúng không nhỉ
+196;Hướng dẫn nấu ăn;Train;Đậu hũ xào thịt sốt cà chua làm sao cho đậm đà
+197;Hướng dẫn nấu ăn;Train;Thịt kho trứng cút nước dừa nấu vậy có ngon không
+198;Hướng dẫn nấu ăn;Train;Canh khoai mỡ nấu tôm nấu kiểu viên chả tôm được không
+199;Hướng dẫn nấu ăn;Train;Sườn xào chua ngọt làm sao cho sốt sánh đẹp vậy
+200;Hướng dẫn nấu ăn;Train;Canh rong biển thịt bằm đậu hũ nấu vậy được chưa
+201;Hướng dẫn nấu ăn;Train;Bò xào cần tỏi làm sao cho thịt bò mềm mà không dai
+202;Hướng dẫn nấu ăn;Train;Cá thu kho mặn ngọt nấu sao cho nước sánh đẹp
+203;Hướng dẫn nấu ăn;Train;Canh bầu nấu tôm tươi nấu sao cho nước canh ngọt
+204;Hướng dẫn nấu ăn;Train;Gà chiên nước mắm làm sao cho da giòn mà thấm vị
+205;Hướng dẫn nấu ăn;Train;Bò xào đậu que làm vậy có bị dai không ta
+206;Hướng dẫn nấu ăn;Train;Khổ qua xào trứng làm sao cho bớt đắng mà vẫn ngon
+207;Hướng dẫn nấu ăn;Train;Bò kho nấu sao cho thịt mềm mà nước sánh vậy
+208;Hướng dẫn nấu ăn;Train;Tôm rim thịt ba chỉ làm sao cho nước rim sánh kẹo
+209;Hướng dẫn nấu ăn;Train;Cá bống kho tiêu làm sao cho cá không bị nát
+210;Hướng dẫn nấu ăn;Train;Gà kho sả ớt làm sao cho thấm vị mà không bị khô
+211;Hướng dẫn nấu ăn;Train;Canh khổ qua thịt băm nấu vậy có đúng cách chưa
+212;Hướng dẫn nấu ăn;Train;Đậu hũ chiên sả ớt làm sao cho giòn mà thơm
+213;Hướng dẫn nấu ăn;Train;Súp cua gà xé nấu sao cho không bị vón bột
+214;Hướng dẫn nấu ăn;Train;Tôm chiên bột mì làm sao cho giòn lâu
+215;Hướng dẫn nấu ăn;Train;Mực xào sa tế làm sao cho mực không bị dai
+216;Hướng dẫn nấu ăn;Train;Trứng chiên thịt băm làm sao cho trứng phồng đẹp
+217;Hướng dẫn nấu ăn;Train;Canh sườn nấu chua làm sao cho vừa vị chua ngọt
+218;Hướng dẫn nấu ăn;Train;Thịt ba chỉ kho tiêu làm sao cho nước kho vừa sệt lại
+219;Hướng dẫn nấu ăn;Train;Canh cà chua trứng đậu hũ nấu vậy được chưa
+220;Hướng dẫn nấu ăn;Train;Đậu que xào tỏi làm sao cho đậu giòn mà không bị dai
+221;Hướng dẫn nấu ăn;Train;Canh bí đỏ nấu tôm tươi nấu sao cho bí không bị nát
+222;Hướng dẫn nấu ăn;Train;Rau muống xào tỏi làm sao cho xanh giòn mà không bị ra nước
+223;Hướng dẫn nấu ăn;Train;Canh chua cá diêu hồng nấu me làm sao cho vừa vị
+224;Hướng dẫn nấu ăn;Train;Thịt viên sốt cà chua làm sao cho viên thịt không bị bở
+225;Hướng dẫn nấu ăn;Train;Cá lóc chiên xù cuốn bánh tráng làm sao cho cá giòn lâu
+226;Hướng dẫn nấu ăn;Train;Mướp xào trứng làm sao cho không bị ra nhiều nước
+227;Hướng dẫn nấu ăn;Train;Canh rau ngót thịt băm nấu vậy có đúng cách chưa
+228;Hướng dẫn nấu ăn;Train;Gà xào sả ớt làm sao cho gà thấm vị mà không khô
+229;Hướng dẫn nấu ăn;Train;Trứng đúc thịt làm sao cho mịn mà không bị tanh
+230;Hướng dẫn nấu ăn;Train;Đậu bắp xào tỏi làm sao cho không bị nhớt
+231;Hướng dẫn nấu ăn;Train;Bò lúc lắc làm sao cho thịt bò mềm mà săn đẹp
+232;Hướng dẫn nấu ăn;Train;Gà rang muối làm sao cho lớp muối bám đều mà giòn
+233;Hướng dẫn nấu ăn;Train;Tôm xào bông cải làm sao cho bông cải giòn mà không nát
+234;Hướng dẫn nấu ăn;Train;Cá ngừ kho thơm cà chua làm sao cho vừa vị chua ngọt
+235;Hướng dẫn nấu ăn;Train;Thịt ba chỉ kho củ cải trắng làm sao cho củ cải không bị nát
+236;Hướng dẫn nấu ăn;Train;Canh xương khoai tây nấu sao cho nước ngọt mà trong
+237;Hướng dẫn nấu ăn;Train;Canh mướp nấu tôm tươi làm sao cho mướp không bị nát
+238;Hướng dẫn nấu ăn;Train;Chả cá chiên nước mắm làm sao cho chả không bị bở
+239;Hướng dẫn nấu ăn;Train;Cách làm cơm chiên dương châu ngon ở nhà như thế nào vậy
+240;Hướng dẫn nấu ăn;Train;Mì xào thập cẩm làm sao cho ngon hả bạn
+241;Hướng dẫn nấu ăn;Train;Chỉ mình cách làm nui xào bò bằm nhanh gọn cho bữa sáng với
+242;Hướng dẫn nấu ăn;Train;Mình muốn nấu cháo gà nguyên con ngon ngọt, bạn hướng dẫn mình nhé
+243;Hướng dẫn nấu ăn;Train;Nấu cháo thịt băm cà rốt kiểu gì cho mềm ngon vậy
+244;Hướng dẫn nấu ăn;Train;Gà hấp hành làm kiểu nào cho thơm mềm vậy bạn
+245;Hướng dẫn nấu ăn;Train;Hướng dẫn mình làm sườn nướng mật ong bằng lò nướng với
+246;Hướng dẫn nấu ăn;Train;Cách ướp thịt heo nướng sả cho ngon thơm là sao vậy
+247;Hướng dẫn nấu ăn;Train;Cá nục chiên sốt cà chua làm sao cho ngon vậy bạn
+248;Hướng dẫn nấu ăn;Train;Bò xào súp lơ xanh nấu như thế nào cho bò mềm vậy
+249;Hướng dẫn nấu ăn;Train;Nấu canh cải thảo thịt bằm như nào cho ngon hả bạn
+250;Hướng dẫn nấu ăn;Train;Trứng hấp thịt băm làm sao cho mềm mịn không bị rỗ vậy
+251;Hướng dẫn nấu ăn;Train;Su su xào trứng nấu sao cho đơn giản mà vẫn ngon vậy
+252;Hướng dẫn nấu ăn;Train;Bí đỏ xào tỏi làm kiểu gì cho bùi bùi thơm thơm vậy
+253;Hướng dẫn nấu ăn;Train;Cà tím hấp mỡ hành làm sao cho ngon vậy bạn
+254;Hướng dẫn nấu ăn;Train;Hướng dẫn mình cuốn chả giò giòn lâu không bị mềm với
+255;Hướng dẫn nấu ăn;Train;Chỉ mình cách làm trứng xào cà chua nhanh gọn cho bữa cơm đi
+256;Hướng dẫn nấu ăn;Train;Hướng dẫn mình làm tôm sốt bơ tỏi chấm bánh mì với
+257;Hướng dẫn nấu ăn;Train;Mình muốn nấu cá kho tộ miền Tây kiểu truyền thống nè
+258;Hướng dẫn nấu ăn;Train;Cho mình công thức thịt heo xào nấm đông cô với
+259;Hướng dẫn nấu ăn;Train;Làm bò xào ớt chuông sao cho thịt mềm mà giòn ngon
+260;Hướng dẫn nấu ăn;Train;Dạy mình cách đổ bánh xèo tôm thịt giòn vàng tại nhà đi
+261;Hướng dẫn nấu ăn;Train;Cách xào măng tây với tôm cho ngon và giòn ra sao
+262;Hướng dẫn nấu ăn;Train;Nấu canh ngao cà chua sao cho ngọt nước vậy
+263;Hướng dẫn nấu ăn;Train;Mình muốn học cách làm đậu hũ nhồi thịt sốt cà chua nè
+264;Hướng dẫn nấu ăn;Train;Cá lóc kho tiêu nấu kiểu nào cho thấm vị đậm đà
+265;Hướng dẫn nấu ăn;Train;Hướng dẫn mình xào bắp bơ tỏi thơm béo nha
+266;Hướng dẫn nấu ăn;Train;Cách kho thịt đậu hũ ngon đậm đà ra sao
+267;Hướng dẫn nấu ăn;Train;Chỉ mình trộn gỏi gà bắp cải giòn ngon đi
+268;Hướng dẫn nấu ăn;Train;Cho mình công thức tôm xào hành tây đơn giản với
+269;Hướng dẫn nấu ăn;Train;Nấu gà xào lăn sữa tươi kiểu nào cho ngon
+270;Hướng dẫn nấu ăn;Train;Hướng dẫn mình chiên cánh gà nước mắm bơ tỏi với
+291;Nguyên liệu và gia vị;Train;Nước mắm là gì và dùng thế nào trong nấu ăn
+292;Nguyên liệu và gia vị;Train;Cách chọn nước mắm ngon
+293;Nguyên liệu và gia vị;Train;Phân biệt nước mắm nguyên chất và nước mắm công nghiệp
+294;Nguyên liệu và gia vị;Train;Nước tương là gì và dùng trong món nào
+295;Nguyên liệu và gia vị;Train;Dầu hào dùng trong món nào
+296;Nguyên liệu và gia vị;Train;Mắm tôm là gì và dùng với món nào
+297;Nguyên liệu và gia vị;Train;Giấm gạo và giấm trắng khác nhau sao
+298;Nguyên liệu và gia vị;Train;Tương ớt dùng sao cho ngon
+299;Nguyên liệu và gia vị;Train;Dầu mè dùng khi nào trong nấu ăn
+300;Nguyên liệu và gia vị;Train;Tương hột là gì và dùng thế nào
+301;Nguyên liệu và gia vị;Train;Tiêu đen và tiêu trắng khác nhau chỗ nào
+302;Nguyên liệu và gia vị;Train;Bột ngọt là gì và nên dùng bao nhiêu
+303;Nguyên liệu và gia vị;Train;Hạt nêm và bột ngọt giống nhau không
+304;Nguyên liệu và gia vị;Train;Ngũ vị hương gồm những gì
+305;Nguyên liệu và gia vị;Train;Bột cà ri dùng trong nấu ăn Việt Nam sao
+306;Nguyên liệu và gia vị;Train;Muối hột và muối tinh khác nhau chỗ nào
+307;Nguyên liệu và gia vị;Train;Đường phèn và đường cát trắng khác gì nhau
+308;Nguyên liệu và gia vị;Train;Đường thốt nốt có gì đặc biệt
+309;Nguyên liệu và gia vị;Train;Bột nghệ dùng trong nấu ăn thế nào
+310;Nguyên liệu và gia vị;Train;Ớt bột và ớt tươi khi nào nên dùng loại nào
+311;Nguyên liệu và gia vị;Train;Sả dùng thế nào trong nấu ăn
+312;Nguyên liệu và gia vị;Train;Gừng có tác dụng gì khi nấu ăn
+313;Nguyên liệu và gia vị;Train;Tỏi phi và tỏi tươi khác gì nhau
+314;Nguyên liệu và gia vị;Train;Hành tím dùng trong món nào
+315;Nguyên liệu và gia vị;Train;Hành tây và hành tím khác nhau thế nào
+316;Nguyên liệu và gia vị;Train;Hành lá dùng sao cho thơm
+317;Nguyên liệu và gia vị;Train;Lá chanh dùng trong món gì
+318;Nguyên liệu và gia vị;Train;Riềng là gì và dùng khi nào
+319;Nguyên liệu và gia vị;Train;Nghệ tươi và bột nghệ khác nhau chỗ nào
+320;Nguyên liệu và gia vị;Train;Chanh và tắc khác nhau sao khi nấu ăn
+321;Nguyên liệu và gia vị;Train;Lá dứa dùng để làm gì trong nấu ăn
+322;Nguyên liệu và gia vị;Train;Ngò rí dùng trong món gì
+323;Nguyên liệu và gia vị;Train;Ngò gai và ngò rí khác nhau chỗ nào
+324;Nguyên liệu và gia vị;Train;Ngò om dùng trong món gì
+325;Nguyên liệu và gia vị;Train;Húng quế và húng lủi khác nhau thế nào
+326;Nguyên liệu và gia vị;Train;Tía tô dùng trong món gì
+327;Nguyên liệu và gia vị;Train;Kinh giới là loại rau gì
+328;Nguyên liệu và gia vị;Train;Lá lốt dùng nấu gì ngon
+329;Nguyên liệu và gia vị;Train;Rau thơm ăn kèm món miền Tây thường gồm loại nào
+330;Nguyên liệu và gia vị;Train;Thì là dùng trong nấu ăn Việt Nam thế nào
+331;Nguyên liệu và gia vị;Train;Bông súng ăn với món gì
+332;Nguyên liệu và gia vị;Train;Bông điên điển là gì
+333;Nguyên liệu và gia vị;Train;Mắm cá linh là gì
+334;Nguyên liệu và gia vị;Train;Cá lóc đồng nấu món nào ngon
+335;Nguyên liệu và gia vị;Train;Bông so đũa ăn được không và nấu món gì
+336;Nguyên liệu và gia vị;Train;Rau đắng đất dùng thế nào
+337;Nguyên liệu và gia vị;Train;Cách chọn thịt heo tươi ngon
+338;Nguyên liệu và gia vị;Train;Thịt ba chỉ thịt nạc vai và thịt đùi khác nhau sao
+339;Nguyên liệu và gia vị;Train;Cách chọn gà ngon
+340;Nguyên liệu và gia vị;Train;Cách nhận biết tôm tươi khi mua
+341;Nguyên liệu và gia vị;Train;Cách chọn cá tươi ngon
+342;Nguyên liệu và gia vị;Train;Thịt bò phần nào dùng xào phần nào dùng kho
+343;Nguyên liệu và gia vị;Train;Cách chọn mực tươi khi đi chợ
+344;Nguyên liệu và gia vị;Train;Nghêu chọn sao cho tươi ngon
+345;Nguyên liệu và gia vị;Train;Đậu hũ có mấy loại phổ biến
+346;Nguyên liệu và gia vị;Train;Các loại nấm phổ biến trong nấu ăn
+347;Nguyên liệu và gia vị;Train;Phân biệt bún phở hủ tiếu và mì
+348;Nguyên liệu và gia vị;Train;Gạo nấu cơm nên chọn loại nào
+349;Nguyên liệu và gia vị;Train;Trứng gà trứng vịt trứng cút khác nhau sao
+350;Nguyên liệu và gia vị;Train;Dầu ăn loại nào phù hợp để chiên
+351;Nguyên liệu và gia vị;Train;Lá chuối dùng gói những món gì
+352;Nguyên liệu và gia vị;Train;Cua đồng nấu được những món gì
+353;Nguyên liệu và gia vị;Train;Trái bần dùng nấu canh chua được không
+354;Nguyên liệu và gia vị;Train;Ếch dùng nấu những món gì
+371;Thay thế nguyên liệu;Train;Không có nước mắm thì dùng gì thay được
+372;Thay thế nguyên liệu;Train;Dùng gì thay dầu hào khi nấu ăn
+373;Thay thế nguyên liệu;Train;Nước tương có thay nước mắm được không
+374;Thay thế nguyên liệu;Train;Không có giấm thì dùng gì thay
+375;Thay thế nguyên liệu;Train;Tương ớt hết rồi thì dùng gì thay
+376;Thay thế nguyên liệu;Train;Mắm tôm thay bằng gì nếu không ăn được
+377;Thay thế nguyên liệu;Train;Dầu mè hết thì thay bằng gì
+378;Thay thế nguyên liệu;Train;Tương hột nấu món gì ngon
+379;Thay thế nguyên liệu;Train;Không có tiêu thì nêm gì thay
+380;Thay thế nguyên liệu;Train;Bột ngọt thay bằng gì cho tự nhiên hơn
+381;Thay thế nguyên liệu;Train;Hạt nêm hết thì nêm gì thay
+382;Thay thế nguyên liệu;Train;Không có ngũ vị hương thì dùng gì
+383;Thay thế nguyên liệu;Train;Bột nghệ hết thì thay bằng gì
+384;Thay thế nguyên liệu;Train;Đường phèn hết thì thay bằng gì khi kho thịt
+385;Thay thế nguyên liệu;Train;Đường thốt nốt thay bằng gì
+386;Thay thế nguyên liệu;Train;Không có sả tươi thì thay bằng gì
+387;Thay thế nguyên liệu;Train;Gừng tươi hết thì dùng gì thay
+388;Thay thế nguyên liệu;Train;Không có tỏi thì nêm gì thay
+389;Thay thế nguyên liệu;Train;Hành tím hết thì thay bằng gì
+390;Thay thế nguyên liệu;Train;Lá chanh không có thì thay bằng gì
+391;Thay thế nguyên liệu;Train;Nếu không có riềng thì thay bằng gì
+392;Thay thế nguyên liệu;Train;Me chua không có thì nấu canh chua bằng gì
+393;Thay thế nguyên liệu;Train;Nước cốt dừa thay bằng gì
+394;Thay thế nguyên liệu;Train;Không có ớt tươi thì dùng gì cho cay
+395;Thay thế nguyên liệu;Train;Không có chanh vắt thì thay bằng gì
+396;Thay thế nguyên liệu;Train;Nấu món cần thịt heo mà không có thì thay bằng gì
+397;Thay thế nguyên liệu;Train;Cá lóc không có thì thay bằng cá gì
+398;Thay thế nguyên liệu;Train;Không có đậu hũ thì thay bằng gì trong món xào
+399;Thay thế nguyên liệu;Train;Trứng gà hết thì dùng trứng gì thay
+400;Thay thế nguyên liệu;Train;Tôm không có thì nấu canh với gì
+401;Thay thế nguyên liệu;Train;Khi xào thịt bò , không dùng rượu nấu ăn thì thay bằng gì để thịt bò thơm và mềm
+402;Thay thế nguyên liệu;Train;Mực tươi hết thì thay bằng gì trong lẩu
+403;Thay thế nguyên liệu;Train;Nghệ tươi hết thì dùng gì thay
+404;Thay thế nguyên liệu;Train;Ớt hiểm không có thì thay bằng ớt gì
+405;Thay thế nguyên liệu;Train;Hành tây thay bằng gì nếu không thích
+406;Thay thế nguyên liệu;Train;Lá dứa không có thì làm sao cho cơm thơm
+407;Thay thế nguyên liệu;Train;Ngò om không có thì nấu canh chua bằng rau gì
+408;Thay thế nguyên liệu;Train;Húng quế hết thì ăn phở với rau gì
+409;Thay thế nguyên liệu;Train;Tía tô không có thì thay bằng rau gì
+410;Thay thế nguyên liệu;Train;Kinh giới hết thì dùng rau gì thay
+411;Thay thế nguyên liệu;Train;Bông súng không mua được thì ăn lẩu mắm với rau gì
+412;Thay thế nguyên liệu;Train;Bông điên điển không có mùa thì thay bằng gì
+413;Thay thế nguyên liệu;Train;Mắm cá linh không có thì nấu lẩu mắm bằng gì
+414;Thay thế nguyên liệu;Train;Trái bần không có thì nấu canh chua cá bằng gì
+415;Thay thế nguyên liệu;Train;Nấu chay thì lấy gì thay thịt
+416;Thay thế nguyên liệu;Train;Nấu chay thì thay nước mắm bằng gì
+417;Thay thế nguyên liệu;Train;Không ăn hải sản thì nấu canh chua bằng gì
+418;Thay thế nguyên liệu;Train;Sữa tươi không có thì nấu súp kem bằng gì
+419;Thay thế nguyên liệu;Train;Rượu nấu ăn hết thì dùng gì thay
+420;Thay thế nguyên liệu;Train;Bột mì không có thì chiên giòn bằng gì
+421;Thay thế nguyên liệu;Train;Dầu đậu phộng không có thì chiên bằng dầu gì
+422;Thay thế nguyên liệu;Train;Đậu phộng không có thì rắc gì lên gỏi
+423;Thay thế nguyên liệu;Train;Cần tây không có thì dùng rau gì thay
+424;Thay thế nguyên liệu;Train;Tôm khô hết thì nấu nước dùng bằng gì
+425;Thay thế nguyên liệu;Train;Dừa nạo không có thì thay bằng gì
+426;Thay thế nguyên liệu;Train;Khoai tây không có thì nấu cà ri bằng gì
+427;Thay thế nguyên liệu;Train;Nấm đông cô khô hết thì dùng nấm gì thay
+428;Thay thế nguyên liệu;Train;Cà rốt hết thì dùng củ gì thay trong nấu canh
+429;Thay thế nguyên liệu;Train;Giá sống không thích thì ăn kèm bún phở bằng gì
+430;Thay thế nguyên liệu;Train;Bún tươi hết thì ăn với gì thay
+431;Thay thế nguyên liệu;Train;Lá chuối không có thì gói bánh bằng gì
+432;Thay thế nguyên liệu;Train;Cua đồng không có thì nấu canh bằng gì
+433;Thay thế nguyên liệu;Train;Me không có thì tạo vị chua bằng gì
+434;Thay thế nguyên liệu;Train;Hủ tiếu không mua được thì nấu bằng gì thay
+451;Phân tích và điều chỉnh công thức;Train;Công thức cho 4 người mà mình nấu cho 2 thì giảm thế nào
+452;Phân tích và điều chỉnh công thức;Train;Nấu cho 10 người mà công thức chỉ cho 4 người thì tăng sao cho đúng
+453;Phân tích và điều chỉnh công thức;Train;Nấu tiệc cho đông người thì cần chú ý gì
+454;Phân tích và điều chỉnh công thức;Train;Công thức ghi khẩu phần 6 nhưng nhà mình 3 người thì sao
+455;Phân tích và điều chỉnh công thức;Train;Món kho bị mặn quá thì cứu sao
+456;Phân tích và điều chỉnh công thức;Train;Canh bị nhạt thì nêm thêm gì
+457;Phân tích và điều chỉnh công thức;Train;Xào rau mà bị ra nước nhiều quá thì phải làm sao
+458;Phân tích và điều chỉnh công thức;Train;Nấu cà ri mà bị loãng quá thì làm đặc lại sao
+459;Phân tích và điều chỉnh công thức;Train;Nước chấm pha bị chua quá thì chỉnh lại sao
+460;Phân tích và điều chỉnh công thức;Train;Thịt kho mà nước kho bị ngọt quá thì sửa thế nào
+461;Phân tích và điều chỉnh công thức;Train;Thịt kho bị dai không mềm thì làm sao
+462;Phân tích và điều chỉnh công thức;Train;Cơm bị khô cứng thì cứu được không
+463;Phân tích và điều chỉnh công thức;Train;Gà luộc bị khô thì lần sau làm sao cho mềm
+464;Phân tích và điều chỉnh công thức;Train;Bánh xèo bị bở không giòn thì do đâu
+465;Phân tích và điều chỉnh công thức;Train;Chả giò chiên bị mềm không giòn thì sửa sao
+466;Phân tích và điều chỉnh công thức;Train;Đậu hũ chiên bị bể thì phải làm sao
+467;Phân tích và điều chỉnh công thức;Train;Nấu cơm bị nhão thì nguyên nhân do đâu
+468;Phân tích và điều chỉnh công thức;Train;Chiên cá bị dính chảo hoài thì làm sao
+469;Phân tích và điều chỉnh công thức;Train;Xào thịt bò mà bị dai thì do đâu
+470;Phân tích và điều chỉnh công thức;Train;Luộc rau mà bị vàng úa thì sai chỗ nào
+471;Phân tích và điều chỉnh công thức;Train;Làm sao cho nước phở trong mà vẫn ngọt
+472;Phân tích và điều chỉnh công thức;Train;Làm sao cho thịt kho tàu có màu đẹp
+473;Phân tích và điều chỉnh công thức;Train;Tại sao nêm gia vị mà không thấm vào thịt
+474;Phân tích và điều chỉnh công thức;Train;Làm sao để cơm chiên tơi không bị dính
+475;Phân tích và điều chỉnh công thức;Train;Tại sao nhiều công thức kho thịt cần nước dừa
+476;Phân tích và điều chỉnh công thức;Train;Tại sao phải phi hành tỏi trước khi xào
+477;Phân tích và điều chỉnh công thức;Train;Tại sao kho cá phải để cá ráo nước trước
+478;Phân tích và điều chỉnh công thức;Train;Công thức ghi ướp thịt qua đêm có cần thiết không
+479;Phân tích và điều chỉnh công thức;Train;Tại sao công thức canh chua hay cho thơm vào
+480;Phân tích và điều chỉnh công thức;Train;Tại sao nhiều món miền Tây hay dùng mắm
+481;Phân tích và điều chỉnh công thức;Train;Vì sao nấu cháo phải khuấy đều
+482;Phân tích và điều chỉnh công thức;Train;Tại sao công thức hay ghi cho đường tan đều trước khi thêm nguyên liệu
+483;Phân tích và điều chỉnh công thức;Train;Không có lò nướng thì nướng bằng gì
+484;Phân tích và điều chỉnh công thức;Train;Không có máy xay thì làm sao xay nhuyễn
+485;Phân tích và điều chỉnh công thức;Train;Không có xửng hấp thì hấp món ăn bằng cách nào
+486;Phân tích và điều chỉnh công thức;Train;Chảo không chống dính thì chiên trứng sao cho không dính
+487;Phân tích và điều chỉnh công thức;Train;Con mình không ăn cay thì nấu kiểu nào
+488;Phân tích và điều chỉnh công thức;Train;Ông bà lớn tuổi ăn không nổi đồ cứng thì nấu sao
+489;Phân tích và điều chỉnh công thức;Train;Muốn nấu ăn ít dầu mỡ thì làm sao
+490;Phân tích và điều chỉnh công thức;Train;Nấu cho người ăn chay thì cần chú ý gì
+491;Phân tích và điều chỉnh công thức;Train;Muốn giảm độ ngọt trong món ăn thì làm sao
+492;Phân tích và điều chỉnh công thức;Train;Công thức ghi dùng bếp gas nhưng mình dùng bếp từ thì sao
+493;Phân tích và điều chỉnh công thức;Train;Tại sao rang gia vị trước khi xay thì thơm hơn
+494;Phân tích và điều chỉnh công thức;Train;Tại sao nhiều công thức yêu cầu ướp với chút dầu ăn
+495;Phân tích và điều chỉnh công thức;Train;Vì sao phải để thịt nghỉ sau khi nướng
+496;Phân tích và điều chỉnh công thức;Train;Tại sao nấu canh phải cho rau vào sau cùng
+497;Phân tích và điều chỉnh công thức;Train;Vì sao không nên mở nắp nồi cơm khi đang nấu
+498;Phân tích và điều chỉnh công thức;Train;Tại sao phải ngâm gạo trước khi nấu xôi
+499;Phân tích và điều chỉnh công thức;Train;Tại sao chiên đồ phải chiên hai lần cho giòn
+500;Phân tích và điều chỉnh công thức;Train;Công thức bảo dùng lửa nhỏ liu riu nghĩa là sao
+501;Phân tích và điều chỉnh công thức;Train;Tại sao phải lật bánh xèo đúng lúc
+502;Phân tích và điều chỉnh công thức;Train;Vì sao khi nướng thịt cần phết dầu lên bề mặt
+503;Phân tích và điều chỉnh công thức;Train;Tại sao nhiều công thức nói nêm nếm lại trước khi tắt bếp
+504;Phân tích và điều chỉnh công thức;Train;Vì sao không nên cho muối vào đậu khi đậu chưa mềm
+505;Phân tích và điều chỉnh công thức;Train;Tại sao phải chần sơ rau trước khi xào
+506;Phân tích và điều chỉnh công thức;Train;Vì sao khi nấu súp phải cho gia vị vào từng giai đoạn
+507;Phân tích và điều chỉnh công thức;Train;Tại sao phải vắt nước rau trước khi trộn gỏi
+508;Phân tích và điều chỉnh công thức;Train;Làm sao nấu cháo cho bé mà không bị sống
+509;Phân tích và điều chỉnh công thức;Train;Tại sao phải để nguội bánh trước khi cắt
+510;Phân tích và điều chỉnh công thức;Train;Vì sao phải đánh trứng cho bông trước khi làm bánh
+511;Phân tích và điều chỉnh công thức;Train;Tại sao khi làm nước sốt phải khuấy liên tục
+512;Phân tích và điều chỉnh công thức;Train;Tại sao phải đổ bột bánh xèo mỏng trên chảo
+513;Phân tích và điều chỉnh công thức;Train;Vì sao không nên nấu quá nhiều món cùng lúc nếu chưa quen
+514;Phân tích và điều chỉnh công thức;Train;Làm sao biết dầu đã đủ nóng để chiên
+531;Món ăn miền Tây;Train;Ẩm thực miền Tây có gì đặc biệt so với các vùng khác
+532;Món ăn miền Tây;Train;Tại sao món ăn miền Tây hay có vị ngọt
+533;Món ăn miền Tây;Train;Mắm có vai trò gì trong ẩm thực miền Tây
+534;Món ăn miền Tây;Train;Mùa nước nổi ở miền Tây có món gì đặc biệt
+535;Món ăn miền Tây;Train;Lẩu mắm miền Tây ăn kèm với rau gì
+536;Món ăn miền Tây;Train;Cá lóc trong ẩm thực miền Tây được chế biến kiểu nào
+537;Món ăn miền Tây;Train;Bún nước lèo Sóc Trăng có gì khác Trà Vinh
+538;Món ăn miền Tây;Train;Hủ tiếu miền Tây có mấy loại
+539;Món ăn miền Tây;Train;Cần Thơ có những món đặc sản gì nổi tiếng
+540;Món ăn miền Tây;Train;An Giang có những món ăn đặc trưng nào
+541;Món ăn miền Tây;Train;Bến Tre nổi tiếng với món gì
+542;Món ăn miền Tây;Train;Sóc Trăng có món gì ngon nên thử
+543;Món ăn miền Tây;Train;Cà Mau có đặc sản gì
+544;Món ăn miền Tây;Train;Đám giỗ miền Tây thường nấu những món gì
+545;Món ăn miền Tây;Train;Tết ở miền Tây thường ăn những gì
+546;Món ăn miền Tây;Train;Đám cưới miền Tây hay nấu gì
+547;Món ăn miền Tây;Train;Cá lóc nướng trui ăn kèm với gì mới đúng kiểu
+548;Món ăn miền Tây;Train;Bánh xèo miền Tây ăn với nước chấm gì
+549;Món ăn miền Tây;Train;Lẩu cá kèo ăn với rau gì ngon nhất
+550;Món ăn miền Tây;Train;Bún mắm ăn kèm với topping gì
+551;Món ăn miền Tây;Train;Cháo cá lóc rau đắng ăn sao cho đúng cách
+552;Món ăn miền Tây;Train;Mắm kho ăn với gì cho hợp
+553;Món ăn miền Tây;Train;Bông súng miền Tây ăn được những món gì
+554;Món ăn miền Tây;Train;Rau đắng đất là gì và ăn với món nào
+555;Món ăn miền Tây;Train;Nước cốt dừa dùng trong món miền Tây nào
+556;Món ăn miền Tây;Train;Cá kèo miền Tây chế biến kiểu nào ngon nhất
+557;Món ăn miền Tây;Train;Tôm càng xanh miền Tây chế biến sao ngon
+558;Món ăn miền Tây;Train;Cá tai tượng được chế biến kiểu nào ở miền Tây
+559;Món ăn miền Tây;Train;Ốc bươu miền Tây ăn kiểu nào
+560;Món ăn miền Tây;Train;Cá bông lau miền Tây nấu món gì ngon
+561;Món ăn miền Tây;Train;Rau đắng miền Tây ăn kèm món gì
+562;Món ăn miền Tây;Train;Bún cá miền Tây có gì đặc biệt
+563;Món ăn miền Tây;Train;Chọn cá lóc tươi ngon thì nhìn vào đâu
+564;Món ăn miền Tây;Train;Tôm càng xanh chọn con nào ngon
+565;Món ăn miền Tây;Train;Mắm cá miền Tây chọn loại nào ngon
+566;Món ăn miền Tây;Train;Dừa miền Tây loại nào nấu ăn ngon nhất
+567;Món ăn miền Tây;Train;Bông điên điển mua về thì chế biến sao
+568;Món ăn miền Tây;Train;Bún mắm và lẩu mắm khác nhau chỗ nào
+569;Món ăn miền Tây;Train;Cá kho tộ và cá kho tiêu khác nhau sao
+570;Món ăn miền Tây;Train;Bánh xèo miền Tây khác bánh xèo miền Trung sao
+571;Món ăn miền Tây;Train;Thịt kho tàu miền Tây khác miền Bắc sao
+572;Món ăn miền Tây;Train;Nướng cá lóc trui kiểu dân dã làm sao
+573;Món ăn miền Tây;Train;Làm sao để mắm kho không bị hôi
+574;Món ăn miền Tây;Train;Làm nước mắm me chấm đồ nướng sao cho ngon
+575;Món ăn miền Tây;Train;Thắng nước hàng cho thịt kho tàu thế nào cho đẹp
+576;Món ăn miền Tây;Train;Chọn rau sống ăn kèm lẩu mắm thế nào cho đủ
+577;Món ăn miền Tây;Train;Chợ nổi miền Tây bán những món ăn gì
+578;Món ăn miền Tây;Train;Bữa cơm gia đình miền Tây thường có gì
+579;Món ăn miền Tây;Train;Ẩm thực Khmer ảnh hưởng ẩm thực miền Tây thế nào
+580;Món ăn miền Tây;Train;Mùa nào ở miền Tây ăn cá linh ngon nhất
+581;Món ăn miền Tây;Train;Bánh cống Sóc Trăng ăn kèm gì
+582;Món ăn miền Tây;Train;Khô cá sặc miền Tây ăn kiểu nào
+583;Món ăn miền Tây;Train;Ếch miền Tây chế biến sao ngon
+584;Món ăn miền Tây;Train;Gỏi miền Tây phổ biến gồm những loại nào
+585;Món ăn miền Tây;Train;Cách pha nước mắm ớt kiểu miền Tây
+586;Món ăn miền Tây;Train;Canh chua miền Tây có mấy loại chua khác nhau
+587;Món ăn miền Tây;Train;Tôm càng xanh miền Tây chế biến kiểu nào ngon
+588;Món ăn miền Tây;Train;Ba khía Cà Mau ăn kiểu nào
+589;Món ăn miền Tây;Train;Lẩu cá kèo rau nhút ăn ở đâu ngon
+590;Món ăn miền Tây;Train;Bông súng miền Tây ăn sao cho ngon
+591;Món ăn miền Tây;Train;Rượu đế miền Tây uống với món gì hợp
+592;Món ăn miền Tây;Train;Cháo cá lóc rau đắng nấu sao cho ngon
+593;Món ăn miền Tây;Train;Bún nước lèo khác bún mắm chỗ nào
+594;Món ăn miền Tây;Train;Cơm tấm miền Tây khác cơm tấm Sài Gòn sao
+611;Dinh dưỡng trong ăn uống;Train;Ăn uống cân bằng nghĩa là sao
+612;Dinh dưỡng trong ăn uống;Train;Tại sao cần ăn nhiều rau xanh
+613;Dinh dưỡng trong ăn uống;Train;Uống nước bao nhiêu một ngày là đủ
+614;Dinh dưỡng trong ăn uống;Train;Ăn sáng có quan trọng không
+615;Dinh dưỡng trong ăn uống;Train;Ăn khuya có hại gì không
+616;Dinh dưỡng trong ăn uống;Train;Chất xơ có tác dụng gì cho cơ thể
+617;Dinh dưỡng trong ăn uống;Train;Ăn quá nhiều đường có hại gì
+618;Dinh dưỡng trong ăn uống;Train;Ăn mặn quá có hại không
+619;Dinh dưỡng trong ăn uống;Train;Chất đạm có trong thực phẩm nào
+620;Dinh dưỡng trong ăn uống;Train;Chất béo tốt khác chất béo xấu sao
+621;Dinh dưỡng trong ăn uống;Train;Tinh bột có trong thực phẩm nào
+622;Dinh dưỡng trong ăn uống;Train;Vitamin có vai trò gì trong cơ thể
+623;Dinh dưỡng trong ăn uống;Train;Trẻ nhỏ cần ăn uống thế nào cho đủ chất
+624;Dinh dưỡng trong ăn uống;Train;Người lớn tuổi nên ăn uống thế nào
+625;Dinh dưỡng trong ăn uống;Train;Phụ nữ mang thai cần chú ý ăn gì
+626;Dinh dưỡng trong ăn uống;Train;Ăn chay có đủ dinh dưỡng không
+627;Dinh dưỡng trong ăn uống;Train;Ăn nhiều bữa nhỏ hay ít bữa to tốt hơn
+628;Dinh dưỡng trong ăn uống;Train;Tại sao nên ăn chậm nhai kỹ
+629;Dinh dưỡng trong ăn uống;Train;Nên ăn trái cây lúc nào trong ngày
+630;Dinh dưỡng trong ăn uống;Train;Ăn tối nên ăn gì cho nhẹ bụng
+631;Dinh dưỡng trong ăn uống;Train;Người tập thể dục nên ăn gì trước và sau khi tập
+632;Dinh dưỡng trong ăn uống;Train;Ăn gì để da đẹp hơn
+633;Dinh dưỡng trong ăn uống;Train;Ăn gì để ngủ ngon hơn
+634;Dinh dưỡng trong ăn uống;Train;Sữa chua tốt cho cơ thể như thế nào
+635;Dinh dưỡng trong ăn uống;Train;Các loại hạt có tốt cho sức khỏe không
+636;Dinh dưỡng trong ăn uống;Train;Ăn cá có tốt hơn ăn thịt không
+637;Dinh dưỡng trong ăn uống;Train;Ăn trứng mỗi ngày có sao không
+638;Dinh dưỡng trong ăn uống;Train;Gạo lứt có tốt hơn gạo trắng không
+639;Dinh dưỡng trong ăn uống;Train;Đậu phụ có giá trị dinh dưỡng gì
+640;Dinh dưỡng trong ăn uống;Train;Rau muống có chất gì tốt cho cơ thể
+641;Dinh dưỡng trong ăn uống;Train;Khoai lang ăn nhiều có tốt không
+642;Dinh dưỡng trong ăn uống;Train;Nên uống sữa lúc nào trong ngày
+643;Dinh dưỡng trong ăn uống;Train;Luộc rau lâu có mất chất không
+644;Dinh dưỡng trong ăn uống;Train;Chiên xào nhiều dầu mỡ có hại gì
+645;Dinh dưỡng trong ăn uống;Train;Hấp thức ăn có tốt hơn chiên không
+646;Dinh dưỡng trong ăn uống;Train;Nấu cháo từ xương hầm có tốt không
+647;Dinh dưỡng trong ăn uống;Train;Rau sống ăn có tốt hơn rau nấu chín không
+648;Dinh dưỡng trong ăn uống;Train;Nghệ có tốt cho sức khỏe không
+649;Dinh dưỡng trong ăn uống;Train;Tỏi có tác dụng gì khi ăn thường xuyên
+650;Dinh dưỡng trong ăn uống;Train;Gừng có tác dụng gì trong ăn uống
+651;Dinh dưỡng trong ăn uống;Train;Mật ong có thay thế đường được không
+652;Dinh dưỡng trong ăn uống;Train;Đậu xanh có tác dụng gì cho cơ thể
+653;Dinh dưỡng trong ăn uống;Train;Ăn rong biển có tốt không
+654;Dinh dưỡng trong ăn uống;Train;Dầu mè có tốt hơn dầu ăn thường không
+655;Dinh dưỡng trong ăn uống;Train;Mì gói ăn nhiều có sao không
+656;Dinh dưỡng trong ăn uống;Train;Đồ ăn nhanh có hại gì cho sức khỏe
+657;Dinh dưỡng trong ăn uống;Train;Ăn cơm nguội có mất chất không
+658;Dinh dưỡng trong ăn uống;Train;Nước ép rau má có tốt không
+659;Dinh dưỡng trong ăn uống;Train;Ăn hải sản bao nhiêu là đủ trong tuần
+660;Dinh dưỡng trong ăn uống;Train;Uống trà xanh có tốt không
+661;Dinh dưỡng trong ăn uống;Train;Ăn óc heo có tốt cho não không
+662;Dinh dưỡng trong ăn uống;Train;Nước dừa uống nhiều có tốt không
+663;Dinh dưỡng trong ăn uống;Train;Ăn cà chua sống hay nấu chín tốt hơn
+664;Dinh dưỡng trong ăn uống;Train;Ăn đồ lên men như dưa muối kim chi có tốt không
+665;Dinh dưỡng trong ăn uống;Train;Thịt đỏ ăn bao nhiêu là vừa phải
+666;Dinh dưỡng trong ăn uống;Train;Cà phê uống nhiều có ảnh hưởng gì
+667;Dinh dưỡng trong ăn uống;Train;Bí đỏ có chất gì tốt cho cơ thể
+668;Dinh dưỡng trong ăn uống;Train;Ăn tôm cua nhiều có tốt không
+669;Dinh dưỡng trong ăn uống;Train;Ăn sáng bằng xôi có tốt không
+670;Dinh dưỡng trong ăn uống;Train;Bắp ngô ăn nhiều có tốt không
+671;Dinh dưỡng trong ăn uống;Train;Canh rau nấu có mất chất so với rau xào không
+672;Dinh dưỡng trong ăn uống;Train;Ăn cơm với canh là đủ chất chưa
+673;Dinh dưỡng trong ăn uống;Train;Phở ăn sáng có đủ chất không
+674;Dinh dưỡng trong ăn uống;Train;Ăn nhiều đồ ngọt ảnh hưởng gì đến cơ thể
+691;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì ăn sáng để giảm cân
+692;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Món nào ăn tối nhẹ bụng mà đủ chất
+693;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì cho người muốn tăng cân
+694;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì vào buổi trưa cho người giảm cân
+695;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì cho bữa cơm chay đủ chất
+696;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Món chay nào giàu đạm
+697;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì cho trẻ nhỏ ăn chay được
+698;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Người hay mệt mỏi nên ăn gì
+699;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì để có sức đề kháng tốt hơn
+700;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì cho người mới ốm dậy ăn
+701;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Người làm việc văn phòng nên ăn gì
+702;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì cho trẻ em đang tuổi lớn
+703;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Mùa nóng nên ăn gì cho mát
+704;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Mùa lạnh nên nấu gì ăn cho ấm
+705;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Mùa mưa nên ăn gì để tăng đề kháng
+706;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý thực đơn bữa sáng nhanh gọn
+707;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì ăn trưa ở nhà nhanh gọn
+708;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý bữa ăn cho hai người sống chung
+709;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nên nấu gì khi ở nhà một mình
+710;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Trong tủ lạnh có trứng và rau thì nấu gì
+711;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Có thịt gà thì nấu món gì đơn giản
+712;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Có tôm tươi thì nấu gì ngon
+713;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Có cá lóc thì nấu gì cho gia đình
+714;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Có đậu phụ thì làm món gì ngon
+715;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý thực đơn cơm nhà cho cả tuần
+716;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Thực đơn cho người ăn kiêng trong tuần
+717;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý ăn gì cho sinh viên ít tiền
+718;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì trước khi thi để tập trung tốt
+719;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì cho bữa tiệc nhỏ tại nhà
+720;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Đi cắm trại mang theo đồ ăn gì
+721;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý bữa phụ lành mạnh cho buổi chiều
+722;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý món ăn cho người ăn kiêng mà vẫn ngon miệng
+723;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Trời mưa lạnh nấu gì ăn cho ấm
+724;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Đi picnic nấu gì mang theo được
+725;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì cho bữa cơm gia đình ngày cuối tuần
+726;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý món ăn cho người không ăn được cay
+727;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì khi nhà hết thịt chỉ có rau
+728;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý ăn gì cho người bị ốm nghén
+729;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì cho bữa phụ buổi sáng ở công ty
+730;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì khi cuối tháng hết tiền
+731;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý thực đơn ngon mà tiết kiệm
+732;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu cơm nhà ngon hơn ăn ngoài sao cho được
+733;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn thịt bò kết hợp với rau gì ngon
+734;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Cá ăn với rau gì hợp
+735;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Tôm kết hợp với nguyên liệu nào ngon
+736;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gà kết hợp nguyên liệu nào cho bữa ngon
+737;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì đãi khách khoảng mười người
+738;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu tiệc sinh nhật tại nhà gồm gì
+739;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu cơm cho cả tuần để tủ lạnh được không
+740;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì giúp xương chắc khỏe
+741;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì cho mắt sáng khỏe
+742;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý món ăn cho người mới bắt đầu tập nấu
+743;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì cho người hay bị chuột rút
+744;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì để có nhiều năng lượng buổi sáng
+745;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý món ăn nhẹ cho buổi tối xem phim
+746;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì cho con ăn dặm lần đầu
+747;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Ăn gì để bổ máu cho phụ nữ
+748;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý bữa ăn cho ngày nắng nóng trên 38 độ
+749;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý món ăn cho người muốn tăng cơ
+750;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý ăn gì cho người ăn low carb
+751;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì cho gia đình ba thế hệ cùng ăn
+752;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý ăn gì khi đang cho con bú
+753;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Nấu gì vừa nhanh vừa healthy cho bữa trưa văn phòng
+754;Gợi ý món ăn theo nhu cầu dinh dưỡng;Train;Gợi ý ăn gì cho người hay bị đau đầu
+771;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị cảm nên ăn gì cho mau khỏe
+772;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Cảm cúm kiêng ăn gì
+773;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Cháo gì ăn khi bị cảm tốt nhất
+774;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị cảm uống gì cho dễ chịu
+775;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị ho nên ăn gì
+776;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Ho kiêng ăn gì cho mau hết
+777;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Trẻ nhỏ bị ho ăn gì cho đỡ
+778;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị sốt nên ăn gì uống gì
+779;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị sốt nên kiêng gì
+780;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Sốt xong ăn gì để phục hồi sức khỏe
+781;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Người mệt mỏi uể oải nên ăn gì
+782;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Ăn gì khi cảm thấy kiệt sức
+783;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Hay mệt buổi chiều nên ăn gì bữa trưa
+784;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Ăn gì cho đỡ mệt khi thay đổi thời tiết
+785;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Trong kỳ kinh nguyệt nên ăn gì
+786;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Kinh nguyệt nên kiêng ăn gì
+787;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Đau bụng kinh ăn gì cho bớt đau
+788;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Trước kỳ kinh nên ăn gì để bớt khó chịu
+789;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Sau kỳ kinh nên ăn gì bồi bổ
+790;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị cảm kèm ho thì ăn uống sao
+791;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Vừa sốt vừa mệt nên ăn gì
+792;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Hết cảm rồi nhưng vẫn mệt nên ăn gì
+793;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Mệt mỏi kèm chán ăn thì làm sao
+794;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Nấu gì cho người nhà bị cảm ăn
+795;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị ho kéo dài nên ăn uống thế nào
+796;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Kinh nguyệt không đều nên ăn gì
+797;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Ăn gì khi bị cảm mà không có gừng
+798;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Sốt nhẹ ở trẻ nhỏ nên cho ăn gì
+799;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Cảm nắng ăn gì cho mau hết
+800;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị nghẹt mũi nên ăn gì cho thông
+801;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Ho có đờm nên ăn gì cho hết
+802;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị cảm lạnh ban đêm nên uống gì trước khi ngủ
+803;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Sốt cao nên làm gì và ăn uống thế nào
+804;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Sau sốt bị yếu chân tay nên bổ sung gì
+805;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Làm việc nhiều mệt mỏi nên ăn gì
+806;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Ăn gì để bớt mệt khi học thi
+807;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Mệt mỏi do thay đổi thời tiết ăn uống sao cho khỏe
+808;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Người già hay mệt mỏi nên ăn gì
+809;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Kinh nguyệt ra nhiều nên ăn gì bù máu
+810;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Uống gì giảm đau bụng kinh hiệu quả
+811;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Ăn gì giúp kinh nguyệt đều hơn
+812;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Trong kỳ kinh có nên uống nước dừa không
+813;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Hay bị mệt trước kỳ kinh nên làm gì
+814;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Nên nấu gì cho người nhà bị sốt
+815;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị ốm không muốn ăn cơm thì ăn gì thay
+816;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị cảm cúm bao lâu thì khỏi và ăn gì cho nhanh
+817;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Mệt mỏi kèm đau đầu nên ăn uống sao
+818;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị ho ban đêm mất ngủ nên làm gì
+819;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Mùa mưa hay bị cảm nên ăn gì phòng
+820;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Kinh nguyệt kéo dài hơn bình thường ăn uống thế nào
+821;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Cách nấu cháo gà gừng cho người cảm
+822;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Kinh nguyệt đến sớm bất thường có cần ăn uống đặc biệt không
+823;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Người bị cảm có nên ăn hải sản không
+824;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Ho lâu ngày ăn mật ong có tốt không
+825;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Mệt mỏi kèm chóng mặt nên ăn gì
+826;Gợi ý ăn uống khi cảm, ho, sốt, mệt mỏi hoặc trong thời kỳ kinh nguyệt;Train;Bị cảm kèm đau họng ăn gì cho dễ nuốt
+841;An toàn thực phẩm;Train;Ngộ độc thực phẩm là gì
+842;An toàn thực phẩm;Train;Bị ngộ độc thực phẩm nên làm gì
+843;An toàn thực phẩm;Train;Làm sao biết thức ăn bị hư
+844;An toàn thực phẩm;Train;Rửa rau sống sao cho sạch
+845;An toàn thực phẩm;Train;Thịt sống để ngoài bao lâu thì hư
+846;An toàn thực phẩm;Train;Hải sản tươi và hải sản ươn khác nhau như thế nào
+847;An toàn thực phẩm;Train;Ăn gỏi cá sống có an toàn không
+848;An toàn thực phẩm;Train;Thịt gà chín hồng ở trong có ăn được không
+849;An toàn thực phẩm;Train;Dùng thớt sao cho đúng cách
+850;An toàn thực phẩm;Train;Rửa tay trước khi nấu ăn có quan trọng không
+851;An toàn thực phẩm;Train;Bếp bẩn có ảnh hưởng đến sức khỏe không
+852;An toàn thực phẩm;Train;Dao dùng cắt thịt sống có cắt trái cây được không
+853;An toàn thực phẩm;Train;Nhiệt độ tủ lạnh bao nhiêu là an toàn
+854;An toàn thực phẩm;Train;Cơm nguội để qua đêm có ăn được không
+855;An toàn thực phẩm;Train;Thức ăn nấu chín để ngoài bao lâu thì hư
+856;An toàn thực phẩm;Train;Đồ ăn thừa hâm lại mấy lần thì phải bỏ
+857;An toàn thực phẩm;Train;Ăn trứng sống có an toàn không
+858;An toàn thực phẩm;Train;Sữa tươi vừa vắt có uống được luôn không
+859;An toàn thực phẩm;Train;Đồ hộp quá hạn có ăn được không
+860;An toàn thực phẩm;Train;Mì gói ăn nhiều có hại không
+861;An toàn thực phẩm;Train;Ăn vặt hàng rong có an toàn không
+862;An toàn thực phẩm;Train;Chọn quán ăn đường phố sao cho an toàn
+863;An toàn thực phẩm;Train;Rau quả có thuốc trừ sâu ăn vào có sao không
+864;An toàn thực phẩm;Train;Trái cây gọt vỏ rồi để lâu có sao không
+865;An toàn thực phẩm;Train;Uống nước máy không đun sôi có sao không
+866;An toàn thực phẩm;Train;Làm sao tránh ngộ độc thực phẩm khi đi du lịch
+867;An toàn thực phẩm;Train;Nấu ăn cho trẻ nhỏ cần chú ý gì về an toàn
+868;An toàn thực phẩm;Train;Tại sao không nên rã đông thực phẩm ở nhiệt độ phòng
+869;An toàn thực phẩm;Train;Thức ăn bị ruồi đậu vào có nên ăn không
+870;An toàn thực phẩm;Train;Có nên ăn thực phẩm rơi xuống đất không
+871;An toàn thực phẩm;Train;Nấu chín thức ăn ở nhiệt độ bao nhiêu mới an toàn
+872;An toàn thực phẩm;Train;Nướng thịt sao cho an toàn không bị sống bên trong
+873;An toàn thực phẩm;Train;Luộc rau bao lâu thì vừa
+874;An toàn thực phẩm;Train;Phụ gia thực phẩm có hại không
+875;An toàn thực phẩm;Train;Phân biệt thực phẩm có hàn the sao
+876;An toàn thực phẩm;Train;Rau quả ngâm hóa chất bảo quản nhận biết sao
+877;An toàn thực phẩm;Train;Dị ứng thực phẩm là gì và nguy hiểm sao
+878;An toàn thực phẩm;Train;Con bị dị ứng thức ăn nên làm gì
+879;An toàn thực phẩm;Train;Thực phẩm hữu cơ có an toàn hơn không
+880;An toàn thực phẩm;Train;Mua thực phẩm online có an toàn không
+881;An toàn thực phẩm;Train;Ướp thịt qua đêm có an toàn không
+882;An toàn thực phẩm;Train;Nấu lẩu ở nhà cần chú ý gì về vệ sinh
+883;An toàn thực phẩm;Train;Xào rau sao cho an toàn và ngon
+884;An toàn thực phẩm;Train;Nấu đồ ăn cho người bệnh cần chú ý gì
+885;An toàn thực phẩm;Train;Mùa nóng bảo quản thức ăn sao cho an toàn
+886;An toàn thực phẩm;Train;Kem hay đá bào ngoài đường có sạch không
+887;An toàn thực phẩm;Train;Ăn buffet cần chú ý gì về an toàn
+888;An toàn thực phẩm;Train;Mang cơm đi làm bảo quản sao cho an toàn
+889;An toàn thực phẩm;Train;Nấm dại có ăn được không
+890;An toàn thực phẩm;Train;Khoai tây mọc mầm có ăn được không
+891;An toàn thực phẩm;Train;Sắn có độc không và ăn sao cho an toàn
+892;An toàn thực phẩm;Train;Măng tươi ăn sao cho an toàn
+893;An toàn thực phẩm;Train;Có nên ăn cá nóc không
+894;An toàn thực phẩm;Train;Thực phẩm chức năng có thay thế bữa ăn được không
+895;An toàn thực phẩm;Train;Nấu thịt chưa rã đông hết có sao không
+896;An toàn thực phẩm;Train;Thức ăn đóng gói hút chân không có an toàn không
+897;An toàn thực phẩm;Train;Tại sao không nên dùng tay trần bốc thức ăn chín
+898;An toàn thực phẩm;Train;Cắt thịt trên thớt bị đen có sao không
+899;An toàn thực phẩm;Train;Trẻ em có nên ăn đồ sống như gỏi cuốn không
+916;Bảo quản và chế biến thực phẩm;Train;Bảo quản rau xanh trong tủ lạnh sao cho tươi lâu
+917;Bảo quản và chế biến thực phẩm;Train;Khoai tây bảo quản sao cho không mọc mầm
+918;Bảo quản và chế biến thực phẩm;Train;Hành tỏi bảo quản sao cho lâu
+919;Bảo quản và chế biến thực phẩm;Train;Cà chua bảo quản trong tủ lạnh hay để ngoài
+920;Bảo quản và chế biến thực phẩm;Train;Thịt tươi bảo quản trong tủ lạnh được bao lâu
+921;Bảo quản và chế biến thực phẩm;Train;Cá tươi bảo quản sao cho đúng
+922;Bảo quản và chế biến thực phẩm;Train;Tôm mua về bảo quản thế nào
+923;Bảo quản và chế biến thực phẩm;Train;Trái cây nào nên để tủ lạnh trái cây nào để ngoài
+924;Bảo quản và chế biến thực phẩm;Train;Chuối mau chín quá nên làm gì
+925;Bảo quản và chế biến thực phẩm;Train;Bơ chưa chín làm sao cho chín nhanh
+926;Bảo quản và chế biến thực phẩm;Train;Gia vị bảo quản sao cho thơm lâu
+927;Bảo quản và chế biến thực phẩm;Train;Gạo bảo quản sao cho không bị mọt
+928;Bảo quản và chế biến thực phẩm;Train;Nước mắm bảo quản thế nào cho đúng
+929;Bảo quản và chế biến thực phẩm;Train;Ướp thịt sao cho thấm gia vị
+930;Bảo quản và chế biến thực phẩm;Train;Cách sơ chế tôm trước khi nấu
+931;Bảo quản và chế biến thực phẩm;Train;Làm sao khử mùi tanh của cá
+932;Bảo quản và chế biến thực phẩm;Train;Làm sao cho thịt kho mềm và thấm vị
+933;Bảo quản và chế biến thực phẩm;Train;Chiên đồ ăn sao cho giòn và không bị bắn dầu
+934;Bảo quản và chế biến thực phẩm;Train;Hấp thức ăn có gì tốt hơn chiên
+935;Bảo quản và chế biến thực phẩm;Train;Nấu canh sao cho ngon và giữ được chất
+936;Bảo quản và chế biến thực phẩm;Train;Luộc thịt sao cho ngon không bị khô
+937;Bảo quản và chế biến thực phẩm;Train;Xào thịt bò sao cho mềm không bị dai
+938;Bảo quản và chế biến thực phẩm;Train;Làm sao nấu cơm ngon bằng nồi cơm điện
+939;Bảo quản và chế biến thực phẩm;Train;Cách làm nước dùng xương heo ngon
+940;Bảo quản và chế biến thực phẩm;Train;Cách kho cá sao cho không bị nát
+941;Bảo quản và chế biến thực phẩm;Train;Nấu xôi bằng nồi cơm điện có được không
+942;Bảo quản và chế biến thực phẩm;Train;Nướng thịt bằng lò nướng cần chú ý gì
+943;Bảo quản và chế biến thực phẩm;Train;Cách nấu phở bò tại nhà đơn giản
+944;Bảo quản và chế biến thực phẩm;Train;Cách rim mặn thức ăn cho bảo quản lâu
+945;Bảo quản và chế biến thực phẩm;Train;Phơi khô thực phẩm bảo quản có tốt không
+946;Bảo quản và chế biến thực phẩm;Train;Muối chua rau củ có khó không
+947;Bảo quản và chế biến thực phẩm;Train;Cách nấu canh chua miền Tây ngon
+948;Bảo quản và chế biến thực phẩm;Train;Bảo quản nước cốt dừa sao cho không bị hư
+949;Bảo quản và chế biến thực phẩm;Train;Mắm cá bảo quản thế nào
+950;Bảo quản và chế biến thực phẩm;Train;Bảo quản đậu phụ tươi sao cho không bị chua
+951;Bảo quản và chế biến thực phẩm;Train;Bảo quản rau thơm tươi lâu bằng cách nào
+952;Bảo quản và chế biến thực phẩm;Train;Bảo quản dầu ăn sau khi mở nắp
+953;Bảo quản và chế biến thực phẩm;Train;Nước chấm pha sẵn để được bao lâu
+954;Bảo quản và chế biến thực phẩm;Train;Sốt mayonnaise bảo quản sao cho đúng
+955;Bảo quản và chế biến thực phẩm;Train;Tương ớt và tương cà mở rồi có cần để tủ lạnh không
+956;Bảo quản và chế biến thực phẩm;Train;Cách luộc rau giữ được màu xanh
+957;Bảo quản và chế biến thực phẩm;Train;Cách làm rau xào không bị ra nước
+958;Bảo quản và chế biến thực phẩm;Train;Cách nấu khoai lang ngon và dễ
+959;Bảo quản và chế biến thực phẩm;Train;Cà rốt nấu chín hay ăn sống tốt hơn
+960;Bảo quản và chế biến thực phẩm;Train;Cách làm gà rán giòn tại nhà
+961;Bảo quản và chế biến thực phẩm;Train;Cách kho thịt với trứng ngon
+962;Bảo quản và chế biến thực phẩm;Train;Cách làm chả giò tại nhà
+963;Bảo quản và chế biến thực phẩm;Train;Cách nấu bún riêu cua đơn giản
+964;Bảo quản và chế biến thực phẩm;Train;Làm sao cắt hành không bị cay mắt
+965;Bảo quản và chế biến thực phẩm;Train;Mẹo nấu cơm bị nhão thành cơm ngon
+966;Bảo quản và chế biến thực phẩm;Train;Làm sao cho canh không bị mặn
+967;Bảo quản và chế biến thực phẩm;Train;Mẹo làm bánh xèo giòn
+968;Bảo quản và chế biến thực phẩm;Train;Cách nấu nước mắm me ngon
+969;Bảo quản và chế biến thực phẩm;Train;Cách pha bột chiên giòn
+970;Bảo quản và chế biến thực phẩm;Train;Cách làm tóp mỡ giòn ngon
+971;Bảo quản và chế biến thực phẩm;Train;Cách nấu canh khổ qua bớt đắng
+972;Bảo quản và chế biến thực phẩm;Train;Bảo quản cơm nấu sẵn cho bữa sau
+973;Bảo quản và chế biến thực phẩm;Train;Cách bảo quản thịt nguội đã mở gói
+974;Bảo quản và chế biến thực phẩm;Train;Cách bảo quản đồ ăn khi mất điện
+975;Bảo quản và chế biến thực phẩm;Train;Cách bảo quản bánh mì cho mềm lâu
+976;Bảo quản và chế biến thực phẩm;Train;Cách bảo quản nấm tươi
+977;Bảo quản và chế biến thực phẩm;Train;Cách bảo quản sữa chua tự làm
+978;Bảo quản và chế biến thực phẩm;Train;Cách bảo quản hành phi giòn lâu
+979;Bảo quản và chế biến thực phẩm;Train;Cách bảo quản nước hầm xương

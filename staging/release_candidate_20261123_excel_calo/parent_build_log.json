@@ -1,0 +1,10 @@
+{
+  "build_id": "release_candidate_20261116_v3",
+  "time_utc": "2026-11-16T01:27:12.861800+00:00",
+  "changes": [
+    "Excluded exactly four test fixtures from active export",
+    "Held conflict versions",
+    "Extracted exact culinary spans for214/277"
+  ],
+  "promoted": false
+}

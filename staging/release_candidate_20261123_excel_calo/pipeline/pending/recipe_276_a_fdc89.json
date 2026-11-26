@@ -1,0 +1,125 @@
+{
+  "base_recipe_id": 276,
+  "original_recipe_sha256": "4fdebd7fc1dc53cf310b82e4a85fd4ba8c75ca6e3b479260960c88438256a86f",
+  "original_source": "Điện máy XANH (Vào bếp) - Cách luộc rau bắp cải ngon, giòn thơm xanh mướt không bị vụn (https://www.dienmayxanh.com/vao-bep/cach-luoc-rau-bap-cai-ngon-gion-thom-xanh-muot-khong-bi-vun-07681)",
+  "recipe_version": "276-A-FDC89",
+  "title": "Bắp cải luộc",
+  "ingredient": {
+    "identity": "Bắp cải xanh sống đã sơ chế",
+    "food_id": "USDA:FDC:169975",
+    "food_state": "RAW",
+    "edible_mass_g": "89",
+    "portion_row": {
+      "id": "85791",
+      "fdc_id": "169975",
+      "seq_num": "1",
+      "amount": "1",
+      "measure_unit_id": "9999",
+      "portion_description": "",
+      "modifier": "cup, chopped",
+      "gram_weight": "89",
+      "data_points": "",
+      "footnote": "",
+      "min_year_acquired": ""
+    }
+  },
+  "servings": 1,
+  "method": "Luộc bằng nước và bỏ nước luộc",
+  "exclusions": [
+    "muối",
+    "giấm",
+    "dầu",
+    "gia vị",
+    "nước chấm",
+    "cơm",
+    "món kèm"
+  ],
+  "scope": "LEVEL_A_INPUT_ESTIMATE",
+  "nutrition_source": {
+    "path": "pipeline/usda_raw/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+    "data_type": "SR Legacy",
+    "format": "ZIP (CSV)",
+    "release": "2018-04",
+    "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+    "license": "CC0-1.0",
+    "accessed_date": "2026-11-16",
+    "bytes": 6074592,
+    "sha256": "b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+    "total_uncompressed_bytes": 39791883,
+    "members": [
+      "Download & API Field Descriptions-2019-10-11-16-22.xlsx",
+      "all_downloaded_table_record_counts.csv",
+      "food.csv",
+      "food_attribute.csv",
+      "food_attribute_type.csv",
+      "food_calorie_conversion_factor.csv",
+      "food_category.csv",
+      "food_nutrient.csv",
+      "food_nutrient_conversion_factor.csv",
+      "food_nutrient_derivation.csv",
+      "food_nutrient_source.csv",
+      "food_portion.csv",
+      "food_protein_conversion_factor.csv",
+      "food_update_log_entry.csv",
+      "measure_unit.csv",
+      "nutrient.csv",
+      "retention_factor.csv",
+      "sr_legacy_food.csv"
+    ],
+    "import_statistics": {
+      "source_nutrient_rows": 644125,
+      "target_rows": 38881,
+      "outside_target_rows": 605244,
+      "values_retained": 38881,
+      "five_values_present": 7709,
+      "food_rows": 7793
+    },
+    "nutrient_ids": [
+      "1008",
+      "1003",
+      "1004",
+      "1005",
+      "1093"
+    ]
+  },
+  "nutrients": {
+    "lipid_g": {
+      "value_per_100g_edible": "0.1",
+      "unit": "G",
+      "nutrient_id": "1004",
+      "row_id": "1484444"
+    },
+    "carbohydrate_g": {
+      "value_per_100g_edible": "5.8",
+      "unit": "G",
+      "nutrient_id": "1005",
+      "row_id": "1484445"
+    },
+    "kcal": {
+      "value_per_100g_edible": "25",
+      "unit": "KCAL",
+      "nutrient_id": "1008",
+      "row_id": "1484446"
+    },
+    "protein_g": {
+      "value_per_100g_edible": "1.28",
+      "unit": "G",
+      "nutrient_id": "1003",
+      "row_id": "1484505"
+    },
+    "sodium_mg": {
+      "value_per_100g_edible": "18",
+      "unit": "MG",
+      "nutrient_id": "1093",
+      "row_id": "1484516"
+    }
+  },
+  "decision": {
+    "origin": "User instruction Prompt 3G.1",
+    "status": "RECIPE_SELECTION_CONFIRMED",
+    "scope": "Phiên bản 276-A-FDC89, FDC 169975, cấp A"
+  },
+  "approval_status": "PENDING",
+  "runtime_enabled": false,
+  "recorded_at": "2026-11-17T21:45:59.866541+07:00"
+}

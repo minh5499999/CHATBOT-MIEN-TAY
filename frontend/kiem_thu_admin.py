@@ -22,10 +22,6 @@ def _view(cluster):
 
 
 def hien_thi_kiem_thu(actor, docs):
-    from backend.chatbot import tai_khoan
-    if not tai_khoan.la_admin(actor):
-        st.error("Bạn không có quyền quản trị.")
-        st.stop()
     # The outer container is a stable CSS hook shared with the other admin pages.
     with st.container(key='admin_feedback_page'):
         _noi_dung(actor, docs)
@@ -94,14 +90,12 @@ def _noi_dung(actor, docs):
             with st.form("form_them_tri_thuc"):
                 q_in = st.text_input("Câu hỏi của người dùng", value=default_q, placeholder="Ví dụ: Cách làm lạp xưởng tươi Mai Quế Lộ miền Tây")
                 nhom_in = st.selectbox("Nhóm tri thức", [
-                    "Hướng dẫn nấu ăn",
                     "Hướng dẫn nấu món ăn miền Tây",
                     "Món ăn miền Tây",
                     "Giải thích nguyên liệu, gia vị",
                     "Thay thế nguyên liệu",
                     "Dinh dưỡng, lượng calo, chất đạm, chất béo",
                     "Bảo quản và chế biến thực phẩm",
-                    "An toàn thực phẩm",
                     "Gợi ý khi ốm, mệt mỏi, phục hồi",
                 ])
                 a_in = st.text_area("Câu trả lời / Công thức chuẩn", height=180, placeholder="Nhập nguyên liệu, các bước thực hiện hoặc lưu ý...")
@@ -109,25 +103,19 @@ def _noi_dung(actor, docs):
                 submitted = st.form_submit_button("🚀 Lưu & Cập nhật FAISS tức thì", type="primary")
 
                 if submitted:
-                    from backend.chatbot import tai_khoan
-                    if not tai_khoan.la_admin(actor):
-                        st.error("Bạn không có quyền quản trị.")
-                        st.stop()
                     if not q_in.strip() or not a_in.strip():
                         st.error("Vui lòng nhập đầy đủ câu hỏi và nội dung câu trả lời.")
                     else:
                         nhom_folder_map = {
-                            "Hướng dẫn nấu ăn": "02_huong_dan_nau_an",
-                            "Hướng dẫn nấu món ăn miền Tây": "03_huong_dan_nau_mon_mien_tay",
-                            "Món ăn miền Tây": "04_mon_an_mien_tay",
-                            "Giải thích nguyên liệu, gia vị": "05_nguyen_lieu_gia_vi",
+                            "Hướng dẫn nấu món ăn miền Tây": "02_huong_dan_nau_an",
+                            "Món ăn miền Tây": "03_huong_dan_nau_mon_mien_tay",
+                            "Giải thích nguyên liệu, gia vị": "04_giai_thich_nguyen_lieu",
                             "Thay thế nguyên liệu": "06_thay_the_nguyen_lieu",
                             "Dinh dưỡng, lượng calo, chất đạm, chất béo": "08_dinh_duong",
-                            "Bảo quản và chế biến thực phẩm": "10_bao_quan_che_bien",
-                            "An toàn thực phẩm": "11_an_toan_thuc_pham",
+                            "Bảo quản và chế biến thực phẩm": "10_bao_quan",
                             "Gợi ý khi ốm, mệt mỏi, phục hồi": "12_goi_y_khi_om_met",
                         }
-                        folder = nhom_folder_map.get(nhom_in, "03_huong_dan_nau_mon_mien_tay")
+                        folder = nhom_folder_map.get(nhom_in, "02_huong_dan_nau_an")
                         try:
                             from backend.chatbot.tu_hoc import them_cau_hoi_moi
                             res = them_cau_hoi_moi(
@@ -137,7 +125,6 @@ def _noi_dung(actor, docs):
                                 nhom_folder=folder,
                                 nguon=nguon_in,
                                 actor=actor,
-                                kiem_tra_quyen=True,
                             )
                             st.success(f"🎉 Đã thêm thành công vào FAISS Index! Tổng số vector hiện tại: {res['tong_so_vector']}. Người dùng có thể hỏi câu này ngay lập tức.")
                             st.session_state.pop("form_cau_hoi", None)

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "scope": "PRODUCTION",
+  "plans": {
+    "plans/plan.json": {
+      "sha256": "6c51a132b6768973fff56adaff42f4f1f96fa4f7b6aaa83bef36028af56ee829",
+      "status": "APPROVED",
+      "reviewed_by": "baotram",
+      "reviewed_at": "2026-11-17T15:36:57.387874+00:00",
+      "review_scope": [
+        "completeness",
+        "ingredient_input_estimate",
+        "mass",
+        "portion_basis",
+        "recipe_mapping"
+      ],
+      "review_subject_path": "p276/plan.json",
+      "recipe_id": 276
+    }
+  },
+  "datasets": {
+    "datasets/dataset.json": {
+      "sha256": "122775eb3646fffa04795cc3ca758c2913726a43670d4184ddd48de25971c7a5",
+      "status": "APPROVED",
+      "reviewed_by": "baotram",
+      "reviewed_at": "2026-11-17T15:36:57.411095+00:00",
+      "review_scope": [
+        "basis_and_units",
+        "food_states",
+        "nutrient_values",
+        "reuse_rights"
+      ],
+      "review_subject_path": "p276/dataset.json"
+    }
+  },
+  "evidence": {
+    "evidence/recipe.txt": {
+      "sha256": "6894bde32d653d3c256a2a0968c1bda4f8b400da72e38f03ec0936d982fdf801",
+      "status": "APPROVED",
+      "reviewed_by": "baotram",
+      "reviewed_at": "2026-11-17T15:36:57.442442+00:00",
+      "review_scope": [
+        "reuse_rights",
+        "source_text"
+      ],
+      "review_subject_path": "p276/recipe.txt",
+      "document_version": "276-A-FDC89"
+    },
+    "evidence/usda.txt": {
+      "sha256": "38281336a403c0c46c96b9048e8e382443a9d1b92e1d3091b6b80362502b035f",
+      "status": "APPROVED",
+      "reviewed_by": "baotram",
+      "reviewed_at": "2026-11-17T15:36:57.466419+00:00",
+      "review_scope": [
+        "reuse_rights",
+        "source_text"
+      ],
+      "review_subject_path": "p276/usda.txt",
+      "document_version": "USDA SR Legacy 2018-04"
+    }
+  }
+}

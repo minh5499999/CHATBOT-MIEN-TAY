@@ -28,26 +28,11 @@ def cap_nhat(previous, text):
     result = set(previous or []) | set(nhan_dien(text))
     q = chuan_hoa(text)
     for name, aliases in TINH_TRANG.items():
-        if (any(re.search(r'\b(?:khong|chua)(?: con)? (?:bi |mac )?'+re.escape(a)+r'\b',q) for a in aliases)
-                or any(re.search(r'\b(?:da )?(?:het|khoi)(?: benh)? '+re.escape(a)+r'\b', q) for a in aliases)):
+        if any(re.search(r'\b(?:khong|chua)(?: con)? (?:bi |mac )?'+re.escape(a)+r'\b',q) for a in aliases):
             result.discard(name)
     if re.search(r'\b(?:bo|xoa) dieu kien suc khoe\b',q):
         result.clear()
     return sorted(result)
-
-
-def la_cau_hoi_chua_benh(text):
-    """Nhận diện câu hỏi hỏi món ăn có chữa khỏi / điều trị bệnh hay không."""
-    q = chuan_hoa(text)
-    if not q:
-        return False
-    if re.search(r'\b(?:nen an gi|an gi)\s+(?:cho|de)\s+(?:mau khoi|do|giam|bot)\b', q):
-        return False
-    return bool(re.search(
-        r'\b(?:chua|dieu tri|tri)(?:\s+(?:khoi|dut|het|duoc|benh))?\s+'
-        r'(?:duoc\s+)?(?:benh|ho|sot|cam|tieu duong|dai thao duong|huyet ap|gut|gout|da day|gan|than|tim)\b',
-        q,
-    ))
 
 
 def dung_chu_de(text, conditions):

@@ -1,0 +1,531 @@
+.stApp {background: #fff5e8; color:#382016;}
+.stApp::before {content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 75% 15%,#fffdf7 0%,#fff5e8 65%,#fce9cf 100%);}
+[data-testid="stHeader"] {background:transparent;}
+.stMain .block-container {max-width:1450px;padding:1.25rem 1.5rem 1rem;}
+[data-testid="stSidebar"] {border-right:1px solid #f6d9b5;}
+[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {padding:1.8rem 1.4rem 1rem;}
+.chat-brand {text-align:center;margin:0 0 1rem;color:#8b2909;}
+.chat-brand>div {width:66px;margin:auto;}
+.chat-brand svg {width:100%;height:68px;}
+.chat-brand h2 {font-family:'Segoe Print',cursive;font-size:28px;color:#8b2909;padding:0;white-space:nowrap;}
+.chat-brand p {font-size:15px;line-height:1.4;}
+.chat-heading {display:flex;align-items:center;gap:14px;margin:0 0 14px;color:#8b2909;}
+.chat-logo {flex:0 0 62px;}.chat-logo svg {width:62px;height:68px;}
+.chat-heading h1 {font-family:'Segoe Print',cursive;font-size:clamp(24px,2.1vw,35px);font-style:italic;color:#842707;padding:0 0 5px;line-height:1.3;}
+.chat-heading p {margin:0;font-size:15px;}.chat-heading-copy {flex:1;}
+.chat-account {display:flex;align-items:center;gap:12px;}.chat-account>span {display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:linear-gradient(120deg,#ffac15,#ff5b00);color:white;font-size:23px;box-shadow:0 3px 7px #b9581725;}
+.chat-account small {display:block;background:#ffdfbb;border-radius:20px;text-align:center;margin-top:4px;padding:2px 12px;}
+.st-key-chat_canvas {border:1px solid #f5dcc5;border-radius:28px;background:#fffaf2ba;padding:22px!important;min-height:60vh;box-shadow:0 4px 14px #b96e2010;}
+[data-testid="stChatMessage"] {background:#fffdf9ed;border:1px solid #f9dfca;border-radius:24px!important;padding:14px 18px;box-shadow:0 5px 10px #9a4b1510;max-width:88%;margin:6px 0 14px;}
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {margin-left:auto;flex-direction:row-reverse;background:#ffe6cbe8;max-width:75%;}
+[data-testid="stChatMessageAvatarAssistant"],[data-testid="stChatMessageAvatarUser"] {background:#ffe9d1;color:#aa390d;}
+[data-testid="stChatMessage"] p {font-size:15px;line-height:1.55;}
+[data-testid="stChatMessage"] li::marker {color:#ff7b00;}
+.st-key-chat_actions {margin:8px 0 18px;}
+.st-key-chat_actions button {width:100%;border:1px solid #ffdbbb;background:#fff8ee;color:#96320e;min-height:44px;box-shadow:0 3px 5px #aa501014;}
+[data-testid="stChatInput"] {
+    box-sizing:border-box;
+    border:1px solid #ffe1ca!important;
+    border-radius:40px!important;
+    background:#fffdfa;
+    box-shadow:0 5px 14px #b96e2015;
+    padding:4px 10px;
+}
+[data-testid="stChatInput"]:focus-within {border-color:#ff7900!important;}
+[data-testid="stChatInput"] textarea {font-size:15px;color:#713e29;}
+[data-testid="stChatInputSubmitButton"] {background:linear-gradient(120deg,#ffab0d,#ff5900);color:white;border-radius:50%;width:40px;height:40px;}
+section[data-testid="stSidebar"] .st-key-nav_chat button {border-radius:18px;min-height:46px;}
+section[data-testid="stSidebar"] .st-key-nav_chat button p {font-weight:600;}
+section[data-testid="stSidebar"] .st-key-nav_suggest button,section[data-testid="stSidebar"] .st-key-nav_cook button {color:#96320e;min-height:40px;font-size:15px;}
+section[data-testid="stSidebar"] .st-key-chan_trang {background:transparent;border-top:1px solid #eacba8;padding-top:14px;}
+section[data-testid="stSidebar"] .st-key-dang_xuat button {border-radius:32px;background:#fffcf5dd;border:1px solid #f2d7bc;min-height:44px;color:#932d0a;}
+@media(min-width:1500px) {.stMain .block-container {padding-right:10vw;}}
+@media(max-width:900px) {.stMain .block-container {padding:2rem 1rem;}.chat-account {display:none;}.chat-heading {gap:10px;}.chat-heading p {font-size:14px;}.chat-logo {flex-basis:52px;}.chat-logo svg {width:52px;}.st-key-chat_canvas {padding:16px!important;}[data-testid="stChatMessage"] {max-width:100%;padding:14px;}}
+
+/* Keep the composer compact, including Streamlit's inner textarea wrapper. */
+[data-testid="stChatInput"] > div {
+    background:transparent!important;
+    border:0!important;
+    border-radius:inherit!important;
+    box-shadow:none!important;
+}
+[data-testid="stChatInput"] textarea {min-height:38px!important;padding-top:8px!important;padding-bottom:8px!important;}
+.st-key-chat_actions button p,section[data-testid="stSidebar"] button p {font-size:15px;}
+section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {gap:0.65rem;}
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p {margin-bottom:0.6rem;}
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p:last-child {margin-bottom:0;}
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li p {margin-bottom:0.2rem;}
+
+/* One composed background keeps the tray, lamp and leaf shadows in proportion. */
+.stApp {
+    background:#fff5e8 url('/app/static/chat/chat-scene-v2.png?v=3') center center / 100% 100% no-repeat fixed!important;
+}
+.stApp::before {content:none!important;}
+[data-testid="stAppViewContainer"], [data-testid="stMain"], [data-testid="stMainBlockContainer"] {
+    background:transparent!important;
+}
+.stApp::after {content:none;}
+.stMain {position:relative;z-index:1;}
+[data-testid="stSidebar"] {
+    background:rgba(255,239,216,0.12);
+    border-right:1px solid #efd4b1;
+}
+.st-key-chat_canvas {
+    background:rgba(255,251,244,0.62);
+    min-height:68vh;
+    padding:24px 22px 28px!important;
+}
+@media(min-width:901px) {
+    .stMain .block-container {max-width:none;padding-right:14vw;padding-left:1.2rem;}
+    .st-key-chat_canvas {padding-right:6vw!important;}
+    .st-key-chat_canvas [data-testid="stChatMessage"] {max-width:88%;}
+}
+@media(max-width:900px) {
+    .stApp {background-size:auto 100%!important;background-position:72% center!important;}
+    .st-key-chat_canvas {background:#fffaf2e6;min-height:60vh;}
+}
+
+/* Keep sidebar navigation and conversation titles readable over the foliage. */
+section[data-testid="stSidebar"] {
+    background:linear-gradient(to bottom,rgba(255,243,224,.28) 0%,rgba(255,243,224,.88) 38%,rgba(255,243,224,.95) 100%)!important;
+}
+section[data-testid="stSidebar"] .nhan-muc,
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+    color:#70452c!important;
+    opacity:1!important;
+    font-weight:600;
+}
+section[data-testid="stSidebar"] .stElementContainer[class*="st-key-ls_"] button {
+    background:rgba(255,250,241,.96)!important;
+    border:1px solid rgba(215,174,126,.42)!important;
+    box-shadow:0 2px 5px rgba(104,62,21,.05);
+    min-height:38px;
+}
+section[data-testid="stSidebar"] .stElementContainer[class*="st-key-ls_"] button p {
+    color:#63300f!important;font-weight:600;
+}
+section[data-testid="stSidebar"] .stElementContainer[class*="st-key-ls_"] button:hover {
+    background:#ffe4bc!important;border-color:#e5a862!important;
+}
+section[data-testid="stSidebar"] .stElementContainer[class*="st-key-xoa_"] button {
+    background:#fff8ed!important;color:#793509!important;
+}
+section[data-testid="stSidebar"] .st-key-chan_trang {
+    background:rgba(255,243,224,.96)!important;
+}
+
+/* Give assistant replies more breathing room below the last line. */
+.st-key-chat_canvas [data-testid="stChatMessage"]:not(:has([data-testid="stChatMessageAvatarUser"])) {
+    padding-top:18px;
+    padding-bottom:32px;
+    height:auto;
+    overflow:visible;
+}
+
+/* Fill the remaining viewport while reserving space for the readable notice. */
+.stMain .block-container {padding-bottom:0.5rem;min-height:100dvh;}
+.st-key-chat_canvas {min-height:calc(100dvh - 12rem);}
+.st-key-chat_notice {
+    background:#fff4df;
+    border:1px solid #e9bc81;
+    border-left:4px solid #e87912;
+    border-radius:12px;
+    padding:10px 14px!important;
+    box-shadow:0 3px 10px #7a3a1012;
+    margin-top:2px;
+}
+.st-key-chat_notice [data-testid="stCaptionContainer"],
+.st-key-chat_notice [data-testid="stCaptionContainer"] p {
+    color:#663711!important;
+    font-size:13px;
+    font-weight:600;
+    line-height:1.6;
+    opacity:1;
+}
+@media(max-width:900px) {
+    .st-key-chat_canvas {min-height:calc(100dvh - 15rem);}
+}
+
+/* Move the composer slightly lower without changing its size. */
+.st-key-chat_canvas [data-testid="stChatInput"] {
+    margin-top:24px;
+}
+
+/* Let the composer consume remaining vertical space above itself. */
+.st-key-chat_canvas {
+    display:flex!important;
+    flex-direction:column!important;
+    padding-bottom:20px!important;
+}
+.st-key-chat_canvas > [data-testid="stLayoutWrapper"]:has(.st-key-chat_composer),
+.st-key-chat_canvas > .st-key-chat_composer {
+    margin-top:auto!important;
+    flex-shrink:0;
+    padding-top:24px;
+}
+.st-key-chat_canvas .st-key-chat_composer [data-testid="stChatInput"] {
+    margin-top:0!important;
+    margin-bottom:0!important;
+}
+
+/* Balance the space around quick actions while keeping the composer at the bottom. */
+.st-key-chat_canvas > [data-testid="stLayoutWrapper"]:has(.st-key-chat_actions),
+.st-key-chat_canvas > .st-key-chat_actions {
+    margin-top:auto!important;
+    margin-bottom:auto!important;
+    flex-shrink:0;
+}
+.st-key-chat_canvas .st-key-chat_actions {margin:0!important;padding:20px 0;}
+.st-key-chat_canvas > [data-testid="stLayoutWrapper"]:has(.st-key-chat_composer),
+.st-key-chat_canvas > .st-key-chat_composer {
+    margin-top:0!important;
+    padding-top:0;
+}
+
+/* Scale sidebar artwork within the sidebar so the lamp stays left of the logo. */
+section[data-testid="stSidebar"] {
+    background-color:#fff0da!important;
+    background-image:linear-gradient(to bottom,rgba(255,243,224,0) 0%,rgba(255,243,224,.88) 24%,rgba(255,243,224,.95) 100%),url('/app/static/chat/sidebar-kitchen.png?v=1')!important;
+    background-size:100% 100%!important;
+    background-position:left top!important;
+    background-repeat:no-repeat!important;
+}
+
+/* Compact sidebar navigation and history spacing. */
+section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {gap:0.3rem!important;}
+section[data-testid="stSidebar"] .st-key-nav_suggest button,
+section[data-testid="stSidebar"] .st-key-nav_cook button {min-height:34px;padding-top:3px;padding-bottom:3px;}
+section[data-testid="stSidebar"] .nhan-muc {margin:0.45rem 0 0.1rem 0.6rem;}
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {margin-bottom:0.2rem;}
+section[data-testid="stSidebar"] .stElementContainer[class*="st-key-ls_"] button {min-height:32px;padding-top:3px;padding-bottom:3px;}
+section[data-testid="stSidebar"] .st-key-chan_trang {padding-top:8px;padding-bottom:8px;}
+
+/* Reserve real line height for history labels so rows cannot overlap them. */
+section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {gap:0.5rem!important;}
+section[data-testid="stSidebar"] .nhan-muc {
+    display:block;line-height:1.5;min-height:19px;
+    margin:0.5rem 0 0.15rem 0.6rem;
+}
+section[data-testid="stSidebar"] .stElementContainer:has([data-testid="stCaptionContainer"]) {
+    height:auto!important;min-height:24px!important;
+    flex-shrink:0;overflow:visible;
+}
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+    padding:2px 0 4px;line-height:1.5;
+}
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {
+    line-height:1.5!important;margin:0!important;
+}
+section[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] {
+    flex-shrink:0;min-height:34px;
+}
+
+/* Keep the menu toggle readable over the kitchen artwork. */
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebarCollapsed"] {
+    z-index:100;
+}
+:is([data-testid="stSidebarCollapsed"], [data-testid="stSidebarCollapsedControl"], [data-testid="stSidebarCollapseButton"]) button {
+    width:42px!important;
+    height:42px!important;
+    min-height:42px!important;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px!important;
+    border:1px solid #e77616!important;
+    border-radius:13px!important;
+    background:#fff8ec!important;
+    color:#a84308!important;
+    box-shadow:0 4px 12px #7b3b2430!important;
+    transition:background .18s ease, box-shadow .18s ease;
+}
+:is([data-testid="stSidebarCollapsed"], [data-testid="stSidebarCollapsedControl"], [data-testid="stSidebarCollapseButton"]) button:hover {
+    background:#ffe2b8!important;
+    box-shadow:0 5px 16px #7b3b2440!important;
+}
+:is([data-testid="stSidebarCollapsed"], [data-testid="stSidebarCollapsedControl"], [data-testid="stSidebarCollapseButton"]) button:focus-visible {
+    outline:3px solid #ff9a35!important;
+    outline-offset:3px;
+}
+section[data-testid="stSidebar"] [data-testid="stSidebarHeader"] {
+    height:3.3rem;
+    min-height:3.3rem;
+}
+/* Center a wider conversation when the sidebar is folded away. */
+@media(min-width:901px) {
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .stMain .block-container {
+        width:100%;
+        max-width:1440px;
+        margin-inline:auto;
+        padding-left:clamp(2rem,5vw,5rem);
+        padding-right:clamp(2rem,5vw,5rem);
+        padding-top:3.5rem;
+    }
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .st-key-chat_canvas {
+        padding:28px!important;
+    }
+}
+@media(prefers-reduced-motion:reduce) {
+    :is([data-testid="stSidebarCollapsed"], [data-testid="stSidebarCollapsedControl"], [data-testid="stSidebarCollapseButton"]) button {transition:none;}
+}
+
+/* Collapsed sidebars must release the width reserved by the open menu. */
+section[data-testid="stSidebar"][data-collapsed="true"] {
+    width:0!important;
+    min-width:0!important;
+    flex-basis:0!important;
+}
+[data-testid="stExpandSidebarButton"] {
+    width:42px!important;
+    height:42px!important;
+    border:1px solid #e77616!important;
+    border-radius:13px!important;
+    background:#fff8ec!important;
+    color:#a84308!important;
+    box-shadow:0 4px 12px #7b3b2430!important;
+}
+[data-testid="stExpandSidebarButton"]:hover {background:#ffe2b8!important;}
+[data-testid="stExpandSidebarButton"]:focus-visible {outline:3px solid #ff9a35;outline-offset:3px;}
+@media(min-width:768px) {
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .stMain {
+        width:100%!important;
+        margin-left:0!important;
+    }
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .stMain .block-container {
+        width:100%!important;
+        max-width:1600px!important;
+        margin-inline:auto!important;
+        padding:3.5rem clamp(1rem,3vw,3rem) 0.5rem!important;
+    }
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .st-key-chat_canvas {
+        width:100%!important;
+        padding:24px!important;
+    }
+}
+
+/* Keep the signed-in identity visible when the menu is collapsed. */
+.stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-account {
+    display:flex;
+    flex-shrink:0;
+    margin-left:auto;
+    padding:8px 12px;
+    border:1px solid #efd1ad;
+    border-radius:18px;
+    background:#fff9eee8;
+    box-shadow:0 3px 10px #9a4b1510;
+}
+.stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-account b {
+    display:block;
+    max-width:200px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+/* Explicit grid areas keep the brand together at every screen width. */
+.stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading {
+    display:grid;
+    grid-template-columns:62px minmax(0,1fr) auto;
+    grid-template-areas:"logo title account";
+    gap:14px;
+    align-items:center;
+    padding-left:24px;
+    margin-top:-18px;
+    margin-bottom:18px;
+}
+.stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading::before {content:none;}
+.stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-logo {grid-area:logo;}
+.stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading-copy {grid-area:title;min-width:0;}
+.stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-account {
+    grid-area:account;
+    justify-self:end;
+    margin:0;
+    max-width:100%;
+}
+@media(max-width:700px) {
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading {
+        grid-template-columns:52px minmax(0,1fr);
+        grid-template-areas:"account account" "logo title";
+        gap:12px;
+        margin-top:0;
+        padding-left:12px;
+    }
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-logo svg {width:52px;height:58px;}
+}
+@media(max-width:480px) {
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading {padding-left:0;gap:10px;}
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-account b {max-width:140px;}
+}
+
+/* Align the brand with the account rather than placing it below the account. */
+@media(min-width:701px) {
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading {
+        grid-template-columns:52px minmax(0,1fr) auto;
+        grid-template-areas:"logo title account";
+        align-items:start;
+        padding-left:114px;
+        margin-top:-44px;
+        column-gap:12px;
+    }
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-logo svg {width:52px;height:58px;}
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading h1 {
+        font-size:clamp(23px,2.1vw,35px);
+        margin:0;
+    }
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-account {align-self:start;}
+}
+
+/* Lift the brand from the foliage with a soft cream surface and warm shadows. */
+.chat-heading {
+    position:relative;
+    isolation:isolate;
+    padding-top:14px;
+    padding-bottom:14px;
+    padding-right:18px;
+    border-radius:24px;
+    background:linear-gradient(110deg,rgba(255,253,246,.94),rgba(255,247,230,.83) 65%,rgba(255,250,239,.65));
+    border:1px solid rgba(255,255,255,.85);
+    box-shadow:0 8px 24px rgba(111,58,15,.13),inset 0 1px 0 rgba(255,255,255,.95);
+}
+.chat-heading h1 {
+    color:#842707;
+    text-shadow:0 2px 0 rgba(255,255,255,.95),0 4px 9px rgba(133,60,13,.18);
+}
+.chat-heading p {
+    color:#82350c;
+    text-shadow:0 1px 1px rgba(255,255,255,.9);
+}
+.chat-heading .chat-logo svg {
+    filter:drop-shadow(0 4px 5px rgba(139,59,0,.28));
+}
+@media(max-width:700px) {
+    .chat-heading {padding-right:12px;}
+}
+
+/* Balanced header: compact branding, a quieter surface, and room for the menu. */
+.chat-heading {
+    box-sizing:border-box;
+    border-radius:22px;
+    background:linear-gradient(105deg,rgba(255,253,248,.72),rgba(255,250,240,.58));
+    border:1px solid rgba(242,222,197,.52);
+    box-shadow:0 4px 14px rgba(105,56,16,.055),inset 0 1px 0 rgba(255,255,255,.7);
+}
+.chat-heading h1 {
+    line-height:1.25;
+    padding-bottom:6px;
+    text-shadow:0 1px 0 #fff,0 2px 4px rgba(133,60,13,.10);
+}
+.chat-heading p {font-size:15px;line-height:1.5;margin:0;}
+.chat-heading .chat-logo svg {filter:drop-shadow(0 3px 4px rgba(139,59,0,.20));}
+.stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading {
+    gap:18px;
+    padding:18px 22px;
+    margin-top:0;
+    margin-bottom:18px;
+}
+.stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-account {
+    background:rgba(255,252,245,.85);
+    border-color:#f0dcc2;
+    box-shadow:0 2px 6px rgba(105,56,16,.06);
+    padding:9px 13px;
+    border-radius:16px;
+    align-self:center;
+}
+@media(min-width:701px) {
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading {
+        grid-template-columns:56px minmax(0,1fr) auto;
+        align-items:center;
+        margin-left:34px;
+        width:calc(100% - 34px);
+    }
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading h1 {
+        font-size:clamp(24px,2vw,33px);
+    }
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-logo svg {width:56px;height:62px;}
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .stMain .block-container {
+        padding-top:1.1rem!important;
+    }
+}
+@media(min-width:701px) and (max-width:1050px) {
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading {
+        gap:12px;
+        padding:16px;
+        margin-left:48px;
+        width:calc(100% - 48px);
+    }
+    .chat-account>span {width:38px;height:38px;font-size:20px;}
+    .chat-account {gap:9px;}
+}
+@media(max-width:700px) {
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading {gap:12px;padding:14px;}
+}
+
+/* Let Streamlit own sidebar sizing; shrink the conversation within the remaining space. */
+.stMain {min-width:0;}
+.stMain .block-container {
+    box-sizing:border-box;
+    min-width:0;
+    width:100%;
+    container-type:inline-size;
+}
+.st-key-chat_canvas,
+.st-key-chat_composer,
+.chat-heading-copy {min-width:0;box-sizing:border-box;}
+.chat-heading {min-width:0;}
+.chat-heading-copy {flex:1 1 0;}
+.chat-heading h1,.chat-heading p {overflow-wrap:anywhere;}
+.stApp:has([data-testid="stSidebar"][data-collapsed="false"]) .stMain .block-container {
+    padding-left:1.2rem!important;
+    padding-right:1.2rem!important;
+}
+.stApp:has([data-testid="stSidebar"][data-collapsed="false"]) .st-key-chat_canvas {
+    padding-left:20px!important;
+    padding-right:20px!important;
+}
+/* Respond to the available conversation width, including when the sidebar opens. */
+@container(max-width:650px) {
+    .chat-heading,
+    .stApp:has([data-testid="stSidebar"][data-collapsed="true"]) .chat-heading {
+        display:grid;
+        grid-template-columns:48px minmax(0,1fr);
+        grid-template-areas:"account account" "logo title";
+        width:100%;
+        margin-left:0;
+        padding:14px;
+        gap:10px;
+    }
+    .chat-logo {grid-area:logo;}
+    .chat-heading-copy {grid-area:title;}
+    .chat-heading .chat-logo svg {width:48px;height:54px;}
+    .chat-heading .chat-account {grid-area:account;justify-self:end;margin:0;}
+    .chat-heading h1 {font-size:24px!important;}
+    .chat-heading p {font-size:14px;}
+    .st-key-chat_actions [data-testid="stHorizontalBlock"] {flex-wrap:wrap;gap:10px;}
+    .st-key-chat_actions [data-testid="stColumn"] {flex:1 1 calc(50% - 10px);min-width:0;}
+}
+
+/* Assistant message height follows its content, including custom emoji avatars. */
+.st-key-chat_canvas [data-testid="stChatMessage"]:not(:has([data-testid="stChatMessageAvatarUser"])) {
+    box-sizing:border-box;
+    width:100%;
+    max-width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:20px 24px!important;
+    align-items:flex-start;
+    flex-grow:0;
+    flex-shrink:0;
+}
+@media(max-width:600px) {
+    .st-key-chat_canvas [data-testid="stChatMessage"]:not(:has([data-testid="stChatMessageAvatarUser"])) {
+        min-height:0!important;
+        padding:16px!important;
+    }
+}
+
+.st-key-chat_canvas [data-testid="stChatMessageContent"] {
+    min-width:0;
+    min-height:0;
+    height:auto!important;
+    align-self:flex-start;
+}

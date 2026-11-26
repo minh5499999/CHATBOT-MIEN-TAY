@@ -1,0 +1,10 @@
+{
+  "action": "NEEDS_REVIEW",
+  "actor": null,
+  "reason": null,
+  "subject_path": null,
+  "subject_sha256": null,
+  "review_scope": [],
+  "evidence_checks": [],
+  "note": "Blank decision template, not an executed approval"
+}

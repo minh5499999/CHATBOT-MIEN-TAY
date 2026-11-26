@@ -19,14 +19,13 @@ def _tai_giao_dien(_mtime):
     # Anh nen la file tinh (static/), khong nhung base64: CSS nhe nen ap dung ngay khi tai lai trang.
     background='/app/static/login/bep_mien_tay_background.png'
     css=(ASSETS/'login.css').read_text(encoding='utf-8').replace('__BACKGROUND__',background)
-    pot=(ASSETS/'brand-pot.svg').read_text(encoding='utf-8')
+    pot='<img src="/app/static/chat/bep-cua-ngoai-logo.png" alt="">'
     return css,pot
 
 
 # Than mui ten net dut (chay ve phia mon an), dau mui ten net lien.
 ARROW='''<svg viewBox="0 0 90 80" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path class="than" d="M15 5 Q5 58 70 66"/><path d="M57 57L70 66 57 72"/></svg>'''
 ARROW_LEFT='''<svg viewBox="0 0 90 80" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path class="than" d="M72 5 Q77 52 16 65"/><path d="M28 54L16 65 33 69"/></svg>'''
-HAT='''<svg class="bmt-hat" viewBox="0 0 64 52" aria-hidden="true"><path d="M18 36C8 36 4 26 10 19c4-5 10-5 13-3 2-8 9-12 16-10 6 2 8 6 8 9 6-3 14 1 13 9-1 7-6 11-12 12v12H18Z" fill="#fff8ec" stroke="#e8590c" stroke-width="3" stroke-linejoin="round"/><path d="M18 41h30" stroke="#e8590c" stroke-width="3"/><circle cx="28" cy="24" r="2" fill="#e8590c"/><circle cx="39" cy="24" r="2" fill="#e8590c"/><path d="M29 29q5 4 10 0" stroke="#e8590c" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>'''
 
 
 def hien_thi(vao_bang_mat_khau,google_da_cau_hinh):
@@ -49,7 +48,7 @@ def hien_thi(vao_bang_mat_khau,google_da_cau_hinh):
     </div>''',unsafe_allow_html=True)
     with st.container(key='login_coluna'):
         st.markdown('<div class="bmt-brand"><div class="bmt-pot">'+pot+
-                    '</div><div class="bmt-wordmark"><h1>Bếp <span>Miền'+HAT+'</span> Tây</h1>'
+                    '</div><div class="bmt-wordmark"><h1>Bếp <span>Của</span> Ngoại</h1>'
                     '<p>Trợ lý hướng dẫn nấu ăn, ưu tiên món miền Tây</p>'
                     '<span class="bmt-stroke"></span></div></div>',unsafe_allow_html=True)
         with st.container(key='the_dn'):
@@ -61,18 +60,10 @@ def hien_thi(vao_bang_mat_khau,google_da_cau_hinh):
                                  icon=':material/lock:',autocomplete='current-password')
                 if st.form_submit_button('Đăng nhập',type='primary',width='stretch',
                                          icon=':material/arrow_forward:',icon_position='right'):
-                    con_khoa=tai_khoan.kiem_tra_khoa_dang_nhap(ten)
-                    if con_khoa>0:
-                        st.error(f'Tài khoản tạm thời bị giới hạn đăng nhập do thử sai nhiều lần. Vui lòng thử lại sau {con_khoa} giây.')
-                    else:
-                        nd=tai_khoan.dang_nhap(ten,mk)
-                        if nd:
-                            vao_bang_mat_khau(nd)
-                        con_khoa=tai_khoan.kiem_tra_khoa_dang_nhap(ten)
-                        if con_khoa>0:
-                            st.error(f'Bạn đã nhập sai quá số lần cho phép. Vui lòng thử lại sau {con_khoa} giây.')
-                        else:
-                            st.error('Sai tên đăng nhập hoặc mật khẩu.')
+                    nd=tai_khoan.dang_nhap(ten,mk)
+                    if nd:
+                        vao_bang_mat_khau(nd)
+                    st.error('Sai tên đăng nhập hoặc mật khẩu.')
             with tab_moi,st.form('dang_ky', border=False, enter_to_submit=False):
                 c1,c2=st.columns(2)
                 display=c1.text_input('Tên của bạn',icon=':material/badge:')

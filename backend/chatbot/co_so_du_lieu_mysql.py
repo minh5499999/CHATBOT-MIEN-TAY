@@ -24,21 +24,15 @@ class Hang(dict):
 
 
 class KetQua:
-    def __init__(self, rows=()):
-        self._rows = [Hang(row) for row in rows]
-        self._pos = 0
+    def __init__(self,cursor):
+        self.cursor=cursor
 
     def fetchone(self):
-        if self._pos >= len(self._rows):
-            return None
-        row = self._rows[self._pos]
-        self._pos += 1
-        return row
+        row=self.cursor.fetchone()
+        return Hang(row) if row is not None else None
 
     def fetchall(self):
-        rest = self._rows[self._pos:]
-        self._pos = len(self._rows)
-        return rest
+        return [Hang(row) for row in self.cursor.fetchall()]
 
     def __iter__(self):
         return iter(self.fetchall())
@@ -74,23 +68,19 @@ class KetNoi:
         cursor=self.con.cursor()
         try:
             cursor.execute(doi_tham_so(sql),params)
-            rows = cursor.fetchall() if cursor.description is not None else ()
-            return KetQua(rows)
         except pymysql.IntegrityError as exc:
-            raise sqlite3.IntegrityError('Vi pham rang buoc du lieu MySQL.') from exc
-        finally:
             cursor.close()
+            raise sqlite3.IntegrityError('Vi pham rang buoc du lieu MySQL.') from exc
+        return KetQua(cursor)
 
     def executemany(self,sql,params):
         cursor=self.con.cursor()
         try:
             cursor.executemany(doi_tham_so(sql),params)
-            rows = cursor.fetchall() if cursor.description is not None else ()
-            return KetQua(rows)
         except pymysql.IntegrityError as exc:
-            raise sqlite3.IntegrityError('Vi pham rang buoc du lieu MySQL.') from exc
-        finally:
             cursor.close()
+            raise sqlite3.IntegrityError('Vi pham rang buoc du lieu MySQL.') from exc
+        return KetQua(cursor)
 
 
 @contextmanager

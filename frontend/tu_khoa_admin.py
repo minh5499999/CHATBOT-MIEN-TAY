@@ -26,10 +26,6 @@ def _select_visible(names):
 
 
 def hien_thi_tu_khoa(actor):
-    from backend.chatbot import tai_khoan
-    if not tai_khoan.la_admin(actor):
-        st.error("Bạn không có quyền quản trị.")
-        st.stop()
     with st.container(key="keyword_listing", border=True):
         search, status, space, add = st.columns([3, 1.15, .9, 1.2], gap="small", vertical_alignment="center")
         query = search.text_input("Tìm nguyên liệu hoặc từ đồng nghĩa", placeholder="Tìm nguyên liệu hoặc từ đồng nghĩa...",

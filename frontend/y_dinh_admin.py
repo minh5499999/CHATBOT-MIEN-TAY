@@ -25,10 +25,6 @@ def _cell(column, text, bold=False, center=False):
 
 
 def hien_thi_y_dinh(actor, docs):
-    from backend.chatbot import tai_khoan
-    if not tai_khoan.la_admin(actor):
-        st.error("Bạn không có quyền quản trị.")
-        st.stop()
     catalog = danh_sach_y_dinh(docs)
     with st.container(key="intent_listing", border=True):
         search, status, sort, add = st.columns([3.1, 1.15, 1.5, 1], gap="small", vertical_alignment="center")

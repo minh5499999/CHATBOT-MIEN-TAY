@@ -10,10 +10,6 @@ from frontend.noi_dung_quan_tri import noi_dung_bien_tap
 
 
 def hien_thi_dinh_duong(actor, docs):
-    from backend.chatbot import tai_khoan
-    if not tai_khoan.la_admin(actor):
-        st.error("Bạn không có quyền quản trị.")
-        st.stop()
     from frontend.bang_quan_tri import esc
 
     build = active_build()

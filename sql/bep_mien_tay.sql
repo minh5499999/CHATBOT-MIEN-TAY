@@ -37,17 +37,3 @@ CREATE TABLE IF NOT EXISTS nhat_ky_quan_tri (
  nguoi_thuc_hien VARCHAR(384) NOT NULL, doi_tuong VARCHAR(384) NOT NULL,
  hanh_dong VARCHAR(64) NOT NULL, chi_tiet LONGTEXT NOT NULL, tao_luc VARCHAR(32) NOT NULL
 ) ENGINE=InnoDB;
-CREATE TABLE IF NOT EXISTS gioi_han_dang_nhap (
- khoa VARCHAR(120) PRIMARY KEY,
- so_lan INT NOT NULL, cua_so_bat_dau DOUBLE NOT NULL, khoa_den DOUBLE NOT NULL
-) ENGINE=InnoDB;
-CREATE TABLE IF NOT EXISTS tuy_chon_ho_so (
- ten_dang_nhap VARCHAR(384) PRIMARY KEY,
- tuy_chon LONGTEXT NOT NULL,
- CONSTRAINT fk_bmt_tuy_chon_user FOREIGN KEY (ten_dang_nhap) REFERENCES nguoi_dung(ten_dang_nhap) ON DELETE CASCADE
-) ENGINE=InnoDB;
-CREATE TABLE IF NOT EXISTS noi_dung_quan_tri (
- ma VARCHAR(32) PRIMARY KEY, nhom VARCHAR(40) NOT NULL,
- tieu_de VARCHAR(255) NOT NULL, noi_dung LONGTEXT NOT NULL,
- trang_thai VARCHAR(20) NOT NULL
-) ENGINE=InnoDB;

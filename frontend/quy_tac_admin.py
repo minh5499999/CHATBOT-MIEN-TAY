@@ -1,7 +1,6 @@
 """Rules catalog and editorial workflow."""
 import json
 import streamlit as st
-from backend.chatbot import co_so_du_lieu
 from backend.chatbot.co_so_du_lieu import ket_noi
 from backend.chatbot.ngon_ngu import chuan_hoa
 from frontend.noi_dung_quan_tri import noi_dung_bien_tap
@@ -35,20 +34,15 @@ def chon_loai_quy_tac(label):
 
 
 def hien_thi_quy_tac(actor, docs):
-    from backend.chatbot import tai_khoan
-    if not tai_khoan.la_admin(actor):
-        st.error("Bạn không có quyền quản trị.")
-        st.stop()
     from frontend.bang_quan_tri import esc
 
     with st.container(key="admin_rules_page"):
         # Initialize the same editorial table used by the other admin pages.
         with ket_noi() as con:
-            if co_so_du_lieu.BACKEND == "sqlite":
-                con.execute("""CREATE TABLE IF NOT EXISTS noi_dung_quan_tri (
-                    ma VARCHAR(32) PRIMARY KEY, nhom VARCHAR(40) NOT NULL,
-                    tieu_de VARCHAR(255) NOT NULL, noi_dung TEXT NOT NULL,
-                    trang_thai VARCHAR(20) NOT NULL)""")
+            con.execute("""CREATE TABLE IF NOT EXISTS noi_dung_quan_tri (
+                ma VARCHAR(32) PRIMARY KEY, nhom VARCHAR(40) NOT NULL,
+                tieu_de VARCHAR(255) NOT NULL, noi_dung TEXT NOT NULL,
+                trang_thai VARCHAR(20) NOT NULL)""")
             edited = con.execute("SELECT * FROM noi_dung_quan_tri WHERE nhom=?",
                                  ("Quy tắc điều chỉnh",)).fetchall()
         source = [d for d in docs if d.get("group_folder") in

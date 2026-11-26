@@ -1,0 +1,351 @@
+{
+  "recipe_id": 44,
+  "recipe_version": "76307958c4b828ccd28db9532277fde53db10d5700047abed647a06cbff487b8",
+  "answer_sha256": "76307958c4b828ccd28db9532277fde53db10d5700047abed647a06cbff487b8",
+  "source_locator": "https://vnexpress.net/doi-song-cooking-banh-xeo-mien-tay-4654925.html",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "source_verification": "UNVERIFIED",
+  "servings": {
+    "exact_from_source": null,
+    "range_from_source": [
+      4,
+      6
+    ],
+    "user_scenario_is_not_source_approval": true
+  },
+  "source_sections": {
+    "ingredients": {
+      "start": 146,
+      "end": 523
+    },
+    "prep": {
+      "start": 523,
+      "end": 657
+    },
+    "steps": {
+      "start": 657,
+      "end": 1068
+    },
+    "finish": {
+      "start": 1068,
+      "end": 1242
+    }
+  },
+  "authorized_answer_text": "Bánh xèo miền Tây có vỏ mỏng giòn màu vàng ươm, nhân tôm thịt béo cùng giá giòn. Bánh thường được cuốn với rau sống rồi chấm nước mắm chua ngọt.\n\nNguyên liệu cần chuẩn bị (cho 4 đến 6 người, làm trong khoảng 55 phút)\n- Phần vỏ: bột bánh xèo 250g, bột chiên giòn 50g, bột nghệ 1 muỗng cà phê, trứng gà 1 quả, bia hoặc nước khoáng có ga 500ml, nước cốt dừa 100ml, muối 1/2 thìa cà phê\n- Phần nhân: tôm hoặc tép bạc 200g, thịt ba chỉ 200g, giá đỗ 200g, hành tây 1 củ\n- Ăn kèm: cải trắng, cà rốt, rau sống, nước mắm chua ngọt\n\nSơ chế\n- Thịt ba chỉ cắt mỏng rồi ướp với chút nước mắm, muối và tiêu\n- Tôm rửa sạch\n- Hành tây cắt múi cau\n- Giá đỗ rửa sạch để ráo\n\nCách chế biến\nPha bột\n- Trộn đều bột bánh xèo, bột chiên giòn, bột nghệ, trứng gà, nước cốt dừa, nước có ga và muối\n- Để bột nghỉ khoảng 30 phút\nXào nhân\n- Phi thơm hành rồi cho thịt vào xào đến khi săn\n- Thêm tôm vào đảo đều\nĐổ bánh\n- Đổ bột vào chảo nóng rồi cho nhân tôm thịt, hành tây và giá lên\n- Đậy nắp khoảng 1 đến 1,5 phút\n- Gấp bánh lại thành hình bán nguyệt và chiên thêm cho phần còn lại chín giòn\n\nHoàn thành món ăn\nBánh xèo ngon nhất khi ăn nóng. Bạn cuốn bánh với cải trắng, cà rốt, rau sống rồi chấm nước mắm chua ngọt.\n\nChúc bạn đổ được những chiếc bánh xèo thật giòn.",
+  "ingredients": [
+    {
+      "raw_text": "bột bánh xèo 250g",
+      "source_span": {
+        "start": 228,
+        "end": 245
+      },
+      "parent_line": "- Phần vỏ: bột bánh xèo 250g, bột chiên giòn 50g, bột nghệ 1 muỗng cà phê, trứng gà 1 quả, bia hoặc nước khoáng có ga 500ml, nước cốt dừa 100ml, muối 1/2 thìa cà phê",
+      "ingredient_name_as_written": "bột bánh xèo",
+      "quantity_as_written": "250",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "bột chiên giòn 50g",
+      "source_span": {
+        "start": 247,
+        "end": 265
+      },
+      "parent_line": "- Phần vỏ: bột bánh xèo 250g, bột chiên giòn 50g, bột nghệ 1 muỗng cà phê, trứng gà 1 quả, bia hoặc nước khoáng có ga 500ml, nước cốt dừa 100ml, muối 1/2 thìa cà phê",
+      "ingredient_name_as_written": "bột chiên giòn",
+      "quantity_as_written": "50",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "bột nghệ 1 muỗng cà phê",
+      "source_span": {
+        "start": 267,
+        "end": 290
+      },
+      "parent_line": "- Phần vỏ: bột bánh xèo 250g, bột chiên giòn 50g, bột nghệ 1 muỗng cà phê, trứng gà 1 quả, bia hoặc nước khoáng có ga 500ml, nước cốt dừa 100ml, muối 1/2 thìa cà phê",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "trứng gà 1 quả",
+      "source_span": {
+        "start": 292,
+        "end": 306
+      },
+      "parent_line": "- Phần vỏ: bột bánh xèo 250g, bột chiên giòn 50g, bột nghệ 1 muỗng cà phê, trứng gà 1 quả, bia hoặc nước khoáng có ga 500ml, nước cốt dừa 100ml, muối 1/2 thìa cà phê",
+      "ingredient_name_as_written": "trứng gà",
+      "quantity_as_written": "1",
+      "unit_as_written": "quả",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "bia hoặc nước khoáng có ga 500ml",
+      "source_span": {
+        "start": 308,
+        "end": 340
+      },
+      "parent_line": "- Phần vỏ: bột bánh xèo 250g, bột chiên giòn 50g, bột nghệ 1 muỗng cà phê, trứng gà 1 quả, bia hoặc nước khoáng có ga 500ml, nước cốt dừa 100ml, muối 1/2 thìa cà phê",
+      "ingredient_name_as_written": "bia hoặc nước khoáng có ga",
+      "quantity_as_written": "500",
+      "unit_as_written": "ml",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "nước cốt dừa 100ml",
+      "source_span": {
+        "start": 342,
+        "end": 360
+      },
+      "parent_line": "- Phần vỏ: bột bánh xèo 250g, bột chiên giòn 50g, bột nghệ 1 muỗng cà phê, trứng gà 1 quả, bia hoặc nước khoáng có ga 500ml, nước cốt dừa 100ml, muối 1/2 thìa cà phê",
+      "ingredient_name_as_written": "nước cốt dừa",
+      "quantity_as_written": "100",
+      "unit_as_written": "ml",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "muối 1/2 thìa cà phê",
+      "source_span": {
+        "start": 362,
+        "end": 382
+      },
+      "parent_line": "- Phần vỏ: bột bánh xèo 250g, bột chiên giòn 50g, bột nghệ 1 muỗng cà phê, trứng gà 1 quả, bia hoặc nước khoáng có ga 500ml, nước cốt dừa 100ml, muối 1/2 thìa cà phê",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "tôm hoặc tép bạc 200g",
+      "source_span": {
+        "start": 396,
+        "end": 417
+      },
+      "parent_line": "- Phần nhân: tôm hoặc tép bạc 200g, thịt ba chỉ 200g, giá đỗ 200g, hành tây 1 củ",
+      "ingredient_name_as_written": "tôm hoặc tép bạc",
+      "quantity_as_written": "200",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "thịt ba chỉ 200g",
+      "source_span": {
+        "start": 419,
+        "end": 435
+      },
+      "parent_line": "- Phần nhân: tôm hoặc tép bạc 200g, thịt ba chỉ 200g, giá đỗ 200g, hành tây 1 củ",
+      "ingredient_name_as_written": "thịt ba chỉ",
+      "quantity_as_written": "200",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "giá đỗ 200g",
+      "source_span": {
+        "start": 437,
+        "end": 448
+      },
+      "parent_line": "- Phần nhân: tôm hoặc tép bạc 200g, thịt ba chỉ 200g, giá đỗ 200g, hành tây 1 củ",
+      "ingredient_name_as_written": "giá đỗ",
+      "quantity_as_written": "200",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "hành tây 1 củ",
+      "source_span": {
+        "start": 450,
+        "end": 463
+      },
+      "parent_line": "- Phần nhân: tôm hoặc tép bạc 200g, thịt ba chỉ 200g, giá đỗ 200g, hành tây 1 củ",
+      "ingredient_name_as_written": "hành tây",
+      "quantity_as_written": "1",
+      "unit_as_written": "củ",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "cải trắng",
+      "source_span": {
+        "start": 474,
+        "end": 483
+      },
+      "parent_line": "- Ăn kèm: cải trắng, cà rốt, rau sống, nước mắm chua ngọt",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "cà rốt",
+      "source_span": {
+        "start": 485,
+        "end": 491
+      },
+      "parent_line": "- Ăn kèm: cải trắng, cà rốt, rau sống, nước mắm chua ngọt",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "rau sống",
+      "source_span": {
+        "start": 493,
+        "end": 501
+      },
+      "parent_line": "- Ăn kèm: cải trắng, cà rốt, rau sống, nước mắm chua ngọt",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "nước mắm chua ngọt",
+      "source_span": {
+        "start": 503,
+        "end": 521
+      },
+      "parent_line": "- Ăn kèm: cải trắng, cà rốt, rau sống, nước mắm chua ngọt",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    }
+  ],
+  "missing": [
+    "RECIPE_SOURCE",
+    "NUTRIENT_SOURCE_5_FIELDS",
+    "REVIEWED_FOOD_MAPPING",
+    "EDIBLE_INPUT_MASS",
+    "SPICES_COMPOUNDS",
+    "EXACT_SOURCE_SERVINGS",
+    "COOKED_YIELD",
+    "CONSUMED_OIL_BROTH",
+    "RETENTION"
+  ],
+  "approved_scopes": [],
+  "medical_approval": false
+}

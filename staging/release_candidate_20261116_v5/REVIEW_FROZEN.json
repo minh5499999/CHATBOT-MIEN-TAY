@@ -1,0 +1,7 @@
+{
+  "build_id": "release_candidate_20261116_v5",
+  "manifest_sha256": "c971ac87d9b97978c91eff822bace4dd77db551bc2163d81ac062c8db6e1530f",
+  "status": "REVIEW_ONLY_DO_NOT_PROMOTE",
+  "source_verified_records": 0,
+  "production_promoted": false
+}

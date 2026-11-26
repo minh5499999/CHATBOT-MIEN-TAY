@@ -1,0 +1,5 @@
+{
+  "operation": "USDA_REVIEW_DATA_IMPORT",
+  "parent": "release_candidate_20261116_p3c_v2",
+  "embedding_rebuilt": false
+}

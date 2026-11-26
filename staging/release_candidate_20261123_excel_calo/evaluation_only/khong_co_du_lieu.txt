@@ -1,0 +1,17 @@
+# Câu hỏi VỀ NẤU ĂN nhưng bộ dữ liệu không có câu trả lời → chatbot không được trả nhầm món khác.
+# Đã kiểm: không có câu hỏi gốc nào nhắc tới các món này.
+Cách nấu chè chuối nước cốt dừa
+Cách làm bánh flan mềm mịn
+Cách làm pizza tại nhà bằng chảo
+Cách nấu bún bò Huế chuẩn vị
+Cách làm kimchi cải thảo
+Cách làm bò bít tết sốt tiêu đen
+Cách làm bánh bông lan bằng nồi cơm điện
+Cách pha trà sữa trân châu đường đen
+Cách làm sinh tố bơ sánh mịn
+Cách làm nem nướng Nha Trang
+Cách tráng bánh cuốn bằng chảo
+Cách làm bún chả Hà Nội
+Cách nấu mì Ý sốt bò bằm
+Cách làm chè đậu xanh đánh
+Cách làm bánh tiramisu không cần lò

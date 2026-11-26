@@ -1,0 +1,80 @@
+{
+  "recipe_id": 277,
+  "recipe_version": "8e8e767f7f54cafe3c4ac052fe71fd2f2344153a893923c12e5589a91fd31342",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "step_review": [
+    {
+      "section": "prep",
+      "start": 154,
+      "end": 196,
+      "text": "- Chà xát muối khắp phi lê cá rồi rửa sạch",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 197,
+      "end": 220,
+      "text": "- Thấm khô cá bằng khăn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 221,
+      "end": 248,
+      "text": "- Cắt cá thành miếng vừa ăn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 249,
+      "end": 281,
+      "text": "- Ướp cá với 1 muỗng cà phê muối",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 297,
+      "end": 325,
+      "text": "- Đập trứng vào tô, đánh đều",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "steps",
+      "start": 326,
+      "end": 408,
+      "text": "- Lần lượt nhúng cá vào bột chiên giòn, sau đó vào trứng, rồi lăn qua bột chiên xù",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 409,
+      "end": 440,
+      "text": "- Bắc chảo, đổ dầu ăn, đun nóng",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 441,
+      "end": 500,
+      "text": "- Khi dầu sôi, cho cá vào chiên đến khi vàng đều rồi vớt ra",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    }
+  ],
+  "required_reviewer_actions": [
+    "Compare ingredients against all steps and serving suggestions",
+    "Resolve quantities/state/edible mass/compound ingredients",
+    "Obtain local recipe + nutrient + conversion + processing evidence",
+    "Map every source component with explicit reviewed identity",
+    "Approve separately by scope; never auto-populate unknown values"
+  ],
+  "new_values_assumed": false
+}

@@ -1,0 +1,168 @@
+{
+  "recipe_id": 277,
+  "recipe_version": "8e8e767f7f54cafe3c4ac052fe71fd2f2344153a893923c12e5589a91fd31342",
+  "answer_sha256": "8e8e767f7f54cafe3c4ac052fe71fd2f2344153a893923c12e5589a91fd31342",
+  "source_locator": "Điện máy XANH (Vào bếp) - Cách làm cá basa chiên xù giòn tan ăn cực thích cả nhà đều mê (https://www.dienmayxanh.com/vao-bep/cach-lam-ca-basa-chien-xu-gion-tan-an-cuc-thich-ca-nha-deu-me-08809)",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "source_verification": "UNVERIFIED",
+  "servings": {
+    "exact_from_source": 3,
+    "range_from_source": null,
+    "user_scenario_is_not_source_approval": true
+  },
+  "source_sections": {
+    "ingredients": {
+      "start": 0,
+      "end": 147
+    },
+    "prep": {
+      "start": 147,
+      "end": 283
+    },
+    "steps": {
+      "start": 283,
+      "end": 502
+    },
+    "finish": {
+      "start": 502,
+      "end": 581
+    }
+  },
+  "authorized_answer_text": "Nguyên liệu cần chuẩn bị (cho 3 người)\n- Phi lê cá basa 200g\n- Trứng gà 1 quả\n- Bột chiên giòn 50g\n- Bột chiên xù 100g\n- Dầu ăn 100ml\n- Muối 1 ít\n\nSơ chế\n- Chà xát muối khắp phi lê cá rồi rửa sạch\n- Thấm khô cá bằng khăn\n- Cắt cá thành miếng vừa ăn\n- Ướp cá với 1 muỗng cà phê muối\n\nCách chế biến\n- Đập trứng vào tô, đánh đều\n- Lần lượt nhúng cá vào bột chiên giòn, sau đó vào trứng, rồi lăn qua bột chiên xù\n- Bắc chảo, đổ dầu ăn, đun nóng\n- Khi dầu sôi, cho cá vào chiên đến khi vàng đều rồi vớt ra\n\nHoàn thành món ăn\nCho cá ra dĩa, ăn kèm tương ớt, tương cà hoặc sốt mayonnaise.",
+  "ingredients": [
+    {
+      "raw_text": "Phi lê cá basa 200g",
+      "source_span": {
+        "start": 41,
+        "end": 60
+      },
+      "parent_line": "- Phi lê cá basa 200g",
+      "ingredient_name_as_written": "Phi lê cá basa",
+      "quantity_as_written": "200",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Trứng gà 1 quả",
+      "source_span": {
+        "start": 63,
+        "end": 77
+      },
+      "parent_line": "- Trứng gà 1 quả",
+      "ingredient_name_as_written": "Trứng gà",
+      "quantity_as_written": "1",
+      "unit_as_written": "quả",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Bột chiên giòn 50g",
+      "source_span": {
+        "start": 80,
+        "end": 98
+      },
+      "parent_line": "- Bột chiên giòn 50g",
+      "ingredient_name_as_written": "Bột chiên giòn",
+      "quantity_as_written": "50",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Bột chiên xù 100g",
+      "source_span": {
+        "start": 101,
+        "end": 118
+      },
+      "parent_line": "- Bột chiên xù 100g",
+      "ingredient_name_as_written": "Bột chiên xù",
+      "quantity_as_written": "100",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Dầu ăn 100ml",
+      "source_span": {
+        "start": 121,
+        "end": 133
+      },
+      "parent_line": "- Dầu ăn 100ml",
+      "ingredient_name_as_written": "Dầu ăn",
+      "quantity_as_written": "100",
+      "unit_as_written": "ml",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Muối 1 ít",
+      "source_span": {
+        "start": 136,
+        "end": 145
+      },
+      "parent_line": "- Muối 1 ít",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    }
+  ],
+  "missing": [
+    "RECIPE_SOURCE",
+    "NUTRIENT_SOURCE_5_FIELDS",
+    "REVIEWED_FOOD_MAPPING",
+    "EDIBLE_INPUT_MASS",
+    "SPICES_COMPOUNDS",
+    "SERVING_BASIS_REVIEW",
+    "COOKED_YIELD",
+    "CONSUMED_OIL_BROTH",
+    "RETENTION"
+  ],
+  "approved_scopes": [],
+  "medical_approval": false
+}

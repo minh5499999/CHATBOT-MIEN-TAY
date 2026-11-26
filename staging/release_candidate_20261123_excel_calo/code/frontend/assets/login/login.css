@@ -1,0 +1,272 @@
+/* Chỉ áp dụng khi trang có scene đăng nhập. Không tác động giao diện chat/admin. */
+.stApp:has(.bmt-login-scene) {
+  --bmt-card-width: clamp(410px, 32.3vw, 560px);
+  --bmt-left: 15.3vw;
+  /* Khung anh nen 1672x941 tren man hinh; ghi chu, hoi nuoc, den... dat theo toa do anh nay.
+     Man hinh rong: phu kin chieu ngang (gian ngang toi da ~9%), chi cat rat it tren/duoi. */
+  --bmt-img-w: 100vw;
+  --bmt-img-h: max(100vh, calc(100vw / 1.95));
+  --bmt-img-x: 0px;
+  --bmt-img-y: calc((100vh - var(--bmt-img-h)) * .5);
+  background: #f9e4c3;
+  color: #26312e;
+  isolation: isolate;
+}
+.stApp:has(.bmt-login-scene)::before {
+  content: ""; position: fixed; inset: 0; z-index: -1;
+  background: #f9e4c3 url('__BACKGROUND__') no-repeat;
+  background-size: var(--bmt-img-w) var(--bmt-img-h);
+  background-position: var(--bmt-img-x) var(--bmt-img-y);
+  pointer-events: none;
+}
+/* Man hinh hep hon anh: anh cao bang man hinh, sat mep phai (chi khuat phan bep sau khung dang nhap). */
+@media (max-aspect-ratio: 1672/941) {
+  .stApp:has(.bmt-login-scene) {
+    --bmt-img-w: 177.7vh; --bmt-img-h: 100vh; --bmt-img-x: calc(100vw - 177.7vh); --bmt-img-y: 0px;
+  }
+}
+/* Nang chieu qua cua so: vet sang cheo luot cham qua man hinh. */
+.stApp:has(.bmt-login-scene)::after {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(115deg,transparent 30%,rgba(255,236,190,.34) 42%,rgba(255,246,222,.5) 46%,rgba(255,236,190,.34) 50%,transparent 62%)
+    no-repeat 0 0 / 250% 100%;
+  mix-blend-mode: soft-light;
+  animation: bmt-sunbeam 14s ease-in-out infinite;
+}
+.stApp:has(.bmt-login-scene) [data-testid="stSidebar"],
+.stApp:has(.bmt-login-scene) [data-testid="stSidebarCollapsedControl"],
+.stApp:has(.bmt-login-scene) [data-testid="stHeader"],
+.stApp:has(.bmt-login-scene) [data-testid="stToolbar"] {display: none !important;}
+.stApp:has(.bmt-login-scene) [data-testid="stMainBlockContainer"] {
+  max-width: none !important; width: 100% !important;
+  padding: clamp(52px, 11vh, 120px) 0 32px !important;
+}
+.stApp:has(.bmt-login-scene) [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] {gap: 0;}
+.stApp:has(.bmt-login-scene) .st-key-login_coluna {
+  width: var(--bmt-card-width); margin-left: var(--bmt-left); position: relative;
+}
+.stApp:has(.bmt-login-scene) .st-key-login_coluna > [data-testid="stVerticalBlock"] {gap: 0;}
+.bmt-brand {
+  display: flex; align-items: center; gap: 14px; margin: 0 0 76px;
+  animation: bmt-enter .75s cubic-bezier(.2,.8,.2,1) both;
+}
+.bmt-pot {width: clamp(82px,6.3vw,110px); flex: 0 0 auto;}
+.bmt-pot svg {width: 100%; overflow: visible; display: block;}
+.bmt-pot .steam {animation: bmt-logo-steam 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom;}
+.bmt-pot .steam-two {animation-delay: .65s;}
+.bmt-pot .steam-three {animation-delay: 1.3s;}
+.bmt-wordmark {flex: 1; min-width: 0;}
+.bmt-wordmark h1 {
+  font-family: 'Segoe Print','Comic Sans MS',cursive; font-style: italic;
+  font-size: clamp(42px,4vw,70px); font-weight: 800; line-height: 1.32;
+  letter-spacing: -2.8px; color: #38220e; margin: 0; padding: 0; white-space: nowrap;
+}
+.bmt-wordmark h1 span {color: #df4b06;}
+.bmt-wordmark p {font-size: clamp(13px,1.05vw,17px); color: #4c3721; margin: 1px 0 0; white-space: nowrap;}
+.bmt-stroke {display: block; width: 74px; height: 5px; margin: 9px auto 0;
+  background: #eb6a12; border-radius: 80% 20% 65% 35%; transform: rotate(-3deg);}
+.stApp:has(.bmt-login-scene) .st-key-the_dn {
+  padding: 18px 36px 20px; border-radius: 26px;
+  background: rgba(255,251,242,.95); border: 1px solid rgba(255,255,255,.82);
+  box-shadow: 0 22px 70px rgba(119,69,21,.14),0 2px 6px rgba(120,61,15,.03);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  animation: bmt-enter .85s .1s cubic-bezier(.2,.8,.2,1) both;
+}
+.stApp:has(.bmt-login-scene) .st-key-the_dn > [data-testid="stVerticalBlock"] {gap: 10px;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [role="tablist"] {
+  gap: 0; background: transparent; border-bottom: 1px solid #e7e1d6; height: 48px;
+}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [role="tab"] {
+  flex: 1 1 50%; justify-content: center; padding: 0 4px 14px; height: 48px;
+  background: transparent; outline: 0; border: 0; color: #23302d;
+}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [role="tab"] p {font-size: 17px; font-weight: 650;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [role="tab"][aria-selected="true"] {color: #ee4a05;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-baseweb="tab-highlight"] {background: #f2550b; height: 3px; border-radius: 3px;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-baseweb="tab-border"] {display:none;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [role="tabpanel"] {padding-top: 18px;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stForm"] {border: 0; padding: 0;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stForm"] [data-testid="stVerticalBlock"] {gap: 13px;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stWidgetLabel"] {margin-bottom: 5px;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stWidgetLabel"] p {font-size: 14px; font-weight: 650; color: #26312e;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-baseweb="input"] {
+  height: 49px; border-radius: 10px; background: rgba(252,244,230,.65);
+  border: 1px solid #e9e1d5; transition: border-color .2s,box-shadow .2s,background .2s;
+}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-baseweb="input"]:focus-within {
+  border-color: #ef8a39; box-shadow: 0 0 0 3px rgba(243,135,51,.12); background: #fffaf1;
+}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-baseweb="base-input"] {background: transparent;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn input {font-size: 14px; color: #27352f; padding-top: 11px; padding-bottom: 11px;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn input::placeholder {color: #8c918b; opacity: 1;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stTextInput"] [data-testid="stIconMaterial"] {color: #78817b;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stFormSubmitButton"] button {
+  width: 100%; height: 50px; border-radius: 10px; border: 0;
+  color: white; background: linear-gradient(110deg,#ff9c24 0%,#f5680c 48%,#e64000 100%);
+  box-shadow: 0 7px 18px rgba(225,89,7,.14); margin-top: 2px;
+  transition: transform .2s,box-shadow .2s,filter .2s;
+}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stFormSubmitButton"] button p {font-weight: 700; font-size: 17px;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stFormSubmitButton"] button:hover {
+  transform: translateY(-2px); box-shadow: 0 10px 25px rgba(225,89,7,.25); filter: brightness(1.04);
+}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stFormSubmitButton"] button:active {transform: translateY(0);}
+.stApp:has(.bmt-login-scene) .bmt-or {display: flex; align-items: center; gap: 15px; color: #96968b; font-size: 14px; margin: 4px 0 1px;}
+.bmt-or::before,.bmt-or::after {content: ''; flex: 1; height: 1px; background: #e7e2d8;}
+.stApp:has(.bmt-login-scene) .st-key-nut_google button {
+  height: 49px; border-radius: 10px; border: 1px solid #e7e2d8; background: rgba(255,255,255,.4);
+  justify-content: center; color: #263e55; gap: 12px; transition: transform .2s,border-color .2s;
+}
+.stApp:has(.bmt-login-scene) .st-key-nut_google button::before {
+  content: 'G'; font: 700 24px Arial,sans-serif; display: inline-block;
+  background: conic-gradient(#4285f4 0deg 90deg,#34a853 90deg 180deg,#fbbc05 180deg 235deg,#ea4335 235deg 290deg,#4285f4 290deg);
+  background-clip: text; -webkit-background-clip: text; color: transparent;
+}
+.stApp:has(.bmt-login-scene) .st-key-nut_google button p {font-size: 14px; font-weight: 650;}
+.stApp:has(.bmt-login-scene) .st-key-nut_google button:hover:not(:disabled) {transform: translateY(-1px); border-color: #d4ad86;}
+.stApp:has(.bmt-login-scene) .st-key-nut_google button:disabled {opacity: .7; color: #496070;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stCaptionContainer"] p {
+  text-align: center; font-size: 11px; color: #777e75; line-height: 1.5; margin-top: 2px;
+}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stAlert"] {border-radius: 10px; font-size: 13px;}
+/* ---------- Trang tri nen: dat theo toa do anh (--bmt-img-*), mon an dung yen, chi lop phu chuyen dong ---------- */
+/* Ghi chu tay + mui ten net dut chay ve phia mon an */
+.bmt-note {position: fixed; z-index: 0; pointer-events: none; color: #fffef4;
+  font-family: 'Segoe Print','Comic Sans MS',cursive; font-style: italic; font-weight: 700;
+  font-size: clamp(18px,1.65vw,30px); line-height: 1.2; text-shadow: 0 2px 10px rgba(22,51,7,.45);
+  animation: bmt-note-in .9s cubic-bezier(.2,.8,.2,1) both;}
+.bmt-note svg {display: block; width: 80px; height: 76px; margin: 2px auto 0; overflow: visible;
+  filter: drop-shadow(0 1px 3px rgba(22,51,7,.45)); animation: bmt-nudge-l 2.4s ease-in-out infinite;}
+.bmt-note-canh svg {animation-name: bmt-nudge-r;}
+.bmt-note .than {stroke-dasharray: 7 6; animation: bmt-dash 1.1s linear infinite;}
+.bmt-note-canh {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .5); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .1); transform: rotate(-8deg); animation-delay: .4s;}
+.bmt-note-com {right: calc(var(--bmt-img-w) * .018); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .05); transform: rotate(-9deg); animation-delay: .7s;}
+.bmt-note-mam {right: calc(var(--bmt-img-w) * .012); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .31); transform: rotate(-9deg); animation-delay: 1s;}
+.bmt-note-ca {right: calc(var(--bmt-img-w) * .035); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .67); transform: rotate(-8deg); animation-delay: 1.3s;}
+/* Khoi boc len tu mat nuoc canh va ca kho, tan dan */
+.bmt-steam {position: fixed; z-index: 0; pointer-events: none; width: calc(var(--bmt-img-w) * .1); height: calc(var(--bmt-img-h) * .27);}
+.bmt-steam-canh {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .614); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .03);}
+.bmt-steam-ca {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .668); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .43);}
+.bmt-steam i {position: absolute; bottom: 0; width: 38%; height: 72%; border-radius: 50%; opacity: 0;
+  background: radial-gradient(ellipse at center,rgba(255,255,250,.6),rgba(255,255,250,0) 70%);
+  filter: blur(9px); animation: bmt-steam-rise 6.5s ease-out infinite;}
+.bmt-steam i:nth-child(1) {left: 6%;}
+.bmt-steam i:nth-child(2) {left: 34%; animation-delay: 2.2s;}
+.bmt-steam i:nth-child(3) {left: 58%; animation-delay: 4.4s;}
+/* Anh bong nhe luot qua mat nuoc sot ca kho va nuoc mam */
+.bmt-gleam {position: fixed; z-index: 0; pointer-events: none; border-radius: 50%; mix-blend-mode: soft-light;
+  background: linear-gradient(120deg,transparent 38%,rgba(255,255,255,.85) 50%,transparent 62%) no-repeat 100% 0 / 300% 100%;
+  animation: bmt-gleam 6s ease-in-out infinite;}
+.bmt-gleam-ca {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .62); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .57);
+  width: calc(var(--bmt-img-w) * .2); height: calc(var(--bmt-img-h) * .3);}
+.bmt-gleam-mam {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .797); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .39);
+  width: calc(var(--bmt-img-w) * .135); height: calc(var(--bmt-img-h) * .235); animation-delay: 2.5s;}
+/* Lap lanh tren nuoc sot (lan luot tung diem) */
+.bmt-glint {position: fixed; z-index: 0; pointer-events: none; width: 20px; height: 20px; margin: -10px 0 0 -10px; opacity: 0;
+  background: radial-gradient(circle,#fff 0 10%,rgba(255,255,255,.65) 18%,transparent 42%),
+    linear-gradient(0deg,transparent 47%,rgba(255,255,255,.95) 50%,transparent 53%),
+    linear-gradient(90deg,transparent 47%,rgba(255,255,255,.95) 50%,transparent 53%);
+  -webkit-mask-image: radial-gradient(circle,#000 18%,transparent 68%); mask-image: radial-gradient(circle,#000 18%,transparent 68%);
+  mix-blend-mode: screen; animation: bmt-twinkle 4.2s ease-in-out infinite;}
+.bmt-glint.g1 {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .670); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .680);}
+.bmt-glint.g2 {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .751); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .638); animation-delay: 1.1s;}
+.bmt-glint.g3 {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .795); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .760); animation-delay: 2.3s;}
+.bmt-glint.g4 {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .709); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .818); animation-delay: 3.2s;}
+.bmt-glint.g5 {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .837); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .457); animation-delay: .6s;}
+.bmt-glint.g6 {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .897); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .553); animation-delay: 2.8s;}
+/* Den may tre: quang sang am lap loe */
+.bmt-glow {position: fixed; z-index: 0; pointer-events: none; width: 30vh; height: 30vh;
+  left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .075 - 15vh); top: calc(var(--bmt-img-y) + var(--bmt-img-h) * .17 - 15vh);
+  border-radius: 50%; background: radial-gradient(circle,rgba(255,214,140,.55),rgba(255,190,100,.18) 45%,transparent 70%);
+  mix-blend-mode: screen; animation: bmt-glow 4.5s ease-in-out infinite;}
+/* Dom sang (bokeh) va bui nang lo lung cham o gian bep ben trai */
+.bmt-dust {position: fixed; top: 0; bottom: 0; left: 0; width: 50vw; z-index: 0; pointer-events: none; overflow: hidden;}
+.bmt-dust i {position: absolute; width: 5px; height: 5px; border-radius: 50%; opacity: 0;
+  background: rgba(255,244,205,.95); box-shadow: 0 0 9px 3px rgba(255,226,150,.55);
+  animation: bmt-bokeh 13s ease-in-out infinite;}
+.bmt-dust i.b {width: 24px; height: 24px; background: radial-gradient(circle,rgba(255,238,185,.55),rgba(255,226,150,0) 70%); box-shadow: none; filter: blur(1.5px);}
+.bmt-dust i:nth-child(1) {left: 5%; top: 30%;}
+.bmt-dust i:nth-child(2) {left: 14%; top: 18%; animation-delay: -3s; animation-duration: 16s;}
+.bmt-dust i:nth-child(3) {left: 22%; top: 62%; animation-delay: -6s;}
+.bmt-dust i:nth-child(4) {left: 9%; top: 78%; animation-delay: -9s; animation-duration: 15s; width: 4px; height: 4px;}
+.bmt-dust i:nth-child(5) {left: 30%; top: 40%; animation-delay: -2s; animation-duration: 18s;}
+.bmt-dust i:nth-child(6) {left: 38%; top: 15%; animation-delay: -7s; width: 3px; height: 3px;}
+.bmt-dust i:nth-child(7) {left: 44%; top: 70%; animation-delay: -11s; animation-duration: 14s;}
+.bmt-dust i:nth-child(8) {left: 3%; top: 52%; animation-delay: -5s; animation-duration: 17s;}
+.bmt-dust i:nth-child(9) {left: 26%; top: 88%; animation-delay: -10s; width: 4px; height: 4px;}
+.bmt-dust i:nth-child(10) {left: 18%; top: 45%; animation-delay: -1s; animation-duration: 12s; width: 3px; height: 3px;}
+.bmt-leaf {position: fixed; z-index: 0; width: 28px; height: 45px; border-radius: 100% 0 100% 0;
+  background: linear-gradient(125deg,#9bb535,#527925); filter: blur(3px); opacity: .3; pointer-events: none;
+  animation: bmt-leaf-drift 12s ease-in-out infinite alternate;}
+.bmt-leaf-one {left: 47%; bottom: 8%;}
+.bmt-leaf-two {left: 4%; top: 26%; width: 18px; height: 29px; animation-delay: -6s;}
+/* Non dau bep tren chu "Mien" */
+.bmt-wordmark h1 span {position: relative;}
+.bmt-hat {position: absolute; width: .62em; left: 58%; top: -.3em; transform: rotate(14deg);
+  filter: drop-shadow(0 2px 3px rgba(150,60,10,.18));}
+/* Nut Dang nhap: phong nhe 2.5% va vet sang quet qua moi 4 giay */
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stFormSubmitButton"] button {
+  position: relative; overflow: hidden; animation: bmt-cta-pulse 2.8s ease-in-out infinite;}
+.stApp:has(.bmt-login-scene) .st-key-the_dn [data-testid="stFormSubmitButton"] button::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; pointer-events: none;
+  background: linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent); transform: skewX(-18deg);
+  animation: bmt-cta-shine 4s ease-in-out infinite;}
+@keyframes bmt-sunbeam {0% {background-position: 100% 0;} 55%,100% {background-position: 0 0;}}
+@keyframes bmt-note-in {from {opacity: 0; translate: 0 12px;} to {opacity: 1; translate: 0 0;}}
+@keyframes bmt-nudge-r {0%,100% {translate: 0 0;} 50% {translate: 6px 4px;}}
+@keyframes bmt-nudge-l {0%,100% {translate: 0 0;} 50% {translate: -6px 4px;}}
+@keyframes bmt-dash {to {stroke-dashoffset: -13;}}
+@keyframes bmt-steam-rise {0% {opacity: 0; transform: translate(0,15%) scale(.6,.7);} 25% {opacity: .8;} 60% {opacity: .45;}
+  100% {opacity: 0; transform: translate(14%,-80%) scale(1.3,1.6) skewX(-8deg);}}
+@keyframes bmt-gleam {0% {background-position: 100% 0;} 45%,100% {background-position: 0 0;}}
+@keyframes bmt-twinkle {0%,40%,100% {opacity: 0; transform: scale(.3) rotate(0);} 52% {opacity: .95; transform: scale(1) rotate(45deg);} 66% {opacity: 0; transform: scale(.4) rotate(90deg);}}
+@keyframes bmt-glow {0%,100% {opacity: .65; transform: scale(.94);} 50% {opacity: 1; transform: scale(1.06);}}
+@keyframes bmt-bokeh {0% {opacity: 0; transform: translate(0,0);} 25% {opacity: .85;} 75% {opacity: .55;} 100% {opacity: 0; transform: translate(24px,-60px);}}
+@keyframes bmt-leaf-drift {from {transform: translate(0,0) rotate(-20deg);} to {transform: translate(15px,-28px) rotate(15deg);}}
+@keyframes bmt-cta-pulse {0%,100% {scale: 1;} 50% {scale: 1.025;}}
+@keyframes bmt-cta-shine {0%,60% {left: -60%;} 100% {left: 130%;}}
+@keyframes bmt-enter {from {opacity: 0; transform: translateY(18px);} to {opacity: 1; transform: translateY(0);}}
+@keyframes bmt-logo-steam {0%,100% {opacity: .45; transform: translateY(2px) skewX(0);} 33% {opacity: 1; transform: translateY(-2px) skewX(-12deg);}
+  66% {opacity: .8; transform: translateY(-4px) skewX(10deg);}}
+@media (max-width: 1200px) and (min-width: 721px) {
+  .stApp:has(.bmt-login-scene) {--bmt-left: 7vw; --bmt-card-width: 420px;}
+  .bmt-note-canh {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .48);}
+  .bmt-wordmark h1 {font-size: 50px;}
+  .bmt-wordmark p {font-size: 13px;}
+}
+@media (max-height: 760px) and (min-width: 721px) {
+  .stApp:has(.bmt-login-scene) [data-testid="stMainBlockContainer"] {padding-top: 50px !important;}
+  .bmt-brand {margin-bottom: 56px;}
+  .bmt-pot {width: 80px;}
+  .bmt-wordmark h1 {font-size: 52px;}
+  .bmt-wordmark p {font-size: 13px;}
+  .bmt-stroke {margin-top: 4px;}
+  .stApp:has(.bmt-login-scene) .st-key-the_dn {padding: 14px 30px 16px;}
+  .stApp:has(.bmt-login-scene) .st-key-the_dn [role="tabpanel"] {padding-top: 12px;}
+  .stApp:has(.bmt-login-scene) .st-key-the_dn [data-baseweb="input"] {height: 44px;}
+}
+@media (max-width: 720px) {
+  .stApp:has(.bmt-login-scene) {--bmt-card-width: min(440px,calc(100vw - 32px)); --bmt-left: auto;}
+  .stApp:has(.bmt-login-scene)::before {
+    background-image: linear-gradient(rgba(255,241,216,.72),rgba(255,241,216,.84)),url('__BACKGROUND__');
+    background-position: 62% center; background-size: cover;
+  }
+  .stApp:has(.bmt-login-scene) [data-testid="stMainBlockContainer"] {padding: 28px 0 !important;}
+  .stApp:has(.bmt-login-scene) .st-key-login_coluna {margin: 0 auto;}
+  .bmt-brand {gap: 8px; margin: 0 2px 44px; justify-content: center;}
+  .bmt-pot {width: 76px;}
+  .bmt-wordmark {flex: 0 1 auto;}
+  .bmt-wordmark h1 {font-size: clamp(34px,9vw,46px); letter-spacing: -2px;}
+  .bmt-wordmark p {font-size: 11px; white-space: normal; max-width: 265px;}
+  .bmt-stroke {margin-top: 6px;}
+  .stApp:has(.bmt-login-scene) .st-key-the_dn {padding: 16px 22px 18px; border-radius: 23px; background: rgba(255,251,242,.96);}
+  .bmt-note,.bmt-steam,.bmt-leaf,.bmt-glow,.bmt-dust,.bmt-gleam,.bmt-glint {display:none;}
+  .stApp:has(.bmt-login-scene)::after {display: none;}
+}
+@media (prefers-reduced-motion: reduce) {
+  .stApp:has(.bmt-login-scene)::before,
+  .stApp:has(.bmt-login-scene)::after,
+  .stApp:has(.bmt-login-scene) *,
+  .stApp:has(.bmt-login-scene) *::before,
+  .stApp:has(.bmt-login-scene) *::after {animation: none !important; transition: none !important;}
+}

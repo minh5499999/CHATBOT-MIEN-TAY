@@ -1,0 +1,88 @@
+{
+  "recipe_id": 78,
+  "recipe_version": "9331b4c2442fdf272e8db45c809085dbbeaa62b89d2814fe2bc7398c7887bdb2",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "step_review": [
+    {
+      "section": "prep",
+      "start": 369,
+      "end": 422,
+      "text": "- Bầu bỏ cuống, gọt vỏ, rửa sạch rồi cắt miếng vừa ăn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 423,
+      "end": 464,
+      "text": "- Hành tím bóc vỏ, rửa sạch và băm nhuyễn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 465,
+      "end": 501,
+      "text": "- Hành lá và ngò cắt bỏ rễ, rửa sạch",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 502,
+      "end": 610,
+      "text": "- Tôm bỏ đầu, lột vỏ, rút chỉ đen rồi rửa nước muối. Giã nhuyễn một nửa phần tôm, phần còn lại để nguyên con",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 626,
+      "end": 704,
+      "text": "- Phi hành tím với dầu ăn cho thơm rồi cho tôm vào xào đến khi chuyển màu hồng",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 705,
+      "end": 746,
+      "text": "- Đổ 2 chén nước lọc vào, đun sôi lửa lớn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 747,
+      "end": 807,
+      "text": "- Nêm bột ngọt, hạt nêm, nước mắm, muối và đường rồi vớt bọt",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 808,
+      "end": 864,
+      "text": "- Cho bầu vào khuấy nhẹ, đợi sôi lại thì nêm lại cho vừa",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 865,
+      "end": 909,
+      "text": "- Cho hành lá và ngò cắt nhỏ vào rồi tắt bếp",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    }
+  ],
+  "required_reviewer_actions": [
+    "Compare ingredients against all steps and serving suggestions",
+    "Resolve quantities/state/edible mass/compound ingredients",
+    "Obtain local recipe + nutrient + conversion + processing evidence",
+    "Map every source component with explicit reviewed identity",
+    "Approve separately by scope; never auto-populate unknown values"
+  ],
+  "new_values_assumed": false
+}

@@ -1,0 +1,112 @@
+{
+  "recipe_id": 43,
+  "recipe_version": "afe1d413def8d08ec8e5529f4519230bafc0bc26cc71658ef918ede5f3650afc",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "step_review": [
+    {
+      "section": "prep",
+      "start": 555,
+      "end": 581,
+      "text": "- Thịt ba chỉ cắt lát mỏng",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 582,
+      "end": 614,
+      "text": "- Dứa và cà tím cắt miếng vừa ăn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 615,
+      "end": 680,
+      "text": "- Tỏi, hành tím và sả băm nhỏ, chừa lại một ít sả để nấu nước lẩu",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 709,
+      "end": 805,
+      "text": "- Cho 500ml nước lọc và 500ml nước dừa vào nồi cùng mắm cá sặc và mắm cá linh, đun khoảng 5 phút",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 806,
+      "end": 839,
+      "text": "- Lọc hỗn hợp qua rây để bỏ xương",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "steps",
+      "start": 853,
+      "end": 880,
+      "text": "- Đun sôi nước với hành tím",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 881,
+      "end": 928,
+      "text": "- Luộc tôm 3 phút, mực 2 phút và cá basa 3 phút",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "steps",
+      "start": 938,
+      "end": 984,
+      "text": "- Phi tỏi, sả và hành tím băm với màu dầu điều",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 985,
+      "end": 1035,
+      "text": "- Cho thịt ba chỉ và hạt nêm vào xào khoảng 4 phút",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 1049,
+      "end": 1095,
+      "text": "- Đổ nước luộc và nước mắm đã lọc vào nồi thịt",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 1096,
+      "end": 1170,
+      "text": "- Thêm dứa, sả, 1,5 muỗng cà phê hạt nêm và đường phèn, nấu khoảng 10 phút",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 1171,
+      "end": 1204,
+      "text": "- Cho cà tím, mực, tôm và rau vào",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    }
+  ],
+  "required_reviewer_actions": [
+    "Compare ingredients against all steps and serving suggestions",
+    "Resolve quantities/state/edible mass/compound ingredients",
+    "Obtain local recipe + nutrient + conversion + processing evidence",
+    "Map every source component with explicit reviewed identity",
+    "Approve separately by scope; never auto-populate unknown values"
+  ],
+  "new_values_assumed": false
+}

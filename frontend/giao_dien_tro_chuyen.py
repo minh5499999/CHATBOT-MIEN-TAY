@@ -1,5 +1,4 @@
 """Trang trí trang trò chuyện; các thao tác vẫn dùng widget Streamlit thật."""
-from functools import lru_cache
 import html
 import re
 from pathlib import Path
@@ -31,14 +30,8 @@ def _anh(ten):
     return f'/app/static/chat/{ten}?v={v}'
 
 
-@lru_cache(maxsize=2)
-def _doc_css_chat(_mtime=None):
-    return (ASSETS / 'chat.css').read_text(encoding='utf-8')
-
-
 def ap_dung():
-    css_file = ASSETS / 'chat.css'
-    css = _doc_css_chat(css_file.stat().st_mtime_ns if css_file.exists() else 0)
+    css = (ASSETS / 'chat.css').read_text(encoding='utf-8')
     for khoa, ten in [('__CHAT_SCENE__', 'chat-scene-v2.png'), ('__AVATAR_BEP__', 'avatar-bep.svg'),
                       ('__MON_CA_KHO__', 'mon-ca-kho.jpg'), ('__MON_CANH__', 'mon-canh.jpg'),
                       ('__MON_DINH_DUONG__', 'mon-dinh-duong.jpg'), ('__MON_NHANH__', 'mon-nhanh.jpg')]:
@@ -47,8 +40,8 @@ def ap_dung():
 
 
 def thuong_hieu():
-    pot = (ASSETS / 'login/brand-pot.svg').read_text(encoding='utf-8')
-    st.markdown('<div class="chat-brand"><div>' + pot + '</div><h2>Bếp Miền Tây</h2>'
+    pot = f'<img src="{_anh("bep-cua-ngoai-logo.png")}" alt="">'
+    st.markdown('<div class="chat-brand"><div>' + pot + '</div><h2>Bếp Của Ngoại</h2>'
                 '<p>Trợ lý hướng dẫn nấu ăn và dinh dưỡng món miền Tây</p></div>', unsafe_allow_html=True)
 
 
@@ -62,9 +55,12 @@ ICON_XUONG = ('<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true
 def tieu_de(nguoi_dung):
     name = html.escape(nguoi_dung['ten_hien_thi'])
     role = 'Admin' if nguoi_dung.get('vai_tro') == 'admin' else 'Thành viên'
-    st.markdown(f'<div class="chat-heading"><div class="chat-logo"><img src="{_anh("header-basket.svg")}" alt=""></div>'
-                '<div class="chat-heading-copy"><h1>Trò chuyện cùng Bếp Miền Tây</h1>'
-                '<p>Bạn có thể hỏi gợi ý món ăn, cách nấu, dinh dưỡng hoặc thay thế nguyên liệu nhé!</p></div>'
+    cooking = st.session_state.get('muc_dang_chon') == 'nav_cook'
+    heading = 'Hướng dẫn nấu ăn' if cooking else 'Trò chuyện cùng Bếp Của Ngoại'
+    description = 'Công thức, cách chế biến và dinh dưỡng cho các món ăn miền Tây.' if cooking else 'Bạn có thể hỏi gợi ý món ăn, cách nấu, dinh dưỡng hoặc thay thế nguyên liệu nhé!'
+    st.markdown(f'<div class="chat-heading"><div class="chat-logo"><img src="{_anh("bep-cua-ngoai-logo.png")}" alt=""></div>'
+                f'<div class="chat-heading-copy"><h1>{heading}</h1>'
+                f'<p>{description}</p></div>'
                 '<div class="chat-tools"><details class="chat-notifications">'
                 f'<summary class="chat-bell" aria-label="Thông báo">{ICON_CHUONG}</summary>'
                 '<div class="chat-notifications-panel"><strong>Thông báo</strong>'

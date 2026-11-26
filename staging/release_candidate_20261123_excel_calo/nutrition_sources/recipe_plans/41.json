@@ -1,0 +1,328 @@
+{
+  "recipe_id": 41,
+  "recipe_version": "c81d3ad7f2421a626db0482bab7d30b084a2c702358be674de9afb484924bcc4",
+  "answer_sha256": "c81d3ad7f2421a626db0482bab7d30b084a2c702358be674de9afb484924bcc4",
+  "source_locator": "Điện máy XANH (Vào bếp): Cách nấu canh chua cá lóc chuẩn công thức mẹ nấu\nhttps://www.dienmayxanh.com/vao-bep/cach-nau-canh-chua-ca-loc-chuan-nhat-ngon-00828",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "source_verification": "UNVERIFIED",
+  "servings": {
+    "exact_from_source": 4,
+    "range_from_source": null,
+    "user_scenario_is_not_source_approval": true
+  },
+  "source_sections": {
+    "ingredients": {
+      "start": 166,
+      "end": 415
+    },
+    "prep": {
+      "start": 415,
+      "end": 814
+    },
+    "steps": {
+      "start": 814,
+      "end": 1097
+    },
+    "finish": {
+      "start": 1097,
+      "end": 1319
+    }
+  },
+  "authorized_answer_text": "Canh chua cá lóc là món canh quen thuộc trong bữa cơm miền Tây. Nước canh chua ngọt hài hòa từ me và thơm, cá lóc ngọt thịt, ăn cùng rau ngổ và ngò gai rất đưa cơm.\n\nNguyên liệu cần chuẩn bị (cho 4 người)\n- Cá lóc 500g\n- Thơm (dứa) 1/4 trái\n- Cà chua 2 trái\n- Đậu bắp 50g\n- Bạc hà (dọc mùng) 50g\n- Me 20g\n- Giá đỗ 50g\n- Ngò gai 1 nhánh\n- Rau ngổ 1 nhánh\n- Nước mắm 1 muỗng canh\n- Đường, muối, hạt nêm, tiêu vừa đủ\n\nSơ chế\n- Cá lóc làm sạch rồi chà muối, rửa lại với nước 2 lần. Cắt khúc vừa ăn cỡ một lóng tay\n- Ướp cá với 1 muỗng canh nước mắm, 1/2 muỗng canh hạt nêm và 1/2 muỗng canh tiêu trong 15 phút\n- Thơm gọt vỏ cắt miếng vừa ăn. Cà chua cắt múi cau\n- Giá rửa sạch 2 lần. Ngò gai và rau ngổ rửa sạch rồi cắt nhỏ\n- Đậu bắp và bạc hà cắt xéo\n- Me cho vào 1 muỗng canh nước ấm khoảng 60 độ C rồi dằm cho mềm\n\nCách chế biến\n- Đun sôi 1 lít nước rồi cho phần me đã dằm vào\n- Cho cá đã ướp vào nấu khoảng 10 phút. Trong lúc nấu nhớ vớt bọt để nước canh trong\n- Thêm cà chua, thơm, đậu bắp, giá và bạc hà vào nồi\n- Khi nước sôi lại thì cho 1 muỗng canh đường, nêm nếm lại cho vừa ăn rồi tắt bếp\n\nHoàn thành món ăn\nMúc canh ra tô và rắc rau ngổ với ngò gai lên trên. Món này ăn nóng với cơm trắng hoặc bún tươi, cá lóc chấm thêm nước mắm là ngon nhất.\n\nVậy là xong nồi canh chua cá lóc rồi, chúc bạn nấu ăn thật vui vẻ.",
+  "ingredients": [
+    {
+      "raw_text": "Cá lóc 500g",
+      "source_span": {
+        "start": 207,
+        "end": 218
+      },
+      "parent_line": "- Cá lóc 500g",
+      "ingredient_name_as_written": "Cá lóc",
+      "quantity_as_written": "500",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Thơm (dứa) 1/4 trái",
+      "source_span": {
+        "start": 221,
+        "end": 240
+      },
+      "parent_line": "- Thơm (dứa) 1/4 trái",
+      "ingredient_name_as_written": "Thơm (dứa)",
+      "quantity_as_written": "1/4",
+      "unit_as_written": "trái",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Cà chua 2 trái",
+      "source_span": {
+        "start": 243,
+        "end": 257
+      },
+      "parent_line": "- Cà chua 2 trái",
+      "ingredient_name_as_written": "Cà chua",
+      "quantity_as_written": "2",
+      "unit_as_written": "trái",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Đậu bắp 50g",
+      "source_span": {
+        "start": 260,
+        "end": 271
+      },
+      "parent_line": "- Đậu bắp 50g",
+      "ingredient_name_as_written": "Đậu bắp",
+      "quantity_as_written": "50",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Bạc hà (dọc mùng) 50g",
+      "source_span": {
+        "start": 274,
+        "end": 295
+      },
+      "parent_line": "- Bạc hà (dọc mùng) 50g",
+      "ingredient_name_as_written": "Bạc hà (dọc mùng)",
+      "quantity_as_written": "50",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Me 20g",
+      "source_span": {
+        "start": 298,
+        "end": 304
+      },
+      "parent_line": "- Me 20g",
+      "ingredient_name_as_written": "Me",
+      "quantity_as_written": "20",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Giá đỗ 50g",
+      "source_span": {
+        "start": 307,
+        "end": 317
+      },
+      "parent_line": "- Giá đỗ 50g",
+      "ingredient_name_as_written": "Giá đỗ",
+      "quantity_as_written": "50",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Ngò gai 1 nhánh",
+      "source_span": {
+        "start": 320,
+        "end": 335
+      },
+      "parent_line": "- Ngò gai 1 nhánh",
+      "ingredient_name_as_written": "Ngò gai",
+      "quantity_as_written": "1",
+      "unit_as_written": "nhánh",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Rau ngổ 1 nhánh",
+      "source_span": {
+        "start": 338,
+        "end": 353
+      },
+      "parent_line": "- Rau ngổ 1 nhánh",
+      "ingredient_name_as_written": "Rau ngổ",
+      "quantity_as_written": "1",
+      "unit_as_written": "nhánh",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Nước mắm 1 muỗng canh",
+      "source_span": {
+        "start": 356,
+        "end": 377
+      },
+      "parent_line": "- Nước mắm 1 muỗng canh",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Đường",
+      "source_span": {
+        "start": 380,
+        "end": 385
+      },
+      "parent_line": "- Đường, muối, hạt nêm, tiêu vừa đủ",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "muối",
+      "source_span": {
+        "start": 387,
+        "end": 391
+      },
+      "parent_line": "- Đường, muối, hạt nêm, tiêu vừa đủ",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "hạt nêm",
+      "source_span": {
+        "start": 393,
+        "end": 400
+      },
+      "parent_line": "- Đường, muối, hạt nêm, tiêu vừa đủ",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "tiêu vừa đủ",
+      "source_span": {
+        "start": 402,
+        "end": 413
+      },
+      "parent_line": "- Đường, muối, hạt nêm, tiêu vừa đủ",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    }
+  ],
+  "missing": [
+    "RECIPE_SOURCE",
+    "NUTRIENT_SOURCE_5_FIELDS",
+    "REVIEWED_FOOD_MAPPING",
+    "EDIBLE_INPUT_MASS",
+    "SPICES_COMPOUNDS",
+    "SERVING_BASIS_REVIEW",
+    "COOKED_YIELD",
+    "CONSUMED_OIL_BROTH",
+    "RETENTION"
+  ],
+  "approved_scopes": [],
+  "medical_approval": false
+}

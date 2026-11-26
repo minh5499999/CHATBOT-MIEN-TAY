@@ -151,17 +151,13 @@ ICON_TIEU_DE = {
 ICON_TIEU_DE['Kiểm thử & phản hồi'] = _svg(
     '<path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.5-4.5A8.5 8.5 0 1 1 21 11.5z"/>'
     '<circle cx="8" cy="11" r=".7"/><circle cx="12" cy="11" r=".7"/><circle cx="16" cy="11" r=".7"/>', 34)
-URL = re.compile(r'https?://[^\s<>"\']+')
+URL = re.compile(r'https?://\S+')
 
 
 def _o_nguon(text):
     """Thẻ nguồn: bấm được nếu nguồn có đường dẫn; nhãn là chữ của nguồn (hoặc chính đường dẫn)."""
     text = ' '.join(str(text or '').split())
     url = (URL.search(text) or [None])[0]
-    if url:
-        url = url.rstrip('.,);]')
-        if not url.lower().startswith(('http://', 'https://')):
-            url = None
     if not text:
         return '<td class="dl-src"></td><td class="dl-go"></td>'
     chip = f'{ICON_BANG["link"]}<span>{esc(text)}</span>'
@@ -173,21 +169,11 @@ def _o_nguon(text):
     return f'<td class="dl-src"><span class="src-chip src-none" title="{esc(text)}"><span>{esc(text)}</span></span></td><td class="dl-go"></td>'
 
 
-def _an_toan_csv(value):
-    text = "" if value is None else str(value)
-    if text.lstrip().startswith(("=", "+", "-", "@", "\t", "\r")):
-        return "'" + text
-    return text
-
-
 def _csv(rows):
     buf = io.StringIO()
     w = csv.writer(buf)
     w.writerow(['Câu hỏi', 'Nội dung', 'Nguồn'])
-    w.writerows(
-        [_an_toan_csv(d.get('question', '')), _an_toan_csv(d.get('answer', '')), _an_toan_csv(d.get('source', ''))]
-        for d in rows
-    )
+    w.writerows([d.get('question', ''), d.get('answer', ''), d.get('source', '')] for d in rows)
     return buf.getvalue().encode('utf-8-sig')  # có BOM để Excel đọc đúng tiếng Việt
 
 
@@ -251,8 +237,8 @@ def hien_thi(actor, dang_xuat):
     st.markdown('<style>' + style_admin(CSS_ADMIN.stat().st_mtime) + '</style><span class="bmt-admin"></span>', unsafe_allow_html=True)
     _hieu_ung_chuyen_muc()
     with st.sidebar:
-        pot = (ROOT/'frontend/assets/login/brand-pot.svg').read_text(encoding='utf-8')
-        st.markdown(f'<div class="admin-brand">{pot}<div>Bếp Miền Tây</div><small>Trang quản trị</small></div>', unsafe_allow_html=True)
+        pot = '<img src="/app/static/chat/bep-cua-ngoai-logo.png" alt="">'
+        st.markdown(f'<div class="admin-brand">{pot}<div>Bếp Của Ngoại</div><small>Trang quản trị</small></div>', unsafe_allow_html=True)
         st.session_state.setdefault('admin_muc', 'Tổng quan')
         for label, icon in [
             ('Tổng quan', 'home'),

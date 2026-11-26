@@ -52,20 +52,6 @@ CREATE TABLE IF NOT EXISTS nhat_ky_quan_tri (
  id INTEGER PRIMARY KEY, nguoi_thuc_hien TEXT NOT NULL, doi_tuong TEXT NOT NULL,
  hanh_dong TEXT NOT NULL, chi_tiet TEXT NOT NULL, tao_luc TEXT NOT NULL
 );
-CREATE TABLE IF NOT EXISTS gioi_han_dang_nhap (
- khoa VARCHAR(120) PRIMARY KEY,
- so_lan INTEGER NOT NULL, cua_so_bat_dau DOUBLE NOT NULL, khoa_den DOUBLE NOT NULL
-);
-CREATE TABLE IF NOT EXISTS tuy_chon_ho_so (
- ten_dang_nhap VARCHAR(384) PRIMARY KEY,
- tuy_chon TEXT NOT NULL,
- FOREIGN KEY (ten_dang_nhap) REFERENCES nguoi_dung(ten_dang_nhap) ON DELETE CASCADE
-);
-CREATE TABLE IF NOT EXISTS noi_dung_quan_tri (
- ma VARCHAR(32) PRIMARY KEY, nhom VARCHAR(40) NOT NULL,
- tieu_de VARCHAR(255) NOT NULL, noi_dung TEXT NOT NULL,
- trang_thai VARCHAR(20) NOT NULL
-);
 """
 
 

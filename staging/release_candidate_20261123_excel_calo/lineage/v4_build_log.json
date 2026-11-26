@@ -1,0 +1,8 @@
+{
+  "build_id": "release_candidate_20261116_v4",
+  "operation": "COPY_AUTHORIZED_V3_ARTIFACTS_AND_EXTEND_TYPED_RUNTIME",
+  "metadata_change": "build_id only",
+  "embedding_rebuilt": false,
+  "parent_manifest_sha256": "8d36e295f3089a7551656d515c48e2c972a088dd4099f2de94c6f7c3948b3436",
+  "production_promoted": false
+}

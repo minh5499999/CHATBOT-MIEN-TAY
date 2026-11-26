@@ -1,0 +1,254 @@
+{
+  "recipe_id": 42,
+  "recipe_version": "85075ef09166ee84aaad8def6eeedba0dd2927255f24532996359d5fa45884d7",
+  "answer_sha256": "85075ef09166ee84aaad8def6eeedba0dd2927255f24532996359d5fa45884d7",
+  "source_locator": "https://www.dienmayxanh.com/vao-bep/cach-lam-mon-ca-loc-kho-to-de-nhat-ngon-nhat-00816",
+  "answer_text": "Cá lóc kho tộ là món kho dân dã của người miền Tây. Miếng cá săn chắc thấm vị mặn ngọt, nước kho sệt thơm mùi tiêu ăn với cơm nóng rất hợp.\n\nNguyên liệu cần chuẩn bị (cho 2 người)\n- Cá lóc 1 con khoảng 500g\n- Thịt heo xay 50g\n- Nước dừa 1 trái\n- Hành lá băm một ít\n- Tỏi băm một ít\n- Nước mắm 2 thìa\n- Nước màu 1 thìa\n- Tiêu xay 1 thìa nhỏ\n- Hạt nêm 1 thìa nhỏ\n- Dầu ăn\n- Ớt hiểm và hành lá để trang trí\n\nSơ chế\n- Cá lóc rửa sạch, bỏ mang, cắt khúc vừa ăn rồi để ráo\n- Trộn hành lá băm với 2 thìa nước mắm, 1 thìa nước màu, 1 thìa nhỏ tiêu và 1 thìa nhỏ hạt nêm\n- Cho cá vào hỗn hợp này ướp trong 30 phút\n\nCách chế biến\n- Phi tỏi và hành với dầu ăn cho vàng thơm\n- Cho thịt heo xay vào đảo đều đến khi thịt vàng\n- Thêm cá cùng phần nước ướp và nước dừa tươi vào nồi, đun lửa vừa\n- Khi nước cạn còn khoảng một nửa thì hạ lửa nhỏ nhất và nêm nếm lại gia vị\n- Tiếp tục đun liu riu đến khi nước kho sệt lại và thịt cá săn chắc\n\nHoàn thành món ăn\nTắt bếp rồi rắc thêm ớt hiểm và hành lá lên trên cho đẹp. Cá kho ăn nóng với cơm trắng là tròn vị.\n\nChúc bạn có nồi cá kho thật ngon cho bữa cơm nhà.",
+  "source_verification": "UNVERIFIED",
+  "ingredients": [
+    {
+      "raw_text": "Cá lóc 1 con khoảng 500g",
+      "source_span": {
+        "start": 182,
+        "end": 206
+      },
+      "parent_line": "- Cá lóc 1 con khoảng 500g",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Thịt heo xay 50g",
+      "source_span": {
+        "start": 209,
+        "end": 225
+      },
+      "parent_line": "- Thịt heo xay 50g",
+      "ingredient_name_as_written": "Thịt heo xay",
+      "quantity_as_written": "50",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Nước dừa 1 trái",
+      "source_span": {
+        "start": 228,
+        "end": 243
+      },
+      "parent_line": "- Nước dừa 1 trái",
+      "ingredient_name_as_written": "Nước dừa",
+      "quantity_as_written": "1",
+      "unit_as_written": "trái",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Hành lá băm một ít",
+      "source_span": {
+        "start": 246,
+        "end": 264
+      },
+      "parent_line": "- Hành lá băm một ít",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Tỏi băm một ít",
+      "source_span": {
+        "start": 267,
+        "end": 281
+      },
+      "parent_line": "- Tỏi băm một ít",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Nước mắm 2 thìa",
+      "source_span": {
+        "start": 284,
+        "end": 299
+      },
+      "parent_line": "- Nước mắm 2 thìa",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Nước màu 1 thìa",
+      "source_span": {
+        "start": 302,
+        "end": 317
+      },
+      "parent_line": "- Nước màu 1 thìa",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Tiêu xay 1 thìa nhỏ",
+      "source_span": {
+        "start": 320,
+        "end": 339
+      },
+      "parent_line": "- Tiêu xay 1 thìa nhỏ",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Hạt nêm 1 thìa nhỏ",
+      "source_span": {
+        "start": 342,
+        "end": 360
+      },
+      "parent_line": "- Hạt nêm 1 thìa nhỏ",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Dầu ăn",
+      "source_span": {
+        "start": 363,
+        "end": 369
+      },
+      "parent_line": "- Dầu ăn",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Ớt hiểm và hành lá để trang trí",
+      "source_span": {
+        "start": 372,
+        "end": 403
+      },
+      "parent_line": "- Ớt hiểm và hành lá để trang trí",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    }
+  ],
+  "source_sections": {
+    "ingredients": {
+      "start": 141,
+      "end": 405
+    },
+    "prep": {
+      "start": 405,
+      "end": 606
+    },
+    "steps": {
+      "start": 606,
+      "end": 924
+    },
+    "finish": {
+      "start": 924,
+      "end": 1091
+    }
+  },
+  "servings_as_recorded": {
+    "exact_from_source": 2,
+    "range_from_source": null,
+    "user_scenario_is_not_source_approval": true
+  },
+  "origin": "Authorized project snapshot, not independently checked external source"
+}

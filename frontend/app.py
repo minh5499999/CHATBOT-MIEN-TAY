@@ -1,6 +1,6 @@
 """Giao diện web của chatbot nấu ăn (Streamlit).
 
-Chatbot LCEL: truy hồi lai có lọc điều kiện; chỉ dùng trích xuất và template có nguồn, không LLM.
+Chatbot LCEL: truy hồi lai có lọc điều kiện, thêm tóm tắt trích xuất bằng Ollama cục bộ.
 Có đăng nhập và lịch sử trò chuyện riêng từng tài khoản (lưu trên máy).
 Các chủ đề (nhóm dữ liệu) chỉ dùng bên trong cho việc tìm và định tuyến câu trả lời, không hiện trên giao diện.
 Chạy: python -m streamlit run app.py   (hoặc bấm đúp chay_web.bat)
@@ -11,7 +11,6 @@ import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 
 from datetime import datetime
-import re
 
 import streamlit as st
 
@@ -25,7 +24,7 @@ from backend.chatbot.cau_hinh import nap_env
 nap_env()
 co_so_du_lieu.BACKEND = os.environ.get('TAI_KHOAN_BACKEND', co_so_du_lieu.BACKEND).strip().lower()
 
-st.set_page_config(page_title="Bếp Miền Tây – Trợ lý nấu ăn", page_icon="🍲", layout="centered")
+st.set_page_config(page_title="Bếp Của Ngoại – Trợ lý nấu ăn", page_icon=str(Path(__file__).resolve().parents[1] / "static/chat/bep-cua-ngoai-logo.png"), layout="centered")
 
 CAU_GOI_Y = [
     "Cách nấu canh chua cá lóc miền Tây",
@@ -143,36 +142,22 @@ def google_da_cau_hinh():
 if ss.nguoi_dung is None and google_da_cau_hinh() and st.user.is_logged_in:
     ss.nguoi_dung = tai_khoan.dang_nhap_google(st.user.email, st.user.get("name"))
 
-# đăng nhập bằng mật khẩu: mã phiên (hạn 30 ngày) giữ trong cookie COOKIE_PHIEN,
-# không ghi lại token phiên vào URL (?phien=...) để tránh lộ qua lịch sử/Referrer/log.
+# đăng nhập bằng mật khẩu: mã phiên (hạn 30 ngày) giữ ở cả cookie COOKIE_PHIEN lẫn đường dẫn trang (?phien=...)
+# → tải lại trang (F5, Ctrl+F5) không phải đăng nhập lại, kể cả khi trình duyệt chặn cookie; chỉ Đăng xuất mới xóa
 COOKIE_PHIEN = "bmt_phien"
-_TOKEN_RE = re.compile(r"^[A-Za-z0-9_-]{0,128}$")
 if ss.nguoi_dung is None:
-    legacy_query_token = st.query_params.get("phien")
-    for ma in (st.context.cookies.get(COOKIE_PHIEN), legacy_query_token):
+    for ma in (st.context.cookies.get(COOKIE_PHIEN), st.query_params.get("phien")):
         nd = tai_khoan.nguoi_dung_theo_phien(ma)
         if nd:
             ss.nguoi_dung, ss.ma_phien = nd, ma
             break
-    if legacy_query_token:
-        st.query_params.pop("phien", None)
 
 
 def ghi_cookie(gia_tri, so_giay):
     """Streamlit không tự ghi cookie được → chạy JS trong khung ẩn (cùng nguồn) để ghi lên trang cha."""
-    gia_tri = str(gia_tri or "")
-    if not _TOKEN_RE.fullmatch(gia_tri):
-        raise ValueError("Mã phiên không hợp lệ.")
-    so_giay = max(0, int(so_giay))
     with st.container(key="o_cookie"):
-        st.iframe(
-            "<script>"
-            "var sec = window.parent.location.protocol === 'https:' ? '; Secure' : '';"
-            f"window.parent.document.cookie = '{COOKIE_PHIEN}={gia_tri}; path=/; "
-            f"max-age={so_giay}; SameSite=Lax' + sec;"
-            "</script>",
-            height=1,
-        )
+        st.iframe(f"<script>window.parent.document.cookie = '{COOKIE_PHIEN}={gia_tri}; path=/; "
+                  f"max-age={so_giay}; SameSite=Lax';</script>", height=1)
     st.markdown("<style>.st-key-o_cookie {position: absolute; width: 0; height: 0; overflow: hidden;}</style>",
                 unsafe_allow_html=True)
 
@@ -181,7 +166,6 @@ def vao_bang_mat_khau(nd):
     ss.nguoi_dung, ss.ma_phien = nd, tai_khoan.tao_phien(nd["ten_dang_nhap"])
     ss.trang_hien_tai = 'Quản trị' if nd.get('vai_tro') == 'admin' else 'Trò chuyện'
     ss.admin_muc = 'Tổng quan'
-    st.query_params.pop("phien", None)
     st.rerun()
 
 
@@ -199,8 +183,8 @@ if ss.get("ma_phien"):
     if ss.get("cookie_phien_da_ghi") != ss.ma_phien:
         ghi_cookie(ss.ma_phien, 30 * 24 * 3600)
         ss.cookie_phien_da_ghi = ss.ma_phien
-    if "phien" in st.query_params:
-        st.query_params.pop("phien", None)
+    if st.query_params.get("phien") != ss.ma_phien:
+        st.query_params["phien"] = ss.ma_phien
 
 TEN = ss.nguoi_dung["ten_dang_nhap"]
 ss.setdefault("tin_nhan", [])
@@ -275,6 +259,11 @@ def chon_muc_chat(muc, cau=None):
         return
     if muc == 'nav_adjust':
         ss.pop('cau_cho', None)
+        ss.pop('adjust_recipe_id', None)
+        ss.pop('adjust_applied', None)
+        ss.pop('adjust_target', None)
+        ss.pop('adjust_salt_cut', None)
+        ss.pop('adjust_oil_cut', None)
         ss.muc_dang_chon, ss.trang_chat, ss.chon_mon_nau = muc, 'adjust_recipe', False
         return
     if muc in ('nav_chat', 'nav_nutri'):
@@ -325,6 +314,11 @@ if ss.nguoi_dung.get('vai_tro') == 'admin' and ss.get('trang_hien_tai', 'Quản 
     hien_thi(TEN, dang_xuat)
     st.stop()
 
+# Streamlit reruns this entrypoint but caches imported modules between runs.
+# Reload the small view module so new image placeholders and assets take effect.
+import importlib
+from frontend import giao_dien_tro_chuyen
+importlib.reload(giao_dien_tro_chuyen)
 from frontend.giao_dien_tro_chuyen import (MUC_THANH_BEN, ap_dung, the_ho_so, thong_bao, thuong_hieu,
                                            tieu_de, tieu_de_trang, to_muc_chon)
 from frontend import mon_yeu_thich
@@ -352,7 +346,7 @@ with st.sidebar:
             st.caption("Lịch sử gần đây")
             for c in recent:
                 st.button(c["tieu_de"], key=f"recent_{c['ma']}", icon=":material/chat:", width="stretch",
-                          on_click=mo_cuoc, args=(c,), help=c["tieu_de"])
+                          on_click=mo_cuoc, args=(c,), help=c["tieu_de"], wrap=True)
             if len(cac_cuoc_da_luu) > len(recent):
                 st.button(f"Xem tất cả ({len(cac_cuoc_da_luu)})", key="recent_all",
                           on_click=chon_muc_chat, args=("nav_history",), width="stretch")
@@ -369,15 +363,18 @@ except Exception as e:
     st.error(f"Không khởi động được chatbot: {e}")
     st.stop()
 
-# chế độ giải thích (chỉ dành cho admin đang đăng nhập): bật bằng &giai_thich=1 trên URL
-giai_thich = (st.query_params.get("giai_thich") == "1") and tai_khoan.la_admin(TEN)
+# chế độ giải thích (câu hỏi sau tiền xử lý / tách từ, câu hỏi viết lại, top-k, ngưỡng): không có nút trên giao diện,
+# bật bằng cách thêm &giai_thich=1 vào đường dẫn trang
+giai_thich = st.query_params.get("giai_thich") == "1"
 
 
 # ================================================================== hiển thị câu trả lời
 
 def hien_nguon(kq):
-    for n in kq["nguon"]:
-        with st.expander("Nguồn tham khảo", icon=":material/menu_book:"):
+    if not kq["nguon"]:
+        return
+    with st.expander("Nguồn tham khảo", expanded=False, icon=":material/menu_book:"):
+        for n in kq["nguon"]:
             dong = f"**ID {n['id_goc']} – {n['cau_hoi']}**  \nNhóm: {n['nhom']} · độ khớp {n['diem']:.3f}"
             if n["nguon"]:
                 dong += f"  \n[Mở bài viết gốc]({n['nguon']})"
@@ -402,8 +399,37 @@ def hien_giai_thich(kq):
 def hien_tra_loi(kq, vi_tri, cuoi, cau_hoi=None, yeu_thich=frozenset()):
     from backend.chatbot.knowledge_policy import render_result
     kq = render_result(kq, doc_cau_hinh()['kho_vector'])
-    st.markdown(kq["cau_tra_loi"])
+    if kq.get('reason_code') == 'COMFORT_MEAL_OPTIONS':
+        st.caption('Kho hiện tại chưa có câu trả lời sức khỏe được duyệt cho tình trạng bạn nêu. '
+                   'Các món dưới đây chỉ là gợi ý món mềm hoặc có nước, không phải kết luận món phù hợp để điều trị. '
+                   'Bạn vẫn có thể hỏi riêng cách nấu một món.')
+    from frontend.ollama_local import cache_key
+    llm = ss.get('ollama_summaries', {}).get(cache_key(cau_hoi or '', kq), {})
+    if llm.get('status') == 'ok':
+        st.markdown(llm['text'])
+        st.markdown('**Nội dung đầy đủ và căn cứ**')
+    elif cuoi and llm.get('status') in ('unavailable', 'model_missing', 'no_selection'):
+        st.caption('Ollama chưa tạo được tóm tắt. Bạn vẫn có thể xem nội dung và nguồn bên dưới.')
+    from frontend.noi_dung_tra_loi import calo_kem_cong_thuc
+    cooking_calories = calo_kem_cong_thuc(kq, doc_cau_hinh()['kho_vector'])
+    if cooking_calories:
+        reference = cooking_calories['reference']
+        st.markdown(f"**Calo ước tính:** ≈ {reference['energy_total_kcal']:,.0f} kcal cả công thức · "
+                    f"≈ {reference['energy_per_serving_kcal']:,.0f} kcal/khẩu phần "
+                    f"(quy ước chia {reference['servings']:g} phần).")
+    from frontend.noi_dung_tra_loi import hien_noi_dung, hien_calo_truc_tiep
+    if not hien_calo_truc_tiep(kq):
+        hien_noi_dung(kq["cau_tra_loi"])
+    from frontend.noi_dung_tra_loi import hien_calo_cong_thuc
+    hien_calo_cong_thuc(kq, doc_cau_hinh()['kho_vector'], key=vi_tri, on_adjust=dieu_chinh_mon_da_luu)
     hien_nguon(kq)
+    cooking_options = []
+    if cuoi and cau_hoi:
+        from frontend.huong_dan_sau_goi_y import cong_thuc_goi_y, hien_huong_dan
+        cooking_options = cong_thuc_goi_y(cau_hoi, kq, doc_cau_hinh()['kho_vector'])
+        from backend.chatbot.knowledge_policy import active_build
+        legacy_comfort = kq.get('reason_code') == 'COMFORT_MEAL_OPTIONS' and not active_build()
+        hien_huong_dan(cooking_options, vi_tri=vi_tri, on_chon=chon_mon_huong_dan if legacy_comfort else hoi)
     if giai_thich and {"kho", "che_do_truy_hoi", "thoi_gian_giay", "diem_cao_nhat", "nguong_ngoai_pham_vi", "nguong_tin_cay", "cau_hoi_sach", "cau_hoi_vao_mo_hinh"}.issubset(kq.get("giai_thich", {})):  # history may be blocked or omit diagnostics
         hien_giai_thich(kq)
     if cau_hoi and kq.get("loai") == "tra_loi":  # chỉ lưu món khi trợ lý trả lời được từ dữ liệu
@@ -412,11 +438,23 @@ def hien_tra_loi(kq, vi_tri, cuoi, cau_hoi=None, yeu_thich=frozenset()):
                   icon=":material/heart_check:" if da_luu else ":material/heart_plus:",
                   key=f"yt_{vi_tri}", type="tertiary", on_click=doi_yeu_thich, args=(cau_hoi,),
                   help="Bấm lần nữa để bỏ khỏi danh sách" if da_luu else "Lưu để xem lại trong mục Món yêu thích")
-    if kq["goi_y"] and cuoi:  # nút câu hỏi gợi ý chỉ bấm được ở câu trả lời mới nhất
+    cooking_questions = {item['question'] for item in cooking_options}
+    other_suggestions = [q for q in kq['goi_y'] if q not in cooking_questions]
+    if other_suggestions and cuoi:  # nút câu hỏi gợi ý chỉ bấm được ở câu trả lời mới nhất
         nhan_goi_y = kq.get("nhan_goi_y") or ("👉 Gợi ý công thức món ăn bạn có thể nấu:" if kq["loai"] == "tra_loi" else "👉 Chọn món bạn muốn xem công thức:")
         st.caption(nhan_goi_y)
-        for j, cau in enumerate(kq["goi_y"]):
+        for j, cau in enumerate(other_suggestions):
             st.button(f"{j+1}. {cau}", key=f"lq_{vi_tri}_{j}", on_click=hoi, args=(cau,))
+    if cuoi and cau_hoi:
+        from backend.chatbot.goi_y_lien_quan import related
+        suggestions = related(cau_hoi, doc_cau_hinh()['kho_vector'], kq)
+        if suggestions:
+            with st.container(border=True, key='related_questions'):
+                st.caption('Bạn có thể hỏi tiếp về nội dung liên quan:')
+                columns = st.columns(2)
+                for j,item in enumerate(suggestions):
+                    columns[j % 2].button(item['question'], key=f'related_{vi_tri}_{item["id"]}',
+                        icon=':material/arrow_forward:', width='stretch', on_click=hoi, args=(item['question'],))
 
 
 # ================================================================== các trang phụ
@@ -490,6 +528,10 @@ with st.container(key="chat_canvas"):
 
         with st.container(key="adjust_page"):
             hien_thi_dieu_chinh(doc_cau_hinh()["kho_vector"], TEN, hoi)
+    elif ss.trang_chat == 'cook_detail':
+        from frontend.chi_tiet_cong_thuc import hien_thi_chi_tiet
+        hien_thi_chi_tiet(ss.get('cook_detail_result', {}), doc_cau_hinh()['kho_vector'], TEN,
+            lambda: chon_muc_chat('nav_cook'), dieu_chinh_mon_da_luu, hoi)
     elif ss.trang_chat == "meal_suggestions":
         from frontend.chon_mon_nau import hien_thi_chon_mon
 
@@ -573,7 +615,7 @@ with st.container(key="chat_canvas"):
 
         if not ss.get("chon_mon_nau"):
             with st.container(key="chat_features"):
-                st.markdown('<h2 class="chat-features-title">✦ Bạn có thể làm gì với Bếp Miền Tây?</h2>', unsafe_allow_html=True)
+                st.markdown('<h2 class="chat-features-title">✦ Bạn có thể làm gì với Bếp Của Ngoại?</h2>', unsafe_allow_html=True)
                 cards = [
                     ('Gợi ý món theo nhu cầu', 'Theo nguyên liệu, thời gian, khẩu phần và tình trạng sức khỏe.', 'mon-ca-kho.jpg', mo_goi_y_mon, ()),
                     ('Hướng dẫn nấu chi tiết', 'Có nguyên liệu, khẩu phần, thời gian và các bước nấu.', 'mon-canh.jpg', chon_muc_chat, ('nav_cook',)),
@@ -588,14 +630,21 @@ with st.container(key="chat_canvas"):
                         st.markdown(f'<p class="chat-feature-description">{description}</p>', unsafe_allow_html=True)
 
         with st.container(key="chat_composer"):
+            with st.form("chat_message_form", clear_on_submit=True, border=False):
+                cot_nhap, cot_gui = st.columns([8, 1], vertical_alignment="bottom")
+                tin_nhap = cot_nhap.text_input(
+                    "Tin nhắn", key="chat_message_text", label_visibility="collapsed",
+                    placeholder="Hỏi mình về món ăn, nguyên liệu, dinh dưỡng...",
+                )
+                da_gui = cot_gui.form_submit_button("Gửi", icon=":material/send:", width="stretch")
             cau_cho = ss.pop("cau_cho", None)
-            cau_hoi = st.chat_input("Hỏi mình về món ăn, nguyên liệu, dinh dưỡng...", max_chars=1000) or cau_cho
+            cau_hoi = (tin_nhap.strip() if da_gui else "") or cau_cho
 
     with st.container(key="chat_footer"):
         thong_bao(GIOI_HAN_DAM, GIOI_HAN)
 
 if cau_hoi:
-    from backend.chatbot.sinh_cau_tra_loi import tra_loi
+    from frontend.hoi_thoai import tra_loi
 
     # hiện ngay câu vừa hỏi và bong bóng trợ lý có ba chấm nhấp nháy trong lúc tìm câu trả lời
     with cho_tin_nhan_moi.container():
@@ -607,19 +656,30 @@ if cau_hoi:
     lich_su = [{"cau_hoi": tn["cau_hoi"], "cau_tra_loi": tn["ket_qua"]["cau_tra_loi"], "chu_de": tn["ket_qua"]["chu_de"],
                 "trang_thai": tn["ket_qua"].get("trang_thai")}
                for tn in ss.tin_nhan if tn["vai"] == "assistant"]
-    if ss.pop('cong_thuc_vua_chon', False):
+    mo_trang_cong_thuc = ss.pop('cong_thuc_vua_chon', False)
+    if mo_trang_cong_thuc:
         lich_su = []
     ss.chon_mon_nau = False
-    from frontend.luu_tuy_chon_ho_so import doc_tuy_chon
-    ho_so_nguoi_dung = doc_tuy_chon(TEN)
-    tuy_chon_hoi = None
-    if any(ho_so_nguoi_dung.get(k) for k in ("allergies", "avoid")) or ho_so_nguoi_dung.get("goal") == "Ăn chay":
-        tuy_chon_hoi = {"ho_so_an_uong": ho_so_nguoi_dung}
-    kq = tra_loi(cau_hoi, lich_su, tuy_chon_hoi)
+    from frontend.huong_dan_sau_goi_y import cau_hoi_tim_cong_thuc
+    cooking_question = cau_hoi_tim_cong_thuc(cau_hoi, doc_cau_hinh()['kho_vector'])
+    kq = tra_loi(cooking_question, lich_su)
+    from backend.chatbot.knowledge_policy import render_result
+    from frontend.ollama_local import cache_key, summarize
+    validated = render_result(kq, doc_cau_hinh()['kho_vector'])
+    summaries = ss.setdefault('ollama_summaries', {})
+    summary_key = cache_key(cau_hoi, validated)
+    if summary_key not in summaries:
+        with st.spinner('Ollama đang đọc tài liệu trên máy…'):
+            summaries[summary_key] = summarize(cau_hoi, validated)
+        while len(summaries) > 30:
+            del summaries[next(iter(summaries))]
     ss.tin_nhan = ss.tin_nhan + [{"vai": "user", "noi_dung": cau_hoi},
                                  {"vai": "assistant", "cau_hoi": cau_hoi, "ket_qua": kq}]
     # lưu lịch sử bản rút gọn (bỏ nội dung các đoạn truy hồi), bản đầy đủ chỉ giữ trong phiên
     ban_luu = [t if t["vai"] == "user" else {**t, "ket_qua": tai_khoan.rut_gon_ket_qua(t["ket_qua"])}
                for t in ss.tin_nhan]
     ss.ma_cuoc = tai_khoan.luu_cuoc_tro_chuyen(TEN, ss.ma_cuoc, ban_luu)
+    if mo_trang_cong_thuc and kq.get('loai') == 'tra_loi':
+        ss.cook_detail_result = kq
+        ss.trang_chat = 'cook_detail'
     st.rerun()  # vẽ lại từ lịch sử (thay ba chấm bằng câu trả lời, hiện nút câu hỏi liên quan)

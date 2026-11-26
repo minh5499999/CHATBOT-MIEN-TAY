@@ -1,0 +1,36 @@
+{
+  "batch_id": "d20e1e093896477aa8378bab8ae94334",
+  "action": "APPROVED",
+  "actor": "baotram",
+  "reason": "Đồng ý sử dụng phiên bản bắp cải luộc 89 g, một phần, USDA FDC 169975 để tính ước tính dinh dưỡng cấp A từ nguyên liệu đầu vào trong phạm vi đồ án",
+  "review_scope": [
+    "completeness",
+    "ingredient_input_estimate",
+    "mass",
+    "portion_basis",
+    "recipe_mapping"
+  ],
+  "subject_path": "p276/plan.json",
+  "subject_sha256": "6c51a132b6768973fff56adaff42f4f1f96fa4f7b6aaa83bef36028af56ee829",
+  "evidence_checks": [
+    {
+      "path": "p276/recipe.txt",
+      "sha256": "6894bde32d653d3c256a2a0968c1bda4f8b400da72e38f03ec0936d982fdf801",
+      "passage": "89 g bắp cải xanh sống đã sơ chế, một phần; luộc bằng nước, bỏ nước luộc, không gia vị hay đồ ăn kèm.",
+      "document_version": "276-A-FDC89",
+      "collected_at": "2026-11-17T21:45:59.866541+07:00"
+    },
+    {
+      "path": "p276/usda.txt",
+      "sha256": "38281336a403c0c46c96b9048e8e382443a9d1b92e1d3091b6b80362502b035f",
+      "passage": "USDA SR Legacy 2018-04; FDC 169975; Cabbage, raw; 1 cup, chopped = 89 g (row 85791).",
+      "document_version": "USDA SR Legacy 2018-04",
+      "collected_at": "2026-11-16"
+    }
+  ],
+  "sequence": 1,
+  "previous_sha256": null,
+  "recorded_at": "2026-11-17T15:36:57.387874+00:00",
+  "policy_sha256": "6c7a32ec283b1e64a79646d48f8a2592d415a8fca3bc72f18204900687defb1d",
+  "policy_scope": "PRODUCTION"
+}

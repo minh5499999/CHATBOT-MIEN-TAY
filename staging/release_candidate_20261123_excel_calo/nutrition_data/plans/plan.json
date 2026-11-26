@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "recipe_id": 276,
+  "recipe_version": "7578b471efbb7b04c43634ad712271a0869bbca29535e8c3e801e5798cd82a0e",
+  "calculation_level": "A",
+  "accounting_method": "INGREDIENT_INPUT_ESTIMATE",
+  "serving_basis": "SOURCE_APPROVED_EXACT",
+  "servings": "1",
+  "method_notes": "Luộc bằng nước và bỏ nước luộc",
+  "dataset_path": "datasets/dataset.json",
+  "citations": [
+    {
+      "path": "evidence/recipe.txt",
+      "sha256": "6894bde32d653d3c256a2a0968c1bda4f8b400da72e38f03ec0936d982fdf801",
+      "passage": "89 g bắp cải xanh sống đã sơ chế, một phần; luộc bằng nước, bỏ nước luộc, không gia vị hay đồ ăn kèm.",
+      "document_version": "276-A-FDC89",
+      "collected_at": "2026-11-17T21:45:59.866541+07:00"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": "cabbage",
+      "source_component_ids": [
+        "cabbage-raw-edible"
+      ],
+      "food_id": "USDA:FDC:169975",
+      "food_state": "RAW",
+      "mass_basis": "EDIBLE",
+      "quantity": "89",
+      "unit": "g",
+      "edible_fraction": "1",
+      "citations": [
+        {
+          "path": "evidence/usda.txt",
+          "sha256": "38281336a403c0c46c96b9048e8e382443a9d1b92e1d3091b6b80362502b035f",
+          "passage": "USDA SR Legacy 2018-04; FDC 169975; Cabbage, raw; 1 cup, chopped = 89 g (row 85791).",
+          "document_version": "USDA SR Legacy 2018-04",
+          "collected_at": "2026-11-16"
+        }
+      ]
+    }
+  ]
+}

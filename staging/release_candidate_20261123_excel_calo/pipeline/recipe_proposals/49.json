@@ -1,0 +1,128 @@
+{
+  "recipe_id": 49,
+  "recipe_version": "f455cd09c457cd9f866f9df97a80436432bc2f65615e44019c2ace6a63d63532",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "step_review": [
+    {
+      "section": "prep",
+      "start": 636,
+      "end": 696,
+      "text": "- Rửa lưỡi heo, tim và dồi trường bằng hỗn hợp muối và chanh",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 697,
+      "end": 749,
+      "text": "- Luộc sơ tim, lưỡi, dồi trường rồi ngâm vào nước đá",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 750,
+      "end": 814,
+      "text": "- Xương giá và xương cổ ngâm nước muối loãng 10 phút rồi rửa lại",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 815,
+      "end": 857,
+      "text": "- Tôm khô ngâm 30 phút cho mềm rồi giã nhỏ",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 891,
+      "end": 977,
+      "text": "- Nướng mía lau, hành tím, mực khô và sá sùng trên vỉ có lót giấy bạc cho dậy mùi thơm",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 992,
+      "end": 1058,
+      "text": "- Cho xương vào nồi với 3 lít nước, đun lửa to 10 phút rồi vớt bọt",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 1059,
+      "end": 1138,
+      "text": "- Vặn lửa nhỏ, cho mía, hành tím, mực và sá sùng đã nướng vào, hầm khoảng 3 giờ",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 1156,
+      "end": 1199,
+      "text": "- Luộc lòng khoảng 15 phút rồi ngâm nước đá",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 1200,
+      "end": 1233,
+      "text": "- Luộc tôm đến khi chuyển màu cam",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "steps",
+      "start": 1250,
+      "end": 1289,
+      "text": "- Thịt heo cắt mỏng, ướp gia vị 30 phút",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 1290,
+      "end": 1333,
+      "text": "- Áp chảo trên lửa vừa đến khi hai mặt vàng",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "steps",
+      "start": 1363,
+      "end": 1410,
+      "text": "- Xào tôm khô với tỏi và cà chua rồi xay nhuyễn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "steps",
+      "start": 1411,
+      "end": 1462,
+      "text": "- Nêm nước hầm xương với đường, cho sốt vào đun sôi",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 1463,
+      "end": 1523,
+      "text": "- Rót từ từ hỗn hợp bột năng và bột bắp vào cho sốt sánh lại",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    }
+  ],
+  "required_reviewer_actions": [
+    "Compare ingredients against all steps and serving suggestions",
+    "Resolve quantities/state/edible mass/compound ingredients",
+    "Obtain local recipe + nutrient + conversion + processing evidence",
+    "Map every source component with explicit reviewed identity",
+    "Approve separately by scope; never auto-populate unknown values"
+  ],
+  "new_values_assumed": false
+}

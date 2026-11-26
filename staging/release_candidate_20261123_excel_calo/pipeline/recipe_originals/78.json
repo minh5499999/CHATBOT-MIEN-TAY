@@ -1,0 +1,254 @@
+{
+  "recipe_id": 78,
+  "recipe_version": "9331b4c2442fdf272e8db45c809085dbbeaa62b89d2814fe2bc7398c7887bdb2",
+  "answer_sha256": "9331b4c2442fdf272e8db45c809085dbbeaa62b89d2814fe2bc7398c7887bdb2",
+  "source_locator": "Điện máy XANH (Vào bếp): Cách nấu canh bầu nấu tôm tươi thơm mát, thanh đạm cho bữa cơm\nhttps://www.dienmayxanh.com/vao-bep/cach-nau-canh-bau-nau-tom-tuoi-thom-mat-thanh-dam-cho-bua-com-13477",
+  "answer_text": "Canh bầu nấu tôm là món canh thanh đạm quen thuộc trong bữa cơm miền Tây. Tôm ngọt nước, bầu chín tới mềm nên rất dễ ăn.\n\nNguyên liệu cần chuẩn bị (cho 2 người, chuẩn bị 15 phút và nấu khoảng 20 phút)\n- Bầu 500g\n- Tôm tươi 100g\n- Hành tím 1 củ\n- Hành lá 3 nhánh\n- Ngò rí một ít\n- Nước mắm 1 muỗng cà phê\n- Dầu ăn 1/2 muỗng canh\n- Hạt nêm, đường, muối, bột ngọt\n\nSơ chế\n- Bầu bỏ cuống, gọt vỏ, rửa sạch rồi cắt miếng vừa ăn\n- Hành tím bóc vỏ, rửa sạch và băm nhuyễn\n- Hành lá và ngò cắt bỏ rễ, rửa sạch\n- Tôm bỏ đầu, lột vỏ, rút chỉ đen rồi rửa nước muối. Giã nhuyễn một nửa phần tôm, phần còn lại để nguyên con\n\nCách chế biến\n- Phi hành tím với dầu ăn cho thơm rồi cho tôm vào xào đến khi chuyển màu hồng\n- Đổ 2 chén nước lọc vào, đun sôi lửa lớn\n- Nêm bột ngọt, hạt nêm, nước mắm, muối và đường rồi vớt bọt\n- Cho bầu vào khuấy nhẹ, đợi sôi lại thì nêm lại cho vừa\n- Cho hành lá và ngò cắt nhỏ vào rồi tắt bếp\n\nHoàn thành món ăn\nMúc canh ra tô. Canh ngọt nước, bầu mềm vừa tới, ăn cùng cơm nóng rất hợp.\n\nChúc bạn có nồi canh bầu thật ngon cho bữa cơm nhà.",
+  "source_verification": "UNVERIFIED",
+  "ingredients": [
+    {
+      "raw_text": "Bầu 500g",
+      "source_span": {
+        "start": 203,
+        "end": 211
+      },
+      "parent_line": "- Bầu 500g",
+      "ingredient_name_as_written": "Bầu",
+      "quantity_as_written": "500",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Tôm tươi 100g",
+      "source_span": {
+        "start": 214,
+        "end": 227
+      },
+      "parent_line": "- Tôm tươi 100g",
+      "ingredient_name_as_written": "Tôm tươi",
+      "quantity_as_written": "100",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Hành tím 1 củ",
+      "source_span": {
+        "start": 230,
+        "end": 243
+      },
+      "parent_line": "- Hành tím 1 củ",
+      "ingredient_name_as_written": "Hành tím",
+      "quantity_as_written": "1",
+      "unit_as_written": "củ",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Hành lá 3 nhánh",
+      "source_span": {
+        "start": 246,
+        "end": 261
+      },
+      "parent_line": "- Hành lá 3 nhánh",
+      "ingredient_name_as_written": "Hành lá",
+      "quantity_as_written": "3",
+      "unit_as_written": "nhánh",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Ngò rí một ít",
+      "source_span": {
+        "start": 264,
+        "end": 277
+      },
+      "parent_line": "- Ngò rí một ít",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Nước mắm 1 muỗng cà phê",
+      "source_span": {
+        "start": 280,
+        "end": 303
+      },
+      "parent_line": "- Nước mắm 1 muỗng cà phê",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Dầu ăn 1/2 muỗng canh",
+      "source_span": {
+        "start": 306,
+        "end": 327
+      },
+      "parent_line": "- Dầu ăn 1/2 muỗng canh",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Hạt nêm",
+      "source_span": {
+        "start": 330,
+        "end": 337
+      },
+      "parent_line": "- Hạt nêm, đường, muối, bột ngọt",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "đường",
+      "source_span": {
+        "start": 339,
+        "end": 344
+      },
+      "parent_line": "- Hạt nêm, đường, muối, bột ngọt",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "muối",
+      "source_span": {
+        "start": 346,
+        "end": 350
+      },
+      "parent_line": "- Hạt nêm, đường, muối, bột ngọt",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "bột ngọt",
+      "source_span": {
+        "start": 352,
+        "end": 360
+      },
+      "parent_line": "- Hạt nêm, đường, muối, bột ngọt",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    }
+  ],
+  "source_sections": {
+    "ingredients": {
+      "start": 122,
+      "end": 362
+    },
+    "prep": {
+      "start": 362,
+      "end": 612
+    },
+    "steps": {
+      "start": 612,
+      "end": 911
+    },
+    "finish": {
+      "start": 911,
+      "end": 1056
+    }
+  },
+  "servings_as_recorded": {
+    "exact_from_source": 2,
+    "range_from_source": null,
+    "user_scenario_is_not_source_approval": true
+  },
+  "origin": "Authorized project snapshot, not independently checked external source"
+}

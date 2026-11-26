@@ -50,18 +50,35 @@
   display: flex; align-items: center; gap: 14px; margin: 0 0 76px;
   animation: bmt-enter .75s cubic-bezier(.2,.8,.2,1) both;
 }
-.bmt-pot {width: clamp(82px,6.3vw,110px); flex: 0 0 auto;}
-.bmt-pot svg {width: 100%; overflow: visible; display: block;}
+.bmt-pot {
+  width: clamp(94px,7.4vw,128px);
+  flex: 0 0 auto;
+  background: radial-gradient(ellipse at center, #fffaf0 32%, #fffaf0aa 54%, transparent 73%);
+}
+.bmt-pot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: scale(1.45);
+  filter: drop-shadow(0 1px 2px #fffaf0) drop-shadow(0 4px 5px #74320d55);
+}
 .bmt-pot .steam {animation: bmt-logo-steam 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom;}
 .bmt-pot .steam-two {animation-delay: .65s;}
 .bmt-pot .steam-three {animation-delay: 1.3s;}
 .bmt-wordmark {flex: 1; min-width: 0;}
-.bmt-wordmark h1 {
-  font-family: 'Segoe Print','Comic Sans MS',cursive; font-style: italic;
-  font-size: clamp(42px,4vw,70px); font-weight: 800; line-height: 1.32;
-  letter-spacing: -2.8px; color: #38220e; margin: 0; padding: 0; white-space: nowrap;
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('/app/static/login/dancing-script.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
 }
-.bmt-wordmark h1 span {color: #df4b06;}
+.bmt-wordmark h1 {
+  font-family: 'Dancing Script','Segoe Script',cursive;
+  font-size: clamp(62px,6vw,104px); font-weight: 700; line-height: 1.25;
+  letter-spacing: -0.025em; color: #d94400; margin: 0; padding: 0; white-space: nowrap;
+}
+.bmt-wordmark h1 span {color: inherit;}
 .bmt-wordmark p {font-size: clamp(13px,1.05vw,17px); color: #4c3721; margin: 1px 0 0; white-space: nowrap;}
 .bmt-stroke {display: block; width: 74px; height: 5px; margin: 9px auto 0;
   background: #eb6a12; border-radius: 80% 20% 65% 35%; transform: rotate(-3deg);}
@@ -231,14 +248,14 @@
 @media (max-width: 1200px) and (min-width: 721px) {
   .stApp:has(.bmt-login-scene) {--bmt-left: 7vw; --bmt-card-width: 420px;}
   .bmt-note-canh {left: calc(var(--bmt-img-x) + var(--bmt-img-w) * .48);}
-  .bmt-wordmark h1 {font-size: 50px;}
+  .bmt-wordmark h1 {font-size: clamp(54px,5.8vw,68px);}
   .bmt-wordmark p {font-size: 13px;}
 }
 @media (max-height: 760px) and (min-width: 721px) {
   .stApp:has(.bmt-login-scene) [data-testid="stMainBlockContainer"] {padding-top: 50px !important;}
   .bmt-brand {margin-bottom: 56px;}
-  .bmt-pot {width: 80px;}
-  .bmt-wordmark h1 {font-size: 52px;}
+  .bmt-pot {width: 94px;}
+  .bmt-wordmark h1 {font-size: clamp(54px,5.8vw,72px);}
   .bmt-wordmark p {font-size: 13px;}
   .bmt-stroke {margin-top: 4px;}
   .stApp:has(.bmt-login-scene) .st-key-the_dn {padding: 14px 30px 16px;}
@@ -254,9 +271,9 @@
   .stApp:has(.bmt-login-scene) [data-testid="stMainBlockContainer"] {padding: 28px 0 !important;}
   .stApp:has(.bmt-login-scene) .st-key-login_coluna {margin: 0 auto;}
   .bmt-brand {gap: 8px; margin: 0 2px 44px; justify-content: center;}
-  .bmt-pot {width: 76px;}
+  .bmt-pot {width: clamp(79px,22vw,92px);}
   .bmt-wordmark {flex: 0 1 auto;}
-  .bmt-wordmark h1 {font-size: clamp(34px,9vw,46px); letter-spacing: -2px;}
+  .bmt-wordmark h1 {font-size: clamp(35px,9.5vw,58px); white-space: normal;}
   .bmt-wordmark p {font-size: 11px; white-space: normal; max-width: 265px;}
   .bmt-stroke {margin-top: 6px;}
   .stApp:has(.bmt-login-scene) .st-key-the_dn {padding: 16px 22px 18px; border-radius: 23px; background: rgba(255,251,242,.96);}

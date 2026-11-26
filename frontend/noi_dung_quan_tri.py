@@ -4,7 +4,7 @@ from uuid import uuid4
 
 import streamlit as st
 
-from backend.chatbot import co_so_du_lieu, tai_khoan
+from backend.chatbot import tai_khoan
 from backend.chatbot.co_so_du_lieu import ket_noi
 
 
@@ -12,12 +12,11 @@ def noi_dung_bien_tap(actor, group, fields, initial=None, compact=False):
     if not tai_khoan.la_admin(actor):
         st.stop()
     with ket_noi() as con:
-        if co_so_du_lieu.BACKEND == "sqlite":
-            con.execute("""CREATE TABLE IF NOT EXISTS noi_dung_quan_tri (
-                ma VARCHAR(32) PRIMARY KEY, nhom VARCHAR(40) NOT NULL,
-                tieu_de VARCHAR(255) NOT NULL, noi_dung TEXT NOT NULL,
-                trang_thai VARCHAR(20) NOT NULL
-            )""")
+        con.execute("""CREATE TABLE IF NOT EXISTS noi_dung_quan_tri (
+            ma VARCHAR(32) PRIMARY KEY, nhom VARCHAR(40) NOT NULL,
+            tieu_de VARCHAR(255) NOT NULL, noi_dung TEXT NOT NULL,
+            trang_thai VARCHAR(20) NOT NULL
+        )""")
         rows = con.execute(
             "SELECT * FROM noi_dung_quan_tri WHERE nhom=? ORDER BY tieu_de", (group,)
         ).fetchall()

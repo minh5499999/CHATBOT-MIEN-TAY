@@ -1,0 +1,104 @@
+{
+  "recipe_id": 44,
+  "recipe_version": "76307958c4b828ccd28db9532277fde53db10d5700047abed647a06cbff487b8",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "step_review": [
+    {
+      "section": "prep",
+      "start": 530,
+      "end": 592,
+      "text": "- Thịt ba chỉ cắt mỏng rồi ướp với chút nước mắm, muối và tiêu",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 593,
+      "end": 607,
+      "text": "- Tôm rửa sạch",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 608,
+      "end": 630,
+      "text": "- Hành tây cắt múi cau",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 631,
+      "end": 655,
+      "text": "- Giá đỗ rửa sạch để ráo",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "steps",
+      "start": 679,
+      "end": 772,
+      "text": "- Trộn đều bột bánh xèo, bột chiên giòn, bột nghệ, trứng gà, nước cốt dừa, nước có ga và muối",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 773,
+      "end": 801,
+      "text": "- Để bột nghỉ khoảng 30 phút",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 811,
+      "end": 859,
+      "text": "- Phi thơm hành rồi cho thịt vào xào đến khi săn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 860,
+      "end": 882,
+      "text": "- Thêm tôm vào đảo đều",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 891,
+      "end": 956,
+      "text": "- Đổ bột vào chảo nóng rồi cho nhân tôm thịt, hành tây và giá lên",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 957,
+      "end": 988,
+      "text": "- Đậy nắp khoảng 1 đến 1,5 phút",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "steps",
+      "start": 989,
+      "end": 1066,
+      "text": "- Gấp bánh lại thành hình bán nguyệt và chiên thêm cho phần còn lại chín giòn",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    }
+  ],
+  "required_reviewer_actions": [
+    "Compare ingredients against all steps and serving suggestions",
+    "Resolve quantities/state/edible mass/compound ingredients",
+    "Obtain local recipe + nutrient + conversion + processing evidence",
+    "Map every source component with explicit reviewed identity",
+    "Approve separately by scope; never auto-populate unknown values"
+  ],
+  "new_values_assumed": false
+}

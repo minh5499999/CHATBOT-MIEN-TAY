@@ -36,26 +36,17 @@ def danh_sach_kho(root, current):
 
 
 def _cap_nhat_che_do(actor):
-    import shutil
     from backend.chatbot import tai_khoan
     from backend.chatbot.cau_hinh import CAU_HINH_PATH
     if not tai_khoan.la_admin(actor):
         st.error('Bạn không có quyền thay đổi chế độ tìm kiếm.')
         return
-    mode = st.session_state.get('retrieval_mode')
-    if mode not in MODES:
-        st.error('Chế độ tìm kiếm không hợp lệ.')
-        return
     config = json.loads(CAU_HINH_PATH.read_text(encoding='utf-8'))
-    config['che_do_truy_hoi'] = mode
-    backup_dir = ROOT / 'backups'
-    backup_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(CAU_HINH_PATH, backup_dir / f'chatbot_BACKUP_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json')
+    config['che_do_truy_hoi'] = st.session_state.retrieval_mode
     temporary = CAU_HINH_PATH.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(config, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     temporary.replace(CAU_HINH_PATH)
     doc_cau_hinh.cache_clear()
-    tai_khoan.ghi_nhat_ky_quan_tri(actor, 'cau_hinh_chatbot', 'doi_che_do_tim_kiem', mode)
 
 
 def _date(timestamp):
@@ -99,10 +90,6 @@ def hien_thi_thong_ke_tim_kiem():
 
 
 def hien_thi_du_lieu_tim_kiem(actor):
-    from backend.chatbot import tai_khoan
-    if not tai_khoan.la_admin(actor):
-        st.error('Bạn không có quyền quản trị.')
-        st.stop()
     config = doc_cau_hinh()
     rows = danh_sach_kho(ROOT, config['kho_vector'])
     with st.container(key='retrieval_listing'):

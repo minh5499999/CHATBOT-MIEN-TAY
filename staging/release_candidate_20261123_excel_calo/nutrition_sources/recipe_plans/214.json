@@ -1,0 +1,248 @@
+{
+  "recipe_id": 214,
+  "recipe_version": "ba42fb127a8d2374b8fb271e616d67dad0bbfa4bbdc6a4ea160f8b16ef83d457",
+  "answer_sha256": "ba42fb127a8d2374b8fb271e616d67dad0bbfa4bbdc6a4ea160f8b16ef83d457",
+  "source_locator": "Điện máy XANH (Vào bếp) - Cách làm tôm chiên bột mì giòn thơm khó cưỡng, ăn là ghiền ngay thôi (https://www.dienmayxanh.com/vao-bep/cach-lam-tom-chien-bot-mi-gion-thom-kho-cuong-an-la-ghien-15780)",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "source_verification": "UNVERIFIED",
+  "servings": {
+    "exact_from_source": 2,
+    "range_from_source": null,
+    "user_scenario_is_not_source_approval": true
+  },
+  "source_sections": {
+    "ingredients": {
+      "start": 0,
+      "end": 165
+    },
+    "prep": {
+      "start": 165,
+      "end": 358
+    },
+    "steps": {
+      "start": 358,
+      "end": 655
+    },
+    "finish": {
+      "start": 655,
+      "end": 735
+    }
+  },
+  "authorized_answer_text": "Nguyên liệu cần chuẩn bị (cho 2 người)\n- Tôm tươi 200g\n- Bột mì 50g\n- Bột bắp 50g\n- Trứng gà 1 quả\n- Dầu ăn 400ml\n- Gia vị muối, hạt nêm, đường, bột ngọt, tiêu xay\n\nSơ chế\n- Cắt đầu tôm, bỏ vỏ, lấy sạch chỉ lưng, giữ lại phần đuôi\n- Rửa sạch tôm bằng nước muối pha loãng rồi để ráo\n- Đập trứng vào chén, đánh tan\n- Trộn đều bột mì và bột bắp trong một chén\n\nCách chế biến\nƯớp tôm\n- Trộn tôm với 1 muỗng cà phê hạt nêm, 1/2 muỗng cà phê đường, 1/2 muỗng cà phê bột ngọt, 1/3 muỗng cà phê tiêu xay, ướp 10 phút\nLăn bột\n- Nhúng tôm vào trứng rồi lăn qua hỗn hợp bột\nChiên\n- Chiên tôm lửa vừa khoảng 20 phút đến khi vàng đều hai mặt rồi vớt ra giấy thấm dầu\n\nHoàn thành món ăn\nCho tôm ra dĩa, ăn kèm tương ớt hoặc sốt mayonnaise tùy thích.",
+  "ingredients": [
+    {
+      "raw_text": "Tôm tươi 200g",
+      "source_span": {
+        "start": 41,
+        "end": 54
+      },
+      "parent_line": "- Tôm tươi 200g",
+      "ingredient_name_as_written": "Tôm tươi",
+      "quantity_as_written": "200",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Bột mì 50g",
+      "source_span": {
+        "start": 57,
+        "end": 67
+      },
+      "parent_line": "- Bột mì 50g",
+      "ingredient_name_as_written": "Bột mì",
+      "quantity_as_written": "50",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Bột bắp 50g",
+      "source_span": {
+        "start": 70,
+        "end": 81
+      },
+      "parent_line": "- Bột bắp 50g",
+      "ingredient_name_as_written": "Bột bắp",
+      "quantity_as_written": "50",
+      "unit_as_written": "g",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Trứng gà 1 quả",
+      "source_span": {
+        "start": 84,
+        "end": 98
+      },
+      "parent_line": "- Trứng gà 1 quả",
+      "ingredient_name_as_written": "Trứng gà",
+      "quantity_as_written": "1",
+      "unit_as_written": "quả",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Dầu ăn 400ml",
+      "source_span": {
+        "start": 101,
+        "end": 113
+      },
+      "parent_line": "- Dầu ăn 400ml",
+      "ingredient_name_as_written": "Dầu ăn",
+      "quantity_as_written": "400",
+      "unit_as_written": "ml",
+      "parse_status": "SINGLE_AMOUNT_SAME_UNIT",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "Gia vị muối",
+      "source_span": {
+        "start": 116,
+        "end": 127
+      },
+      "parent_line": "- Gia vị muối, hạt nêm, đường, bột ngọt, tiêu xay",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "hạt nêm",
+      "source_span": {
+        "start": 129,
+        "end": 136
+      },
+      "parent_line": "- Gia vị muối, hạt nêm, đường, bột ngọt, tiêu xay",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "đường",
+      "source_span": {
+        "start": 138,
+        "end": 143
+      },
+      "parent_line": "- Gia vị muối, hạt nêm, đường, bột ngọt, tiêu xay",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "bột ngọt",
+      "source_span": {
+        "start": 145,
+        "end": 153
+      },
+      "parent_line": "- Gia vị muối, hạt nêm, đường, bột ngọt, tiêu xay",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    },
+    {
+      "raw_text": "tiêu xay",
+      "source_span": {
+        "start": 155,
+        "end": 163
+      },
+      "parent_line": "- Gia vị muối, hạt nêm, đường, bột ngọt, tiêu xay",
+      "ingredient_name_as_written": null,
+      "quantity_as_written": null,
+      "unit_as_written": null,
+      "parse_status": "UNRESOLVED",
+      "food_id": null,
+      "food_state": null,
+      "edible_mass_g": null,
+      "edible_fraction": null,
+      "unit_to_gram_evidence": null,
+      "brand_and_compound_composition": null,
+      "ingredient_source_verification": "UNVERIFIED",
+      "nutrient_source": null
+    }
+  ],
+  "missing": [
+    "RECIPE_SOURCE",
+    "NUTRIENT_SOURCE_5_FIELDS",
+    "REVIEWED_FOOD_MAPPING",
+    "EDIBLE_INPUT_MASS",
+    "SPICES_COMPOUNDS",
+    "SERVING_BASIS_REVIEW",
+    "COOKED_YIELD",
+    "CONSUMED_OIL_BROTH",
+    "RETENTION"
+  ],
+  "approved_scopes": [],
+  "medical_approval": false
+}

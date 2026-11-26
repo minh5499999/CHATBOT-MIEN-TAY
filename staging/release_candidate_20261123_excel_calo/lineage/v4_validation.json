@@ -1,0 +1,14 @@
+{
+  "status": "STRUCTURAL_COPY_PASS",
+  "original_records": 993,
+  "allowed_records": 832,
+  "held_records": 161,
+  "recipes": 250,
+  "western_ids": 150,
+  "train": 795,
+  "test": 198,
+  "source_verified_records": 0,
+  "embedding_rebuilt": false,
+  "faiss_byte_identical_to_parent": true,
+  "runtime_tests": "See audit/v4_tests_*.json; structural status does not assert test success"
+}

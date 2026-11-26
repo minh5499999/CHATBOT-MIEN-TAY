@@ -1,0 +1,96 @@
+{
+  "recipe_id": 41,
+  "recipe_version": "c81d3ad7f2421a626db0482bab7d30b084a2c702358be674de9afb484924bcc4",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "step_review": [
+    {
+      "section": "prep",
+      "start": 422,
+      "end": 509,
+      "text": "- Cá lóc làm sạch rồi chà muối, rửa lại với nước 2 lần. Cắt khúc vừa ăn cỡ một lóng tay",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 510,
+      "end": 605,
+      "text": "- Ướp cá với 1 muỗng canh nước mắm, 1/2 muỗng canh hạt nêm và 1/2 muỗng canh tiêu trong 15 phút",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 606,
+      "end": 657,
+      "text": "- Thơm gọt vỏ cắt miếng vừa ăn. Cà chua cắt múi cau",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 658,
+      "end": 719,
+      "text": "- Giá rửa sạch 2 lần. Ngò gai và rau ngổ rửa sạch rồi cắt nhỏ",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 720,
+      "end": 747,
+      "text": "- Đậu bắp và bạc hà cắt xéo",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 748,
+      "end": 812,
+      "text": "- Me cho vào 1 muỗng canh nước ấm khoảng 60 độ C rồi dằm cho mềm",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 828,
+      "end": 875,
+      "text": "- Đun sôi 1 lít nước rồi cho phần me đã dằm vào",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 876,
+      "end": 960,
+      "text": "- Cho cá đã ướp vào nấu khoảng 10 phút. Trong lúc nấu nhớ vớt bọt để nước canh trong",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 961,
+      "end": 1013,
+      "text": "- Thêm cà chua, thơm, đậu bắp, giá và bạc hà vào nồi",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 1014,
+      "end": 1095,
+      "text": "- Khi nước sôi lại thì cho 1 muỗng canh đường, nêm nếm lại cho vừa ăn rồi tắt bếp",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    }
+  ],
+  "required_reviewer_actions": [
+    "Compare ingredients against all steps and serving suggestions",
+    "Resolve quantities/state/edible mass/compound ingredients",
+    "Obtain local recipe + nutrient + conversion + processing evidence",
+    "Map every source component with explicit reviewed identity",
+    "Approve separately by scope; never auto-populate unknown values"
+  ],
+  "new_values_assumed": false
+}

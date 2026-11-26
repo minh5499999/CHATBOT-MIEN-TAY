@@ -1,0 +1,17 @@
+{
+  "scope": "PRODUCTION",
+  "reviewers": {
+    "baotram": [
+      "basis_and_units",
+      "completeness",
+      "food_states",
+      "ingredient_input_estimate",
+      "mass",
+      "nutrient_values",
+      "portion_basis",
+      "recipe_mapping",
+      "reuse_rights",
+      "source_text"
+    ]
+  }
+}

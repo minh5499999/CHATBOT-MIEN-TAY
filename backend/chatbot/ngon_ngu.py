@@ -90,13 +90,9 @@ DONG_NGHIA = [
 ]
 
 
-def _van_ban_nhu_cau(text):
-    return re.sub(r"\bbao nhieu\b", "luong", khang_dinh(text))
-
-
 def mo_rong_keyword(text):
     text = chuan_hoa_dia_phuong(text)
-    positive = _van_ban_nhu_cau(text)
+    positive = khang_dinh(text)
     # "không khỏe" là một triệu chứng, không phải phủ định triệu chứng.
     positive += " met moi" if co_cum(text, "khong khoe") else ""
     additions = [canonical for aliases, canonical in DONG_NGHIA
@@ -123,7 +119,6 @@ NGUYEN_LIEU = {
     "ớt": ("ớt", "sa tế"),
     "me": ("me", "me chua", "nước cốt me"),
     "nước cốt dừa": ("nước cốt dừa", "cốt dừa"),
-    "bạc hà": ("bạc hà", "dọc mùng"),
     "hành": ("hành lá", "hành tím", "hành phi", "hành tây"),
     "tỏi": ("tỏi", "tỏi băm", "tỏi phi"),
     "tiêu": ("tiêu", "hạt tiêu", "tiêu xay"),
@@ -135,7 +130,6 @@ ALIASES = {"tôm": ("tom", "tep"), "cua": ("cua", "ghe"), "cá": ("ca",),
            "thịt bò": ("thit bo",), "thịt gà": ("thit ga",), "gluten": ("gluten",), "cay": ("cay",), "cơm": ("com",), "ớt": ('ot',),
            "me": ("me", "me chua", "nuoc cot me"),
            "nước cốt dừa": ("nuoc cot dua", "cot dua"),
-           "bạc hà": ("bac ha", "doc mung"),
            "hành": ("hanh", "hanh la", "hanh tim", "hanh phi"),
            "tỏi": ("toi bam", "toi phi", "cu toi", "tep toi", "nhanh toi"),
            "tiêu": ("tieu", "hat tieu")}
@@ -161,12 +155,8 @@ def dieu_kien(text, lich_su=None):
     for q in [*(h.get("cau_hoi", "") for h in (lich_su or [])), text]:
         q = chuan_hoa(chuan_hoa_dia_phuong(q))
         # Chỉ đọc phạm vi sau động từ loại trừ, dừng ở chuyển ý/yêu cầu mới.
-        for m in re.finditer(r"\b(?:di ung(?: voi)?|khong an(?: duoc)?|khong dung|khong them|(?<!an )kieng|tranh)\s+([^.!?]+)", q):
-            span = re.split(
-                r"\b(?:nhung|con|muon|can|hay|goi y|nau|thich|thi|de|nen|la gi|"
-                r"cach nau|cach lam|huong dan|chi (?:toi|minh|tui|em)|day (?:toi|minh|tui|em))\b",
-                m[1],
-            )[0]
+        for m in re.finditer(r"\b(?:di ung(?: voi)?|khong an(?: duoc)?|khong dung|khong them|(?<!an )kieng|tranh)\s+([^,;.!?]+)", q):
+            span = re.split(r"\b(?:nhung|con|muon|can|hay|goi y|nau|thich|thi|de|nen|la gi)\b", m[1])[0]
             # Câu hỏi về kiêng gì/ngộ độc/dị ứng nói chung không phải khai báo
             # danh sách nguyên liệu cá nhân. Không lưu các từ này vào hồ sơ.
             if re.match(r'^(?:gi\b|an gi\b|thuc pham\b|thuc an\b|ngo doc\b|nhiem khuan\b|sao\b|trong\b|ma\b)', span):
@@ -185,12 +175,12 @@ def dieu_kien(text, lich_su=None):
                 if not any(name in cam for name in ("thịt heo", "thịt bò", "thịt gà")):
                     cam.add("thịt")
                 remaining = re.sub(r"\bthit\b", " ", remaining)
-            remaining = re.sub(r"[,;/]+|\b(?:va|voi|hoac|cac|loai|bat ky|duoc|ca|nua|chay|an|nha|nhe|a)\b", " ", remaining)
+            remaining = re.sub(r"\b(?:va|voi|hoac|cac|loai|bat ky|duoc|ca|nua|chay|an|nha|nhe|a)\b", " ", remaining)
             if remaining.strip():
                 chua_ro.append(remaining.strip())
         if co_cum(khang_dinh(q), "an chay") or co_cum(q, "thuan chay") or co_cum(q, "vegan"):
             chay = True
-    positive = _van_ban_nhu_cau(text)
+    positive = khang_dinh(text)
     needs = [name for name, aliases in NHU_CAU.items() if any(co_cum(positive, a) for a in aliases)]
     if not needs and re.search(r"\b(mon do|mon nay|mon kia|cai do|cai nay)\b", chuan_hoa(text)):
         for luot in reversed(lich_su or []):
@@ -198,15 +188,7 @@ def dieu_kien(text, lich_su=None):
             if previous:
                 needs = previous
                 break
-    q_plain = chuan_hoa(text)
-    dinh_luong = bool(
-        re.search(r"\d+(?:[.,]\d+)?\s*(?:kcal|calo|calories|g\s*(?:dam|protein|chat beo|carb))\b", q_plain)
-        or re.search(
-            r"\b(?:bao nhieu|ham luong|co bao nhieu|chua bao nhieu)\s+"
-            r"(?:kcal|calo|calories|nang luong|dam|protein|chat dam|chat beo|chat xo|carb|tinh bot|natri|duong)\b",
-            q_plain,
-        )
-    )
+    dinh_luong = bool(re.search(r"\d+(?:[.,]\d+)?\s*(?:kcal|calo|calories|g\s*(?:dam|protein|chat beo|carb))\b", chuan_hoa(text)))
     return {"loai_tru": sorted(cam), "an_chay": chay, "nhu_cau": needs,
             "chua_ro": chua_ro, "can_dinh_luong": dinh_luong}
 

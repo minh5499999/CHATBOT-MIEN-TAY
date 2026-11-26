@@ -56,18 +56,19 @@ def danh_muc(kho):
     return tuple(result)
 
 
-@store_cache(maxsize=8)
 def tu_vung_nguyen_lieu(kho):
     names = {ten_nguyen_lieu(line) for r in danh_muc(kho) for line in r.nguyen_lieu}
     names.update(('cá lóc', 'cá quả', 'thịt gà', 'trứng', 'trứng vịt', 'trứng gà', 'cà chua', 'đậu hũ', 'ớt'))
     return tuple(sorted((n for n in names if len(n) >= 2), key=len, reverse=True))
 
 
-def goi_y_theo_dieu_kien(kho, state):
+def goi_y_theo_dieu_kien(kho, state, *, chon_cong_thuc=None):
     dk = state['dieu_kien']
     results = []
     nau_nhanh = 'nau_nhanh' in state.get('intents', [])
     for recipe in danh_muc(kho):
+        if chon_cong_thuc and not chon_cong_thuc(recipe):
+            continue
         if vi_pham(recipe.noi_dung, dk) or not du_bang_chung(recipe.noi_dung+' '+recipe.cau_hoi, dk):
             continue
         if dk.get('chua_ro') or dk.get('can_dinh_luong'):

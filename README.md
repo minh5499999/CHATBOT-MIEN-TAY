@@ -1,4 +1,56 @@
-# Chatbot Bếp Miền Tây
+# Bếp Của Ngoại
+
+### Chạy bản GitHub trên máy Windows mới
+
+Giải nén ZIP, mở PowerShell tại thư mục có `chay_web.bat` và cài Python 3.12, MySQL và Ollama. Bản tải về đã có giao diện, Excel và kho FAISS của bản đang dùng. Hãy giữ nguyên thư mục `staging` để các checksum khớp.
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+$env:CHATBOT_MODEL_DIR = .\.venv\Scripts\python.exe -c "from huggingface_hub import snapshot_download; print(snapshot_download('bkai-foundation-models/vietnamese-bi-encoder', revision='84f9d9ada0d1a3c37557398b9ae9fcedcdf40be0', ignore_patterns=['*.bin','*.onnx','*.h5','*.msgpack','*.gguf']))"
+ollama pull qwen2.5:3b
+```
+
+Nếu máy chưa có schema MySQL của ứng dụng, chạy `.\.venv\Scripts\python.exe scripts/chuan_bi_mysql.py`, rồi mở và chạy `du_lieu_nguoi_dung/khoi_tao_mysql_rieng.sql` trong MySQL Workbench bằng tài khoản có quyền tạo schema. Sau đó sao chép `du_lieu_nguoi_dung/mysql_ket_noi.env` thành `.env` tại gốc dự án. Nếu máy đã có schema và tài khoản ứng dụng, dùng cấu hình kết nối MySQL hiện có.
+
+Trong cùng cửa sổ PowerShell, chạy `.\chay_web.bat` và mở http://localhost:8501. Biến `CHATBOT_MODEL_DIR` trỏ tới snapshot mô hình vừa tải. Khi mở PowerShell mới, đặt lại biến này hoặc lưu đường dẫn vào `.env`. Tạo tài khoản trong ứng dụng nếu cơ sở dữ liệu mới chưa có tài khoản.
+
+### LLM cục bộ bằng Ollama
+
+Bản web `chay_web.bat` có thêm tóm tắt bằng Ollama, mặc định dùng model đã cài
+`qwen2.5:3b`. Không cần API key; chỉ kết nối `127.0.0.1:11434`, không dùng proxy
+hay cloud. Nếu Ollama chưa chạy, launcher thử khởi động `ollama serve` ở nền.
+Trên máy mới, cài Ollama rồi chạy `ollama pull qwen2.5:3b` một lần khi có mạng.
+Sau khi tải đủ mô hình, phần này chạy ngoại tuyến.
+
+Cấu hình tại `cau_hinh/ollama.json`: `enabled` bật/tắt, `model` chọn model đã
+tải, `timeout_seconds` giới hạn chờ (tối đa 60 giây). Máy RTX 3050 4 GB dùng
+ngữ cảnh 2048 token, batch 128, mô hình giữ trong bộ nhớ 5 phút khi rảnh.
+Nếu đổi model hoặc cấu hình, khởi động lại web. Không cần `llama-cpp-python`.
+
+Luồng: truy hồi và kiểm tra quyền nguồn hiện có → LLM chọn tối đa 3 đoạn liên
+quan → mã Python dựng tóm tắt từ nguyên văn đoạn đã chọn. Đây là **RAG trích
+xuất**, chưa phải chế độ diễn giải tự do. LLM không tạo định lượng, nguồn mới
+hoặc lời khuyên điều trị. Tóm tắt hiện phía trên, công thức và nguồn đầy đủ
+vẫn ở bên dưới. Các nhánh tính calo, đổi khẩu phần, sức khỏe, từ chối và nội
+dung chưa được phép không qua bước rút gọn. Khi thiếu model, timeout hoặc đầu
+ra sai, hiển thị câu trả lời gốc. Lựa chọn đoạn có thể chưa tối ưu, cần đối
+chiếu nội dung đầy đủ. Không coi bản tóm tắt là toàn bộ quy trình nấu.
+
+Tóm tắt chỉ giữ trong phiên giao diện (tối đa 30 lượt), không ghi thêm vào
+MySQL hoặc thay đổi kho staging đã kiểm định. Khi mở lại lịch sử sau phiên
+mới, người dùng vẫn thấy câu trả lời gốc.
+
+Kiểm tra kết nối và suy luận thật, không truy cập tài khoản:
+`.venv\Scripts\python.exe -B -X utf8 scripts/kiem_tra_ollama.py`.
+Kiểm thử bảo toàn dữ liệu:
+`.venv\Scripts\python.exe -B -X utf8 -m unittest discover -s tests -p test_ollama_local.py -v`.
+
+### Luồng trả lời LangChain
+
+Chạy bản web bằng `chay_web.bat`. LangChain điều phối xử lý ngữ cảnh, truy hồi và chọn câu trả lời từ dữ liệu. Mô hình embedding dùng cho tìm kiếm. Công thức và calo được lấy hoặc tính từ dữ liệu của dự án.
+
+Tùy chọn backend `che_do_du_lieu=evaluation` giới hạn kho truy hồi ở `answer_Train`. Trước khi báo cáo điểm Test độc lập, cần kiểm tra cả đường trả lời khớp câu trong danh mục nguồn và đường calo, vì chúng có bước tra cứu riêng. Bản web thông thường dùng kho phục vụ `answer_all`; kết quả trên kho đó không phải điểm Test độc lập.
 
 Đề tài môn Các ứng dụng AI của nhóm là xây dựng chatbot hỗ trợ hướng dẫn nấu ăn và gợi ý món ăn theo nhu cầu dinh dưỡng, ưu tiên món miền Tây.
 
@@ -89,6 +141,56 @@ Nút "Đăng nhập bằng Gmail" bị mờ cho tới khi có mã Google OAuth:
 Đăng nhập Gmail được nhớ 30 ngày (tải lại trang không phải đăng nhập lại). **Không** đưa `secrets.toml` lên GitHub.
 
 ## Cách chatbot trả lời
+
+### Calo từ Excel chuẩn hóa (23/11/2026)
+
+File chạy web `chay_web.bat` dùng bản backend kế thừa
+`staging/release_candidate_20261123_excel_calo`. Bản trước vẫn giữ tại
+`staging/release_candidate_20261118_m5_v9`.
+
+Dữ liệu nhập từ bản Excel có 250 công thức và 2.250 câu hỏi nằm trong
+`data/calo/cong_thuc.json`; bản dùng trên web được ghim checksum trong manifest.
+File `câu hoi.xlsx` tại gốc source hiện là bản mới, có đủ 993 câu gốc tại `Dataset`
+và 2.250 câu calo tại `Hoi_dap_calo`, cùng các bảng tính và nguồn. Nội dung 993
+câu gốc giữ nguyên. File cũ được sao lưu tại
+`../project_backups/before_replace_cau_hoi_20261123/câu hoi.xlsx`.
+Không trộn các câu calo vào Train/Test
+hoặc dựng lại kho vector. Mỗi câu hỏi về calo được chọn theo đúng công thức đang
+được phép sử dụng trong kho hiện tại; số trả lời được tính từ tổng kcal và số phần.
+
+Có thể hỏi “Canh chua cá lóc bao nhiêu calo?”, rồi “Ăn nửa phần thì sao?”.
+Tên chung như “cá kho tộ bao nhiêu calo” hiển thị các công thức liên quan để chọn
+bằng nút hoặc “Món thứ 1”; không tự gán số calo của một loại cá cho tất cả món.
+Kết quả calo kèm các mục xem một khẩu phần, nửa khẩu phần và công thức nấu.
+Một tô/đĩa không mặc định bằng một khẩu phần; 100 g món chín cần cân món chín.
+Nửa mẻ khác nửa khẩu phần. Công thức có thay nguyên liệu hoặc đang sửa không dùng
+lại số gốc. Các bản đang chờ rà soát/tạm ẩn vẫn giữ nguyên giới hạn đó.
+
+Kết quả này là **ước tính theo giả định Excel**, có nguyên liệu dùng dữ liệu đại
+diện, không phải hồ sơ dinh dưỡng đã thẩm định, không áp dụng làm lời khuyên điều
+trị. Không tự tạo số protein, béo, carbohydrate hoặc natri. Nguồn, cơ sở chia
+phần và giả định được hiển thị cùng câu trả lời. Các câu nấu ăn khác tiếp tục
+qua luồng hiện có.
+
+Sau khi sửa Excel, nhập lại bằng Python có `openpyxl`:
+`python scripts/nap_calo_excel.py "câu hoi.xlsx"`.
+Sau đó chạy `python scripts/build_excel_calo.py` và
+`python scripts/check_excel_calo_integration.py` bằng môi trường của dự án;
+khởi động lại web để nạp phiên bản mới. Không sửa trực tiếp bundle đã ghim checksum.
+
+Kiểm tra tích hợp được lưu tại `audit/excel_calo_integration.json`.
+
+### Dữ liệu đạm, béo, carbohydrate khả dụng và natri
+
+File `câu hoi.xlsx` có thêm sheet `Dinh_duong_250_mon`, các cột dưỡng chất theo
+nguyên liệu và nguồn của từng chỉ số. Dữ liệu chuẩn bị cho bước giao diện được
+lưu riêng tại `data/dinh_duong/cong_thuc_250.json`; xem định nghĩa và quy tắc thiếu
+dữ liệu trong `data/dinh_duong/README.md`. Chưa bật bảng so sánh trước–sau hoặc
+thay hồ sơ dinh dưỡng đã duyệt của runtime bằng dữ liệu ước tính này.
+
+152/250 bản có số cho đủ cả bốn chỉ số theo nguồn/kịch bản đã chọn. Số bản có số
+đạm: 247; béo: 233; carbohydrate khả dụng: 196; natri: 183. Chỉ số thiếu được ghi
+rõ, không thay bằng 0 hoặc coi tổng một phần nguyên liệu là tổng đủ của món.
 
 1. LCEL mở rộng đồng nghĩa, giữ câu gốc và phủ định.
 2. Ghép chủ đề câu nối tiếp rồi truy hồi lai bằng RRF.

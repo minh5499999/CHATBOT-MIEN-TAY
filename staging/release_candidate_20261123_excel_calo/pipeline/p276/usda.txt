@@ -1,0 +1,8 @@
+USDA SR Legacy 2018-04; FDC 169975; Cabbage, raw; 1 cup, chopped = 89 g (row 85791).
+https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip
+SHA-256 b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0; CC0-1.0
+1004 | G | 0.1 per 100 g | row 1484444
+1005 | G | 5.8 per 100 g | row 1484445
+1008 | KCAL | 25 per 100 g | row 1484446
+1003 | G | 1.28 per 100 g | row 1484505
+1093 | MG | 18 per 100 g | row 1484516

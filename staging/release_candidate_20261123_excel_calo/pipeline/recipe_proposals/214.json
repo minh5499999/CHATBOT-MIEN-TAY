@@ -1,0 +1,72 @@
+{
+  "recipe_id": 214,
+  "recipe_version": "ba42fb127a8d2374b8fb271e616d67dad0bbfa4bbdc6a4ea160f8b16ef83d457",
+  "status": "NEEDS_REVIEW",
+  "executable": false,
+  "step_review": [
+    {
+      "section": "prep",
+      "start": 172,
+      "end": 230,
+      "text": "- Cắt đầu tôm, bỏ vỏ, lấy sạch chỉ lưng, giữ lại phần đuôi",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 231,
+      "end": 281,
+      "text": "- Rửa sạch tôm bằng nước muối pha loãng rồi để ráo",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "prep",
+      "start": 282,
+      "end": 312,
+      "text": "- Đập trứng vào chén, đánh tan",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": false
+    },
+    {
+      "section": "prep",
+      "start": 313,
+      "end": 356,
+      "text": "- Trộn đều bột mì và bột bắp trong một chén",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 380,
+      "end": 508,
+      "text": "- Trộn tôm với 1 muỗng cà phê hạt nêm, 1/2 muỗng cà phê đường, 1/2 muỗng cà phê bột ngọt, 1/3 muỗng cà phê tiêu xay, ướp 10 phút",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 517,
+      "end": 562,
+      "text": "- Nhúng tôm vào trứng rồi lăn qua hỗn hợp bột",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    },
+    {
+      "section": "steps",
+      "start": 569,
+      "end": 653,
+      "text": "- Chiên tôm lửa vừa khoảng 20 phút đến khi vàng đều hai mặt rồi vớt ra giấy thấm dầu",
+      "status": "NEEDS_REVIEW",
+      "material_or_consumption_flag": true
+    }
+  ],
+  "required_reviewer_actions": [
+    "Compare ingredients against all steps and serving suggestions",
+    "Resolve quantities/state/edible mass/compound ingredients",
+    "Obtain local recipe + nutrient + conversion + processing evidence",
+    "Map every source component with explicit reviewed identity",
+    "Approve separately by scope; never auto-populate unknown values"
+  ],
+  "new_values_assumed": false
+}
